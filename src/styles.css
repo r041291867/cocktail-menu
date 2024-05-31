@@ -1,0 +1,68 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+
+@font-face {
+  font-family: "handwrite";
+  /* src: url("/fonts/Yozai-Regular.woff") format("woff"); */
+  src: url("/fonts/JasonHandwriting5.ttf") format("truetype");
+}
+#root ~ iframe {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 5px 20px 30px;
+  font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #ccc;
+  /* background: url("https://i.imgur.com/2ovH9wo.jpg"), #2e2e2e; */
+  background: #2e2e2e;
+}
+
+.App {
+  font-family: sans-serif;
+}
+
+.handwrite-en {
+  font-family: "Yellowtail", cursive;
+  font-style: normal;
+  transform: skew(13deg, 0deg);
+}
+
+.handwrite-ch {
+  font-family: "handwrite", cursive;
+  font-style: normal;
+}
+
+.menu__grid {
+  display: grid;
+  gap: 40px;
+}
+
+.menu__section {
+  min-width: 335px;
+}
+
+.menu__title {
+  position: sticky;
+  top: 0;
+  padding: 10px 0px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #2e2e2e;
+  border-bottom: 1px solid #aaa;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .menu__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 80px;
+    max-width: 830px;
+    margin: auto;
+  }
+}

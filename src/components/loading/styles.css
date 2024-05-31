@@ -1,0 +1,22 @@
+.loading__frame {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.loading__mask {
+  position: absolute;
+  inset: 0;
+  background: #232323;
+  /* opacity: 0.6; */
+}
+
+.loading__main {
+  position: absolute;
+  inset: 0;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  background: url("/images/pouring-wine.gif") center/400% no-repeat, #232323;
+  border-radius: 10px;
+}
