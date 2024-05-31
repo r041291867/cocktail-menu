@@ -1,4 +1,4 @@
-export default cocktailMenu = [
+export const cocktailMenu = [
   {
     category: "Features",
     cocktails: [

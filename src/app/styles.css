@@ -1,10 +1,7 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
 
 @font-face {
   font-family: "handwrite";
-  /* src: url("/fonts/Yozai-Regular.woff") format("woff"); */
   src: url("/fonts/JasonHandwriting5.ttf") format("truetype");
 }
 #root ~ iframe {
@@ -20,10 +17,6 @@ body {
   color: #ccc;
   /* background: url("https://i.imgur.com/2ovH9wo.jpg"), #2e2e2e; */
   background: #2e2e2e;
-}
-
-.App {
-  font-family: sans-serif;
 }
 
 .handwrite-en {
@@ -61,7 +54,7 @@ body {
   .menu__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px 80px;
+    /* gap: 40px 80px; */
     max-width: 830px;
     margin: auto;
   }
