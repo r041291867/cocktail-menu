@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Take A Sip",
-  description: "Welcome to Take A Sip! Click here to checkout the menu!",
+  title: "The Mixology Nook",
+  description: "Welcome to The Mixology Nook, your destination for all things home bar! Cheers to creating unforgettable moments, one drink at a time!",
 };
 
 export default function RootLayout({ children }) {
