@@ -35,6 +35,7 @@
 }
 
 .cocktail__main {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,10 +58,12 @@
 }
 
 .cocktail__stars {
+  position: absolute;
+  right: 0;
   display: inline-flex;
   align-items: center;
   height: 20px;
-  padding: 2px 8px;
+  padding: 2px 6px;
   font-size: 14px;
   color: #333;
   // background: rgba(255, 255, 255, 0.3);
