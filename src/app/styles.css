@@ -1,11 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Neucha&family=Londrina+Solid:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 @font-face {
   font-family: "handwrite";
-  src: url("/fonts/JasonHandwriting5.ttf") format("truetype");
+  src: url("/fonts/JasonHandwriting5p.ttf") format("truetype");
 }
+
+:root {
+  --header-height: 40px;
+}
+
 #root ~ iframe {
   display: none !important;
+}
+
+div {
+  box-sizing: border-box;
 }
 
 body {
@@ -20,19 +32,64 @@ body {
 }
 
 .handwrite-en {
-  font-family: "Yellowtail", cursive;
+  font-family:  "Yellowtail", cursive;
   font-style: normal;
   transform: skew(13deg, 0deg);
+}
+
+.handwrite-en2 {
+  font-family: "Annie Use Your Telescope",cursive;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transform: skew(-13deg, 0deg);
 }
 
 .handwrite-ch {
   font-family: "handwrite", cursive;
   font-style: normal;
+  letter-spacing: 0.5px;
+}
+
+.handwrite-border {
+  border-width: 2px;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, transparent, #aaa 10%, #aaa 90%, #ffffff00);
+}
+
+.menu__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 20px 0 20px;
+  line-height: var(--header-height);
+  font-size: 18px;
+  background: #2e2e2e;
+  user-select: none;
+  z-index: 11;
+}
+
+.menu__header--inner {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  max-width: 830px;
+  margin: auto;
+  border-bottom: 1px solid #aaa;
+}
+
+.menu__header--inner > img {
+  width: 25px;
+  height: 25px;
 }
 
 .menu__grid {
   display: grid;
   gap: 40px;
+  padding-top: var(--header-height);
 }
 
 .menu__section {
@@ -40,9 +97,10 @@ body {
 }
 
 .menu__title {
-  position: sticky;
-  top: 0;
-  padding: 10px 0px 10px;
+  /* position: sticky; */
+  top: var(--header-height);
+  /* padding: 10px 0px 10px; */
+  line-height: 40px;
   font-size: 18px;
   font-weight: bold;
   background: #2e2e2e;
@@ -51,6 +109,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  :root {
+    --header-height: 50px;
+  }
+
   .menu__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

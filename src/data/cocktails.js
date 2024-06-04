@@ -50,7 +50,7 @@ export const cocktailMenu = [
       },
       {
         nameCht: "往日情懷",
-        nameEng: "Old Fashined",
+        nameEng: "Old Fashioned",
         alcohol: "Strong",
         shots: 3,
         ingredients: ["whisky", "bitters", "sugar"],
