@@ -20,32 +20,34 @@ export default function Home() {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link
+          rel="icon"
+          href="/favicon.ico"
+          sizes="any"
+        />
       </Head>
 
-      {/* <div className="menu__header handwrite-ch">
-        調酒小角落
-        <div className="handwrite-en">
-        {' - '}The Mixology Nook
+      <div className="menu__header ">
+        <div className="menu__header--inner handwrite-border">
+          <img
+            src={"./favicon.ico"}
+            alt=""
+          />
+          <div className="handwrite-en2">The Mixology Menu</div>
         </div>
-      </div> */}
-      {/* <div className="handwrite-border">。 */}
-        <div className="menu__header handwrite-border">
-          <img src={"./favicon.ico"} alt="" width={20} height={20} />
-          <div className="handwrite-en">
-            The Mixology Nook
-          </div>
-        </div>
-      {/* </div> */}
+      </div>
 
       <div className="menu__grid">
         {cocktailMenu.map(({ category, cocktails }) => (
-          <div key={category} className="menu__section">
+          <div
+            key={category}
+            className="menu__section"
+          >
             <div className="menu__title handwrite-border">
               <span className="handwrite-ch">{toChinese(category)}</span>
               <span
-                className="handwrite-en"
-                style={{ marginLeft: 6, fontSize: 16 }}
+                className="handwrite-en2"
+                style={{ marginLeft: 6 }}
               >
                 {category}
               </span>
