@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Neucha&family=Londrina+Solid:wght@300&display=swap");
 
 @font-face {
   font-family: "handwrite";
   src: url("/fonts/JasonHandwriting5.ttf") format("truetype");
 }
+
+:root {
+  --header-height: 30px;
+}
+
 #root ~ iframe {
   display: none !important;
+}
+
+div {
+  box-sizing: border-box;
 }
 
 body {
@@ -20,8 +30,9 @@ body {
 }
 
 .handwrite-en {
-  font-family: "Yellowtail", cursive;
+  font-family:  "Yellowtail", "Annie Use Your Telescope",cursive;
   font-style: normal;
+  /* font-weight: bold; */
   transform: skew(13deg, 0deg);
 }
 
@@ -30,9 +41,36 @@ body {
   font-style: normal;
 }
 
+.handwrite-border {
+  border-width: 2px;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, transparent, #aaa 10%, #aaa 90%, #ffffff00);
+}
+
+.menu__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 20px 0 10px;
+  line-height: var(--header-height);
+  /* text-align: center; */
+  font-size: 16px;
+  background: #2e2e2e;
+  border-bottom: 1px solid #aaa;
+  user-select: none;
+  z-index: 11;
+}
+
 .menu__grid {
   display: grid;
   gap: 40px;
+  padding-top: var(--header-height);
 }
 
 .menu__section {
@@ -41,8 +79,9 @@ body {
 
 .menu__title {
   position: sticky;
-  top: 0;
-  padding: 10px 0px 10px;
+  top: var(--header-height);
+  /* padding: 10px 0px 10px; */
+  line-height: 40px;
   font-size: 18px;
   font-weight: bold;
   background: #2e2e2e;
