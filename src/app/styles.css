@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "handwrite";
-  src: url("/fonts/JasonHandwriting5.ttf") format("truetype");
+  src: url("/fonts/JasonHandwriting5p.ttf") format("truetype");
 }
 
 :root {
@@ -48,6 +48,7 @@ body {
 .handwrite-ch {
   font-family: "handwrite", cursive;
   font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 .handwrite-border {
