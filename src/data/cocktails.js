@@ -89,6 +89,14 @@ export const cocktailMenu = [
         ingredients: ["whisky", "lemon"],
       },
       {
+        nameCht: "淘金熱",
+        nameEng: "Gold Rush",
+        alcohol: "Medium",
+        shots: 2,
+        ingredients: ["whisky", "honey", "lemon"],
+        hasImage: false,
+      },
+      {
         nameCht: "蜜蜂之膝",
         nameEng: "Bee's Knees",
         alcohol: "Medium",
