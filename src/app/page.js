@@ -5,12 +5,14 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import CocktailItem from "@/components/cocktailItem";
 import Loading from "@/components/loading";
+import Popup from "@/components/popup";
 import { cocktailMenu } from "@/data/cocktails";
 import { toChinese } from "@/data/engToCht";
 
 const randomNum = Math.round(Math.random() * 1000);
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [showPopup, setShowPopup] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -34,6 +36,17 @@ export default function Home() {
             alt=""
           />
           <div className="handwrite-en2">The Mixology Menu</div>
+          <div style={{ flex: 1 }}></div>
+          <div className="surprise">
+            <div
+              className="handwrite-en2"
+              onClick={() => {
+                setShowPopup(true);
+              }}
+            >
+              Surprise Me!
+            </div>
+          </div>
         </div>
       </div>
 
@@ -63,6 +76,14 @@ export default function Home() {
       </div>
 
       {loading && <Loading />}
+
+      {showPopup && (
+        <Popup
+          onCloseClick={() => {
+            setShowPopup(false);
+          }}
+        />
+      )}
     </>
   );
 }
