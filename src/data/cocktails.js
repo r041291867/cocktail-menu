@@ -107,13 +107,6 @@ export const cocktailMenu = [
         imgPosition: "right",
       },
       {
-        nameCht: "黛綺莉",
-        nameEng: "Daiquiri",
-        alcohol: "Medium",
-        shots: 2,
-        ingredients: ["rum", "lemon"],
-      },
-      {
         nameCht: "大人版冰火",
         nameEng: "Vodka Lime",
         alcohol: "Medium",
@@ -122,6 +115,13 @@ export const cocktailMenu = [
         hasImage: true,
         src: "/images/cocktails/vodkaLime.jpg",
         imgPosition: "right",
+      },
+      {
+        nameCht: "黛綺莉",
+        nameEng: "Daiquiri",
+        alcohol: "Medium",
+        shots: 2,
+        ingredients: ["rum", "lemon"],
       },
       {
         nameCht: "沈默第三者",
