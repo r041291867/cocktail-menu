@@ -5,6 +5,7 @@ const dictionary = {
   Sour: "清新酸爽",
   Twist: "經典改編",
   gin: "琴酒",
+  "souler gin": "書展琴酒",
   whisky: "威士忌",
   brandy: "白蘭地",
   rum: "蘭姆酒",
@@ -13,6 +14,7 @@ const dictionary = {
   "rosso vermouth": "甜香艾酒",
   campari: "金巴利",
   cointreau: "君度橙酒",
+  umeshu: "梅酒",
   mint: "薄荷",
   lime: "萊姆",
   lemon: "檸檬",
@@ -20,11 +22,14 @@ const dictionary = {
   sugar: "糖",
   soda: "蘇打水",
   "tonic water": "通寧水",
+  "green tea": "綠茶",
   water: "水",
   bitters: "苦精",
   ginger: "薑",
   cocoa: "可可",
   cream: "鮮奶油",
+  "amarula cream": "大象奶酒",
+  milk: "牛奶"
 };
 
 export function toChinese(englishText) {

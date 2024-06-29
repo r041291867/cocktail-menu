@@ -10,11 +10,18 @@ export const cocktailMenu = [
         ingredients: ["gin", "lemon"],
       },
       {
-        nameCht: "雪白佳人",
-        nameEng: "White Lady",
+        nameCht: "牛奶糖",
+        nameEng: "Fudge",
         alcohol: "Medium",
         shots: 2,
-        ingredients: ["gin", "cointreau", "lemon"],
+        ingredients: ["amarula cream", "milk", "sugar"],
+      },
+      {
+        nameCht: "梅子樹下",
+        nameEng: "Beneath the Plum Tree",
+        alcohol: "Medium",
+        shots: 2,
+        ingredients: ["souler gin", "umeshu", "green tea"],
       },
       {
         nameCht: "茉莉",
@@ -41,6 +48,13 @@ export const cocktailMenu = [
   {
     category: "Classics",
     cocktails: [
+      {
+        nameCht: "白色佳人",
+        nameEng: "White Lady",
+        alcohol: "Medium",
+        shots: 2,
+        ingredients: ["gin", "cointreau", "lemon"],
+      },
       {
         nameCht: "側車",
         nameEng: "Sidecar",
@@ -89,24 +103,6 @@ export const cocktailMenu = [
         ingredients: ["whisky", "lemon"],
       },
       {
-        nameCht: "淘金熱",
-        nameEng: "Gold Rush",
-        alcohol: "Medium",
-        shots: 2,
-        ingredients: ["whisky", "honey", "lemon"],
-        hasImage: false,
-      },
-      {
-        nameCht: "蜜蜂之膝",
-        nameEng: "Bee's Knees",
-        alcohol: "Medium",
-        shots: 2,
-        ingredients: ["gin", "honey", "lemon"],
-        hasImage: true,
-        src: "/images/cocktails/beesKnees.jpg",
-        imgPosition: "right",
-      },
-      {
         nameCht: "黛綺莉",
         nameEng: "Daiquiri",
         alcohol: "Medium",
@@ -121,6 +117,26 @@ export const cocktailMenu = [
         ingredients: ["vodka", "lemon"],
         hasImage: true,
         src: "/images/cocktails/vodkaLime.jpg",
+        imgPosition: "right",
+      },
+      {
+        nameCht: "淘金熱",
+        nameEng: "Gold Rush",
+        alcohol: "Medium",
+        shots: 2,
+        ingredients: ["whisky", "honey", "lemon"],
+        hasImage: true,
+        src: "/images/cocktails/goldRush.jpg",
+        imgPosition: "right",
+      },
+      {
+        nameCht: "蜜蜂之膝",
+        nameEng: "Bee's Knees",
+        alcohol: "Medium",
+        shots: 2,
+        ingredients: ["gin", "honey", "lemon"],
+        hasImage: true,
+        src: "/images/cocktails/beesKnees.jpg",
         imgPosition: "right",
       },
       {
