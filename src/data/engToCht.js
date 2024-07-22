@@ -20,6 +20,7 @@ const dictionary = {
   lemon: "檸檬",
   honey: "蜂蜜",
   sugar: "糖",
+  grapefruit: "葡萄柚",
   soda: "蘇打水",
   "tonic water": "通寧水",
   "green tea": "綠茶",

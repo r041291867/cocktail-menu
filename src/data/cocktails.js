@@ -3,13 +3,6 @@ export const cocktailMenu = [
     category: "Features",
     cocktails: [
       {
-        nameCht: "琴蕾",
-        nameEng: "Gimlet",
-        alcohol: "Medium",
-        shots: 2,
-        ingredients: ["gin", "lemon"],
-      },
-      {
         nameCht: "牛奶糖",
         nameEng: "Fudge",
         alcohol: "Medium",
@@ -22,6 +15,13 @@ export const cocktailMenu = [
         alcohol: "Medium",
         shots: 2,
         ingredients: ["souler gin", "umeshu", "green tea"],
+      },
+      {
+        nameCht: "梅子冰茶",
+        nameEng: "Plum Iced Tree",
+        alcohol: "Medium",
+        shots: 2,
+        ingredients: ["gin", "vodka", "tequila", "rum", "cointreau", "umeshu", "honey", "green tea"],
       },
       {
         nameCht: "茉莉",
@@ -96,29 +96,29 @@ export const cocktailMenu = [
     category: "Sour",
     cocktails: [
       {
-        nameCht: "威士忌酸酒",
-        nameEng: "Whisky Sour",
+        nameCht: "琴蕾",
+        nameEng: "Gimlet",
         alcohol: "Medium",
         shots: 2,
-        ingredients: ["whisky", "lemon"],
+        ingredients: ["gin", "lemon", "sugar"],
       },
       {
         nameCht: "黛綺莉",
         nameEng: "Daiquiri",
         alcohol: "Medium",
         shots: 2,
-        ingredients: ["rum", "lemon"],
+        ingredients: ["rum", "lemon", "sugar"],
       },
-      {
-        nameCht: "大人版冰火",
-        nameEng: "Vodka Lime",
-        alcohol: "Medium",
-        shots: 2,
-        ingredients: ["vodka", "lemon"],
-        hasImage: true,
-        src: "/images/cocktails/vodkaLime.jpg",
-        imgPosition: "right",
-      },
+      // {
+      //   nameCht: "大人版冰火",
+      //   nameEng: "Vodka Lime",
+      //   alcohol: "Medium",
+      //   shots: 2,
+      //   ingredients: ["vodka", "lemon", "sugar"],
+      //   hasImage: true,
+      //   src: "/images/cocktails/vodkaLime.jpg",
+      //   imgPosition: "right",
+      // },
       {
         nameCht: "淘金熱",
         nameEng: "Gold Rush",
@@ -139,13 +139,13 @@ export const cocktailMenu = [
         src: "/images/cocktails/beesKnees.jpg",
         imgPosition: "right",
       },
-      {
-        nameCht: "沈默第三者",
-        nameEng: "Silent Third",
-        alcohol: "Medium",
-        shots: 2,
-        ingredients: ["whisky", "cointreau", "lemon"],
-      },
+      // {
+      //   nameCht: "沈默第三者",
+      //   nameEng: "Silent Third",
+      //   alcohol: "Medium",
+      //   shots: 2,
+      //   ingredients: ["whisky", "cointreau", "lemon"],
+      // },
       {
         nameCht: "末調",
         nameEng: "X.Y.Z.",
@@ -179,13 +179,6 @@ export const cocktailMenu = [
         ingredients: ["whisky", "soda"],
       },
       {
-        nameCht: "琴蘇打",
-        nameEng: "Gin Soda",
-        alcohol: "light",
-        shots: 1,
-        ingredients: ["gin", "soda"],
-      },
-      {
         nameCht: "琴費士",
         nameEng: "Gin Fizz",
         alcohol: "light",
@@ -200,18 +193,18 @@ export const cocktailMenu = [
         ingredients: ["gin", "tonic water"],
       },
       {
-        nameCht: "琴蕾高球",
-        nameEng: "Gimlet Highball",
-        alcohol: "light",
-        shots: 1,
-        ingredients: ["gin", "soda", "lemon"],
-      },
-      {
         nameCht: "莫希托",
         nameEng: "Mojito",
         alcohol: "light",
         shots: 1,
         ingredients: ["rum", "soda", "lemon", "mint"],
+      },
+      {
+        nameCht: "泡泡",
+        nameEng: "Spumoni",
+        alcohol: "light",
+        shots: 1,
+        ingredients: ["campari", "grapefruit","tonic water"],
       },
       {
         nameCht: "美國佬",
