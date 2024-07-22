@@ -232,6 +232,16 @@ export const cocktailMenu = [
         imgPosition: "left",
       },
       {
+        nameCht: "飛行夢",
+        nameEng: "Aviation Dream",
+        alcohol: "Medium",
+        shots: 2,
+        ingredients: ["gin", "maraschino", "lemon"],
+        hasImage: true,
+        src: "/images/cocktails/aviationDream.jpg",
+        imgPosition: "left",
+      },
+      {
         nameCht: "盤尼西林",
         nameEng: "Penicillin",
         alcohol: "Medium",
