@@ -1,6 +1,6 @@
 export const cocktailMenu = [
   {
-    category: "Features",
+    category: "Signature",
     cocktails: [
       {
         nameCht: "牛奶糖",
@@ -34,11 +34,11 @@ export const cocktailMenu = [
         imgPosition: "left",
       },
       {
-        nameCht: "神風特攻隊",
-        nameEng: "Kamikaze",
+        nameCht: "茶風特攻隊",
+        nameEng: "Kamikaze Tea",
         alcohol: "Medium",
         shots: 2,
-        ingredients: ["vodka", "cointreau", "lemon"],
+        ingredients: ["vodka", "green tea","cointreau", "lemon"],
         hasImage: true,
         src: "/images/cocktails/kamikaze.jpg",
         imgPosition: "left",
@@ -60,7 +60,7 @@ export const cocktailMenu = [
         nameEng: "Sidecar",
         alcohol: "Medium",
         shots: 2,
-        ingredients: ["brandy", "cointreau", "lemon"],
+        ingredients: ["brandy", "grand marnier", "lemon"],
       },
       {
         nameCht: "往日情懷",

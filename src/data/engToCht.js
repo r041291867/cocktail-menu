@@ -1,5 +1,6 @@
 const dictionary = {
   Features: "精選",
+  Signature: "特調",
   Classics: "懷舊經典",
   "Just Relax": "輕鬆喝",
   Sour: "清新酸爽",
@@ -13,7 +14,8 @@ const dictionary = {
   tequila: "龍舌蘭",
   "rosso vermouth": "甜香艾酒",
   campari: "金巴利",
-  cointreau: "君度橙酒",
+  cointreau: "橙酒",
+  "grand marnier": "柑曼怡",
   umeshu: "梅酒",
   mint: "薄荷",
   lime: "萊姆",
