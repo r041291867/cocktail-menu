@@ -3,11 +3,18 @@ export const cocktailMenu = [
     category: "Signature",
     cocktails: [
       {
+        nameCht: "青草巷",
+        nameEng: "Herb Lane",
+        alcohol: "Light",
+        shots: 1,
+        ingredients: ["fernet branca", "vermouth", "bitters", "sugar"],
+      },
+      {
         nameCht: "牛奶糖",
         nameEng: "Fudge",
         alcohol: "Light",
         shots: 1,
-        ingredients: ["amarula cream", "milk", "sugar"],
+        ingredients: ["amarula", "milk", "honey"],
       },
       {
         nameCht: "梅子樹下",
@@ -22,16 +29,6 @@ export const cocktailMenu = [
         alcohol: "Medium",
         shots: 2,
         ingredients: ["gin", "vodka", "tequila", "rum", "cointreau", "umeshu", "honey", "green tea"],
-      },
-      {
-        nameCht: "茉莉",
-        nameEng: "Jasmine",
-        alcohol: "Medium",
-        shots: 2,
-        ingredients: ["gin", "lemon", "campari", "cointreau"],
-        hasImage: true,
-        src: "/images/cocktails/jasmine.jpeg",
-        imgPosition: "left",
       },
       {
         nameCht: "茶風特攻隊",
@@ -146,6 +143,16 @@ export const cocktailMenu = [
       //   shots: 2,
       //   ingredients: ["whisky", "cointreau", "lemon"],
       // },
+      {
+        nameCht: "茉莉",
+        nameEng: "Jasmine",
+        alcohol: "Medium",
+        shots: 2,
+        ingredients: ["gin", "lemon", "campari", "cointreau"],
+        hasImage: true,
+        src: "/images/cocktails/jasmine.jpeg",
+        imgPosition: "left",
+      },
       {
         nameCht: "末調",
         nameEng: "X.Y.Z.",

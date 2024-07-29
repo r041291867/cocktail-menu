@@ -12,7 +12,9 @@ const dictionary = {
   rum: "蘭姆酒",
   vodka: "伏特加",
   tequila: "龍舌蘭",
+  "vermouth": "香艾酒",
   "rosso vermouth": "甜香艾酒",
+  "dry vermouth": "不甜香艾酒",
   campari: "金巴利",
   cointreau: "橙酒",
   "grand marnier": "柑曼怡",
@@ -32,8 +34,9 @@ const dictionary = {
   ginger: "薑",
   cocoa: "可可",
   cream: "鮮奶油",
-  "amarula cream": "大象奶酒",
-  milk: "牛奶"
+  "amarula": "大象奶酒",
+  milk: "牛奶",
+  "fernet branca": "芙內布蘭卡"
 };
 
 export function toChinese(englishText) {
