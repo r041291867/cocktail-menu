@@ -18,7 +18,7 @@ export const cocktailMenu = [
       },
       {
         nameCht: "梅子冰茶",
-        nameEng: "Plum Iced Tree",
+        nameEng: "Plum Iced Tea",
         alcohol: "Medium",
         shots: 1.5,
         ingredients: ["gin", "vodka", "tequila", "rum", "cointreau", "umeshu", "honey", "green tea"],
@@ -32,7 +32,7 @@ export const cocktailMenu = [
       },
       {
         nameCht: "茶風特攻隊",
-        nameEng: "Kamikaze Tea",
+        nameEng: "Tea-kaze",
         alcohol: "Medium",
         shots: 2,
         ingredients: ["vodka", "green tea","cointreau", "lemon"],
