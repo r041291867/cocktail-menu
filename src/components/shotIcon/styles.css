@@ -12,6 +12,10 @@
   background: url("/images/ic-shot-empty.svg") center/contain no-repeat;
 }
 
+.shot-icon.status-half {
+  background: url("/images/ic-shot-half.svg") center/contain no-repeat;
+}
+
 .shot-icon.status-filled {
   background: url("/images/ic-shot-filled.svg") center/contain no-repeat;
 }

@@ -8,11 +8,20 @@ export default function CocktailItem({ cocktail }) {
   const numToRate = (num) => {
     let result = [];
 
-    for (let i = 0; i < num; i++) {
+    // 處理滿杯子
+    for (let i = 0; i < Math.floor(num); i++) {
       result = [...result, <ShotIcon key={"fill" + i} status="filled" />];
     }
-    for (let i = 0; i < 3 - num; i++) {
-      result = [...result, <ShotIcon key={"empty" + i} status="empty" />];
+
+    // 處理半滿杯子
+    if (num % 1 === 0.5) {
+        result = [...result, <ShotIcon key={"half"} status="half" />];
+    }
+
+    // 處理空杯子
+    const emptyCups = 3 - result.length;
+    for (let i = 0; i < emptyCups; i++) {
+        result = [...result, <ShotIcon key={"empty" + i} status="empty" />];
     }
 
     return result;
