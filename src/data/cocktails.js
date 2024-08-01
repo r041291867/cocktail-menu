@@ -25,7 +25,7 @@ export const cocktailMenu = [
       },
       {
         nameCht: "梅子樹下",
-        nameEng: "Beneath the Plum Tree",
+        nameEng: "Beneath Plum Tree",
         alcohol: "Medium",
         shots: 2,
         ingredients: ["souler gin", "umeshu", "green tea"],
