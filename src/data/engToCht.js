@@ -6,7 +6,7 @@ const dictionary = {
   Sour: "清新酸爽",
   Twist: "經典改編",
   gin: "琴酒",
-  "souler gin": "書展琴酒",
+  "souler gin": "琴酒",
   whisky: "威士忌",
   brandy: "白蘭地",
   rum: "蘭姆酒",
