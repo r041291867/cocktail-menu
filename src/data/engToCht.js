@@ -36,7 +36,9 @@ const dictionary = {
   cream: "鮮奶油",
   "amarula": "大象奶酒",
   milk: "牛奶",
-  "fernet branca": "芙內布蘭卡"
+  "fernet branca": "芙內布蘭卡",
+  mango: '芒果',
+  "coconut milk": "椰奶",
 };
 
 export function toChinese(englishText) {
