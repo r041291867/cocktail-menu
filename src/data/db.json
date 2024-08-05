@@ -1,0 +1,8 @@
+{
+  "cocktails": [
+    {
+      "name": "white lady",
+      "ingredients": ["gin", "cointreau", "lemon"]
+    }
+  ]
+}
