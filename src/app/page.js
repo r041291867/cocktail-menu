@@ -14,9 +14,8 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
+      window.scrollTo(0, 0);
     }, 2000 + randomNum);
-
-    window.scrollTo(0, 0);
   }, []);
 
   return (
