@@ -15,6 +15,8 @@ export default function Home() {
     setTimeout(() => {
       setLoading(false);
     }, 2000 + randomNum);
+
+    window.scrollTo(0, 0);
   }, []);
 
   return (
