@@ -1,7 +1,9 @@
 {
   "cocktails": [
     {
-      "name": "white lady",
+      "nameCht": "白色佳人",
+      "nameEng": "White Lady",
+      "shots": 2,
       "ingredients": ["gin", "cointreau", "lemon"]
     }
   ]
