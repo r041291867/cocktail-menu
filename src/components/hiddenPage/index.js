@@ -1,36 +1,11 @@
-"use client";
-
 import "./styles.css";
-import Head from "next/head";
-import { useEffect, useState } from "react";
 import CocktailItem from "@/components/cocktailItem";
-import Loading from "@/components/loading";
-import HiddenPage from "@/components/hiddenPage";
 import { cocktailMenu } from "@/data/cocktails";
 import { toChinese } from "@/data/engToCht";
 
-const randomNum = Math.round(Math.random() * 1000);
-export default function Home() {
-  const [loading, setLoading] = useState(true);
-  const [showHiddenPage, setShowHiddenPage] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-      window.scrollTo(0, 0);
-    }, 2000 + randomNum);
-  }, []);
-
+export default function HiddenPage({ onCloseClick = () => {} }) {
   return (
-    <>
-      <Head>
-        <link
-          rel="icon"
-          href="/favicon.ico"
-          sizes="any"
-        />
-      </Head>
-
+    <div className="hidden-page__frame">
       <div className="menu__header ">
         <div className="menu__header--inner handwrite-border">
           <img
@@ -39,7 +14,7 @@ export default function Home() {
           />
           <div className="handwrite-en2">The Mixology Menu</div>
           <div style={{ flex: 1 }}></div>
-          <div onClick={() => setShowHiddenPage(true)}>+</div>
+          <div onClick={onCloseClick}>x</div>
         </div>
       </div>
 
@@ -67,12 +42,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-
-      {loading && <Loading />}
-
-      {showHiddenPage && (
-        <HiddenPage onCloseClick={() => setShowHiddenPage(false)} />
-      )}
-    </>
+    </div>
   );
 }

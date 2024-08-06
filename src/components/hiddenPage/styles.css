@@ -1,0 +1,8 @@
+.hidden-page__frame {
+  position: fixed;
+  inset: 0;
+  padding: 0 20px 0 20px;
+  background: #2e2e2e;
+  overflow: auto;
+  z-index: 22;
+}
