@@ -21,6 +21,18 @@ export default function Home() {
     }, 2000 + randomNum);
   }, []);
 
+  useEffect(() => {
+    if (showHiddenPage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [showHiddenPage]);
+
   return (
     <>
       <Head>
@@ -44,13 +56,13 @@ export default function Home() {
       </div>
 
       <div className="menu__grid">
-        {cocktailMenu.map(({ category, cocktails }) => (
+        {cocktailMenu.map(({ category, categoryCh, cocktails }) => (
           <div
             key={category}
             className="menu__section"
           >
             <div className="menu__title handwrite-border">
-              <span className="handwrite-ch">{toChinese(category)}</span>
+              <span className="handwrite-ch">{categoryCh}</span>
               <span
                 className="handwrite-en2"
                 style={{ marginLeft: 6 }}

@@ -1,8 +1,14 @@
 .hidden-page__frame {
   position: fixed;
   inset: 0;
-  padding: 0 20px 0 20px;
+  padding: 5px 20px 30px 20px;
   background: #2e2e2e;
   overflow: auto;
   z-index: 22;
+}
+
+.hidden-page__frame .close-btn {
+  transform: rotate(45deg);
+  transform-origin: center;
+  cursor: pointer;
 }

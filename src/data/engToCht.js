@@ -1,18 +1,14 @@
 const dictionary = {
-  Features: "精選",
-  Signature: "特調",
-  Classics: "懷舊經典",
-  "Just Relax": "輕鬆喝",
-  Sour: "清新酸爽",
-  Twist: "經典改編",
   gin: "琴酒",
   "souler gin": "琴酒",
   whisky: "威士忌",
+  whiskey: "威士忌",
   brandy: "白蘭地",
+  "apricot brandy": "杏桃白蘭地",
   rum: "蘭姆酒",
   vodka: "伏特加",
   tequila: "龍舌蘭",
-  "vermouth": "香艾酒",
+  vermouth: "香艾酒",
   "rosso vermouth": "甜香艾酒",
   "dry vermouth": "不甜香艾酒",
   campari: "金巴利",
@@ -32,16 +28,34 @@ const dictionary = {
   water: "水",
   bitters: "苦精",
   ginger: "薑",
-  cocoa: "可可",
+  cacao: "可可",
   cream: "鮮奶油",
-  "amarula": "大象奶酒",
+  amarula: "大象奶酒",
   milk: "牛奶",
   "fernet branca": "芙內布蘭卡",
-  mango: '芒果',
+  mango: "芒果",
+  coffee: "咖啡",
   "coconut milk": "椰奶",
+  cola: "可樂",
+  pineapple: "鳳梨",
+  orange: "柳橙",
+  grenadine: "紅石榴",
+  prosecco: "氣泡酒",
+  aperol: "阿普羅",
+  lillet: "麗葉酒",
+  absinthe: "艾碧斯",
+  "egg white": "蛋白",
+  "egg yolk": "蛋黃",
+  "orange flower water": "橙花水",
+  "White Crème": "白薄荷",
+  bénédictine: "班尼迪克汀",
+  amaro: "義大利苦酒",
+  chartreuse: "夏翠斯",
+  Orgeat: "杏仁"
 };
 
 export function toChinese(englishText) {
-  if (!dictionary[englishText]) return englishText;
-  return dictionary[englishText];
+  const lowerCase = englishText.toLowerCase();
+  if (!dictionary[lowerCase]) return englishText;
+  return dictionary[lowerCase];
 }

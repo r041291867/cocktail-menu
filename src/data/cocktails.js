@@ -1,6 +1,7 @@
 export const cocktailMenu = [
   {
     category: "Signature",
+    categoryCh: "特調",
     cocktails: [
       {
         nameCht: "青草巷",
@@ -57,6 +58,7 @@ export const cocktailMenu = [
   },
   {
     category: "Sour",
+    categoryCh: "清新酸爽",
     cocktails: [
       {
         nameCht: "琴蕾",
@@ -143,6 +145,7 @@ export const cocktailMenu = [
   },
   {
     category: "Classics",
+    categoryCh: "懷舊經典",
     cocktails: [
       {
         nameCht: "白色佳人",
@@ -190,6 +193,7 @@ export const cocktailMenu = [
   },
   {
     category: "Just Relax",
+    categoryCh: "輕鬆喝",
     cocktails: [
       // {
       //   nameCht: "嗨波魯",
@@ -243,6 +247,7 @@ export const cocktailMenu = [
   },
   {
     category: "Twist",
+    categoryCh: "經典改編",
     cocktails: [
       {
         nameCht: "莫科斯驢子",
@@ -259,7 +264,7 @@ export const cocktailMenu = [
         nameEng: "Alexandra",
         alcohol: "Medium",
         shots: 1,
-        ingredients: ["brandy", "cocoa", "cream"],
+        ingredients: ["brandy", "cacao", "cream"],
         hasImage: true,
         src: "/images/cocktails/alexandar.jpg",
         imgPosition: "left",
