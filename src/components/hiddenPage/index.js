@@ -29,7 +29,7 @@ export default function HiddenPage({ onCloseClick = () => {} }) {
             key={category}
             className="menu__section"
           >
-            <div className="menu__title handwrite-border">
+            <div className="menu__title handwrite-border sticky">
               <span className="handwrite-ch">{categoryCh}</span>
               <span
                 className="handwrite-en2"
