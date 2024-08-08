@@ -68,6 +68,7 @@ const dictionary = {
   cassis: "黑醋栗",
   champagne: "香檳",
   galliano: "加利安諾",
+  passionfruit: "百香果"
 };
 
 export function toChinese(englishText) {
