@@ -15,6 +15,7 @@ const dictionary = {
   campari: "金巴利",
   cointreau: "橙酒",
   "grand marnier": "柑曼怡",
+  curacao: "橙酒",
   umeshu: "梅酒",
   mint: "薄荷",
   lime: "萊姆",
