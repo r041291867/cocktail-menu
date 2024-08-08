@@ -39,7 +39,7 @@ export default function HiddenPage({ onCloseClick = () => {} }) {
               </span>
             </div>
             {cocktails.map((cocktail, index) =>
-              cocktail.available ? (
+              cocktail.show ? (
                 <CocktailItem
                   key={index + cocktail.nameEng}
                   cocktail={cocktail}
