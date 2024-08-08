@@ -24,30 +24,32 @@ export default function HiddenPage({ onCloseClick = () => {} }) {
       </div>
 
       <div className="menu__grid">
-        {cocktailMenu.map(({ category, categoryCh, cocktails }) => (
-          <div
-            key={category}
-            className="menu__section"
-          >
-            <div className="menu__title handwrite-border sticky">
-              <span className="handwrite-ch">{categoryCh}</span>
-              <span
-                className="handwrite-en2"
-                style={{ marginLeft: 6 }}
-              >
-                {category}
-              </span>
+        {cocktailMenu.map(({ category, categoryCh, cocktails }) =>
+          cocktails.filter((c) => c.show).length ? (
+            <div
+              key={category}
+              className="menu__section"
+            >
+              <div className="menu__title handwrite-border sticky">
+                <span className="handwrite-ch">{categoryCh}</span>
+                <span
+                  className="handwrite-en2"
+                  style={{ marginLeft: 6 }}
+                >
+                  {category}
+                </span>
+              </div>
+              {cocktails.map((cocktail, index) =>
+                cocktail.show ? (
+                  <CocktailItem
+                    key={index + cocktail.nameEng}
+                    cocktail={cocktail}
+                  />
+                ) : null
+              )}
             </div>
-            {cocktails.map((cocktail, index) =>
-              cocktail.show ? (
-                <CocktailItem
-                  key={index + cocktail.nameEng}
-                  cocktail={cocktail}
-                />
-              ) : null
-            )}
-          </div>
-        ))}
+          ) : null
+        )}
       </div>
     </div>
   );

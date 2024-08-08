@@ -410,14 +410,7 @@ export const cocktailMenu = [
         nameCht: "咖啡馬丁尼",
         nameEng: "Espresso Martini",
         shots: 1.5,
-        ingredients: ["Vodka", "Coffee"],
-        show: true,
-      },
-      {
-        nameCht: "黑色俄羅斯",
-        nameEng: "Black Russian",
-        shots: 2,
-        ingredients: ["Vodka", "coffee"],
+        ingredients: ["Vodka", "espresso"],
         show: true,
       },
       {
@@ -449,6 +442,13 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "黑色俄羅斯",
+        nameEng: "Black Russian",
+        shots: 2.5,
+        ingredients: ["Vodka", "coffee"],
+        show: true,
+      },
+      {
         nameCht: "教母",
         nameEng: "God Mother",
         shots: 3,
@@ -465,8 +465,8 @@ export const cocktailMenu = [
     ],
   },
   {
-    category: "Brandy / Tequila",
-    categoryCh: "白蘭地/龍舌蘭",
+    category: "Brandy",
+    categoryCh: "白蘭地",
     cocktails: [
       {
         nameCht: "馬頸",
@@ -480,7 +480,7 @@ export const cocktailMenu = [
         nameEng: "Alexander",
         shots: 1.5,
         ingredients: ["Brandy", "Cacao", "Cream"],
-        show: true,
+        show: false,
       },
       {
         nameCht: "親密時光",
@@ -529,7 +529,7 @@ export const cocktailMenu = [
         nameEng: "B and B",
         shots: 3,
         ingredients: ["Brandy", "bénédictine"],
-        show: true,
+        show: false,
       },
       {
         nameCht: "法蘭西集團",
@@ -545,6 +545,12 @@ export const cocktailMenu = [
         ingredients: ["Brandy", "Absinthe", "Sugar", "Bitters"],
         show: false,
       },
+    ],
+  },
+  {
+    category: "Tequila",
+    categoryCh: "龍舌蘭",
+    cocktails: [
       {
         nameCht: "龍舌蘭日出",
         nameEng: "Tequila Sunrise",
