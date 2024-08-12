@@ -81,19 +81,6 @@ export const cocktailMenu = [
         show: true,
       },
       {
-        nameCht: "老廣場",
-        nameEng: "Vieux Carrè",
-        shots: 3,
-        ingredients: [
-          "Whiskey",
-          "Brandy",
-          "Rosso Vermouth",
-          "Bénédictine",
-          "Bitters",
-        ],
-        show: false,
-      },
-      {
         nameCht: "提伯里",
         nameEng: "Tipperary",
         shots: 2,
@@ -158,8 +145,15 @@ export const cocktailMenu = [
         nameCht: "三葉草俱樂部",
         nameEng: "Clover Club",
         shots: 1.5,
-        ingredients: ["Gin", "raspberry", "Lemon", "Egg White"],
-        show: false,
+        ingredients: ["Gin", "Grenadine", "Lemon", "Egg White"],
+        show: true,
+      },
+      {
+        nameCht: "海陸大戰",
+        nameEng: "Army & Navy",
+        shots: 1.5,
+        ingredients: ["Gin", "Lemon", "Ogreat", "Bitters"],
+        show: true,
       },
       {
         nameCht: "猴子腺體",
@@ -578,6 +572,19 @@ export const cocktailMenu = [
         ingredients: ["Brandy", "Absinthe", "Sugar", "Bitters"],
         show: false,
       },
+      {
+        nameCht: "老廣場",
+        nameEng: "Vieux Carrè",
+        shots: 3,
+        ingredients: [
+          "Brandy",
+          "Whiskey",
+          "Rosso Vermouth",
+          "bénédictine",
+          "Bitters",
+        ],
+        show: false,
+      },
     ],
   },
   {
@@ -595,7 +602,7 @@ export const cocktailMenu = [
         nameCht: "帕洛瑪",
         nameEng: "Paloma",
         shots: 1,
-        ingredients: ["Tequila", "lime", "Grapefruit", "Soda"],
+        ingredients: ["Tequila", "Grapefruit", "lime", "Soda"],
         show: true,
       },
       {
