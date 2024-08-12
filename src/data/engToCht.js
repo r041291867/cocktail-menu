@@ -4,6 +4,7 @@ const dictionary = {
   whisky: "威士忌",
   whiskey: "威士忌",
   brandy: "白蘭地",
+  calvados: "蘋果白蘭地",
   "apricot brandy": "杏桃白蘭地",
   rum: "蘭姆酒",
   vodka: "伏特加",
