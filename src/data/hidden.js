@@ -11,6 +11,13 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "沉默第三者",
+        nameEng: "Silent Third",
+        shots: 1.5,
+        ingredients: ["Whiskey", "cointreau", "Lemon"],
+        show: true,
+      },
+      {
         nameCht: "薄荷朱利普",
         nameEng: "Mint Julep",
         shots: 1.5,
