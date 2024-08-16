@@ -142,6 +142,13 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "海陸之間",
+        nameEng: "Army & Navy",
+        shots: 1.5,
+        ingredients: ["Gin", "Lemon", "Ogreat", "Bitters"],
+        show: true,
+      },
+      {
         nameCht: "蜜蜂之膝",
         nameEng: "Bee’s Knees",
         shots: 1.5,
@@ -156,11 +163,11 @@ export const cocktailMenu = [
         show: true,
       },
       {
-        nameCht: "海陸大戰",
-        nameEng: "Army & Navy",
+        nameCht: "百萬美元",
+        nameEng: "Million Dollar",
         shots: 1.5,
-        ingredients: ["Gin", "Lemon", "Ogreat", "Bitters"],
-        show: true,
+        ingredients: ["Gin", "Rosso Vermouth", "Pineapple", "Grenadine", "Egg White"],
+        show: false,
       },
       {
         nameCht: "猴子腺體",
@@ -184,6 +191,13 @@ export const cocktailMenu = [
           "Bitters",
         ],
         show: false,
+      },
+      {
+        nameCht: "橫濱",
+        nameEng: "Yokohama",
+        shots: 1.5,
+        ingredients: ["Gin", "Vodka", "Orange", "Grenadine", "Absinthe"],
+        show: true,
       },
       {
         nameCht: "天使之顏",
