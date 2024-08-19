@@ -17,6 +17,7 @@ const dictionary = {
   cointreau: "橙酒",
   "grand marnier": "柑曼怡",
   curacao: "橙酒",
+  "blue curacao": "藍柑橘",
   umeshu: "梅酒",
   mint: "薄荷",
   lime: "萊姆",

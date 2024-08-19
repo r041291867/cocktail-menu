@@ -4,6 +4,13 @@ export const cocktailMenu = [
     categoryCh: "威士忌",
     cocktails: [
       {
+        nameCht: "國王谷",
+        nameEng: "King's Valley",
+        shots: 1.5,
+        ingredients: ["Whiskey", "cointreau", "Lemon", "blue curacao"],
+        show: true,
+      },
+      {
         nameCht: "威士忌酸酒",
         nameEng: "Whiskey Sour",
         shots: 1.5,
@@ -145,7 +152,7 @@ export const cocktailMenu = [
         nameCht: "海陸之間",
         nameEng: "Army & Navy",
         shots: 1.5,
-        ingredients: ["Gin", "Lemon", "Ogreat", "Bitters"],
+        ingredients: ["Gin", "Lemon", "Orgeat", "Bitters"],
         show: true,
       },
       {
