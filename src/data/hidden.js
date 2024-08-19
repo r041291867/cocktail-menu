@@ -4,6 +4,12 @@ export const cocktailMenu = [
     categoryCh: "威士忌",
     cocktails: [
       {
+        nameCht: "嗨波魯",
+        nameEng: "Highball",
+        shots: 1,
+        ingredients: ["whisky", "soda"],
+      },
+      {
         nameCht: "國王谷",
         nameEng: "King's Valley",
         shots: 1.5,
