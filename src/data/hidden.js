@@ -105,7 +105,7 @@ export const cocktailMenu = [
         nameEng: "Tipperary",
         shots: 2,
         ingredients: [
-          "Irish Whiskey",
+          "Whiskey",
           "Rosso Vermouth",
           "Chartreuse",
           "Bitters",
@@ -131,6 +131,13 @@ export const cocktailMenu = [
         shots: 1,
         ingredients: ["Gin", "Lemon", "Sugar", "Soda"],
         show: false,
+      },
+      {
+        nameCht: "琴通寧",
+        nameEng: "Gin & Tonic",
+        alcohol: "light",
+        shots: 1,
+        ingredients: ["gin", "tonic water"],
       },
       {
         nameCht: "拉莫斯琴費士",
@@ -421,6 +428,12 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "末調",
+        nameEng: "X.Y.Z.",
+        shots: 2,
+        ingredients: ["rum", "cointreau", "lemon"],
+      },
+      {
         nameCht: "黃色鳥",
         nameEng: "Yellow Bird",
         shots: 2,
@@ -461,13 +474,6 @@ export const cocktailMenu = [
         show: true,
       },
       {
-        nameCht: "性感海灘",
-        nameEng: "Sex on the Beach",
-        shots: 1.5,
-        ingredients: ["Vodka", "Peach Schnapps", "Orange", "Cranberry"],
-        show: false,
-      },
-      {
         nameCht: "咖啡馬丁尼",
         nameEng: "Espresso Martini",
         shots: 1.5,
@@ -496,7 +502,7 @@ export const cocktailMenu = [
         show: true,
       },
       {
-        nameCht: "俄羅斯春日拳",
+        nameCht: "俄羅斯之春潘趣",
         nameEng: "Russian Spring Punch",
         shots: 2,
         ingredients: ["Vodka", "Lemon", "Cassis", "Sugar", "Sparkling wine"],
@@ -544,7 +550,7 @@ export const cocktailMenu = [
         show: false,
       },
       {
-        nameCht: "親密時光",
+        nameCht: "床第之間",
         nameEng: "Between the Sheets",
         shots: 2,
         ingredients: ["Brandy", "Rum", "cointreau", "Lemon"],
@@ -565,10 +571,10 @@ export const cocktailMenu = [
         show: false,
       },
       {
-        nameCht: "波爾圖翻轉",
+        nameCht: "波特菲麗普",
         nameEng: "Porto Flip",
         shots: 2,
-        ingredients: ["Brandy", "Red Tawny Port Wine", "Egg Yolk"],
+        ingredients: ["Brandy", "Port Wine", "Egg Yolk"],
         show: false,
       },
       {
@@ -691,7 +697,7 @@ export const cocktailMenu = [
         nameCht: "基爾",
         nameEng: "KIR",
         shots: 1,
-        ingredients: ["Dry White Wine", "Cassis"],
+        ingredients: ["White Wine", "Cassis"],
         show: false,
       },
       {
@@ -716,6 +722,12 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "泡泡",
+        nameEng: "Spumoni",
+        shots: 1,
+        ingredients: ["campari", "grapefruit","tonic water"],
+      },
+      {
         nameCht: "香檳雞尾酒",
         nameEng: "Champagne Cocktail",
         shots: 1.5,
@@ -733,6 +745,13 @@ export const cocktailMenu = [
         nameEng: "Grasshopper",
         shots: 1.5,
         ingredients: ["White Cacao", "green crème de menthe", "Cream"],
+        show: false,
+      },
+      {
+        nameCht: "性感海灘",
+        nameEng: "Sex on the Beach",
+        shots: 1.5,
+        ingredients: ["Vodka", "Peach Schnapps", "Orange", "Cranberry"],
         show: false,
       },
       {

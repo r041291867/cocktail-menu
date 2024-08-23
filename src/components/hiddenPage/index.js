@@ -1,8 +1,11 @@
 import "./styles.css";
+import { useState } from "react";
 import CocktailItem from "@/components/cocktailItem";
 import { cocktailMenu } from "@/data/hidden";
 
 export default function HiddenPage({ onCloseClick = () => {} }) {
+  const [showAll, setShowAll] = useState(false);
+
   return (
     <div className="hidden-page__frame">
       <div className="menu__header ">
@@ -12,7 +15,15 @@ export default function HiddenPage({ onCloseClick = () => {} }) {
             style={{ filter: "grayscale(1)" }}
             alt=""
           />
-          <div className="handwrite-en2">The Hidden Menu</div>
+          <div
+            className="handwrite-en2"
+            onDoubleClick={() => {
+              setShowAll(!showAll);
+            }}
+          >
+            The Hidden Menu
+            {showAll && <span>.</span> }
+          </div>
           <div style={{ flex: 1 }}></div>
           <div
             className="close-btn"
@@ -25,7 +36,7 @@ export default function HiddenPage({ onCloseClick = () => {} }) {
 
       <div className="menu__grid">
         {cocktailMenu.map(({ category, categoryCh, cocktails }) =>
-          cocktails.filter((c) => c.show).length ? (
+          cocktails.filter((c) => c.show).length || showAll ? (
             <div
               key={category}
               className="menu__section"
@@ -40,7 +51,7 @@ export default function HiddenPage({ onCloseClick = () => {} }) {
                 </span>
               </div>
               {cocktails.map((cocktail, index) =>
-                cocktail.show ? (
+                cocktail.show || showAll ? (
                   <CocktailItem
                     key={index + cocktail.nameEng}
                     cocktail={cocktail}
