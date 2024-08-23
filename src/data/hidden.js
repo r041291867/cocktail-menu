@@ -101,7 +101,7 @@ export const cocktailMenu = [
         show: true,
       },
       {
-        nameCht: "提伯里",
+        nameCht: "蒂珀雷里",
         nameEng: "Tipperary",
         shots: 2,
         ingredients: [
