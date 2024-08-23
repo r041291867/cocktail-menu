@@ -220,13 +220,6 @@ export const cocktailMenu = [
         show: true,
       },
       {
-        nameCht: "天使之顏",
-        nameEng: "Angel Face",
-        shots: 2,
-        ingredients: ["Gin", "Apricot Brandy", "Calvados"],
-        show: false,
-      },
-      {
         nameCht: "飛行",
         nameEng: "Aviation",
         shots: 2,
@@ -273,6 +266,13 @@ export const cocktailMenu = [
         nameEng: "White Lady",
         shots: 2,
         ingredients: ["Gin", "cointreau", "Lemon"],
+        show: false,
+      },
+      {
+        nameCht: "天使之顏",
+        nameEng: "Angel Face",
+        shots: 2.5,
+        ingredients: ["Gin", "Apricot Brandy", "Calvados"],
         show: false,
       },
       {
