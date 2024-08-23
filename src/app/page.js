@@ -7,7 +7,7 @@ import CocktailItem from "@/components/cocktailItem";
 import Loading from "@/components/loading";
 import HiddenPage from "@/components/hiddenPage";
 import { cocktailMenu } from "@/data/cocktails";
-import { toChinese } from "@/data/engToCht";
+// import { toChinese } from "@/data/engToCht";
 
 const randomNum = Math.round(Math.random() * 1000);
 export default function Home() {
