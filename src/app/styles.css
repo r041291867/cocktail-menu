@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Neucha&family=Londrina+Solid:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap");
 
 @font-face {
   font-family: "handwrite";
@@ -32,12 +29,6 @@ body {
 }
 
 .handwrite-en {
-  font-family:  "Yellowtail", cursive;
-  font-style: normal;
-  transform: skew(13deg, 0deg);
-}
-
-.handwrite-en2 {
   font-family: "Annie Use Your Telescope",cursive;
   font-style: normal;
   font-weight: bold;

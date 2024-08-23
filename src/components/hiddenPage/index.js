@@ -16,7 +16,7 @@ export default function HiddenPage({ onCloseClick = () => {} }) {
             alt=""
           />
           <div
-            className="handwrite-en2"
+            className="handwrite-en"
             onDoubleClick={() => {
               setShowAll(!showAll);
             }}
@@ -44,7 +44,7 @@ export default function HiddenPage({ onCloseClick = () => {} }) {
               <div className="menu__title handwrite-border sticky">
                 <span className="handwrite-ch">{categoryCh}</span>
                 <span
-                  className="handwrite-en2"
+                  className="handwrite-en"
                   style={{ marginLeft: 6 }}
                 >
                   {category}

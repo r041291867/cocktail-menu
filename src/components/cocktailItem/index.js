@@ -46,7 +46,7 @@ export default function CocktailItem({ cocktail }) {
         <div className="cocktail__main">
           <div className="cocktail__name">
             <div className="cocktail__cht handwrite-ch">{cocktail.nameCht}</div>
-            <div className="cocktail__eng handwrite-en2">{cocktail.nameEng}</div>
+            <div className="cocktail__eng handwrite-en">{cocktail.nameEng}</div>
           </div>
 
           <div className="cocktail__stars">{numToRate(cocktail.shots)}</div>
@@ -55,7 +55,7 @@ export default function CocktailItem({ cocktail }) {
         <div className="cocktail__ingredients--ch handwrite-ch">
           {cocktail.ingredients.map((str) => toChinese(str)).join(" / ")}
         </div>
-        <div className="cocktail__ingredients handwrite-en2">
+        <div className="cocktail__ingredients handwrite-en">
           {cocktail.ingredients.map((str) => capitalize(str)).join(" / ")}
         </div>
       </div>

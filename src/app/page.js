@@ -49,7 +49,7 @@ export default function Home() {
             src={"./favicon.ico"}
             alt=""
           />
-          <div className="handwrite-en2">The Mixology Menu</div>
+          <div className="handwrite-en">The Mixology Menu</div>
           <div style={{ flex: 1 }}></div>
           <div onClick={() => setShowHiddenPage(true)}>+</div>
         </div>
@@ -64,7 +64,7 @@ export default function Home() {
             <div className="menu__title handwrite-border">
               <span className="handwrite-ch">{categoryCh}</span>
               <span
-                className="handwrite-en2"
+                className="handwrite-en"
                 style={{ marginLeft: 6 }}
               >
                 {category}
