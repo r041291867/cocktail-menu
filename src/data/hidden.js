@@ -166,7 +166,7 @@ export const cocktailMenu = [
         nameEng: "Army & Navy",
         shots: 1.5,
         ingredients: ["Gin", "Lemon", "Orgeat", "Bitters"],
-        show: true,
+        show: false,
       },
       {
         nameCht: "蜜蜂之膝",
