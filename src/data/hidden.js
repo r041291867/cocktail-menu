@@ -8,6 +8,15 @@ export const cocktailMenu = [
         nameEng: "Highball",
         shots: 1,
         ingredients: ["whisky", "soda"],
+        show: true,
+        directions: {
+          method: "build",
+          ingredients: {
+            whisky: '45ml',
+            soda: "to top",
+          },
+          container: 'Lowball'
+        }
       },
       {
         nameCht: "國王谷",
@@ -15,6 +24,15 @@ export const cocktailMenu = [
         shots: 1.5,
         ingredients: ["Whiskey", "cointreau", "Lemon", "blue curacao"],
         show: true,
+        directions: {
+          method: "build",
+          ingredients: {
+            whisky: '60ml',
+            cointreau: '15ml',
+            lemon: '20ml',
+            "blue curacao": "1 barspoon",
+          }
+        }
       },
       {
         nameCht: "威士忌酸酒",
