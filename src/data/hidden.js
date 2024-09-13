@@ -617,7 +617,7 @@ export const cocktailMenu = [
         show: false,
       },
       {
-        nameCht: "法蘭西集團",
+        nameCht: "霹靂神探",
         nameEng: "French Connection",
         shots: 3,
         ingredients: ["Brandy", "Amaretto"],
