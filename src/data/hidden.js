@@ -589,13 +589,6 @@ export const cocktailMenu = [
         show: false,
       },
       {
-        nameCht: "波特菲麗普",
-        nameEng: "Porto Flip",
-        shots: 2,
-        ingredients: ["Brandy", "Port Wine", "Egg Yolk"],
-        show: false,
-      },
-      {
         nameCht: "側車",
         nameEng: "Sidecar",
         shots: 2,
@@ -751,9 +744,7 @@ export const cocktailMenu = [
         shots: 1.5,
         ingredients: [
           "Champagne",
-          "Brandy",
           "Bitters",
-          "Grand Marnier",
           "Sugar",
         ],
         show: false,
@@ -822,6 +813,13 @@ export const cocktailMenu = [
         nameEng: "Naked and Famous",
         shots: 2,
         ingredients: ["Mezcal", "Yellow Chartreuse", "Aperol", "Lime"],
+        show: false,
+      },
+      {
+        nameCht: "波特菲麗普",
+        nameEng: "Porto Flip",
+        shots: 2,
+        ingredients: ["Port Wine", "Brandy", "Egg Yolk"],
         show: false,
       },
     ],
