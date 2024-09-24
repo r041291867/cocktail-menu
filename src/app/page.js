@@ -7,11 +7,16 @@ import CocktailItem from "@/components/cocktailItem";
 import Loading from "@/components/loading";
 import HiddenPage from "@/components/hiddenPage";
 import { cocktailMenu } from "@/data/cocktails";
+import Popup from "@/components/popup";
+import Reciepe from "@/components/reciepe";
+import { getReciepe } from '@/data/reciepe.js'
 // import { toChinese } from "@/data/engToCht";
 
 const randomNum = Math.round(Math.random() * 1000);
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
+  const [resiepeItem, setResiepeItem] = useState(null);
   const [showHiddenPage, setShowHiddenPage] = useState(false);
 
   useEffect(() => {
@@ -23,32 +28,35 @@ export default function Home() {
 
   useEffect(() => {
     if (showHiddenPage) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [showHiddenPage]);
+
+  const item = {
+    name: "Highball",
+    method: "Build",
+    reciepe: {
+      whisky: "45ml",
+      soda: "to top",
+    },
+    glass: "Lowball",
+  };
 
   return (
     <>
       <Head>
-        <link
-          rel="icon"
-          href="/favicon.ico"
-          sizes="any"
-        />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
 
       <div className="menu__header ">
         <div className="menu__header--inner handwrite-border">
-          <img
-            src={"./favicon.ico"}
-            alt=""
-          />
+          <img src={"./favicon.ico"} alt="" />
           <div className="handwrite-en">The Mixology Menu</div>
           <div style={{ flex: 1 }}></div>
           <div onClick={() => setShowHiddenPage(true)}>+</div>
@@ -57,16 +65,10 @@ export default function Home() {
 
       <div className="menu__grid">
         {cocktailMenu.map(({ category, categoryCh, cocktails }) => (
-          <div
-            key={category}
-            className="menu__section"
-          >
+          <div key={category} className="menu__section">
             <div className="menu__title handwrite-border">
               <span className="handwrite-ch">{categoryCh}</span>
-              <span
-                className="handwrite-en"
-                style={{ marginLeft: 6 }}
-              >
+              <span className="handwrite-en" style={{ marginLeft: 6 }}>
                 {category}
               </span>
             </div>
@@ -83,7 +85,19 @@ export default function Home() {
       {loading && <Loading />}
 
       {showHiddenPage && (
-        <HiddenPage onCloseClick={() => setShowHiddenPage(false)} />
+        <HiddenPage
+          onCocktailClick={(cocktail) => {
+            setShowPopup(true);
+            setResiepeItem(getReciepe(cocktail.nameEng))
+          }}
+          onCloseClick={() => setShowHiddenPage(false)}
+        />
+      )}
+
+      {showPopup && (
+        <Popup onCloseClick={() => setShowPopup(false)}>
+          <Reciepe reciepe={resiepeItem} />
+        </Popup>
       )}
     </>
   );

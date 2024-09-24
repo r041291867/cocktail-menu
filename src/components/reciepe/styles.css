@@ -1,0 +1,39 @@
+.reciepe-name {
+  font-size: 22px;
+  text-align: center;
+}
+
+.method-and-glass {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.reciepe-method,
+.reciepe-glass {
+  font-size: 18px;
+  text-align: center;
+}
+
+.reciepe-ing {
+  font-size: 18px;
+  margin: 20px auto 10px;
+  text-align: center;
+}
+
+.reciepe-ing > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .reciepe-ing > div:first-child {
+  width: 60%;
+}
+
+.reciepe-ing > div:last-child {
+  width: 40%;
+} */
+
+/* .reciepe-glass {
+
+} */

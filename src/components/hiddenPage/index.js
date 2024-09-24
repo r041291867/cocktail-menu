@@ -3,7 +3,7 @@ import { useState } from "react";
 import CocktailItem from "@/components/cocktailItem";
 import { cocktailMenu } from "@/data/hidden";
 
-export default function HiddenPage({ onCloseClick = () => {} }) {
+export default function HiddenPage({ onCocktailClick = () => {}, onCloseClick = () => {} }) {
   const [showAll, setShowAll] = useState(false);
 
   return (
@@ -55,6 +55,7 @@ export default function HiddenPage({ onCloseClick = () => {} }) {
                   <CocktailItem
                     key={index + cocktail.nameEng}
                     cocktail={cocktail}
+                    onCocktailClick={() => onCocktailClick(cocktail)}
                   />
                 ) : null
               )}

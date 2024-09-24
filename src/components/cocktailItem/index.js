@@ -2,7 +2,7 @@ import "./styles.scss";
 import ShotIcon from "../shotIcon";
 import { toChinese } from "../../data/engToCht";
 
-export default function CocktailItem({ cocktail }) {
+export default function CocktailItem({ cocktail, onCocktailClick = () => {} }) {
   const { hasImage = false, src = "", imgPosition = "left" } = cocktail;
 
   const numToRate = (num) => {
@@ -15,13 +15,13 @@ export default function CocktailItem({ cocktail }) {
 
     // 處理半滿杯子
     if (num % 1 === 0.5) {
-        result = [...result, <ShotIcon key={"half"} status="half" />];
+      result = [...result, <ShotIcon key={"half"} status="half" />];
     }
 
     // 處理空杯子
     const emptyCups = 3 - result.length;
     for (let i = 0; i < emptyCups; i++) {
-        result = [...result, <ShotIcon key={"empty" + i} status="empty" />];
+      result = [...result, <ShotIcon key={"empty" + i} status="empty" />];
     }
 
     return result;
@@ -32,7 +32,7 @@ export default function CocktailItem({ cocktail }) {
   }
 
   return (
-    <div className={`cocktail__outer`}>
+    <div className={`cocktail__outer`} onDoubleClick={onCocktailClick}>
       {hasImage && imgPosition === "left" && (
         <div
           className="cocktail__image cocktail__image--left"

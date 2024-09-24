@@ -1,0 +1,24 @@
+.popup-frame {
+  position: fixed;
+  inset: 0 0 0 0;
+  z-index: 999;
+}
+
+.popup-mask {
+  position: absolute;
+  inset: 0;
+  background: #00000030;
+}
+
+.popup-main {
+  position: absolute;
+  inset: 50% 0 auto 0;
+  width: 320px;
+  /* height: 500px; */
+  padding: 15px;
+  margin: auto;
+  background: #2e2e2e;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  z-index: 1;
+}

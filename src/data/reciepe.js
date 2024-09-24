@@ -9,8 +9,8 @@ export const reciepe = [
     "name": "Highball",
     "method": "Build",
     "reciepe": {
-      "whisky": "45ml",
-      "soda": "to top"
+      "Whisky": "45ml",
+      "Soda": "to top"
     },
     "glass": "Lowball"
   },
