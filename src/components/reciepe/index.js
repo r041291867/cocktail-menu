@@ -1,6 +1,8 @@
 import "./styles.css";
 
 export default function Reciepe({ reciepe }) {
+  if (!reciepe) return null;
+
   const { name, method, reciepe: ing, glass } = reciepe;
 
   function capitalize(str) {
