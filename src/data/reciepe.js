@@ -14,7 +14,7 @@ export const reciepe = [
       "Lemon Wedge": "Optional",
       "Ratio": "1:3 or 1:4"
     },
-    "glass": "Lowball"
+    "glass": "Highball"
   },
   {
     "name": "Gin Soda",
@@ -149,7 +149,7 @@ export const reciepe = [
       "Campari": "20ml",
       "Rosso Vermouth": "20ml"
     },
-    "glass": "Highball"
+    "glass": "Lowball"
   },
   {
     "name": "Old Pal",
@@ -243,7 +243,7 @@ export const reciepe = [
     "glass": "Coupe"
   },
   {
-    "name": "Bee’s Knees",
+    "name": "Bee's Knees",
     "method": "Shake",
     "reciepe": {
       "Gin": "60",
@@ -857,7 +857,7 @@ export const reciepe = [
     "glass": "Lowball"
   },
   {
-    "name": "Horse’s Neck",
+    "name": "Horse's Neck",
     "method": "Build",
     "reciepe": {
       "Brandy": "60ml",
@@ -1019,7 +1019,7 @@ export const reciepe = [
     "glass": "Martini"
   },
   {
-    "name": "Tommy’s Margarita",
+    "name": "Tommy's Margarita",
     "method": "Shake",
     "reciepe": {
       "Tequila": "60ml",
