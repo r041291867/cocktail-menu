@@ -478,6 +478,20 @@ export const cocktailMenu = [
     categoryCh: "伏特加",
     cocktails: [
       {
+        nameCht: "奇奇",
+        nameEng: "Chi Chi",
+        shots: 1,
+        ingredients: ["Vodka", "Lemon", "Coconut milk", "Pineapple"],
+        show: true,
+      },
+      {
+        nameCht: "克羅拉多鬥牛犬",
+        nameEng: "Colorado Bulldog",
+        shots: 1,
+        ingredients: ["Vodka", "Coffee", "Cream", "Cola"],
+        show: true,
+      },
+      {
         nameCht: "海風",
         nameEng: "Sea Breeze",
         shots: 1,
@@ -497,6 +511,19 @@ export const cocktailMenu = [
         shots: 1.5,
         ingredients: ["Vodka", "espresso"],
         show: true,
+      },
+      {
+        nameCht: "上流社會",
+        nameEng: "High Life",
+        shots: 1.5,
+        ingredients: ["Vodka", "Cointreau", "Pineapple", "Egg White"],
+        show: true,
+      },
+      {
+        nameCht: "大人版冰火",
+        nameEng: "Vodka Lime",
+        shots: 1.5,
+        ingredients: ["vodka", "lemon", "sugar"],
       },
       {
         nameCht: "柯夢波丹",
@@ -520,11 +547,25 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "豔星馬丁尼",
+        nameEng: "Pornstar Martini",
+        shots: 2,
+        ingredients: ["Vodka", "passionfruit", "Lime", "Vanilla", "Prosecco"],
+        show: false,
+      },
+      {
         nameCht: "俄羅斯之春潘趣",
         nameEng: "Russian Spring Punch",
         shots: 2,
         ingredients: ["Vodka", "Lemon", "Cassis", "Sugar", "Sparkling wine"],
         show: false,
+      },
+      {
+        nameCht: "白色俄羅斯",
+        nameEng: "White Russian",
+        shots: 2,
+        ingredients: ["Vodka", "coffee", "Cream"],
+        show: true,
       },
       {
         nameCht: "黑色俄羅斯",

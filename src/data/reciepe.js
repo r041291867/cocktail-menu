@@ -672,6 +672,29 @@ export const reciepe = [
     "glass": "Lowball"
   },
   {
+    "name": "Chi Chi",
+    "method": "Shake",
+    "reciepe": {
+      "Vodka": "30ml",
+      "Lemon Juice": "15ml",
+      "Coconut Milk": "45ml",
+      "Pineapple Juice": "60ml",
+      "Garnish": "Umbrella"
+    },
+    "glass": "Hurricane"
+  },
+  {
+    "name": "Vodka Lime",
+    "method": "Shake",
+    "reciepe": {
+      "Vodka": "60ml",
+      "Lemon Juice": "20ml",
+      "Sugar": "15ml",
+      "Garnish": "Lemon weige"
+    },
+    "glass": "Lowball"
+  },
+  {
     "name": "Espresso Martini",
     "method": "Shake",
     "reciepe": {
@@ -688,7 +711,8 @@ export const reciepe = [
       "Vodka": "40ml",
       "Cointreau": "15ml",
       "Lime Juice": "15ml",
-      "Cranberry": "30ml"
+      "Cranberry": "30ml",
+      "Garnish": "Cherry & Lemon Peel"
     },
     "glass": "Martini"
   },
@@ -745,6 +769,17 @@ export const reciepe = [
     "glass": "Lowball"
   },
   {
+    "name": "Colorado Bulldog",
+    "method": "Shake",
+    "reciepe": {
+      "Vodka": "40ml",
+      "Coffee Liquor": "20ml",
+      "Cream": "20ml",
+      "Cola": "to top"
+    },
+    "glass": "Lowball"
+  },
+  {
     "name": "God Mother",
     "method": "Stir",
     "reciepe": {
@@ -774,6 +809,17 @@ export const reciepe = [
     "glass": "Martini"
   },
   {
+    "name": "High Life",
+    "method": "Shake",
+    "reciepe": {
+      "Vodka": "45ml",
+      "Cointreau": "10ml",
+      "Pineapple Juice": "45ml",
+      "Egg White": "30ml"
+    },
+    "glass": "Martini"
+  },
+  {
     "name": "Blue Monday",
     "method": "Shake",
     "reciepe": {
@@ -783,6 +829,20 @@ export const reciepe = [
       "Orange Bitters": "2 dash"
     },
     "glass": "Martini"
+  },
+  {
+    "name": "Pornstar Martini",
+    "method": "Shake",
+    "reciepe": {
+      "Vodka": "45ml",
+      "Passion Fruit Liquor": "15ml",
+      "Passion Fruit Juice": "30ml",
+      "Lime Juice": "15ml",
+      "Vanilla Syrup": "15ml",
+      "Prosecco": "1 shot",
+      "Garnish": "Half of Passion Fruit"
+    },
+    "glass": "Coupe"
   },
   {
     "name": "After Midnight",
