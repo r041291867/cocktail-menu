@@ -76,6 +76,10 @@ export default function Home() {
               <CocktailItem
                 key={index + cocktail.nameEng}
                 cocktail={cocktail}
+                onCocktailClick={() => {
+                  setShowPopup(true);
+                  setResiepeItem(getReciepe(cocktail.nameEng))
+                }}
               />
             ))}
           </div>
