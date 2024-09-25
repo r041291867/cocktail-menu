@@ -10,7 +10,9 @@ export const reciepe = [
     "method": "Build",
     "reciepe": {
       "Whisky": "45ml",
-      "Soda": "to top"
+      "Soda": "to top",
+      "Lemon Wedge": "Optional",
+      "Ratio": "1:3 or 1:4"
     },
     "glass": "Lowball"
   },
