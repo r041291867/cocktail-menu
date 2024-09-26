@@ -49,6 +49,13 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "受苦混蛋",
+        nameEng: "Suffering Bastard",
+        shots: 1.5,
+        ingredients: ["Whiskey", "Gin", "Lime", "Ginger", "Soda"],
+        show: true,
+      },
+      {
         nameCht: "薄荷朱利普",
         nameEng: "Mint Julep",
         shots: 1.5,
@@ -188,7 +195,7 @@ export const cocktailMenu = [
       },
       {
         nameCht: "蜜蜂之膝",
-        nameEng: "Bee’s Knees",
+        nameEng: "Bee's Knees",
         shots: 1.5,
         ingredients: ["Gin", "Honey", "Lemon"],
         show: true,
@@ -596,7 +603,7 @@ export const cocktailMenu = [
     cocktails: [
       {
         nameCht: "馬頸",
-        nameEng: "Horse’s Neck",
+        nameEng: "Horse's Neck",
         shots: 1,
         ingredients: ["Brandy", "Ginger", "Soda", "Bitters"],
         show: false,
@@ -713,7 +720,7 @@ export const cocktailMenu = [
       },
       {
         nameCht: "湯米瑪格麗特",
-        nameEng: "Tommy’s Margarita",
+        nameEng: "Tommy's Margarita",
         shots: 2,
         ingredients: ["Tequila", "Lime", "Agave Syrup"],
         show: false,

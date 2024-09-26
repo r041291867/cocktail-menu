@@ -1198,5 +1198,18 @@ export const reciepe = [
       "Lime Juice": "25ml"
     },
     "glass": "Martini"
+  },
+  {
+    "name": "Suffering Bastard",
+    "method": "Shake",
+    "reciepe": {
+      "Bourbon Whisky": "30ml",
+      "Gin": "30ml",
+      "Lime Juice": "15ml",
+      "Angostura Bitters": "2 dash",
+      "Ginger Sytup": "20ml",
+      "Soda": "to top",
+    },
+    "glass": "Highball"
   }
 ]
