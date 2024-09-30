@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap'); */
 
-@font-face {
+/* @font-face {
   font-family: "handwrite";
   src: url("/fonts/JasonHandwriting5p.ttf") format("truetype");
+} */
+
+@font-face {
+  font-family: "handwrite2";
+  src: url("/fonts/851tegaki_zatsu_normal_0883.ttf") format("truetype");
 }
 
 :root {
@@ -37,7 +43,7 @@ body {
 }
 
 .handwrite-ch {
-  font-family: "handwrite", cursive;
+  font-family: "handwrite2";
   font-style: normal;
   letter-spacing: 0.5px;
 }
