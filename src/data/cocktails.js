@@ -4,11 +4,11 @@ export const cocktailMenu = [
     categoryCh: "特調",
     cocktails: [
       {
-        nameCht: "青草巷",
-        nameEng: "Herb Lane",
+        nameCht: "檸檬塔",
+        nameEng: "Lemon Tart",
         alcohol: "Light",
         shots: 1,
-        ingredients: ["fernet branca", "vermouth", "bitters", "sugar", "soda"],
+        ingredients: ["lemon", "cointreau", "cream"],
       },
       {
         nameCht: "牛奶糖",
@@ -35,6 +35,13 @@ export const cocktailMenu = [
         ingredients: ["gin", "vodka", "tequila", "rum", "cointreau", "umeshu", "honey", "green tea"],
       },
       {
+        nameCht: "茶香椪柑",
+        nameEng: "Tea & Ponkan",
+        alcohol: "Medium",
+        shots: 1.5,
+        ingredients: ["vodka", "tea", "lillet", "ponkan", "passionfruit", "egg white"],
+      },
+      {
         nameCht: "梅子樹下",
         nameEng: "Beneath Plum Tree",
         alcohol: "Medium",
@@ -42,16 +49,6 @@ export const cocktailMenu = [
         ingredients: ["souler gin", "umeshu", "green tea"],
         hasImage: false,
         src: "/images/cocktails/jasmine.jpeg",
-        imgPosition: "left",
-      },
-      {
-        nameCht: "茶風",
-        nameEng: "Tea-kaze",
-        alcohol: "Medium",
-        shots: 2,
-        ingredients: ["vodka", "green tea","cointreau", "lemon"],
-        hasImage: true,
-        src: "/images/cocktails/teakaze.jpg",
         imgPosition: "left",
       },
     ],
@@ -104,13 +101,6 @@ export const cocktailMenu = [
         src: "/images/cocktails/beesKnees.jpg",
         imgPosition: "right",
       },
-      // {
-      //   nameCht: "沈默第三者",
-      //   nameEng: "Silent Third",
-      //   alcohol: "Medium",
-      //   shots: 2,
-      //   ingredients: ["whisky", "cointreau", "lemon"],
-      // },
       {
         nameCht: "茉莉",
         nameEng: "Jasmine",

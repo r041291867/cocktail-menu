@@ -72,6 +72,7 @@ export default function Home() {
                 {category}
               </span>
             </div>
+
             {cocktails.map((cocktail, index) => (
               <CocktailItem
                 key={index + cocktail.nameEng}

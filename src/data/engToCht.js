@@ -78,6 +78,10 @@ const dictionary = {
   galliano: "加利安諾",
   passionfruit: "百香果",
   vanilla: "香草",
+  tea: "茶",
+  ponkan: "椪柑",
+  cucumber: "小黃瓜",
+  suze: "龍膽草"
 };
 
 export function toChinese(englishText) {

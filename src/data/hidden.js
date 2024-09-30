@@ -151,6 +151,13 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "琴霸克",
+        nameEng: "Gin Buck",
+        shots: 1,
+        ingredients: ["Gin", "Ginger", "Lemon", "Sugar", "Soda"],
+        show: false,
+      },
+      {
         nameCht: "琴費士",
         nameEng: "Gin Fizz",
         shots: 1,
@@ -208,6 +215,20 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "琴蕾",
+        nameEng: "Gimlet",
+        shots: 1.5,
+        ingredients: ["Gin", "Lemon", "Sugar"],
+        show: true,
+      },
+      {
+        nameCht: "喬治亞旅店",
+        nameEng: "Hotel Georgia",
+        shots: 1.5,
+        ingredients: ["Gin", "Lemon", "Orgeat", "Egg White"],
+        show: false,
+      },
+      {
         nameCht: "百萬美元",
         nameEng: "Million Dollar",
         shots: 1.5,
@@ -219,6 +240,13 @@ export const cocktailMenu = [
         nameEng: "Monkey Gland",
         shots: 1.5,
         ingredients: ["Gin", "Orange", "Absinthe", "Grenadine"],
+        show: false,
+      },
+      {
+        nameCht: "老姑娘",
+        nameEng: "Old Maid",
+        shots: 1.5,
+        ingredients: ["Gin", "Lime", "Sugar", "Cucumber", "Mint"],
         show: false,
       },
       {
@@ -271,6 +299,13 @@ export const cocktailMenu = [
         shots: 2,
         ingredients: ["Gin", "Cointreau", "Lillet", "Lemon", "Absinthe"],
         show: false,
+      },
+      {
+        nameCht: "茉莉",
+        nameEng: "Jasmine",
+        shots: 2,
+        ingredients: ["Gin", "Cointreau", "Lime", "Campari"],
+        show: true,
       },
       {
         nameCht: "天堂",
@@ -353,6 +388,13 @@ export const cocktailMenu = [
         nameEng: "Vesper",
         shots: 3,
         ingredients: ["Gin", "Vodka", "Lillet"],
+        show: true,
+      },
+      {
+        nameCht: "白色內格羅尼",
+        nameEng: "White Negroni",
+        shots: 3,
+        ingredients: ["Gin", "Suze", "Lillet"],
         show: true,
       },
     ],

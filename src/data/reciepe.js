@@ -48,6 +48,16 @@ export const reciepe = [
     "glass": "Lowball"
   },
   {
+    "name": "Gold Rush",
+    "method": "Shake",
+    "reciepe": {
+      "Whiskey": "60ml",
+      "Honey": "15ml",
+      "Lemon": "20ml"
+    },
+    "glass": "Martini"
+  },
+  {
     "name": "Silent Third",
     "method": "Shake",
     "reciepe": {
@@ -95,7 +105,7 @@ export const reciepe = [
     "name": "Paper Plane",
     "method": "Shake",
     "reciepe": {
-      "Whiskey": "20ml",
+      "Bourbon Whiskey": "20ml",
       "Amaro": "20ml",
       "Aperol": "20ml",
       "Lemon": "20ml"
@@ -196,6 +206,19 @@ export const reciepe = [
     "glass": "Highball"
   },
   {
+    "name": "Gin Buck",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Lemon": "20ml",
+      "Ginger Syrup": "10ml",
+      "Angostura Bitters": "2 dash",
+      "Soda Water": "90ml",
+      "Garnish": "Lime twist"
+    },
+    "glass": "Highball"
+  },
+  {
     "name": "Gin & Tonic",
     "method": "Build",
     "reciepe": {
@@ -235,20 +258,42 @@ export const reciepe = [
     "name": "Army & Navy",
     "method": "Shake",
     "reciepe": {
-      "Gin ": "60",
-      "Lemon": "20",
-      "orgeat": "15",
+      "Gin ": "60ml",
+      "Lemon": "20ml",
+      "Orgeat": "15ml",
       "Angostura bitters": "1 dash"
     },
     "glass": "Coupe"
   },
   {
+    "name": "Hotel Georgia",
+    "method": "Shake",
+    "reciepe": {
+      "Dry Gin ": "50ml",
+      "Lemon": "20ml",
+      "orgeat": "15ml",
+      "Egg white": "15ml",
+      "Garnish": "Grated nutmeg",
+    },
+    "glass": "Coupe"
+  },
+  {
+    "name": "Gimlet",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Sugar": "10ml",
+      "Lemon": "20ml"
+    },
+    "glass": "Martini"
+  },
+  {
     "name": "Bee's Knees",
     "method": "Shake",
     "reciepe": {
-      "Gin": "60",
-      "Honey": "15",
-      "Lemon": "20"
+      "Gin": "60ml",
+      "Honey": "15ml",
+      "Lemon": "20ml"
     },
     "glass": "Martini"
   },
@@ -436,6 +481,29 @@ export const reciepe = [
     "glass": "Martini"
   },
   {
+    "name": "Jasmine",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Lime Juice": "20ml",
+      "Campari": "10ml",
+      "Cointreau": "20ml",
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Old Maid",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Lime Juice": "30ml",
+      "Sugar": "15ml",
+      "Cucumber": "3 slice",
+      "Mint": "6-8 Spring",
+    },
+    "glass": "Lowball"
+  },
+  {
     "name": "Martini",
     "method": "Stir",
     "reciepe": {
@@ -451,6 +519,16 @@ export const reciepe = [
       "Gin": "40ml",
       "Campari": "20ml",
       "Rosso Vermouth": "20ml"
+    },
+    "glass": "Lowball"
+  },
+  {
+    "name": "White Negroni",
+    "method": "Stir",
+    "reciepe": {
+      "Gin": "40ml",
+      "Suze": "20ml",
+      "Lillet": "20ml"
     },
     "glass": "Lowball"
   },
@@ -541,6 +619,16 @@ export const reciepe = [
       "Grapefruit": "10ml",
       "Maraschino": "5ml",
       "Lime Juice": "20ml"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "X.Y.Z.",
+    "method": "Shake",
+    "reciepe": {
+      "White Rum": "50ml",
+      "Cointreau": "20ml",
+      "Lemon Juice": "20ml",
     },
     "glass": "Martini"
   },
@@ -1211,5 +1299,107 @@ export const reciepe = [
       "Soda": "to top",
     },
     "glass": "Highball"
-  }
+  },
+  {
+    "name": "Herb Lane",
+    "method": "Build",
+    "reciepe": {
+      "Fernet Branca": "30ml",
+      "Rosso Vermouth": "30ml",
+      "Angostura Bitters": "1 dash",
+      "Sugar": "5ml",
+      "Soda": "to top",
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Fudge",
+    "method": "Shake",
+    "reciepe": {
+      "Amarula": "45ml",
+      "Milk": "45ml",
+      "Honey": "5ml",
+      "Sugar": "5ml",
+      "Black Tea Syrup": "5ml",
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Mango Pomelo",
+    "method": "Shake",
+    "reciepe": {
+      "Vodka": "30ml",
+      "Mango": "30ml",
+      "Coconut Milk": "30ml",
+      "Grapefruit Liquor": "10ml",
+      "Sugar": "5ml",
+      "Garnish": "Grapefruit pulp",
+    },
+    "glass": "Coupe"
+  },
+  {
+    "name": "Plum Iced Tea",
+    "method": "Shake",
+    "reciepe": {
+      "Vodka": "15ml",
+      "Tequila": "15ml",
+      "Rum": "15ml",
+      "Gin": "15ml",
+      "Cointreau": "15ml",
+      "Lemon Juice": "25ml",
+      "Honey": "15ml",
+      "Umeshu": "30ml"
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Beneath Plum Tree",
+    "method": "Rolling",
+    "reciepe": {
+      "Gin": "45ml",
+      "Umeshu": "30ml",
+      "Green Tea": "30ml",
+      "Sugar": "10ml",
+    },
+    "glass": "Nick & Nora"
+  },
+  {
+    "name": "Lemon Tart",
+    "method": "Shake",
+    "reciepe": {
+      "Limoncello": "30ml",
+      "Cointreau": "30ml",
+      "Lemon Juice": "45ml",
+      "Cream": "60ml",
+      "Sugar": "30ml",
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Tea & Ponkan",
+    "method": "Shake",
+    "reciepe": {
+      "Tea infused Vodka": "30ml",
+      "Lillet": "10ml",
+      "Sugar": "10ml",
+      "Ponkan Juice": "30ml",
+      "Passionfruit Syrup": "10ml",
+      "Egg White": "20ml"
+    },
+    "glass": "Coupe"
+  },
+  {
+    "name": "Mermaid",
+    "method": "Shake",
+    "reciepe": {
+      "White Rum": "45ml",
+      "Pineapple juice": "30ml",
+      "Lemon Juice": "15ml",
+      "Cointreau": "10ml",
+      "Sugar": "10ml",
+      "Blue curacao": "5ml",
+      "Coconut water": "To top",
+    },
+    "glass": "Hurricane"
+  },
 ]
