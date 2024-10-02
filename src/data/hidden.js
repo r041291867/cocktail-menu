@@ -9,14 +9,6 @@ export const cocktailMenu = [
         shots: 1,
         ingredients: ["whisky", "soda"],
         show: true,
-        directions: {
-          method: "build",
-          ingredients: {
-            whisky: '45ml',
-            soda: "to top",
-          },
-          container: 'Lowball'
-        }
       },
       {
         nameCht: "國王谷",
@@ -24,21 +16,12 @@ export const cocktailMenu = [
         shots: 1.5,
         ingredients: ["Whiskey", "cointreau", "Lemon", "blue curacao"],
         show: true,
-        directions: {
-          method: "build",
-          ingredients: {
-            whisky: '60ml',
-            cointreau: '15ml',
-            lemon: '20ml',
-            "blue curacao": "1 barspoon",
-          }
-        }
       },
       {
-        nameCht: "威士忌酸酒",
-        nameEng: "Whiskey Sour",
+        nameCht: "布朗德比",
+        nameEng: "Brown Derby",
         shots: 1.5,
-        ingredients: ["Whiskey", "Lemon", "Sugar", "Egg White"],
+        ingredients: ["Whiskey", "Grapefruit", "Lemon", "Honey"],
         show: true,
       },
       {
@@ -77,11 +60,67 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "第八區",
+        nameEng: "Ward 8",
+        shots: 1.5,
+        ingredients: ["Whiskey", "Lemon", "Orange", "Grenadine"],
+        show: true,
+      },
+      {
+        nameCht: "威士忌酸酒",
+        nameEng: "Whiskey Sour",
+        shots: 1.5,
+        ingredients: ["Whiskey", "Lemon", "Sugar", "Egg White"],
+        show: true,
+      },
+      {
+        nameCht: "威士忌斯瑪旭",
+        nameEng: "Whiskey Smash",
+        shots: 1.5,
+        ingredients: ["Whiskey", "Lemon", "Sugar", "Mint"],
+        show: true,
+      },
+      {
+        nameCht: "血與沙",
+        nameEng: "Blood and Sand",
+        shots: 2,
+        ingredients: ["Whiskey", "cherry", "rosso vermouth", "orange"],
+        show: true,
+      },
+      {
         nameCht: "紙飛機",
         nameEng: "Paper Plane",
         shots: 2,
         ingredients: ["Whiskey", "Amaro", "Aperol", "Lemon"],
         show: true,
+      },
+      {
+        nameCht: "黑色曼哈頓",
+        nameEng: "Black Manhattan",
+        shots: 3,
+        ingredients: ["Whiskey", "Averna", "Bitters"],
+        show: false,
+      },
+      {
+        nameCht: "鮑比·伯恩斯",
+        nameEng: "Bobby Burns",
+        shots: 3,
+        ingredients: ["Whiskey", "Rosso Vermouth", "Bénédictine", "Bitters"],
+        show: false,
+      },
+      {
+        nameCht: "布魯克林",
+        nameEng: "Brooklyn",
+        shots: 3,
+        ingredients: ["Whiskey", "Dry Vermouth", "Maraschino", "Amer Picon"],
+        show: false,
+      },
+      {
+        nameCht: "響尾蛇",
+        nameEng: "Diamondback",
+        shots: 3,
+        ingredients: ["Whiskey", "Applejack", "Chartreuse"],
+        show: false,
       },
       {
         nameCht: "教父",
@@ -91,11 +130,39 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "綠點區",
+        nameEng: "Greenpoint",
+        shots: 3,
+        ingredients: ["Whiskey", "Chartreuse", "Rosso Vermouth", "Bitters"],
+        show: false,
+      },
+      {
+        nameCht: "進階威士忌雞尾酒",
+        nameEng: "Improved Whiskey Cocktail",
+        shots: 3,
+        ingredients: ["Whiskey", "Sugar", "Maraschino", "Absinthe", "Bitters"],
+        show: false,
+      },
+      {
         nameCht: "往日情懷",
         nameEng: "Old Fashioned",
         shots: 3,
         ingredients: ["Whiskey", "Sugar", "Bitters"],
-        show: false,
+        show: true,
+      },
+      {
+        nameCht: "左輪手槍",
+        nameEng: "Revolver",
+        shots: 3,
+        ingredients: ["Whisky", "Coffee", "Bitters"],
+        show: true,
+      },
+      {
+        nameCht: "羅伯洛伊",
+        nameEng: "Rob Roy",
+        shots: 3,
+        ingredients: ["Whisky", "Rosso Vermouth", "Bitters"],
+        show: true,
       },
       {
         nameCht: "鏽釘子",
@@ -119,6 +186,20 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "路易斯安那",
+        nameEng: "La Louisiane",
+        shots: 3,
+        ingredients: ["Whiskey", "Rosso Vermouth", "Bénédictine", "Absinthe", "Bitters"],
+        show: true,
+      },
+      {
+        nameCht: "小義大利",
+        nameEng: "Little Italy",
+        shots: 3,
+        ingredients: ["Whiskey", "Rosso Vermouth", "Cynar"],
+        show: true,
+      },
+      {
         nameCht: "老朋友",
         nameEng: "Old Pal",
         shots: 3,
@@ -126,9 +207,16 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "法外狂徒",
+        nameEng: "Scofflaw",
+        shots: 3,
+        ingredients: ["Whiskey", "Dry Vermouth", "Lemon", "Grenadine"],
+        show: true,
+      },
+      {
         nameCht: "蒂珀雷里",
         nameEng: "Tipperary",
-        shots: 2,
+        shots: 3,
         ingredients: [
           "Whiskey",
           "Rosso Vermouth",
@@ -136,6 +224,18 @@ export const cocktailMenu = [
           "Bitters",
         ],
         show: false,
+      },
+      {
+        nameCht: "多倫多",
+        nameEng: "Toronto",
+        shots: 3,
+        ingredients: [
+          "Whiskey",
+          "Fernet Branca",
+          "Sugar",
+          "Bitters",
+        ],
+        show: true,
       },
     ],
   },
@@ -187,6 +287,18 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "湯姆柯林斯",
+        nameEng: "Tom Collins",
+        shots: 1,
+        ingredients: [
+          "Gin",
+          "Lemon",
+          "Sugar",
+          "Soda",
+        ],
+        show: true,
+      },
+      {
         nameCht: "二十世紀",
         nameEng: "20th Century",
         shots: 1.5,
@@ -199,6 +311,13 @@ export const cocktailMenu = [
         shots: 1.5,
         ingredients: ["Gin", "Lemon", "Orgeat", "Bitters"],
         show: false,
+      },
+      {
+        nameCht: "羅勒斯瑪旭",
+        nameEng: "Basil Smash",
+        shots: 1.5,
+        ingredients: ["Gin", "Lemon", "Sugar", "Basil"],
+        show: true,
       },
       {
         nameCht: "蜜蜂之膝",
@@ -215,10 +334,31 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "東方",
+        nameEng: "Eastside",
+        shots: 1.5,
+        ingredients: ["Gin", "Lime", "Sugar", "Mint", "Cucumber"],
+        show: true,
+      },
+      {
+        nameCht: "伊恩佐尼",
+        nameEng: "Enzoni",
+        shots: 1.5,
+        ingredients: ["Gin", "Campari", "Lemon", "Sugar", "Grapes"],
+        show: true,
+      },
+      {
         nameCht: "琴蕾",
         nameEng: "Gimlet",
         shots: 1.5,
         ingredients: ["Gin", "Lemon", "Sugar"],
+        show: true,
+      },
+      {
+        nameCht: "琴瑞奇",
+        nameEng: "Gin Rickey",
+        shots: 1.5,
+        ingredients: ["Gin", "Lemon", "Sugar", "Soda"],
         show: true,
       },
       {
@@ -250,6 +390,27 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "潘丹尼斯俱樂部",
+        nameEng: "Pendennis Club",
+        shots: 1.5,
+        ingredients: ["Gin", "Lime", "Apricot", "Sugar", "Bitters"],
+        show: false,
+      },
+      {
+        nameCht: "粉紅佳人",
+        nameEng: "Pink Lady",
+        alcohol: "light",
+        shots: 1.5,
+        ingredients: ["Gin", "Applejack", "Lemon", "Grenadine", "Honey", "Egg White"],
+      },
+      {
+        nameCht: "木星",
+        nameEng: "Saturn",
+        alcohol: "light",
+        shots: 1.5,
+        ingredients: ["Gin", "Passion", "Lemon", "Falernum", "Orgeat"],
+      },
+      {
         nameCht: "新加坡司令",
         nameEng: "Singapore Sling",
         shots: 1.5,
@@ -262,6 +423,18 @@ export const cocktailMenu = [
           "Lime",
           "Grenadine",
           "Bitters",
+        ],
+        show: false,
+      },
+      {
+        nameCht: "南方",
+        nameEng: "Southside",
+        shots: 1.5,
+        ingredients: [
+          "Gin",
+          "Lime",
+          "Sugar",
+          "Mint",
         ],
         show: false,
       },
@@ -343,6 +516,13 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "寶石",
+        nameEng: "Bijou",
+        shots: 3,
+        ingredients: ["Gin", "Rosso Vermouth", "Chartreuse", "Bitters"],
+        show: false,
+      },
+      {
         nameCht: "翻雲覆雨",
         nameEng: "Hanky Panky",
         shots: 3,
@@ -354,6 +534,13 @@ export const cocktailMenu = [
         nameEng: "Last Word",
         shots: 3,
         ingredients: ["Gin", "Chartreuse", "Maraschino", "Lime"],
+        show: false,
+      },
+      {
+        nameCht: "吕西安·戈丹",
+        nameEng: "Lucien Gaudin",
+        shots: 3,
+        ingredients: ["Gin", "Dry Vermouth", "Campari", "Cointreau"],
         show: false,
       },
       {
@@ -404,6 +591,13 @@ export const cocktailMenu = [
     categoryCh: "蘭姆酒",
     cocktails: [
       {
+        nameCht: "航空郵件",
+        nameEng: "Airmail",
+        shots: 1,
+        ingredients: ["Rum", "Lime", "Honey", "Champagne"],
+        show: false,
+      },
+      {
         nameCht: "月黑風高",
         nameEng: "Dark 'N' Stormy",
         shots: 1,
@@ -432,10 +626,24 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "百加得",
+        nameEng: "Bacardi Cocktail",
+        shots: 1.5,
+        ingredients: ["Rum", "Lime", "Grenadine"],
+        show: true,
+      },
+      {
         nameCht: "黛綺莉",
         nameEng: "Daiquiri",
         shots: 1.5,
         ingredients: ["Rum", "Lime", "Sugar"],
+        show: true,
+      },
+      {
+        nameCht: "多明尼加",
+        nameEng: "Dominicana",
+        shots: 1.5,
+        ingredients: ["Rum", "Coffee", "Cream"],
         show: false,
       },
       {
@@ -443,6 +651,13 @@ export const cocktailMenu = [
         nameEng: "Hemingway Special",
         shots: 1.5,
         ingredients: ["Rum", "Grapefruit", "Maraschino", "Lime"],
+        show: true,
+      },
+      {
+        nameCht: "忍冬花",
+        nameEng: "Honeysuckle",
+        shots: 1.5,
+        ingredients: ["Rum", "Honey", "Lime"],
         show: true,
       },
       {
@@ -481,10 +696,31 @@ export const cocktailMenu = [
         show: true,
       },
       {
+        nameCht: "女王公園四維索",
+        nameEng: "Queen's Park Swizzle",
+        shots: 1.5,
+        ingredients: ["Rum", "Lime", "Sugar", "Mint", "Bitters"],
+        show: true,
+      },
+      {
         nameCht: "梭子魚",
         nameEng: "Barracuda",
         shots: 2,
         ingredients: ["Rum", "Galliano", "Pineapple", "Lime", "Prosecco"],
+        show: false,
+      },
+      {
+        nameCht: "纜車",
+        nameEng: "Cable Car",
+        shots: 2,
+        ingredients: ["Rum", "Curacao", "Lemon", "Sugar"],
+        show: false,
+      },
+      {
+        nameCht: "噴射機英雄",
+        nameEng: "Jet Pilot",
+        shots: 2,
+        ingredients: ["Rum", "Falernum", "Lime", "Grapefruit", "Cinnamon", "Absinthe", "Bitters"],
         show: false,
       },
       {
@@ -505,6 +741,13 @@ export const cocktailMenu = [
         nameEng: "Yellow Bird",
         shots: 2,
         ingredients: ["Rum", "Galliano", "cointreau", "Lime"],
+        show: false,
+      },
+      {
+        nameCht: "殭屍",
+        nameEng: "Zombie",
+        shots: 2.5,
+        ingredients: ["Rum", "Lime", "Falernum", "Donn’s Mix", "Grenadine", "Bitters", "Absinthe"],
         show: false,
       },
       {
@@ -679,6 +922,13 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "香榭大道",
+        nameEng: "Champs-Élysées",
+        shots: 2,
+        ingredients: ["Brandy", "Lemon", "Chartreuse", "Sugar"],
+        show: false,
+      },
+      {
         nameCht: "側車",
         nameEng: "Sidecar",
         shots: 2,
@@ -707,6 +957,13 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "日本雞尾酒",
+        nameEng: "Japanese Cocktail",
+        shots: 3,
+        ingredients: ["Brandy", "Orgeat", "Bitters"],
+        show: false,
+      },
+      {
         nameCht: "賽澤瑞克",
         nameEng: "Sazerac",
         shots: 3,
@@ -732,6 +989,13 @@ export const cocktailMenu = [
     category: "Tequila",
     categoryCh: "龍舌蘭",
     cocktails: [
+      {
+        nameCht: "惡魔",
+        nameEng: "El Diablo",
+        shots: 1,
+        ingredients: ["Tequila", "Cassis", "Lime", "Ginger", "Soda"],
+        show: false,
+      },
       {
         nameCht: "龍舌蘭日出",
         nameEng: "Tequila Sunrise",
@@ -795,6 +1059,27 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "夏翠絲四維索",
+        nameEng: "Chartreuse Swizzle",
+        shots: 1,
+        ingredients: ["Chartreuse", "Pineapple", "Lime", "Falernum"],
+        show: false,
+      },
+      {
+        nameCht: "費爾南迪托",
+        nameEng: "Fernandito",
+        shots: 1,
+        ingredients: ["Fernet Branca", "Cola"],
+        show: false,
+      },
+      {
+        nameCht: "加里波第",
+        nameEng: "Garibaldi",
+        shots: 1,
+        ingredients: ["Campari", "Orange", "Sugar"],
+        show: false,
+      },
+      {
         nameCht: "基爾",
         nameEng: "KIR",
         shots: 1,
@@ -808,13 +1093,7 @@ export const cocktailMenu = [
         ingredients: ["Orange", "Prosecco"],
         show: false,
       },
-      {
-        nameCht: "費爾南迪托",
-        nameEng: "Fernandito",
-        shots: 1,
-        ingredients: ["Fernet Branca", "Cola"],
-        show: false,
-      },
+
       {
         nameCht: "橙光",
         nameEng: "Spritz",
@@ -847,10 +1126,38 @@ export const cocktailMenu = [
         show: false,
       },
       {
+        nameCht: "傑克蘿絲",
+        nameEng: "Jack Rose",
+        shots: 1.5,
+        ingredients: ["Applejack", "Calvados", "Lemon", "Grenadine"],
+        show: true,
+      },
+      {
+        nameCht: "皮姆之杯",
+        nameEng: "Pimm's Cup",
+        shots: 1.5,
+        ingredients: ["Pimm’s No. 1", "Lime", "Sugar", "Cucumber", "Mint", "Fruit", "Ginger", "Soda"],
+        show: false,
+      },
+      {
+        nameCht: "皮斯可酸酒",
+        nameEng: "Pisco Sour",
+        shots: 1.5,
+        ingredients: ["Pisco", "Lime", "Lemon", "Sugar", "Egg White", "Bitters"],
+        show: false,
+      },
+      {
         nameCht: "性感海灘",
         nameEng: "Sex on the Beach",
         shots: 1.5,
         ingredients: ["Vodka", "Peach Schnapps", "Orange", "Cranberry"],
+        show: false,
+      },
+      {
+        nameCht: "千里達酸酒",
+        nameEng: "Trinidad Sour",
+        shots: 1.5,
+        ingredients: ["Bitters", "Orgeat", "Lemon", "Whiskey"],
         show: false,
       },
       {
@@ -910,6 +1217,34 @@ export const cocktailMenu = [
         nameEng: "Porto Flip",
         shots: 2,
         ingredients: ["Port Wine", "Brandy", "Egg Yolk"],
+        show: false,
+      },
+      {
+        nameCht: "雪莉酷伯樂",
+        nameEng: "Sherry Cobbler",
+        shots: 2,
+        ingredients: ["Sherry", "Pineapple", "Orange"],
+        show: false,
+      },
+      {
+        nameCht: "阿多尼斯",
+        nameEng: "Adonis",
+        shots: 3,
+        ingredients: ["Sherry", "Rosso Vermouth", "Bitters"],
+        show: false,
+      },
+      {
+        nameCht: "竹子",
+        nameEng: "Bamboo",
+        shots: 3,
+        ingredients: ["Sherry", "Dry Vermouth", "Sugar", "Bitters"],
+        show: false,
+      },
+      {
+        nameCht: "寡婦之吻",
+        nameEng: "Widow’s Kiss",
+        shots: 3,
+        ingredients: ["Apple Brandy", "Chartreuse", "Bénédictine", "Bitters"],
         show: false,
       },
     ],

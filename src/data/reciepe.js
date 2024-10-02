@@ -113,6 +113,17 @@ export const reciepe = [
     "glass": "Martini"
   },
   {
+    "name": "Blood and Sand",
+    "method": "Shake",
+    "reciepe": {
+      "Scotch Whiskey": "20ml",
+      "Heering Liquor": "20ml",
+      "Rosso Vermouth": "20ml",
+      "Orange Juice": "20ml"
+    },
+    "glass": "Martini"
+  },
+  {
     "name": "God Father",
     "method": "Stir",
     "reciepe": {
@@ -136,8 +147,8 @@ export const reciepe = [
     "name": "Rusty Nail",
     "method": "Stir",
     "reciepe": {
-      "Whisky": "50ml",
-      "Drambuie": "20ml"
+      "Scotch Whisky": "60ml",
+      "Drambuie": "15ml"
     },
     "glass": "Lowball"
   },
@@ -155,7 +166,7 @@ export const reciepe = [
     "name": "Boulevardier",
     "method": "Stir",
     "reciepe": {
-      "Whiskey": "40ml",
+      "Boubon or Rye Whiskey": "40ml",
       "Campari": "20ml",
       "Rosso Vermouth": "20ml"
     },
@@ -537,7 +548,7 @@ export const reciepe = [
     "method": "Stir",
     "reciepe": {
       "Gin": "60ml",
-      "Dry Vermouth": "60ml",
+      "Dry Vermouth": "15ml",
       "Maraschino": "1 bar spoon",
       "Absinthe": "0.5 bar spoon",
       "Orange Bitters": "3 dash"
@@ -705,16 +716,6 @@ export const reciepe = [
       "Prosecco": "15ml"
     },
     "glass": "Coupe"
-  },
-  {
-    "name": "X.Y.Z.",
-    "method": "Shake",
-    "reciepe": {
-      "Rum": "50ml",
-      "Cointreau": "20ml",
-      "Lemon Juice": "20ml"
-    },
-    "glass": "Martini"
   },
   {
     "name": "Yellow Bird",
@@ -957,7 +958,7 @@ export const reciepe = [
     "glass": "Highball"
   },
   {
-    "name": "Alexander",
+    "name": "Brandy Alexander",
     "method": "Shake",
     "reciepe": {
       "Brandy": "45ml",
@@ -1402,4 +1403,594 @@ export const reciepe = [
     },
     "glass": "Hurricane"
   },
+  {
+    "name": "Airmail",
+    "method": "Shake",
+    "reciepe": {
+      "Dark Rum": "40ml",
+      "Lime Juice": "20ml",
+      "Honey": "20ml",
+      "Champagne": "80ml"
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Bacardi Cocktail",
+    "method": "Shake",
+    "reciepe": {
+      "Bacardi White Rum": "60ml",
+      "Lime Juice": "30ml",
+      "Grenadine": "20ml"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Adonis",
+    "method": "Stir",
+    "reciepe": {
+      "Fino Sherry": "45ml",
+      "Rosso Vermouth": "45ml",
+      "Orange Bitters": "2 dash",
+      "Garnish": "Orange Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Bamboo",
+    "method": "Stir",
+    "reciepe": {
+      "Dry Sherry": "45ml",
+      "Dry Vermouth": "45ml",
+      "Demerara Syrup": "1 tsp",
+      "Orange Bitters": "1 dash",
+      "Angostura Bitters": "1 dash",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Basil Smash",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Lemon Juice": "20ml",
+      "Sugar": "15ml",
+      "Fresh Basil": "10-12 Leaves",
+      "Garnish": "Basil Bouquet"
+    },
+    "glass": "Lowball"
+  },
+  {
+    "name": "Bijou",
+    "method": "Stir",
+    "reciepe": {
+      "Gin": "50ml",
+      "Rosso Vermouth": "20ml",
+      "Green Chartreuse": "20ml",
+      "Orange Bitters": "1 dash",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Black Manhattan",
+    "method": "Stir",
+    "reciepe": {
+      "Rye Whiskey": "60ml",
+      "Averna": "20ml",
+      "Orange Bitters": "1 dash",
+      "Angostura Bitters": "1 dash",
+      "Garnish": "Cherry"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Bobby Burns",
+    "method": "Stir",
+    "reciepe": {
+      "Scotch Whisky": "60ml",
+      "Rosso Vermouth": "20ml",
+      "Bénédictine": "10ml",
+      "Angostura Bitters": "1 dash",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Brooklyn",
+    "method": "Stir",
+    "reciepe": {
+      "Rye Whiskey": "60ml",
+      "Dry Vermouth": "20ml",
+      "Maraschino": "10ml",
+      "Amer Picon": "10ml",
+      "Garnish": "Cherry"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Brown Derby",
+    "method": "Shake",
+    "reciepe": {
+      "Bourbon Whisky": "60ml",
+      "Grapefruit Juice": "30ml",
+      "Lemon Juice": "1 tsp",
+      "Honey Syrup": "15ml",
+      "Garnish": "Grapefruit Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Cable Car",
+    "method": "Shake",
+    "reciepe": {
+      "Spiced Rum": "50ml",
+      "Orange Curaçao": "20ml",
+      "Lemon Juice": "30ml",
+      "Sugar": "15ml",
+      "Garnish": "Orange Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Champs-Élysées",
+    "method": "Shake",
+    "reciepe": {
+      "Cognac": "60ml",
+      "Lemon Juice": "20ml",
+      "Green Chartreuse": "15ml",
+      "Sugar": "5ml",
+      "Angostura Bitters": "1 dash"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Chartreuse Swizzle",
+    "method": "Build",
+    "reciepe": {
+      "Green Chartreuse": "50ml",
+      "Pineapple Juice": "30ml",
+      "Lime Juice": "20ml",
+      "Falernum": "15ml",
+      "Garnish": "Mint Sprig and Grated Nutmeg"
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Diamondback",
+    "method": "Stir",
+    "reciepe": {
+      "Rye Whiskey": "50ml",
+      "Applejack": "20ml",
+      "Yellow Chartreuse": "20ml"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Dominicana",
+    "method": "Shake",
+    "reciepe": {
+      "Aged Rum": "50ml",
+      "Coffee Liqueur": "30ml",
+      "Cream": "Floated (shake cream in the container to aerate prior to pouring)",
+      "Garnish": "Grated Nutmeg"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Eastside",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Lime Juice": "30ml",
+      "Sugar": "20ml",
+      "Mint": "6-8 Leaves",
+      "Cucumber": "3-4 Slices",
+      "Garnish": "Cucumber Slice and Mint Sprig"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Enzoni",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "30ml",
+      "Campari": "30ml",
+      "Lemon Juice": "20ml",
+      "Sugar": "15ml",
+      "Green Grapes": "5",
+      "Garnish": "Grape"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "El Diablo",
+    "method": "Shake",
+    "reciepe": {
+      "Tequila": "45ml",
+      "Crème de Cassis": "15ml",
+      "Lime Juice": "15ml",
+      "Ginger Syrup": "20ml",
+      "Soda": "To top",
+      "Garnish": "Lime Wedge"
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Garibaldi",
+    "method": "Build",
+    "reciepe": {
+      "Campari": "45ml",
+      "Orange Juice": "120ml",
+      "Sugar": "1 tsp",
+      "Garnish": "Orange Slice"
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Gin Rickey",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Lime Juice": "20ml",
+      "Sugar": "15ml",
+      "Soda": "To top",
+      "Garnish": "Lime Wedge"
+    },
+    "glass": "Lowball"
+  },
+  {
+    "name": "Greenpoint",
+    "method": "Stir",
+    "reciepe": {
+      "Rye Whiskey": "60ml",
+      "Yellow Chartreuse": "15ml",
+      "Rosso Vermouth": "15ml",
+      "Angostura Bitters": "1 dash",
+      "Orange Bitters": "1 dash",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Honeysuckle",
+    "method": "Shake",
+    "reciepe": {
+      "White Rum": "60ml",
+      "Lemon Juice": "20ml",
+      "Honey": "20ml"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Improved Whiskey Cocktail",
+    "method": "Stir",
+    "reciepe": {
+      "Rye Whiskey": "60ml",
+      "Sugar": "10ml",
+      "Maraschino": "10ml",
+      "Absinthe": "1 dash",
+      "Angostura Bitters": "2 dash",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Lowball"
+  },
+  {
+    "name": "Jack Rose",
+    "method": "Shake",
+    "reciepe": {
+      "Applejack": "30ml",
+      "Calvados": "30ml",
+      "Lemon Juice": "15ml",
+      "Lime Juice": "15ml",
+      "Grenadine": "20ml",
+      "Garnish": "Apple Fan"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Japanese Cocktail",
+    "method": "Stir",
+    "reciepe": {
+      "Cognac": "60ml",
+      "Orgeat Syrup": "15ml",
+      "Angostura Bitters": "2 dash",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Jet Pilot",
+    "method": "Shake",
+    "reciepe": {
+      "Jamaican Rum": "30ml",
+      "Puerto Rican Rum": "20ml",
+      "Overproof Demerara Rum": "20ml",
+      "Falernum": "15ml",
+      "Lime Juice": "15ml",
+      "Grapefruit": "15ml",
+      "Cinnamon Syrup": "15ml",
+      "Absinthe": "1 dash",
+      "Angostura Bitters": "1 dash",
+      "Garnish": "Mint Sprig, Lime Wheel, Cherry"
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "La Louisiane Cocktail",
+    "method": "Stir",
+    "reciepe": {
+      "Rye Whiskey": "30ml",
+      "Rosso Vermouth": "30ml",
+      "Bénédictine": "30ml",
+      "Absinthe": "2 dash",
+      "Peychaud’s Bitters": "2 dash",
+      "Garnish": "Cherry"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Little Italy",
+    "method": "Stir",
+    "reciepe": {
+      "Rye Whiskey": "60ml",
+      "Rosso Vermouth": "20ml",
+      "Cynar": "15ml",
+      "Garnish": "Cherry"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Lucien Gaudin",
+    "method": "Stir",
+    "reciepe": {
+      "Gin": "45ml",
+      "Dry Vermouth": "15ml",
+      "Campari": "15ml",
+      "Cointreau": "15ml",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Mexican Firing Squad",
+    "method": "Shake",
+    "reciepe": {
+      "Blanco Tequila": "60ml",
+      "Lime Juice": "20ml",
+      "Sugar": "15ml",
+      "Grenadine": "5ml",
+      "Angostura Bitters": "4 dash",
+      "Garnish": "Lime Wheel, Cherry"
+    },
+    "glass": "Lowball"
+  },
+  {
+    "name": "Pendennis Cocktail Club",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Lime Juice": "20ml",
+      "Apricot Liqueur": "15ml",
+      "Sugar": "5ml",
+      "Peychaud’s Bitters": "2 dash",
+      "Garnish": "Lime Wedge"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Pimm's Cup",
+    "method": "Shake",
+    "reciepe": {
+      "Pimm’s No. 1": "60ml",
+      "Lime Juice": "20ml",
+      "Sugar": "15ml",
+      "Cucumber, Mint, Strawberry, Orange": "Muddled",
+      "Ginger Syrup": "20ml",
+      "Soda": "To top",
+      "Garnish": "Cucumber Slice, Mint Sprig, Strawberry"
+    },
+    "glass": "Lowball"
+  },
+  {
+    "name": "Pink Lady",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "45ml",
+      "Applejack": "15ml",
+      "Lemon Juice": "20ml",
+      "Grenadine": "15ml",
+      "Honey": "5ml",
+      "Egg White": "20ml",
+      "Garnish": "Cherry"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Pisco Sour",
+    "method": "Shake",
+    "reciepe": {
+      "Pisco": "60ml",
+      "Lime Juice": "15ml",
+      "Lemon Juice": "15ml",
+      "Sugar": "20ml",
+      "Egg White": "20ml",
+      "Amargo Chuncho Bitters": "1 dash",
+      "Garnish": "Amargo Chuncho Bitters (dropped on top of foam)"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Queen's Park Swizzle",
+    "method": "Build",
+    "reciepe": {
+      "Demerara Rum": "60ml",
+      "Lime Juice": "20ml",
+      "Demerara Syrup": "15ml",
+      "Mint": "6-8 Leaves",
+      "Angostura Bitters": "2 dash",
+      "Garnish": "Mint Sprig, Angortura Dashes to float and Grated Nutmeg"
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Revolver",
+    "method": "Stir",
+    "reciepe": {
+      "Bourbon Whisky": "60ml",
+      "Coffee Liqueur": "15ml",
+      "Orange Bitters": "2 dash",
+      "Garnish": "Flamed Orange Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Rob Roy",
+    "method": "Stir",
+    "reciepe": {
+      "Scotch Whisky": "60ml",
+      "Rosso Vermouth": "20ml",
+      "Angostura Bitters": "2 dash",
+      "Garnish": "Cherry"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Saturn",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "45ml",
+      "Passion Fruit Syrup": "15ml",
+      "Lemon Juice": "15ml",
+      "Falernum": "7.5ml",
+      "Orgeat Syrup": "7.5ml",
+      "Garnish": "Lime Twist and Cherry"
+    },
+    "glass": "Lowball"
+  },
+  {
+    "name": "Scofflaw",
+    "method": "Shake",
+    "reciepe": {
+      "Rye Whiskey": "45ml",
+      "Dry Vermouth": "30ml",
+      "Lemon Juice": "20ml",
+      "Grenadine": "10ml",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Sherry Cobbler",
+    "method": "Shake",
+    "reciepe": {
+      "Dry Sherry": "90ml",
+      "Pineapple Gum Syrup": "15ml",
+      "Orange Slices": "2 slices",
+      "Seasonal Berries (optional)": "",
+      "Garnish": "Orange Slice and Mint Spring"
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Southside",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Lime Juice": "20ml",
+      "Sugar": "20ml",
+      "Mint": "6-8 Springs",
+      "Garnish": "Mint Sprig"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Tom Collins",
+    "method": "Shake",
+    "reciepe": {
+      "Gin": "60ml",
+      "Lemon Juice": "30ml",
+      "Sugar": "20ml",
+      "Soda": "To top",
+      "Garnish": "Lemon Wheel and Cherry"
+    },
+    "glass": "Highball"
+  },
+  {
+    "name": "Toronto",
+    "method": "Stir",
+    "reciepe": {
+      "Rye Whiskey": "60ml",
+      "Fernet Branca": "7.5ml",
+      "Sugar": "7.5ml",
+      "Angostura Bitters": "2 dash",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Trinidad Sour",
+    "method": "Shake",
+    "reciepe": {
+      "Angostura Bitters": "45ml",
+      "Orgeat Syrup": "30ml",
+      "Lemon Juice": "20ml",
+      "Rye Whiskey": "15ml",
+      "Garnish": "Lemon Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Ward 8",
+    "method": "Shake",
+    "reciepe": {
+      "Rye Whiskey": "60ml",
+      "Lemon Juice": "15ml",
+      "Orange Juice": "15ml",
+      "Grenadine": "15ml",
+      "Garnish": "Orange Twist"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Whiskey Smash",
+    "method": "Shake",
+    "reciepe": {
+      "Bourbon Whisky": "60ml",
+      "Half Lemon in wedges": "Muddled",
+      "Sugar": "15ml",
+      "Mint": "4-6 Leaves",
+      "Garnish": "Mint Sprig"
+    },
+    "glass": "Lowball"
+  },
+  {
+    "name": "Widow’s Kiss",
+    "method": "Stir",
+    "reciepe": {
+      "Apple Brandy or Calvados": "60ml",
+      "Yellow Chartreuse": "7.5ml",
+      "Bénédictine": "7.5ml",
+      "Angostura Bitters": "2 dash",
+      "Garnish": "Cherry"
+    },
+    "glass": "Martini"
+  },
+  {
+    "name": "Zombie",
+    "method": "Shake",
+    "reciepe": {
+      "Jamaican Rum": "45ml",
+      "Aged Cuban Rum": "45ml",
+      "Overproof Rum": "30ml",
+      "Lime Juice": "20ml",
+      "Falernum": "15ml",
+      "Donn’s Mix (2 parts grapefruit juice and 1 part cinnamon syrup)": "15ml",
+      "Grenadine": "1 tsp",
+      "Angostura Bitters": "1 dash",
+      "Pernod or Absinthe": "6 drop",
+      "Garnish": "Mint Sprig and Cherry"
+    },
+    "glass": "Hurricane"
+  }
 ]
