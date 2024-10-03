@@ -1965,7 +1965,7 @@ export const reciepe = [
     "glass": "Lowball"
   },
   {
-    "name": "Widow’s Kiss",
+    "name": "Widow's Kiss",
     "method": "Stir",
     "reciepe": {
       "Apple Brandy or Calvados": "60ml",
