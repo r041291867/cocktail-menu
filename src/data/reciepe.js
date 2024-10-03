@@ -1972,7 +1972,7 @@ export const reciepe = [
       Sugar: "5ml",
       "Black Tea Syrup": "5ml",
     },
-    glass: "Highball",
+    glass: "Coupe",
     category: "Signature",
     nameCht: "牛奶糖",
     ingredients: ["amarula", "milk", "honey"],
