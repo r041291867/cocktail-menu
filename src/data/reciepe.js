@@ -1,1996 +1,2949 @@
 export function getReciepe(name) {
-  if (!name) return '';
+  if (!name) return "";
 
-  return reciepe.find((cocktail) => cocktail.name === name)
+  return reciepe.find((cocktail) => cocktail.nameEng === name);
 }
 
 export const reciepe = [
   {
-    "name": "Highball",
-    "method": "Build",
-    "reciepe": {
-      "Whisky": "45ml",
-      "Soda": "to top",
+    nameEng: "Highball",
+    method: "Build",
+    reciepe: {
+      Whisky: "45ml",
+      Soda: "to top",
       "Lemon Wedge": "Optional",
-      "Ratio": "1:3 or 1:4"
+      Ratio: "1:3 or 1:4",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Whiskey",
+    nameCht: "嗨波魯",
+    ingredients: ["whisky", "soda"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Gin Soda",
-    "method": "Build",
-    "reciepe": {
-      "gin": "45ml",
-      "soda": "to top"
+    nameEng: "Gin Soda",
+    method: "Build",
+    reciepe: {
+      gin: "45ml",
+      soda: "to top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Gin",
+    nameCht: "琴蘇打",
+    ingredients: ["gin", "soda"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "King's Valley",
-    "method": "Shake",
-    "reciepe": {
-      "Whiskey": "60ml",
-      "cointreau": "15ml",
+    nameEng: "King's Valley",
+    method: "Shake",
+    reciepe: {
+      Whiskey: "60ml",
+      cointreau: "15ml",
       "Lemon juice": "15ml",
-      "blue curacao": "1tsp"
+      "blue curacao": "1tsp",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "國王谷",
+    ingredients: ["Whiskey", "cointreau", "Lemon", "blue curacao"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Whiskey Sour",
-    "method": "Shake",
-    "reciepe": {
-      "Whiskey": "60ml",
-      "Lemon": "20ml",
-      "Sugar": "20ml",
-      "Egg White": ""
+    nameEng: "Whiskey Sour",
+    method: "Shake",
+    reciepe: {
+      Whiskey: "60ml",
+      Lemon: "20ml",
+      Sugar: "20ml",
+      "Egg White": "",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Whiskey",
+    nameCht: "威士忌酸酒",
+    ingredients: ["Whiskey", "Lemon", "Sugar", "Egg White"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Gold Rush",
-    "method": "Shake",
-    "reciepe": {
-      "Whiskey": "60ml",
-      "Honey": "15ml",
-      "Lemon": "20ml"
+    nameEng: "Gold Rush",
+    method: "Shake",
+    reciepe: {
+      Whiskey: "60ml",
+      Honey: "15ml",
+      Lemon: "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "淘金熱",
+    ingredients: ["Whiskey", "Lemon", "Honey"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Silent Third",
-    "method": "Shake",
-    "reciepe": {
-      "Whiskey": "50ml",
-      "cointreau": "20ml",
-      "Lemon": "20ml"
+    nameEng: "Silent Third",
+    method: "Shake",
+    reciepe: {
+      Whiskey: "50ml",
+      cointreau: "20ml",
+      Lemon: "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "沉默第三者",
+    ingredients: ["Whiskey", "cointreau", "Lemon"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Mint Julep",
-    "method": "Build",
-    "reciepe": {
-      "Whiskey": "45ml",
-      "Mint": "6-8 string",
-      "Sugar": "1 tbsp",
-      "Crushed Ice": ""
+    nameEng: "Mint Julep",
+    method: "Build",
+    reciepe: {
+      Whiskey: "45ml",
+      Mint: "6-8 string",
+      Sugar: "1 tbsp",
+      "Crushed Ice": "",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Whiskey",
+    nameCht: "薄荷朱利普",
+    ingredients: ["Whiskey", "Mint", "Sugar", "Water"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "New York Sour",
-    "method": "Shake",
-    "reciepe": {
-      "Whiskey": "60ml",
-      "Sugar": "20ml",
-      "Lemon": "20ml",
+    nameEng: "New York Sour",
+    method: "Shake",
+    reciepe: {
+      Whiskey: "60ml",
+      Sugar: "20ml",
+      Lemon: "20ml",
       "Egg White": "optional",
-      "Red wine": "float"
+      "Red wine": "float",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Whiskey",
+    nameCht: "紐約酸酒",
+    ingredients: ["Whiskey", "Sugar", "Lemon", "Egg White", "Red wine"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Penicillin",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Penicillin",
+    method: "Shake",
+    reciepe: {
       "Peat Whisky": "60ml",
-      "Lemon": "20ml",
-      "Honey": "5ml",
-      "Ginger": "10ml"
+      Lemon: "20ml",
+      Honey: "5ml",
+      Ginger: "10ml",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Whiskey",
+    nameCht: "盤尼西林",
+    ingredients: ["Whisky", "Lemon", "Honey", "Ginger"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Paper Plane",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Paper Plane",
+    method: "Shake",
+    reciepe: {
       "Bourbon Whiskey": "20ml",
-      "Amaro": "20ml",
-      "Aperol": "20ml",
-      "Lemon": "20ml"
+      Amaro: "20ml",
+      Aperol: "20ml",
+      Lemon: "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "紙飛機",
+    ingredients: ["Whiskey", "Amaro", "Aperol", "Lemon"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Blood and Sand",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Blood and Sand",
+    method: "Shake",
+    reciepe: {
       "Scotch Whiskey": "20ml",
       "Heering Liquor": "20ml",
       "Rosso Vermouth": "20ml",
-      "Orange Juice": "20ml"
+      "Orange Juice": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "血與沙",
+    ingredients: ["Whiskey", "cherry", "rosso vermouth", "orange"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "God Father",
-    "method": "Stir",
-    "reciepe": {
-      "Whiskey": "50ml",
-      "amaretto": "20ml"
+    nameEng: "God Father",
+    method: "Stir",
+    reciepe: {
+      Whiskey: "50ml",
+      amaretto: "20ml",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Whiskey",
+    nameCht: "教父",
+    ingredients: ["Whiskey", "amaretto"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Old Fashioned",
-    "method": "Stir",
-    "reciepe": {
-      "Whiskey": "60ml",
-      "Sugar": "10ml",
+    nameEng: "Old Fashioned",
+    method: "Stir",
+    reciepe: {
+      Whiskey: "60ml",
+      Sugar: "10ml",
       "Angostura Bitters": "1 dash",
-      "Orange Bitters": "1 dash"
+      "Orange Bitters": "1 dash",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Whiskey",
+    nameCht: "往日情懷",
+    ingredients: ["Whiskey", "Sugar", "Bitters"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "Rusty Nail",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Rusty Nail",
+    method: "Stir",
+    reciepe: {
       "Scotch Whisky": "60ml",
-      "Drambuie": "15ml"
+      Drambuie: "15ml",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Whiskey",
+    nameCht: "鏽釘子",
+    ingredients: ["Whisky", "Drambuie"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Manhattan",
-    "method": "Stir",
-    "reciepe": {
-      "Whiskey": "50ml",
+    nameEng: "Manhattan",
+    method: "Stir",
+    reciepe: {
+      Whiskey: "50ml",
       "Rosso Vermouth": "20ml",
-      "Bitters": "1 dash"
+      Bitters: "1 dash",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "曼哈頓",
+    ingredients: ["Whiskey", "Rosso Vermouth", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Boulevardier",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Boulevardier",
+    method: "Stir",
+    reciepe: {
       "Boubon or Rye Whiskey": "40ml",
-      "Campari": "20ml",
-      "Rosso Vermouth": "20ml"
+      Campari: "20ml",
+      "Rosso Vermouth": "20ml",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Whiskey",
+    nameCht: "花花公子",
+    ingredients: ["Whiskey", "Campari", "Rosso Vermouth"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Old Pal",
-    "method": "Stir",
-    "reciepe": {
-      "Whiskey": "50ml",
-      "Campari": "20ml",
-      "Dry Vermouth": "20ml"
+    nameEng: "Old Pal",
+    method: "Stir",
+    reciepe: {
+      Whiskey: "50ml",
+      Campari: "20ml",
+      "Dry Vermouth": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "老朋友",
+    ingredients: ["Whiskey", "Campari", "Dry Vermouth"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "Tipperary",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Tipperary",
+    method: "Stir",
+    reciepe: {
       "Irish Whiskey": "50ml",
       "Rosso Vermouth": "25ml",
       "Green Chartreuse": "15ml",
       "Angostura Bitters": "2 dashes",
-      "Garnish": "Orange Peel"
+      Garnish: "Orange Peel",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "蒂珀雷里",
+    ingredients: ["Whiskey", "Rosso Vermouth", "Chartreuse", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "French 75",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "30ml",
-      "Lemon": "15ml",
-      "Sugar": "15ml",
-      "Champagne": "90ml"
+    nameEng: "French 75",
+    method: "Shake",
+    reciepe: {
+      Gin: "30ml",
+      Lemon: "15ml",
+      Sugar: "15ml",
+      Champagne: "90ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Gin",
+    nameCht: "法式75",
+    ingredients: ["Gin", "Lemon", "Sugar", "Champagne"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Gin Fizz",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "45ml",
-      "Lemon": "20ml",
-      "Sugar": "10ml",
-      "Soda Water": "90ml"
+    nameEng: "Gin Fizz",
+    method: "Shake",
+    reciepe: {
+      Gin: "45ml",
+      Lemon: "20ml",
+      Sugar: "10ml",
+      "Soda Water": "90ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Gin",
+    nameCht: "琴費士",
+    ingredients: ["Gin", "Lemon", "Sugar", "Soda"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Gin Buck",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
-      "Lemon": "20ml",
+    nameEng: "Gin Buck",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
+      Lemon: "20ml",
       "Ginger Syrup": "10ml",
       "Angostura Bitters": "2 dash",
       "Soda Water": "90ml",
-      "Garnish": "Lime twist"
+      Garnish: "Lime twist",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Gin",
+    nameCht: "琴霸克",
+    ingredients: ["Gin", "Ginger", "Lemon", "Sugar", "Soda"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Gin & Tonic",
-    "method": "Build",
-    "reciepe": {
-      "Gin": "45ml",
+    nameEng: "Gin & Tonic",
+    method: "Build",
+    reciepe: {
+      Gin: "45ml",
       "Tonic Water": "135ml",
-      "Lemon": "5ml"
+      Lemon: "5ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Gin",
+    nameCht: "琴通寧",
+    ingredients: ["gin", "tonic water"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Ramos Gin Fizz",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "45ml",
-      "Lemon": "30ml",
-      "Cream": "60ml",
+    nameEng: "Ramos Gin Fizz",
+    method: "Shake",
+    reciepe: {
+      Gin: "45ml",
+      Lemon: "30ml",
+      Cream: "60ml",
       "Egg white": "30ml",
-      "Sugar": "30ml",
+      Sugar: "30ml",
       "Orange Flower Water": "3 drops",
       "Vanilla Extract (Optional)": "2 drops",
-      "Soda": "to top"
+      Soda: "to top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Gin",
+    nameCht: "拉莫斯琴費士",
+    ingredients: [
+      "Gin",
+      "Lemon",
+      "Cream",
+      "Egg white",
+      "Sugar",
+      "Orange Flower Water",
+      "Soda",
+    ],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "20th Century",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "45ml",
-      "lillet": "10ml",
+    nameEng: "20th Century",
+    method: "Shake",
+    reciepe: {
+      Gin: "45ml",
+      lillet: "10ml",
       "white cacao": "10ml",
-      "lemon": "15ml"
+      lemon: "15ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "二十世紀",
+    ingredients: ["Gin", "lillet", "white cacao", "lemon"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Army & Navy",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Army & Navy",
+    method: "Shake",
+    reciepe: {
       "Gin ": "60ml",
-      "Lemon": "20ml",
-      "Orgeat": "15ml",
-      "Angostura bitters": "1 dash"
+      Lemon: "20ml",
+      Orgeat: "15ml",
+      "Angostura bitters": "1 dash",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Gin",
+    nameCht: "海陸之間",
+    ingredients: ["Gin", "Lemon", "Orgeat", "Bitters"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Hotel Georgia",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Hotel Georgia",
+    method: "Shake",
+    reciepe: {
       "Dry Gin ": "50ml",
-      "Lemon": "20ml",
-      "orgeat": "15ml",
+      Lemon: "20ml",
+      orgeat: "15ml",
       "Egg white": "15ml",
-      "Garnish": "Grated nutmeg",
+      Garnish: "Grated nutmeg",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Gin",
+    nameCht: "喬治亞旅店",
+    ingredients: ["Gin", "Lemon", "Orgeat", "Egg White"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Gimlet",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
-      "Sugar": "10ml",
-      "Lemon": "20ml"
+    nameEng: "Gimlet",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
+      Sugar: "10ml",
+      Lemon: "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "琴蕾",
+    ingredients: ["Gin", "Lemon", "Sugar"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Bee's Knees",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
-      "Honey": "15ml",
-      "Lemon": "20ml"
+    nameEng: "Bee's Knees",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
+      Honey: "15ml",
+      Lemon: "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "蜜蜂之膝",
+    ingredients: ["Gin", "Honey", "Lemon"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Clover Club",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
-      "Grenadine": "20ml",
-      "Lemon": "20ml",
-      "Egg White": "15ml"
+    nameEng: "Clover Club",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
+      Grenadine: "20ml",
+      Lemon: "20ml",
+      "Egg White": "15ml",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Gin",
+    nameCht: "三葉草俱樂部",
+    ingredients: ["Gin", "Grenadine", "Lemon", "Egg White"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Million Dollar",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "50ml",
+    nameEng: "Million Dollar",
+    method: "Shake",
+    reciepe: {
+      Gin: "50ml",
       "Rosso Vermouth": "25ml",
       "Pineapple Juice": "25ml",
-      "Grenadine": "5ml",
-      "Egg White": "30ml"
+      Grenadine: "5ml",
+      "Egg White": "30ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "百萬美元",
+    ingredients: [
+      "Gin",
+      "Rosso Vermouth",
+      "Pineapple",
+      "Grenadine",
+      "Egg White",
+    ],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Monkey Gland",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Monkey Gland",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Orange Juice": "20ml",
-      "Absinthe": "1 dash",
-      "Grenadine": "1 dash"
+      Absinthe: "1 dash",
+      Grenadine: "1 dash",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "猴子腺體",
+    ingredients: ["Gin", "Orange", "Absinthe", "Grenadine"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Singapore Sling",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "30ml",
-      "Cointreau": "7.5ml",
-      "Bénédictine": "7.5ml",
+    nameEng: "Singapore Sling",
+    method: "Shake",
+    reciepe: {
+      Gin: "30ml",
+      Cointreau: "7.5ml",
+      Bénédictine: "7.5ml",
       "Heering Cherry Liqueur": "15ml",
       "Pineapple Juice": "120ml",
-      "Lime": "15ml",
-      "Grenadine": "10ml",
-      "Angostura Bitters": "1 dash"
+      Lime: "15ml",
+      Grenadine: "10ml",
+      "Angostura Bitters": "1 dash",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Gin",
+    nameCht: "新加坡司令",
+    ingredients: [
+      "Gin",
+      "Cointreau",
+      "bénédictine",
+      "Cherry",
+      "Pineapple",
+      "Lime",
+      "Grenadine",
+      "Bitters",
+    ],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Yokohama",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "45ml",
-      "Vodka": "15ml",
+    nameEng: "Yokohama",
+    method: "Shake",
+    reciepe: {
+      Gin: "45ml",
+      Vodka: "15ml",
       "Orange Juice": "20ml",
-      "Grenadine": "10ml",
-      "Absinthe": "rinse"
+      Grenadine: "10ml",
+      Absinthe: "rinse",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "橫濱",
+    ingredients: ["Gin", "Vodka", "Orange", "Grenadine", "Absinthe"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Aviation",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Aviation",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Lemon Juice": "20ml",
-      "Maraschino": "15ml",
-      "Violet Liqueur": "5ml"
+      Maraschino: "15ml",
+      "Violet Liqueur": "5ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "飛行",
+    ingredients: ["Gin", "Maraschino", "Lemon", "Violet"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Bramble",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Bramble",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Lemon Juice": "20ml",
-      "Sugar": "1 tsp",
+      Sugar: "1 tsp",
       "Crème de Mûre": "15ml",
-      "Garnish": "fresh blackberry"
+      Garnish: "fresh blackberry",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Gin",
+    nameCht: "荊棘",
+    ingredients: ["Gin", "Lemon", "Sugar", "berries"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Casino",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
-      "Maraschino": "15ml",
+    nameEng: "Casino",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
+      Maraschino: "15ml",
       "Lemon Juice": "20ml",
       "Orange Bitters": "1 dash",
-      "Garnish": "orange peel & cherry"
+      Garnish: "orange peel & cherry",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "賭場",
+    ingredients: ["Gin", "Maraschino", "Lemon", "Bitters"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Corpse Reviver #2",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "22.5ml",
-      "Cointreau": "22.5ml",
-      "Lillet": "22.5ml",
+    nameEng: "Corpse Reviver #2",
+    method: "Shake",
+    reciepe: {
+      Gin: "22.5ml",
+      Cointreau: "22.5ml",
+      Lillet: "22.5ml",
       "Lemon Juice": "22.5ml",
-      "Absinthe": "Rinse"
+      Absinthe: "Rinse",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "亡者復甦二號",
+    ingredients: ["Gin", "Cointreau", "Lillet", "Lemon", "Absinthe"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Paradise",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "40ml",
+    nameEng: "Paradise",
+    method: "Shake",
+    reciepe: {
+      Gin: "40ml",
       "Apricot Brandy": "20ml",
-      "Orange Juice": "20ml"
+      "Orange Juice": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "天堂",
+    ingredients: ["Gin", "Apricot", "Orange"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Pegu Club",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Pegu Club",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Grand Marnier": "20ml",
       "Lime Juice": "20ml",
       "Angostura Bitters": "1 dash",
-      "Orange Bitters": "1 dash"
+      "Orange Bitters": "1 dash",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "勃固俱樂部",
+    ingredients: ["Gin", "Curacao", "lime", "bitters"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "White Lady",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "50ml",
-      "Cointreau": "20ml",
-      "Lemon Juice": "20ml"
+    nameEng: "White Lady",
+    method: "Shake",
+    reciepe: {
+      Gin: "50ml",
+      Cointreau: "20ml",
+      "Lemon Juice": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "白色佳人",
+    ingredients: ["Gin", "cointreau", "Lemon"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Angel Face",
-    "method": "Stir",
-    "reciepe": {
-      "Gin": "30ml",
-      "Calvados": "30ml",
-      "Apricot Brandy": "30ml"
+    nameEng: "Angel Face",
+    method: "Stir",
+    reciepe: {
+      Gin: "30ml",
+      Calvados: "30ml",
+      "Apricot Brandy": "30ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "天使之顏",
+    ingredients: ["Gin", "Apricot", "Calvados"],
+    show: false,
+    shots: 2.5,
   },
   {
-    "name": "Martinez",
-    "method": "Stir",
-    "reciepe": {
-      "Gin": "45ml",
+    nameEng: "Martinez",
+    method: "Stir",
+    reciepe: {
+      Gin: "45ml",
       "Rosso Vermouth": "45ml",
-      "Maraschino": "1 bar spoon",
+      Maraschino: "1 bar spoon",
       "Angostura Bitters": "2 dash",
-      "Garnish": "orange peel"
+      Garnish: "orange peel",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "馬丁尼茲",
+    ingredients: ["Gin", "Rosso Vermouth", "Maraschino", "Bitters"],
+    show: false,
+    shots: 2.5,
   },
   {
-    "name": "Hanky Panky",
-    "method": "Stir",
-    "reciepe": {
-      "Gin": "50ml",
+    nameEng: "Hanky Panky",
+    method: "Stir",
+    reciepe: {
+      Gin: "50ml",
       "Rosso Vermouth": "30ml",
-      "Fernet Branca": "7.5ml"
+      "Fernet Branca": "7.5ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "翻雲覆雨",
+    ingredients: ["Gin", "Rosso Vermouth", "Fernet Branca"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Last Word",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "30ml",
+    nameEng: "Last Word",
+    method: "Shake",
+    reciepe: {
+      Gin: "30ml",
       "Green Chartreuse": "20ml",
-      "Maraschino": "20ml",
-      "Lime Juice": "20ml"
-    },
-    "glass": "Martini"
-  },
-  {
-    "name": "Jasmine",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "50ml",
+      Maraschino: "20ml",
       "Lime Juice": "20ml",
-      "Cointreau": "20ml",
-      "Campari": "15ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "臨別一語",
+    ingredients: ["Gin", "Chartreuse", "Maraschino", "Lime"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Old Maid",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Jasmine",
+    method: "Shake",
+    reciepe: {
+      Gin: "50ml",
+      "Lime Juice": "20ml",
+      Cointreau: "20ml",
+      Campari: "15ml",
+    },
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "茉莉",
+    ingredients: ["Gin", "Cointreau", "Lime", "Campari"],
+    show: true,
+    shots: 2,
+  },
+  {
+    nameEng: "Old Maid",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Lime Juice": "30ml",
-      "Sugar": "15ml",
-      "Cucumber": "3 slice",
-      "Mint": "6-8 Spring",
+      Sugar: "15ml",
+      Cucumber: "3 slice",
+      Mint: "6-8 Spring",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Gin",
+    nameCht: "老姑娘",
+    ingredients: ["Gin", "Lime", "Sugar", "Cucumber", "Mint"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Martini",
-    "method": "Stir",
-    "reciepe": {
-      "Gin": "75ml",
-      "Dry Vermouth": "15ml"
-    },
-    "glass": "Martini"
-  },
-  {
-    "name": "Negroni",
-    "method": "Stir",
-    "reciepe": {
-      "Gin": "40ml",
-      "Campari": "20ml",
-      "Rosso Vermouth": "20ml"
-    },
-    "glass": "Lowball"
-  },
-  {
-    "name": "White Negroni",
-    "method": "Stir",
-    "reciepe": {
-      "Gin": "40ml",
-      "Suze": "20ml",
-      "Lillet": "20ml"
-    },
-    "glass": "Lowball"
-  },
-  {
-    "name": "Tuxedo",
-    "method": "Stir",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Martini",
+    method: "Stir",
+    reciepe: {
+      Gin: "75ml",
       "Dry Vermouth": "15ml",
-      "Maraschino": "1 bar spoon",
-      "Absinthe": "0.5 bar spoon",
-      "Orange Bitters": "3 dash"
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "馬丁尼",
+    ingredients: ["Gin", "Dry Vermouth"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "Vesper",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "45ml",
-      "Vodka": "15ml",
-      "Lillet": "10ml",
-      "Garnish": "lime peel"
+    nameEng: "Negroni",
+    method: "Stir",
+    reciepe: {
+      Gin: "40ml",
+      Campari: "20ml",
+      "Rosso Vermouth": "20ml",
     },
-    "glass": "Martini"
+    glass: "Lowball",
+    category: "Gin",
+    nameCht: "內格羅尼",
+    ingredients: ["Gin", "Campari", "Rosso Vermouth"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Dark 'N' Stormy",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "White Negroni",
+    method: "Stir",
+    reciepe: {
+      Gin: "40ml",
+      Suze: "20ml",
+      Lillet: "20ml",
+    },
+    glass: "Lowball",
+    category: "Gin",
+    nameCht: "白色內格羅尼",
+    ingredients: ["Gin", "Suze", "Lillet"],
+    show: false,
+    shots: 3,
+  },
+  {
+    nameEng: "Tuxedo",
+    method: "Stir",
+    reciepe: {
+      Gin: "60ml",
+      "Dry Vermouth": "15ml",
+      Maraschino: "1 bar spoon",
+      Absinthe: "0.5 bar spoon",
+      "Orange Bitters": "3 dash",
+    },
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "燕尾服",
+    ingredients: ["Gin", "Dry Vermouth", "Maraschino", "Absinthe", "Bitters"],
+    show: false,
+    shots: 3,
+  },
+  {
+    nameEng: "Vesper",
+    method: "Shake",
+    reciepe: {
+      Gin: "45ml",
+      Vodka: "15ml",
+      Lillet: "10ml",
+      Garnish: "lime peel",
+    },
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "薇絲朋",
+    ingredients: ["Gin", "Vodka", "Lillet"],
+    show: true,
+    shots: 3,
+  },
+  {
+    nameEng: "Dark 'N' Stormy",
+    method: "Shake",
+    reciepe: {
       "Dark Rum": "60ml",
       "Ginger Syrup": "20ml",
-      "Soda": "to top"
+      Soda: "to top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Rum",
+    nameCht: "月黑風高",
+    ingredients: ["Rum", "Ginger", "Soda"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Mojito",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Mojito",
+    method: "Shake",
+    reciepe: {
       "White Rum": "40ml",
       "Lime Juice": "20ml",
-      "Mint": "6-8 springs",
-      "Sugar": "10ml",
-      "Soda": "tp top"
+      Mint: "6-8 springs",
+      Sugar: "10ml",
+      Soda: "tp top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Rum",
+    nameCht: "莫希托",
+    ingredients: ["Rum", "Lime", "Mint", "Sugar", "Soda"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Painkiller",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Painkiller",
+    method: "Shake",
+    reciepe: {
       "Dark Rum": "60ml",
       "Pineapple Juice": "120ml",
       "Orange Juice": "30ml",
       "Coconut Milk": "30ml",
-      "Garnish": "orange slice & cherry & 肉荳蔻粉"
+      Garnish: "orange slice & cherry & 肉荳蔻粉",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Rum",
+    nameCht: "止痛藥",
+    ingredients: ["Rum", "Pineapple", "Orange", "Coconut milk"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Pina Colada",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Pina Colada",
+    method: "Shake",
+    reciepe: {
       "White Rum": "30ml",
       "Pineapple Juice": "90ml",
       "Coconut Milk": "30ml",
       "Lemon Juice": "15ml",
-      "Sugar": "20ml"
+      Sugar: "20ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Rum",
+    nameCht: "鳳梨可樂達",
+    ingredients: ["Rum", "Coconut milk", "Pineapple"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Daiquiri",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Daiquiri",
+    method: "Shake",
+    reciepe: {
       "White Rum": "60ml",
       "Lemon Juice": "20ml",
-      "Sugar": "15ml"
+      Sugar: "15ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Rum",
+    nameCht: "黛綺莉",
+    ingredients: ["Rum", "Lime", "Sugar"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Hemingway Special",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Hemingway Special",
+    method: "Shake",
+    reciepe: {
       "White Rum": "60ml",
-      "Grapefruit": "10ml",
-      "Maraschino": "5ml",
-      "Lime Juice": "20ml"
+      Grapefruit: "10ml",
+      Maraschino: "5ml",
+      "Lime Juice": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Rum",
+    nameCht: "海明威特調",
+    ingredients: ["Rum", "Grapefruit", "Maraschino", "Lime"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "X.Y.Z.",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "X.Y.Z.",
+    method: "Shake",
+    reciepe: {
       "White Rum": "50ml",
-      "Cointreau": "20ml",
+      Cointreau: "20ml",
       "Lemon Juice": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Rum",
+    nameCht: "末調",
+    ingredients: ["rum", "cointreau", "lemon"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Hurricane",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Hurricane",
+    method: "Shake",
+    reciepe: {
       "White Rum": "30ml",
       "Dark Rum": "60ml",
       "Lime Juice": "30ml",
       "Orange Juice": "30ml",
       "Passionfruit Syrup": "30ml",
-      "Grenadine": "1 tsp",
-      "Garnish": "cherry"
+      Grenadine: "1 tsp",
+      Garnish: "cherry",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Rum",
+    nameCht: "颶風",
+    ingredients: [
+      "Rum",
+      "Passionfruit",
+      "Orange",
+      "Lime",
+      "Grenadine",
+      "Sugar",
+    ],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Jungle Bird",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Jungle Bird",
+    method: "Shake",
+    reciepe: {
       "Dark Rum": "30ml",
-      "Campari": "30ml",
+      Campari: "30ml",
       "Pineapple Juice": "90ml",
       "Lime Juice": "15ml",
-      "Sugar": "15ml"
+      Sugar: "15ml",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Rum",
+    nameCht: "叢林鳥",
+    ingredients: ["Rum", "Pineapple", "Campari", "lime", "Sugar"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Mai-Tai",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Mai-Tai",
+    method: "Shake",
+    reciepe: {
       "White Rum": "30ml",
       "Dark Rum": "30ml",
-      "Curacao": "15ml",
-      "Orgeat": "15ml",
-      "Lime Juice": "15ml"
+      Curacao: "15ml",
+      Orgeat: "15ml",
+      "Lime Juice": "15ml",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Rum",
+    nameCht: "邁泰",
+    ingredients: ["Rum", "Curacao", "Orgeat", "Lime", "Sugar"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Mary Pickford",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Mary Pickford",
+    method: "Shake",
+    reciepe: {
       "White Rum": "45ml",
       "Pineapple Juice": "45ml",
-      "Maraschino": "7.5ml",
-      "Grenadine": "5ml"
+      Maraschino: "7.5ml",
+      Grenadine: "5ml",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Rum",
+    nameCht: "瑪麗·畢克馥",
+    ingredients: ["Rum", "Pineapple", "Maraschino", "Grenadine"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Barracuda",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Barracuda",
+    method: "Shake",
+    reciepe: {
       "Gold Rum": "45ml",
-      "Galliano": "15ml",
+      Galliano: "15ml",
       "Pineapple Juice": "60ml",
       "Lime Juice": "1 dash",
-      "Prosecco": "to top"
+      Prosecco: "to top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Rum",
+    nameCht: "梭子魚",
+    ingredients: ["Rum", "Galliano", "Pineapple", "Lime", "Prosecco"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Old Cuban",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Old Cuban",
+    method: "Shake",
+    reciepe: {
       "Dark Rum": "45ml",
       "Lime Juice": "25ml",
-      "Sugar": "15ml",
+      Sugar: "15ml",
       "Angostura Bitters": "2 dash",
-      "Mint": "6-8 string",
-      "Prosecco": "15ml"
+      Mint: "6-8 string",
+      Prosecco: "15ml",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Rum",
+    nameCht: "老古巴人",
+    ingredients: ["Rum", "Lime", "Mint", "Sugar", "Bitters", "Prosecco"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Yellow Bird",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Yellow Bird",
+    method: "Shake",
+    reciepe: {
       "White Rum": "40ml",
-      "Galliano": "20ml",
-      "Cointreau": "20ml",
-      "Lime Juice": "20ml"
+      Galliano: "20ml",
+      Cointreau: "20ml",
+      "Lime Juice": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Rum",
+    nameCht: "黃色鳥",
+    ingredients: ["Rum", "Galliano", "cointreau", "Lime"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "El Presidente",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "El Presidente",
+    method: "Stir",
+    reciepe: {
       "White Rum": "50ml",
       "Dry Vermouth": "30ml",
-      "Curacao": "10ml",
-      "Grenadine": "5ml",
-      "Bitters": "3 drop"
+      Curacao: "10ml",
+      Grenadine: "5ml",
+      Bitters: "3 drop",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Rum",
+    nameCht: "大總統",
+    ingredients: ["Rum", "Dry Vermouth", "cointreau", "Grenadine", "Bitters"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "Sea Breeze",
-    "method": "Build",
-    "reciepe": {
-      "Vodka": "45ml",
-      "Cranberry": "90ml",
-      "Grapefruit": "30ml"
+    nameEng: "Sea Breeze",
+    method: "Build",
+    reciepe: {
+      Vodka: "45ml",
+      Cranberry: "90ml",
+      Grapefruit: "30ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Vodka",
+    nameCht: "海風",
+    ingredients: ["Vodka", "Cranberry", "Grapefruit"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Moscow Mule",
-    "method": "Build",
-    "reciepe": {
-      "Vodka": "40ml",
+    nameEng: "Moscow Mule",
+    method: "Build",
+    reciepe: {
+      Vodka: "40ml",
       "Ginger Syrup": "20ml",
       "Lemon Juice": "15ml",
-      "Soda": "to top",
-      "Garnish": "Lemon weige"
+      Soda: "to top",
+      Garnish: "Lemon weige",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Vodka",
+    nameCht: "莫斯科驢子",
+    ingredients: ["Vodka", "Ginger", "Soda", "Lime"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Chi Chi",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "30ml",
+    nameEng: "Chi Chi",
+    method: "Shake",
+    reciepe: {
+      Vodka: "30ml",
       "Lemon Juice": "15ml",
       "Coconut Milk": "45ml",
       "Pineapple Juice": "60ml",
-      "Garnish": "Umbrella"
+      Garnish: "Umbrella",
     },
-    "glass": "Hurricane"
+    glass: "Hurricane",
+    category: "Vodka",
+    nameCht: "奇奇",
+    ingredients: ["Vodka", "Lemon", "Coconut milk", "Pineapple"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Vodka Lime",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "60ml",
+    nameEng: "Vodka Lime",
+    method: "Shake",
+    reciepe: {
+      Vodka: "60ml",
       "Lemon Juice": "20ml",
-      "Sugar": "15ml",
-      "Garnish": "Lemon weige"
+      Sugar: "15ml",
+      Garnish: "Lemon weige",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Vodka",
+    nameCht: "大人版冰火",
+    ingredients: ["vodka", "lemon", "sugar"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Espresso Martini",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "40ml",
+    nameEng: "Espresso Martini",
+    method: "Shake",
+    reciepe: {
+      Vodka: "40ml",
       "Coffee Liqiuor": "20ml",
-      "Espresso": "30ml"
+      Espresso: "30ml",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Vodka",
+    nameCht: "咖啡馬丁尼",
+    ingredients: ["Vodka", "espresso"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Cosmopolitan",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "40ml",
-      "Cointreau": "15ml",
+    nameEng: "Cosmopolitan",
+    method: "Shake",
+    reciepe: {
+      Vodka: "40ml",
+      Cointreau: "15ml",
       "Lime Juice": "15ml",
-      "Cranberry": "30ml",
-      "Garnish": "Cherry & Lemon Peel"
+      Cranberry: "30ml",
+      Garnish: "Cherry & Lemon Peel",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Vodka",
+    nameCht: "柯夢波丹",
+    ingredients: ["Vodka", "Cointreau", "Lime", "Cranberry"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "French Martini",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "50ml",
-      "Raspberry": "10ml",
-      "Pineapple Juice": "40ml"
+    nameEng: "French Martini",
+    method: "Shake",
+    reciepe: {
+      Vodka: "50ml",
+      Raspberry: "10ml",
+      "Pineapple Juice": "40ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Vodka",
+    nameCht: "法式馬丁尼",
+    ingredients: ["Vodka", "Raspberry", "Pineapple"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Lemon Drop Martini",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "45ml",
-      "cointreau": "15ml",
-      "Lemon": "30ml",
-      "Limoncello": "30ml"
+    nameEng: "Lemon Drop Martini",
+    method: "Shake",
+    reciepe: {
+      Vodka: "45ml",
+      cointreau: "15ml",
+      Lemon: "30ml",
+      Limoncello: "30ml",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Vodka",
+    nameCht: "檸檬糖馬丁尼",
+    ingredients: ["Vodka", "cointreau", "Lemon", "sugar"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Russian Spring Punch",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "25ml",
+    nameEng: "Russian Spring Punch",
+    method: "Shake",
+    reciepe: {
+      Vodka: "25ml",
       "Lemon Juice": "25ml",
-      "Cassis": "15ml",
-      "Sugar": "10ml",
-      "Sparkling Wine": "To top"
+      Cassis: "15ml",
+      Sugar: "10ml",
+      "Sparkling Wine": "To top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Vodka",
+    nameCht: "俄羅斯之春潘趣",
+    ingredients: ["Vodka", "Lemon", "Cassis", "Sugar", "Sparkling wine"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Black Russian",
-    "method": "Build",
-    "reciepe": {
-      "Vodka": "50ml",
-      "Coffee Liquor": "20ml"
-    },
-    "glass": "Lowball"
-  },
-  {
-    "name": "White Russian",
-    "method": "Build",
-    "reciepe": {
-      "Vodka": "50ml",
+    nameEng: "Black Russian",
+    method: "Build",
+    reciepe: {
+      Vodka: "50ml",
       "Coffee Liquor": "20ml",
-      "Cream": "20ml"
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Vodka",
+    nameCht: "黑色俄羅斯",
+    ingredients: ["Vodka", "coffee"],
+    show: true,
+    shots: 2.5,
   },
   {
-    "name": "Colorado Bulldog",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "40ml",
+    nameEng: "White Russian",
+    method: "Build",
+    reciepe: {
+      Vodka: "50ml",
       "Coffee Liquor": "20ml",
-      "Cream": "20ml",
-      "Cola": "to top"
+      Cream: "20ml",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Vodka",
+    nameCht: "白色俄羅斯",
+    ingredients: ["Vodka", "coffee", "Cream"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "God Mother",
-    "method": "Stir",
-    "reciepe": {
-      "Vodka": "50ml",
-      "Amaretto": "20ml"
+    nameEng: "Colorado Bulldog",
+    method: "Shake",
+    reciepe: {
+      Vodka: "40ml",
+      "Coffee Liquor": "20ml",
+      Cream: "20ml",
+      Cola: "to top",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Vodka",
+    nameCht: "克羅拉多鬥牛犬",
+    ingredients: ["Vodka", "Coffee", "Cream", "Cola"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Silver Wing",
-    "method": "Stir",
-    "reciepe": {
-      "Vodka": "50ml",
-      "Cointreau": "20ml",
-      "Dry Vermouth": "20ml"
+    nameEng: "God Mother",
+    method: "Stir",
+    reciepe: {
+      Vodka: "50ml",
+      Amaretto: "20ml",
     },
-    "glass": "Martini"
+    glass: "Lowball",
+    category: "Vodka",
+    nameCht: "教母",
+    ingredients: ["Vodka", "amaretto"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Kamikaze",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "40ml",
-      "Cointreau": "20ml",
-      "Lemon Juice": "20ml"
+    nameEng: "Silver Wing",
+    method: "Stir",
+    reciepe: {
+      Vodka: "50ml",
+      Cointreau: "20ml",
+      "Dry Vermouth": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Vodka",
+    nameCht: "銀色羽翼",
+    ingredients: ["Vodka", "cointreau", "dry vermouth"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "High Life",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "45ml",
-      "Cointreau": "10ml",
+    nameEng: "Kamikaze",
+    method: "Shake",
+    reciepe: {
+      Vodka: "40ml",
+      Cointreau: "20ml",
+      "Lemon Juice": "20ml",
+    },
+    glass: "Martini",
+    category: "Vodka",
+    ingredients: ["Vodka", "cointreau", "Lemon"],
+    show: true,
+    shots: 2,
+  },
+  {
+    nameEng: "High Life",
+    method: "Shake",
+    reciepe: {
+      Vodka: "45ml",
+      Cointreau: "10ml",
       "Pineapple Juice": "45ml",
-      "Egg White": "30ml"
+      "Egg White": "30ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Vodka",
+    nameCht: "上流社會",
+    ingredients: ["Vodka", "Cointreau", "Pineapple", "Egg White"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Blue Monday",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "60ml",
-      "Cointreau": "20ml",
+    nameEng: "Blue Monday",
+    method: "Shake",
+    reciepe: {
+      Vodka: "60ml",
+      Cointreau: "20ml",
       "Blue Curacao": "1 tsp",
-      "Orange Bitters": "2 dash"
+      "Orange Bitters": "2 dash",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Vodka",
+    nameCht: "藍色星期一",
+    ingredients: ["Vodka", "Cointreau", "Blue Curacao", "Bitters"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Pornstar Martini",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "45ml",
+    nameEng: "Pornstar Martini",
+    method: "Shake",
+    reciepe: {
+      Vodka: "45ml",
       "Passion Fruit Liquor": "15ml",
       "Passion Fruit Juice": "30ml",
       "Lime Juice": "15ml",
       "Vanilla Syrup": "15ml",
-      "Prosecco": "1 shot",
-      "Garnish": "Half of Passion Fruit"
+      Prosecco: "1 shot",
+      Garnish: "Half of Passion Fruit",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Vodka",
+    nameCht: "豔星馬丁尼",
+    ingredients: ["Vodka", "passionfruit", "Lime", "Vanilla", "Prosecco"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "After Midnight",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "60ml",
+    nameEng: "After Midnight",
+    method: "Shake",
+    reciepe: {
+      Vodka: "60ml",
       "White Cacao": "15ml",
-      "Green Crème De Menthe": "15ml"
+      "Green Crème De Menthe": "15ml",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Vodka",
+    nameCht: "午夜酒",
+    ingredients: ["Vodka", "White Cacao", "Green Crème De Menthe"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Horse's Neck",
-    "method": "Build",
-    "reciepe": {
-      "Brandy": "60ml",
+    nameEng: "Horse's Neck",
+    method: "Build",
+    reciepe: {
+      Brandy: "60ml",
       "Ginger Syrup": "20ml",
-      "Soda": "100ml",
+      Soda: "100ml",
       "Angostura Bitters": "1 dash",
-      "Garnish": "Long Lemon Peel"
+      Garnish: "Long Lemon Peel",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Brandy",
+    nameCht: "馬頸",
+    ingredients: ["Brandy", "Ginger", "Soda", "Bitters"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Brandy Alexander",
-    "method": "Shake",
-    "reciepe": {
-      "Brandy": "45ml",
-      "Cacao": "30ml",
-      "Cream": "30ml",
-      "Garnish": "grated nutmeg"
+    nameEng: "Alexander",
+    method: "Shake",
+    reciepe: {
+      Brandy: "45ml",
+      Cacao: "30ml",
+      Cream: "30ml",
+      Garnish: "grated nutmeg",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Brandy",
+    nameCht: "亞歷山大",
+    ingredients: ["Brandy", "Cacao", "Cream"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Between the Sheets",
-    "method": "Shake",
-    "reciepe": {
-      "Brandy": "30ml",
+    nameEng: "Between the Sheets",
+    method: "Shake",
+    reciepe: {
+      Brandy: "30ml",
       "White Rum": "30ml",
-      "cointreau": "15ml",
-      "Lemon": "15ml"
+      cointreau: "15ml",
+      Lemon: "15ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Brandy",
+    nameCht: "床笫之間",
+    ingredients: ["Brandy", "Rum", "cointreau", "Lemon"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Brandy Crusta",
-    "method": "Shake",
-    "reciepe": {
-      "Brandy": "60ml",
-      "Curacao": "10ml",
+    nameEng: "Brandy Crusta",
+    method: "Shake",
+    reciepe: {
+      Brandy: "60ml",
+      Curacao: "10ml",
       "Lemon Juice": "10ml",
-      "Maraschino": "10ml",
+      Maraschino: "10ml",
       "Angostura Bitters": "1 dash",
-      "Garnish": "Lemon peel & Sugar"
+      Garnish: "Lemon peel & Sugar",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Brandy",
+    nameCht: "白蘭地庫斯塔",
+    ingredients: [
+      "Brandy",
+      "Maraschino",
+      "Curacao",
+      "Lemon",
+      "Sugar",
+      "Bitters",
+    ],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Porto Flip",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Porto Flip",
+    method: "Shake",
+    reciepe: {
       "Red Tawny Port Wine": "45ml",
-      "Brandy": "15ml",
+      Brandy: "15ml",
       "Egg Yolk": "10ml",
-      "Garnish": "ground nutmeg"
+      Garnish: "ground nutmeg",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Else",
+    nameCht: "波特菲麗普",
+    ingredients: ["Port Wine", "Brandy", "Egg Yolk"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Sidecar",
-    "method": "Shake",
-    "reciepe": {
-      "Brandy": "50ml",
-      "Cointreau": "20ml",
-      "Lemon Juice": "20ml"
+    nameEng: "Sidecar",
+    method: "Shake",
+    reciepe: {
+      Brandy: "50ml",
+      Cointreau: "20ml",
+      "Lemon Juice": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Brandy",
+    nameCht: "側車",
+    ingredients: ["Brandy", "cointreau", "Lemon"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Stinger",
-    "method": "Stir",
-    "reciepe": {
-      "Brandy": "50ml",
-      "White Crème De Menthe": "20ml"
+    nameEng: "Stinger",
+    method: "Stir",
+    reciepe: {
+      Brandy: "50ml",
+      "White Crème De Menthe": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Brandy",
+    nameCht: "毒刺",
+    ingredients: ["Brandy", "white crème de menthe"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "B and B",
-    "method": "Stir",
-    "reciepe": {
-      "Brandy": "50ml",
-      "Bénédictine": "20ml"
+    nameEng: "B and B",
+    method: "Stir",
+    reciepe: {
+      Brandy: "50ml",
+      Bénédictine: "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Brandy",
+    nameCht: "B&B",
+    ingredients: ["Brandy", "bénédictine"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "French Connection",
-    "method": "Stir",
-    "reciepe": {
-      "Brandy": "50ml",
-      "Amaretto": "20ml"
+    nameEng: "French Connection",
+    method: "Stir",
+    reciepe: {
+      Brandy: "50ml",
+      Amaretto: "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Brandy",
+    nameCht: "霹靂神探",
+    ingredients: ["Brandy", "Amaretto"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Sazerac",
-    "method": "Stir",
-    "reciepe": {
-      "Brandy": "60ml",
-      "Absinthe": "rinse",
-      "Sugar": "10ml",
-      "Bitters": "1 dash"
+    nameEng: "Sazerac",
+    method: "Stir",
+    reciepe: {
+      Brandy: "60ml",
+      Absinthe: "rinse",
+      Sugar: "10ml",
+      Bitters: "1 dash",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Brandy",
+    nameCht: "賽澤瑞克",
+    ingredients: ["Brandy", "Absinthe", "Sugar", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Vieux Carrè",
-    "method": "Stir",
-    "reciepe": {
-      "Brandy": "30ml",
+    nameEng: "Vieux Carrè",
+    method: "Stir",
+    reciepe: {
+      Brandy: "30ml",
       "Rye Whiskey": "30ml",
       "Rosso Vermouth": "30ml",
-      "bénédictine": "1 tsp",
+      bénédictine: "1 tsp",
       "Angostura Bitters": "1 dash",
-      "Orange Bitters": "1 dash"
+      "Orange Bitters": "1 dash",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Brandy",
+    nameCht: "老廣場",
+    ingredients: [
+      "Brandy",
+      "Whiskey",
+      "Rosso Vermouth",
+      "bénédictine",
+      "Bitters",
+    ],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Tequila Sunrise",
-    "method": "Build",
-    "reciepe": {
-      "Tequila": "40ml",
+    nameEng: "Tequila Sunrise",
+    method: "Build",
+    reciepe: {
+      Tequila: "40ml",
       "Orange Juice": "120ml",
-      "Grenadine": "1 tsp"
+      Grenadine: "1 tsp",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Tequila",
+    nameCht: "龍舌蘭日出",
+    ingredients: ["Tequila", "Orange", "Grenadine"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Paloma",
-    "method": "Shake",
-    "reciepe": {
-      "Tequila": "60ml",
-      "Grapefruit": "20ml",
+    nameEng: "Paloma",
+    method: "Shake",
+    reciepe: {
+      Tequila: "60ml",
+      Grapefruit: "20ml",
       "Lime Juice": "15ml",
-      "Soda": "Top",
-      "Salt": "1 pinch"
+      Soda: "Top",
+      Salt: "1 pinch",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Tequila",
+    nameCht: "帕洛瑪",
+    ingredients: ["Tequila", "Grapefruit", "lime", "Soda"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Margarita",
-    "method": "Shake",
-    "reciepe": {
-      "Tequila": "50ml",
-      "Cointreau": "20ml",
-      "Lime Juice": "20ml"
+    nameEng: "Margarita",
+    method: "Shake",
+    reciepe: {
+      Tequila: "50ml",
+      Cointreau: "20ml",
+      "Lime Juice": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Tequila",
+    nameCht: "瑪格麗特",
+    ingredients: ["Tequila", "cointreau", "Lime"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Mocking Bird",
-    "method": "Shake",
-    "reciepe": {
-      "Tequila": "60ml",
+    nameEng: "Mocking Bird",
+    method: "Shake",
+    reciepe: {
+      Tequila: "60ml",
       "Lime Juice": "15ml",
-      "Sugar": "15ml",
-      "Green Crème De Menthe": "5ml"
+      Sugar: "15ml",
+      "Green Crème De Menthe": "5ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Tequila",
+    nameCht: "仿聲鳥",
+    ingredients: ["Tequila", "green crème de menthe", "Lime", "sugar"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Tommy's Margarita",
-    "method": "Shake",
-    "reciepe": {
-      "Tequila": "60ml",
+    nameEng: "Tommy's Margarita",
+    method: "Shake",
+    reciepe: {
+      Tequila: "60ml",
       "Lime Juice": "30ml",
       "Agave Syrup": "15ml",
-      "Garnish": "Lime Slice"
+      Garnish: "Lime Slice",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Tequila",
+    nameCht: "湯米瑪格麗特",
+    ingredients: ["Tequila", "Lime", "Agave Syrup"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Rosita",
-    "method": "Stir",
-    "reciepe": {
-      "Tequila": "40ml",
-      "Campari": "20ml",
+    nameEng: "Rosita",
+    method: "Stir",
+    reciepe: {
+      Tequila: "40ml",
+      Campari: "20ml",
       "Rosso Vermouth": "20ml",
-      "Garnish": "Orange Peel"
+      Garnish: "Orange Peel",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Tequila",
+    nameCht: "蘿西塔",
+    ingredients: ["Tequila", "Campari", "Rosso Vermouth"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Americano",
-    "method": "Build",
-    "reciepe": {
-      "Campari": "30ml",
+    nameEng: "Americano",
+    method: "Build",
+    reciepe: {
+      Campari: "30ml",
       "Rosso Vermouth": "30ml",
-      "Soda": "to top"
+      Soda: "to top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Else",
+    nameCht: "美國佬",
+    ingredients: ["Campari", "Rosso Vermouth", "Soda"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Bellini",
-    "method": "Build",
-    "reciepe": {
-      "Prosecco": "100ml",
-      "White Peach Puree": "50ml"
+    nameEng: "Bellini",
+    method: "Build",
+    reciepe: {
+      Prosecco: "100ml",
+      "White Peach Puree": "50ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Else",
+    nameCht: "貝里尼",
+    ingredients: ["Prosecco", "White Peach"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "KIR",
-    "method": "Build",
-    "reciepe": {
+    nameEng: "KIR",
+    method: "Build",
+    reciepe: {
       "Dry White Wine": "90ml",
-      "Crème de Cassis": "10ml"
+      "Crème de Cassis": "10ml",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Else",
+    nameCht: "基爾",
+    ingredients: ["White Wine", "Cassis"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Mimosa",
-    "method": "Build",
-    "reciepe": {
-      "Prosecco": "90ml",
-      "Orange Juice": "90ml"
+    nameEng: "Mimosa",
+    method: "Build",
+    reciepe: {
+      Prosecco: "90ml",
+      "Orange Juice": "90ml",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Else",
+    nameCht: "含羞草",
+    ingredients: ["Orange", "Prosecco"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Fernandito",
-    "method": "Build",
-    "reciepe": {
+    nameEng: "Fernandito",
+    method: "Build",
+    reciepe: {
       "Fernet Branca": "50ml",
-      "Cola": "to top"
+      Cola: "to top",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Else",
+    nameCht: "費爾南迪托",
+    ingredients: ["Fernet Branca", "Cola"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Aperol Spritz",
-    "method": "Build",
-    "reciepe": {
-      "Prosecco": "90ml",
-      "Aperol": "60ml",
-      "Soda": "30ml"
+    nameEng: "Aperol Spritz",
+    method: "Build",
+    reciepe: {
+      Prosecco: "90ml",
+      Aperol: "60ml",
+      Soda: "30ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
   },
   {
-    "name": "Spumoni",
-    "method": "Shake",
-    "reciepe": {
-      "Campari": "20ml",
-      "Grapefruit": "20ml",
-      "Tonic Water": "to top"
+    nameEng: "Spumoni",
+    method: "Shake",
+    reciepe: {
+      Campari: "20ml",
+      Grapefruit: "20ml",
+      "Tonic Water": "to top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Else",
+    nameCht: "泡泡",
+    ingredients: ["campari", "grapefruit", "tonic water"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Champagne Cocktail",
-    "method": "Build",
-    "reciepe": {
-      "Champagne": "to top",
+    nameEng: "Champagne Cocktail",
+    method: "Build",
+    reciepe: {
+      Champagne: "to top",
       "Angostura Bitters": "2 - 4 dash",
-      "Sugar Cube": "1"
+      "Sugar Cube": "1",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Else",
+    nameCht: "香檳雞尾酒",
+    ingredients: ["Champagne", "Bitters", "Sugar"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Grasshopper",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Grasshopper",
+    method: "Shake",
+    reciepe: {
       "White Cacao": "30ml",
       "Green Crème De Menthe": "30ml",
-      "Cream": "30ml"
+      Cream: "30ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "綠色蚱蜢",
+    ingredients: ["White Cacao", "green crème de menthe", "Cream"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Sex on the Beach",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "45ml",
+    nameEng: "Sex on the Beach",
+    method: "Shake",
+    reciepe: {
+      Vodka: "45ml",
       "Peach Schnapps": "15ml",
       "Orange Juice": "45ml",
       "Cranberry Juice": "45ml",
-      "Garnish": "umbrella"
+      Garnish: "umbrella",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Else",
+    nameCht: "性感海灘",
+    ingredients: ["Vodka", "Peach Schnapps", "Orange", "Cranberry"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Caipirinha",
-    "method": "Build",
-    "reciepe": {
-      "Cachaça": "50ml",
+    nameEng: "Caipirinha",
+    method: "Build",
+    reciepe: {
+      Cachaça: "50ml",
       "Lime Juice": "10ml",
-      "Sugar": "10ml"
+      Sugar: "10ml",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Else",
+    nameCht: "卡琵莉亞",
+    ingredients: ["Cachaça", "Lime", "Sugar"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Golden Dream",
-    "method": "Shake",
-    "reciepe": {
-      "Galliano": "45ml",
-      "Cointreau": "20ml",
+    nameEng: "Golden Dream",
+    method: "Shake",
+    reciepe: {
+      Galliano: "45ml",
+      Cointreau: "20ml",
       "Orange Juice": "20ml",
-      "Cream": "10ml"
+      Cream: "10ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "金色夢想",
+    ingredients: ["Galliano", "cointreau", "Orange", "Cream"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Illegal",
-    "method": "Shake",
-    "reciepe": {
-      "Mezcal": "30ml",
+    nameEng: "Illegal",
+    method: "Shake",
+    reciepe: {
+      Mezcal: "30ml",
       "Jamaican Overproof White Rum": "15ml",
-      "Falernum": "15ml",
-      "Maraschino": "1 tsp",
+      Falernum: "15ml",
+      Maraschino: "1 tsp",
       "Lime Juice": "20ml",
-      "Sugar": "15ml",
-      "Egg White": "10ml"
+      Sugar: "15ml",
+      "Egg White": "10ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "非法",
+    ingredients: [
+      "Mezcal",
+      "Rum",
+      "Falernum",
+      "Maraschino",
+      "Lime",
+      "Sugar",
+      "Egg White",
+    ],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Long Island Iced Tea",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "15ml",
-      "Tequila": "15ml",
-      "Rum": "15ml",
-      "Gin": "15ml",
-      "Cointreau": "15ml",
+    nameEng: "Long Island Iced Tea",
+    method: "Shake",
+    reciepe: {
+      Vodka: "15ml",
+      Tequila: "15ml",
+      Rum: "15ml",
+      Gin: "15ml",
+      Cointreau: "15ml",
       "Lemon Juice": "25ml",
-      "Sugar": "20ml",
-      "Cola": "to top"
+      Sugar: "20ml",
+      Cola: "to top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Else",
+    nameCht: "長島冰茶",
+    ingredients: [
+      "Vodka",
+      "Tequila",
+      "Rum",
+      "Gin",
+      "Cointreau",
+      "Lemon",
+      "Sugar",
+      "Cola",
+    ],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Naked and Famous",
-    "method": "Shake",
-    "reciepe": {
-      "Mezcal": "25ml",
+    nameEng: "Naked and Famous",
+    method: "Shake",
+    reciepe: {
+      Mezcal: "25ml",
       "Yellow Chartreuse": "25ml",
-      "Aperol": "25ml",
-      "Lime Juice": "25ml"
+      Aperol: "25ml",
+      "Lime Juice": "25ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "一脫成名",
+    ingredients: ["Mezcal", "Yellow Chartreuse", "Aperol", "Lime"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Suffering Bastard",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Suffering Bastard",
+    method: "Shake",
+    reciepe: {
       "Bourbon Whisky": "30ml",
-      "Gin": "30ml",
+      Gin: "30ml",
       "Lime Juice": "15ml",
       "Angostura Bitters": "2 dash",
       "Ginger Sytup": "20ml",
-      "Soda": "to top",
+      Soda: "to top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Whiskey",
+    nameCht: "受苦混蛋",
+    ingredients: ["Whiskey", "Gin", "Lime", "Ginger", "Soda"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Herb Lane",
-    "method": "Build",
-    "reciepe": {
+    nameEng: "Herb Lane",
+    method: "Build",
+    reciepe: {
       "Fernet Branca": "30ml",
       "Rosso Vermouth": "30ml",
       "Angostura Bitters": "1 dash",
-      "Sugar": "5ml",
-      "Soda": "to top",
+      Sugar: "5ml",
+      Soda: "to top",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Signature",
+    nameCht: "青草巷",
+    ingredients: ["Fernet Branca", "Rosso Vermouth", "Bitters", "Soda"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Fudge",
-    "method": "Shake",
-    "reciepe": {
-      "Amarula": "45ml",
-      "Milk": "45ml",
-      "Honey": "5ml",
-      "Sugar": "5ml",
+    nameEng: "Fudge",
+    method: "Shake",
+    reciepe: {
+      Amarula: "45ml",
+      Milk: "45ml",
+      Honey: "5ml",
+      Sugar: "5ml",
       "Black Tea Syrup": "5ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Signature",
+    nameCht: "牛奶糖",
+    ingredients: ["amarula", "milk", "honey"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Mango Pomelo",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "30ml",
-      "Mango": "30ml",
+    nameEng: "Mango Pomelo",
+    method: "Shake",
+    reciepe: {
+      Vodka: "30ml",
+      Mango: "30ml",
       "Coconut Milk": "30ml",
       "Grapefruit Liquor": "10ml",
-      "Sugar": "5ml",
-      "Garnish": "Grapefruit pulp",
+      Sugar: "5ml",
+      Garnish: "Grapefruit pulp",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Signature",
+    nameCht: "楊枝甘露",
+    ingredients: ["vodka", "mango", "coconut milk", "grapefruit"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Plum Iced Tea",
-    "method": "Shake",
-    "reciepe": {
-      "Vodka": "15ml",
-      "Tequila": "15ml",
-      "Rum": "15ml",
-      "Gin": "15ml",
-      "Cointreau": "15ml",
+    nameEng: "Plum Iced Tea",
+    method: "Shake",
+    reciepe: {
+      Vodka: "15ml",
+      Tequila: "15ml",
+      Rum: "15ml",
+      Gin: "15ml",
+      Cointreau: "15ml",
       "Lemon Juice": "25ml",
-      "Honey": "15ml",
-      "Umeshu": "30ml"
+      Honey: "15ml",
+      Umeshu: "30ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Signature",
+    nameCht: "梅子冰茶",
+    ingredients: ["gin", "vodka", "tequila", "rum", "cointreau", "umeshu", "honey", "green tea"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Beneath Plum Tree",
-    "method": "Rolling",
-    "reciepe": {
-      "Gin": "45ml",
-      "Umeshu": "30ml",
+    nameEng: "Beneath Plum Tree",
+    method: "Rolling",
+    reciepe: {
+      Gin: "45ml",
+      Umeshu: "30ml",
       "Green Tea": "30ml",
-      "Sugar": "10ml",
+      Sugar: "10ml",
     },
-    "glass": "Nick & Nora"
+    glass: "Nick & Nora",
+    category: "Signature",
+    nameCht: "梅子樹下",
+    ingredients: ["souler gin", "umeshu", "green tea"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Lemon Tart",
-    "method": "Shake",
-    "reciepe": {
-      "Limoncello": "30ml",
-      "Cointreau": "30ml",
+    nameEng: "Lemon Tart",
+    method: "Shake",
+    reciepe: {
+      Limoncello: "30ml",
+      Cointreau: "30ml",
       "Lemon Juice": "45ml",
-      "Cream": "60ml",
-      "Sugar": "30ml",
+      Cream: "60ml",
+      Sugar: "30ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Signature",
+    nameCht: "檸檬塔",
+    ingredients: ["lemon", "cointreau", "cream"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Tea & Ponkan",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Tea & Ponkan",
+    method: "Shake",
+    reciepe: {
       "Tea infused Vodka": "30ml",
-      "Lillet": "10ml",
-      "Sugar": "10ml",
+      Lillet: "10ml",
+      Sugar: "10ml",
       "Ponkan Juice": "30ml",
       "Passionfruit Syrup": "10ml",
-      "Egg White": "20ml"
+      "Egg White": "20ml",
     },
-    "glass": "Coupe"
+    glass: "Coupe",
+    category: "Signature",
+    nameCht: "茶香椪柑",
+    ingredients: ["vodka", "tea", "lillet", "ponkan", "passionfruit", "egg white"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Mermaid",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Mermaid",
+    method: "Shake",
+    reciepe: {
       "White Rum": "45ml",
       "Pineapple juice": "30ml",
       "Lemon Juice": "15ml",
-      "Cointreau": "10ml",
-      "Sugar": "10ml",
+      Cointreau: "10ml",
+      Sugar: "10ml",
       "Blue curacao": "5ml",
       "Coconut water": "To top",
     },
-    "glass": "Hurricane"
+    glass: "Hurricane",
+    category: "Signature",
+    nameCht: "美人魚",
+    ingredients: ["Rum", "Pineapple", "Lemon", "Cointreau", "Sugar", "Blue curacao", "coconut water"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Airmail",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Airmail",
+    method: "Shake",
+    reciepe: {
       "Dark Rum": "40ml",
       "Lime Juice": "20ml",
-      "Honey": "20ml",
-      "Champagne": "80ml"
+      Honey: "20ml",
+      Champagne: "80ml",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Rum",
+    nameCht: "航空郵件",
+    ingredients: ["Rum", "Lime", "Honey", "Champagne"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Bacardi Cocktail",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Bacardi Cocktail",
+    method: "Shake",
+    reciepe: {
       "Bacardi White Rum": "60ml",
       "Lime Juice": "30ml",
-      "Grenadine": "20ml"
+      Grenadine: "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Rum",
+    nameCht: "百加得",
+    ingredients: ["Rum", "Lime", "Grenadine"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Adonis",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Adonis",
+    method: "Stir",
+    reciepe: {
       "Fino Sherry": "45ml",
       "Rosso Vermouth": "45ml",
       "Orange Bitters": "2 dash",
-      "Garnish": "Orange Twist"
+      Garnish: "Orange Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "阿多尼斯",
+    ingredients: ["Sherry", "Rosso Vermouth", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Bamboo",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Bamboo",
+    method: "Stir",
+    reciepe: {
       "Dry Sherry": "45ml",
       "Dry Vermouth": "45ml",
       "Demerara Syrup": "1 tsp",
       "Orange Bitters": "1 dash",
       "Angostura Bitters": "1 dash",
-      "Garnish": "Lemon Twist"
+      Garnish: "Lemon Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "竹子",
+    ingredients: ["Sherry", "Dry Vermouth", "Sugar", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Basil Smash",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Basil Smash",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Lemon Juice": "20ml",
-      "Sugar": "15ml",
+      Sugar: "15ml",
       "Fresh Basil": "10-12 Leaves",
-      "Garnish": "Basil Bouquet"
+      Garnish: "Basil Bouquet",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Gin",
+    nameCht: "羅勒斯瑪旭",
+    ingredients: ["Gin", "Lemon", "Sugar", "Basil"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Bijou",
-    "method": "Stir",
-    "reciepe": {
-      "Gin": "50ml",
+    nameEng: "Bijou",
+    method: "Stir",
+    reciepe: {
+      Gin: "50ml",
       "Rosso Vermouth": "20ml",
       "Green Chartreuse": "20ml",
       "Orange Bitters": "1 dash",
-      "Garnish": "Lemon Twist"
+      Garnish: "Lemon Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "寶石",
+    ingredients: ["Gin", "Rosso Vermouth", "Chartreuse", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Black Manhattan",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Black Manhattan",
+    method: "Stir",
+    reciepe: {
       "Rye Whiskey": "60ml",
-      "Averna": "20ml",
+      Averna: "20ml",
       "Orange Bitters": "1 dash",
       "Angostura Bitters": "1 dash",
-      "Garnish": "Cherry"
+      Garnish: "Cherry",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "黑色曼哈頓",
+    ingredients: ["Whiskey", "amaro", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Bobby Burns",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Bobby Burns",
+    method: "Stir",
+    reciepe: {
       "Scotch Whisky": "60ml",
       "Rosso Vermouth": "20ml",
-      "Bénédictine": "10ml",
+      Bénédictine: "10ml",
       "Angostura Bitters": "1 dash",
-      "Garnish": "Lemon Twist"
+      Garnish: "Lemon Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "鮑比·伯恩斯",
+    ingredients: ["Whiskey", "Rosso Vermouth", "Bénédictine", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Brooklyn",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Brooklyn",
+    method: "Stir",
+    reciepe: {
       "Rye Whiskey": "60ml",
       "Dry Vermouth": "20ml",
-      "Maraschino": "10ml",
+      Maraschino: "10ml",
       "Amer Picon": "10ml",
-      "Garnish": "Cherry"
+      Garnish: "Cherry",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "布魯克林",
+    ingredients: ["Whiskey", "Dry Vermouth", "Maraschino", "Amer Picon"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Brown Derby",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Brown Derby",
+    method: "Shake",
+    reciepe: {
       "Bourbon Whisky": "60ml",
       "Grapefruit Juice": "30ml",
       "Lemon Juice": "1 tsp",
       "Honey Syrup": "15ml",
-      "Garnish": "Grapefruit Twist"
+      Garnish: "Grapefruit Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "布朗德比",
+    ingredients: ["Whiskey", "Grapefruit", "Lemon", "Honey"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Cable Car",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Cable Car",
+    method: "Shake",
+    reciepe: {
       "Spiced Rum": "50ml",
       "Orange Curaçao": "20ml",
       "Lemon Juice": "30ml",
-      "Sugar": "15ml",
-      "Garnish": "Orange Twist"
+      Sugar: "15ml",
+      Garnish: "Orange Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Rum",
+    nameCht: "纜車",
+    ingredients: ["Rum", "Curacao", "Lemon", "Sugar"],
+    show: true,
+    shots: 2,
   },
   {
-    "name": "Champs-Élysées",
-    "method": "Shake",
-    "reciepe": {
-      "Cognac": "60ml",
+    nameEng: "Champs-Élysées",
+    method: "Shake",
+    reciepe: {
+      Cognac: "60ml",
       "Lemon Juice": "20ml",
       "Green Chartreuse": "15ml",
-      "Sugar": "5ml",
-      "Angostura Bitters": "1 dash"
+      Sugar: "5ml",
+      "Angostura Bitters": "1 dash",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Brandy",
+    nameCht: "香榭大道",
+    ingredients: ["Brandy", "Lemon", "Chartreuse", "Sugar"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Chartreuse Swizzle",
-    "method": "Build",
-    "reciepe": {
+    nameEng: "Chartreuse Swizzle",
+    method: "Build",
+    reciepe: {
       "Green Chartreuse": "50ml",
       "Pineapple Juice": "30ml",
       "Lime Juice": "20ml",
-      "Falernum": "15ml",
-      "Garnish": "Mint Sprig and Grated Nutmeg"
+      Falernum: "15ml",
+      Garnish: "Mint Sprig and Grated Nutmeg",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Else",
+    nameCht: "夏翠絲四維索",
+    ingredients: ["Chartreuse", "Pineapple", "Lime", "Falernum"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Diamondback",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Diamondback",
+    method: "Stir",
+    reciepe: {
       "Rye Whiskey": "50ml",
-      "Applejack": "20ml",
-      "Yellow Chartreuse": "20ml"
+      Applejack: "20ml",
+      "Yellow Chartreuse": "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "響尾蛇",
+    ingredients: ["Whiskey", "Applejack", "Chartreuse"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Dominicana",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Dominicana",
+    method: "Shake",
+    reciepe: {
       "Aged Rum": "50ml",
       "Coffee Liqueur": "30ml",
-      "Cream": "Floated (shake cream in the container to aerate prior to pouring)",
-      "Garnish": "Grated Nutmeg"
+      Cream:
+        "Floated (shake cream in the container to aerate prior to pouring)",
+      Garnish: "Grated Nutmeg",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Rum",
+    nameCht: "多明尼加",
+    ingredients: ["Rum", "Coffee", "Cream"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Eastside",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Eastside",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Lime Juice": "30ml",
-      "Sugar": "20ml",
-      "Mint": "6-8 Leaves",
-      "Cucumber": "3-4 Slices",
-      "Garnish": "Cucumber Slice and Mint Sprig"
+      Sugar: "20ml",
+      Mint: "6-8 Leaves",
+      Cucumber: "3-4 Slices",
+      Garnish: "Cucumber Slice and Mint Sprig",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "東方",
+    ingredients: ["Gin", "Lime", "Sugar", "Mint", "Cucumber"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Enzoni",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "30ml",
-      "Campari": "30ml",
+    nameEng: "Enzoni",
+    method: "Shake",
+    reciepe: {
+      Gin: "30ml",
+      Campari: "30ml",
       "Lemon Juice": "20ml",
-      "Sugar": "15ml",
+      Sugar: "15ml",
       "Green Grapes": "5",
-      "Garnish": "Grape"
+      Garnish: "Grape",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "伊恩佐尼",
+    ingredients: ["Gin", "Campari", "Lemon", "Sugar", "Grapes"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "El Diablo",
-    "method": "Shake",
-    "reciepe": {
-      "Tequila": "45ml",
+    nameEng: "El Diablo",
+    method: "Shake",
+    reciepe: {
+      Tequila: "45ml",
       "Crème de Cassis": "15ml",
       "Lime Juice": "15ml",
       "Ginger Syrup": "20ml",
-      "Soda": "To top",
-      "Garnish": "Lime Wedge"
+      Soda: "To top",
+      Garnish: "Lime Wedge",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Tequila",
+    nameCht: "惡魔",
+    ingredients: ["Tequila", "Cassis", "Lime", "Ginger", "Soda"],
+    show: false,
+    shots: 1,
   },
   {
-    "name": "Garibaldi",
-    "method": "Build",
-    "reciepe": {
-      "Campari": "45ml",
+    nameEng: "Garibaldi",
+    method: "Build",
+    reciepe: {
+      Campari: "45ml",
       "Orange Juice": "120ml",
-      "Sugar": "1 tsp",
-      "Garnish": "Orange Slice"
+      Sugar: "1 tsp",
+      Garnish: "Orange Slice",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Else",
+    nameCht: "加里波第",
+    ingredients: ["Campari", "Orange", "Sugar"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Gin Rickey",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Gin Rickey",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Lime Juice": "20ml",
-      "Sugar": "15ml",
-      "Soda": "To top",
-      "Garnish": "Lime Wedge"
+      Sugar: "15ml",
+      Soda: "To top",
+      Garnish: "Lime Wedge",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Gin",
+    nameCht: "琴瑞奇",
+    ingredients: ["Gin", "Lemon", "Sugar", "Soda"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Greenpoint",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Greenpoint",
+    method: "Stir",
+    reciepe: {
       "Rye Whiskey": "60ml",
       "Yellow Chartreuse": "15ml",
       "Rosso Vermouth": "15ml",
       "Angostura Bitters": "1 dash",
       "Orange Bitters": "1 dash",
-      "Garnish": "Lemon Twist"
+      Garnish: "Lemon Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "綠點區",
+    ingredients: ["Whiskey", "Chartreuse", "Rosso Vermouth", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Honeysuckle",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Honeysuckle",
+    method: "Shake",
+    reciepe: {
       "White Rum": "60ml",
       "Lemon Juice": "20ml",
-      "Honey": "20ml"
+      Honey: "20ml",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Rum",
+    nameCht: "忍冬花",
+    ingredients: ["Rum", "Honey", "Lime"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Improved Whiskey Cocktail",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Improved Whiskey Cocktail",
+    method: "Stir",
+    reciepe: {
       "Rye Whiskey": "60ml",
-      "Sugar": "10ml",
-      "Maraschino": "10ml",
-      "Absinthe": "1 dash",
+      Sugar: "10ml",
+      Maraschino: "10ml",
+      Absinthe: "1 dash",
       "Angostura Bitters": "2 dash",
-      "Garnish": "Lemon Twist"
+      Garnish: "Lemon Twist",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Whiskey",
+    nameCht: "進階威士忌雞尾酒",
+    ingredients: ["Whiskey", "Sugar", "Maraschino", "Absinthe", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Jack Rose",
-    "method": "Shake",
-    "reciepe": {
-      "Applejack": "30ml",
-      "Calvados": "30ml",
+    nameEng: "Jack Rose",
+    method: "Shake",
+    reciepe: {
+      Applejack: "30ml",
+      Calvados: "30ml",
       "Lemon Juice": "15ml",
       "Lime Juice": "15ml",
-      "Grenadine": "20ml",
-      "Garnish": "Apple Fan"
+      Grenadine: "20ml",
+      Garnish: "Apple Fan",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "傑克蘿絲",
+    ingredients: ["Applejack", "Calvados", "Lemon", "Grenadine"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Japanese Cocktail",
-    "method": "Stir",
-    "reciepe": {
-      "Cognac": "60ml",
+    nameEng: "Japanese Cocktail",
+    method: "Stir",
+    reciepe: {
+      Cognac: "60ml",
       "Orgeat Syrup": "15ml",
       "Angostura Bitters": "2 dash",
-      "Garnish": "Lemon Twist"
+      Garnish: "Lemon Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Brandy",
+    nameCht: "日本雞尾酒",
+    ingredients: ["Brandy", "Orgeat", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Jet Pilot",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Jet Pilot",
+    method: "Shake",
+    reciepe: {
       "Jamaican Rum": "30ml",
       "Puerto Rican Rum": "20ml",
       "Overproof Demerara Rum": "20ml",
-      "Falernum": "15ml",
+      Falernum: "15ml",
       "Lime Juice": "15ml",
-      "Grapefruit": "15ml",
+      Grapefruit: "15ml",
       "Cinnamon Syrup": "15ml",
-      "Absinthe": "1 dash",
+      Absinthe: "1 dash",
       "Angostura Bitters": "1 dash",
-      "Garnish": "Mint Sprig, Lime Wheel, Cherry"
+      Garnish: "Mint Sprig, Lime Wheel, Cherry",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Rum",
+    nameCht: "噴射機英雄",
+    ingredients: [
+      "Rum",
+      "Falernum",
+      "Lime",
+      "Grapefruit",
+      "Cinnamon",
+      "Absinthe",
+      "Bitters",
+    ],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "La Louisiane Cocktail",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "La Louisiane Cocktail",
+    method: "Stir",
+    reciepe: {
       "Rye Whiskey": "30ml",
       "Rosso Vermouth": "30ml",
-      "Bénédictine": "30ml",
-      "Absinthe": "2 dash",
+      Bénédictine: "30ml",
+      Absinthe: "2 dash",
       "Peychaud’s Bitters": "2 dash",
-      "Garnish": "Cherry"
+      Garnish: "Cherry",
     },
-    "glass": "Martini"
+    glass: "Martini",
   },
   {
-    "name": "Little Italy",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Little Italy",
+    method: "Stir",
+    reciepe: {
       "Rye Whiskey": "60ml",
       "Rosso Vermouth": "20ml",
-      "Cynar": "15ml",
-      "Garnish": "Cherry"
+      Cynar: "15ml",
+      Garnish: "Cherry",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "小義大利",
+    ingredients: ["Whiskey", "Rosso Vermouth", "Cynar"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Lucien Gaudin",
-    "method": "Stir",
-    "reciepe": {
-      "Gin": "45ml",
+    nameEng: "Lucien Gaudin",
+    method: "Stir",
+    reciepe: {
+      Gin: "45ml",
       "Dry Vermouth": "15ml",
-      "Campari": "15ml",
-      "Cointreau": "15ml",
-      "Garnish": "Lemon Twist"
+      Campari: "15ml",
+      Cointreau: "15ml",
+      Garnish: "Lemon Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "吕西安·戈丹",
+    ingredients: ["Gin", "Dry Vermouth", "Campari", "Cointreau"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "Mexican Firing Squad",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Mexican Firing Squad",
+    method: "Shake",
+    reciepe: {
       "Blanco Tequila": "60ml",
       "Lime Juice": "20ml",
-      "Sugar": "15ml",
-      "Grenadine": "5ml",
+      Sugar: "15ml",
+      Grenadine: "5ml",
       "Angostura Bitters": "4 dash",
-      "Garnish": "Lime Wheel, Cherry"
+      Garnish: "Lime Wheel, Cherry",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Tequila",
+    nameCht: "墨西哥突擊隊",
+    ingredients: ["Tequila", "Lime", "Sugar", "Grenadine", "Bitters"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Pendennis Cocktail Club",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Pendennis Cocktail Club",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Lime Juice": "20ml",
       "Apricot Liqueur": "15ml",
-      "Sugar": "5ml",
+      Sugar: "5ml",
       "Peychaud’s Bitters": "2 dash",
-      "Garnish": "Lime Wedge"
+      Garnish: "Lime Wedge",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "潘丹尼斯俱樂部",
+    ingredients: ["Gin", "Lime", "Apricot", "Sugar", "Bitters"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Pimm's Cup",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Pimm's Cup",
+    method: "Shake",
+    reciepe: {
       "Pimm’s No. 1": "60ml",
       "Lime Juice": "20ml",
-      "Sugar": "15ml",
+      Sugar: "15ml",
       "Cucumber, Mint, Strawberry, Orange": "Muddled",
       "Ginger Syrup": "20ml",
-      "Soda": "To top",
-      "Garnish": "Cucumber Slice, Mint Sprig, Strawberry"
+      Soda: "To top",
+      Garnish: "Cucumber Slice, Mint Sprig, Strawberry",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Else",
+    nameCht: "皮姆之杯",
+    ingredients: [
+      "Pimm’s No. 1",
+      "Lime",
+      "Sugar",
+      "Cucumber",
+      "Mint",
+      "Fruit",
+      "Ginger",
+      "Soda",
+    ],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Pink Lady",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "45ml",
-      "Applejack": "15ml",
+    nameEng: "Pink Lady",
+    method: "Shake",
+    reciepe: {
+      Gin: "45ml",
+      Applejack: "15ml",
       "Lemon Juice": "20ml",
-      "Grenadine": "15ml",
-      "Honey": "5ml",
+      Grenadine: "15ml",
+      Honey: "5ml",
       "Egg White": "20ml",
-      "Garnish": "Cherry"
+      Garnish: "Cherry",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "粉紅佳人",
+    ingredients: [
+      "Gin",
+      "Applejack",
+      "Lemon",
+      "Grenadine",
+      "Honey",
+      "Egg White",
+    ],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Pisco Sour",
-    "method": "Shake",
-    "reciepe": {
-      "Pisco": "60ml",
+    nameEng: "Pisco Sour",
+    method: "Shake",
+    reciepe: {
+      Pisco: "60ml",
       "Lime Juice": "15ml",
       "Lemon Juice": "15ml",
-      "Sugar": "20ml",
+      Sugar: "20ml",
       "Egg White": "20ml",
       "Amargo Chuncho Bitters": "1 dash",
-      "Garnish": "Amargo Chuncho Bitters (dropped on top of foam)"
+      Garnish: "Amargo Chuncho Bitters (dropped on top of foam)",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "皮斯可酸酒",
+    ingredients: ["Pisco", "Lime", "Lemon", "Sugar", "Egg White", "Bitters"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Queen's Park Swizzle",
-    "method": "Build",
-    "reciepe": {
+    nameEng: "Queen's Park Swizzle",
+    method: "Build",
+    reciepe: {
       "Demerara Rum": "60ml",
       "Lime Juice": "20ml",
       "Demerara Syrup": "15ml",
-      "Mint": "6-8 Leaves",
+      Mint: "6-8 Leaves",
       "Angostura Bitters": "2 dash",
-      "Garnish": "Mint Sprig, Angortura Dashes to float and Grated Nutmeg"
+      Garnish: "Mint Sprig, Angortura Dashes to float and Grated Nutmeg",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Rum",
+    nameCht: "皇后公園四維索",
+    ingredients: ["Rum", "Lime", "Sugar", "Mint", "Bitters"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Revolver",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Revolver",
+    method: "Stir",
+    reciepe: {
       "Bourbon Whisky": "60ml",
       "Coffee Liqueur": "15ml",
       "Orange Bitters": "2 dash",
-      "Garnish": "Flamed Orange Twist"
+      Garnish: "Flamed Orange Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "左輪手槍",
+    ingredients: ["Whisky", "Coffee", "Bitters"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "Rob Roy",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Rob Roy",
+    method: "Stir",
+    reciepe: {
       "Scotch Whisky": "60ml",
       "Rosso Vermouth": "20ml",
       "Angostura Bitters": "2 dash",
-      "Garnish": "Cherry"
+      Garnish: "Cherry",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "羅伯·洛伊",
+    ingredients: ["Whisky", "Rosso Vermouth", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Saturn",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "45ml",
+    nameEng: "Saturn",
+    method: "Shake",
+    reciepe: {
+      Gin: "45ml",
       "Passion Fruit Syrup": "15ml",
       "Lemon Juice": "15ml",
-      "Falernum": "7.5ml",
+      Falernum: "7.5ml",
       "Orgeat Syrup": "7.5ml",
-      "Garnish": "Lime Twist and Cherry"
+      Garnish: "Lime Twist and Cherry",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Gin",
+    nameCht: "木星",
+    ingredients: ["Gin", "Passionfruit", "Lemon", "Falernum", "Orgeat"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Scofflaw",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Scofflaw",
+    method: "Shake",
+    reciepe: {
       "Rye Whiskey": "45ml",
       "Dry Vermouth": "30ml",
       "Lemon Juice": "20ml",
-      "Grenadine": "10ml",
-      "Garnish": "Lemon Twist"
+      Grenadine: "10ml",
+      Garnish: "Lemon Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "法外狂徒",
+    ingredients: ["Whiskey", "Dry Vermouth", "Lemon", "Grenadine"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "Sherry Cobbler",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Sherry Cobbler",
+    method: "Shake",
+    reciepe: {
       "Dry Sherry": "90ml",
       "Pineapple Gum Syrup": "15ml",
       "Orange Slices": "2 slices",
       "Seasonal Berries (optional)": "",
-      "Garnish": "Orange Slice and Mint Spring"
+      Garnish: "Orange Slice and Mint Spring",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Else",
+    nameCht: "雪莉酷伯樂",
+    ingredients: ["Sherry", "Pineapple", "Orange"],
+    show: false,
+    shots: 2,
   },
   {
-    "name": "Southside",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Southside",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Lime Juice": "20ml",
-      "Sugar": "20ml",
-      "Mint": "6-8 Springs",
-      "Garnish": "Mint Sprig"
+      Sugar: "20ml",
+      Mint: "6-8 Springs",
+      Garnish: "Mint Sprig",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "南方",
+    ingredients: ["Gin", "Lime", "Sugar", "Mint"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Tom Collins",
-    "method": "Shake",
-    "reciepe": {
-      "Gin": "60ml",
+    nameEng: "Tom Collins",
+    method: "Shake",
+    reciepe: {
+      Gin: "60ml",
       "Lemon Juice": "30ml",
-      "Sugar": "20ml",
-      "Soda": "To top",
-      "Garnish": "Lemon Wheel and Cherry"
+      Sugar: "20ml",
+      Soda: "To top",
+      Garnish: "Lemon Wheel and Cherry",
     },
-    "glass": "Highball"
+    glass: "Highball",
+    category: "Gin",
+    nameCht: "湯姆·柯林斯",
+    ingredients: ["Gin", "Lemon", "Sugar", "Soda"],
+    show: true,
+    shots: 1,
   },
   {
-    "name": "Toronto",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Toronto",
+    method: "Stir",
+    reciepe: {
       "Rye Whiskey": "60ml",
       "Fernet Branca": "7.5ml",
-      "Sugar": "7.5ml",
+      Sugar: "7.5ml",
       "Angostura Bitters": "2 dash",
-      "Garnish": "Lemon Twist"
+      Garnish: "Lemon Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "多倫多",
+    ingredients: ["Whiskey", "Fernet Branca", "Sugar", "Bitters"],
+    show: true,
+    shots: 3,
   },
   {
-    "name": "Trinidad Sour",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Trinidad Sour",
+    method: "Shake",
+    reciepe: {
       "Angostura Bitters": "45ml",
       "Orgeat Syrup": "30ml",
       "Lemon Juice": "20ml",
       "Rye Whiskey": "15ml",
-      "Garnish": "Lemon Twist"
+      Garnish: "Lemon Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "千里達酸酒",
+    ingredients: ["Bitters", "Orgeat", "Lemon", "Whiskey"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Ward 8",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Ward 8",
+    method: "Shake",
+    reciepe: {
       "Rye Whiskey": "60ml",
       "Lemon Juice": "15ml",
       "Orange Juice": "15ml",
-      "Grenadine": "15ml",
-      "Garnish": "Orange Twist"
+      Grenadine: "15ml",
+      Garnish: "Orange Twist",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Whiskey",
+    nameCht: "第八區",
+    ingredients: ["Whiskey", "Lemon", "Orange", "Grenadine"],
+    show: true,
+    shots: 1.5,
   },
   {
-    "name": "Whiskey Smash",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Whiskey Smash",
+    method: "Shake",
+    reciepe: {
       "Bourbon Whisky": "60ml",
       "Half Lemon in wedges": "Muddled",
-      "Sugar": "15ml",
-      "Mint": "4-6 Leaves",
-      "Garnish": "Mint Sprig"
+      Sugar: "15ml",
+      Mint: "4-6 Leaves",
+      Garnish: "Mint Sprig",
     },
-    "glass": "Lowball"
+    glass: "Lowball",
+    category: "Whiskey",
+    nameCht: "威士忌斯瑪旭",
+    ingredients: ["Whiskey", "Lemon", "Sugar", "Mint"],
+    show: false,
+    shots: 1.5,
   },
   {
-    "name": "Widow's Kiss",
-    "method": "Stir",
-    "reciepe": {
+    nameEng: "Widow's Kiss",
+    method: "Stir",
+    reciepe: {
       "Apple Brandy or Calvados": "60ml",
       "Yellow Chartreuse": "7.5ml",
-      "Bénédictine": "7.5ml",
+      Bénédictine: "7.5ml",
       "Angostura Bitters": "2 dash",
-      "Garnish": "Cherry"
+      Garnish: "Cherry",
     },
-    "glass": "Martini"
+    glass: "Martini",
+    category: "Else",
+    nameCht: "寡婦之吻",
+    ingredients: ["Apple Brandy", "Chartreuse", "Bénédictine", "Bitters"],
+    show: false,
+    shots: 3,
   },
   {
-    "name": "Zombie",
-    "method": "Shake",
-    "reciepe": {
+    nameEng: "Zombie",
+    method: "Shake",
+    reciepe: {
       "Jamaican Rum": "45ml",
       "Aged Cuban Rum": "45ml",
       "Overproof Rum": "30ml",
       "Lime Juice": "20ml",
-      "Falernum": "15ml",
+      Falernum: "15ml",
       "Donn’s Mix (2 parts grapefruit juice and 1 part cinnamon syrup)": "15ml",
-      "Grenadine": "1 tsp",
+      Grenadine: "1 tsp",
       "Angostura Bitters": "1 dash",
       "Pernod or Absinthe": "6 drop",
-      "Garnish": "Mint Sprig and Cherry"
+      Garnish: "Mint Sprig and Cherry",
     },
-    "glass": "Hurricane"
-  }
-]
+    glass: "Hurricane",
+    category: "Rum",
+    nameCht: "殭屍",
+    ingredients: [
+      "Rum",
+      "Lime",
+      "Falernum",
+      "Cinnamon",
+      "Grapefruit",
+      "Grenadine",
+      "Bitters",
+      "Absinthe",
+    ],
+    show: false,
+    shots: 2.5,
+  },
+];
