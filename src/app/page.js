@@ -57,9 +57,9 @@ export default function Home() {
       <div className="menu__header ">
         <div className="menu__header--inner handwrite-border">
           <img src={"./favicon.ico"} alt="" />
-          <div className="handwrite-en">The Mixology Menu</div>
+          <div className="handwrite-en" onDoubleClick={() => setShowHiddenPage(true)}>The Mixology Menu</div>
           <div style={{ flex: 1 }}></div>
-          <div onClick={() => setShowHiddenPage(true)}>+</div>
+          {/* <div onClick={() => setShowHiddenPage(true)}>+</div> */}
         </div>
       </div>
 
