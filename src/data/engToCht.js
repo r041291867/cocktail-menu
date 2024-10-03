@@ -5,7 +5,10 @@ const dictionary = {
   whiskey: "威士忌",
   brandy: "白蘭地",
   calvados: "蘋果白蘭地",
+  applejack: "蘋果白蘭地",
+  "apple brandy": "蘋果白蘭地",
   "apricot brandy": "杏桃白蘭地",
+  "apricot": "杏桃",
   rum: "蘭姆酒",
   vodka: "伏特加",
   tequila: "龍舌蘭",
@@ -81,7 +84,18 @@ const dictionary = {
   tea: "茶",
   ponkan: "椪柑",
   cucumber: "小黃瓜",
-  suze: "龍膽草"
+  suze: "龍膽草",
+  falernum: "法勒南",
+  drambuie: "蜂蜜酒",
+  cynar: "開胃酒",
+  basil: "羅勒",
+  grapes: "葡萄",
+  berries: "莓果",
+  cinnamon: "肉桂",
+  "pimm’s no. 1": "皮姆一號",
+  pisco: "皮斯可",
+  cachaça: "卡夏莎",
+  sherry: "雪莉酒"
 };
 
 export function toChinese(englishText) {

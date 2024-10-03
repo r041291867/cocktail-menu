@@ -349,7 +349,7 @@ export const reciepe = [
       "Gin": "30ml",
       "Cointreau": "7.5ml",
       "Bénédictine": "7.5ml",
-      "Heering Cherry Liquior": "15ml",
+      "Heering Cherry Liqueur": "15ml",
       "Pineapple Juice": "120ml",
       "Lime": "15ml",
       "Grenadine": "10ml",
@@ -495,10 +495,10 @@ export const reciepe = [
     "name": "Jasmine",
     "method": "Shake",
     "reciepe": {
-      "Gin": "60ml",
+      "Gin": "50ml",
       "Lime Juice": "20ml",
-      "Campari": "10ml",
       "Cointreau": "20ml",
+      "Campari": "15ml",
     },
     "glass": "Martini"
   },

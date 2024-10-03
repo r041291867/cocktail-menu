@@ -98,7 +98,7 @@ export const cocktailMenu = [
         nameCht: "黑色曼哈頓",
         nameEng: "Black Manhattan",
         shots: 3,
-        ingredients: ["Whiskey", "Averna", "Bitters"],
+        ingredients: ["Whiskey", "amaro", "Bitters"],
         show: false,
       },
       {
@@ -391,7 +391,7 @@ export const cocktailMenu = [
       },
       {
         nameCht: "潘丹尼斯俱樂部",
-        nameEng: "Pendennis Club",
+        nameEng: "Pendennis Cocktail Club",
         shots: 1.5,
         ingredients: ["Gin", "Lime", "Apricot", "Sugar", "Bitters"],
         show: false,
@@ -408,7 +408,7 @@ export const cocktailMenu = [
         nameEng: "Saturn",
         alcohol: "light",
         shots: 1.5,
-        ingredients: ["Gin", "Passion", "Lemon", "Falernum", "Orgeat"],
+        ingredients: ["Gin", "Passionfruit", "Lemon", "Falernum", "Orgeat"],
       },
       {
         nameCht: "新加坡司令",
@@ -456,7 +456,7 @@ export const cocktailMenu = [
         nameCht: "荊棘",
         nameEng: "Bramble",
         shots: 2,
-        ingredients: ["Gin", "Lemon", "Sugar", "Crème de Mûre"],
+        ingredients: ["Gin", "Lemon", "Sugar", "berries"],
         show: false,
       },
       {
@@ -484,7 +484,7 @@ export const cocktailMenu = [
         nameCht: "天堂",
         nameEng: "Paradise",
         shots: 2,
-        ingredients: ["Gin", "Apricot Brandy", "Orange"],
+        ingredients: ["Gin", "Apricot", "Orange"],
         show: false,
       },
       {
@@ -505,7 +505,7 @@ export const cocktailMenu = [
         nameCht: "天使之顏",
         nameEng: "Angel Face",
         shots: 2.5,
-        ingredients: ["Gin", "Apricot Brandy", "Calvados"],
+        ingredients: ["Gin", "Apricot", "Calvados"],
         show: false,
       },
       {
@@ -747,7 +747,7 @@ export const cocktailMenu = [
         nameCht: "殭屍",
         nameEng: "Zombie",
         shots: 2.5,
-        ingredients: ["Rum", "Lime", "Falernum", "Donn’s Mix", "Grenadine", "Bitters", "Absinthe"],
+        ingredients: ["Rum", "Lime", "Falernum", "Cinnamon", "Grapefruit", "Grenadine", "Bitters", "Absinthe"],
         show: false,
       },
       {
