@@ -158,7 +158,7 @@ export const cocktailMenu = [
         show: true,
       },
       {
-        nameCht: "羅伯洛伊",
+        nameCht: "羅伯·洛伊",
         nameEng: "Rob Roy",
         shots: 3,
         ingredients: ["Whisky", "Rosso Vermouth", "Bitters"],
@@ -287,7 +287,7 @@ export const cocktailMenu = [
         show: true,
       },
       {
-        nameCht: "湯姆柯林斯",
+        nameCht: "湯姆·柯林斯",
         nameEng: "Tom Collins",
         shots: 1,
         ingredients: [
@@ -724,7 +724,7 @@ export const cocktailMenu = [
         show: false,
       },
       {
-        nameCht: "老古巴",
+        nameCht: "老古巴人",
         nameEng: "Old Cuban",
         shots: 2,
         ingredients: ["Rum", "Lime", "Mint", "Sugar", "Bitters", "Prosecco"],
@@ -901,7 +901,7 @@ export const cocktailMenu = [
         show: false,
       },
       {
-        nameCht: "床第之間",
+        nameCht: "床笫之間",
         nameEng: "Between the Sheets",
         shots: 2,
         ingredients: ["Brandy", "Rum", "cointreau", "Lemon"],
