@@ -23,7 +23,7 @@ export default function Home() {
     setTimeout(() => {
       setLoading(false);
       window.scrollTo(0, 0);
-    }, 2000 + randomNum);
+    }, 1000 + randomNum);
   }, []);
 
   useEffect(() => {
