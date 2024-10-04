@@ -20,6 +20,7 @@ export const reciepe = [
     ingredients: ["whisky", "soda"],
     show: true,
     shots: 1,
+    alchol: 10,
   },
   {
     nameEng: "Gin Soda",
@@ -34,6 +35,7 @@ export const reciepe = [
     ingredients: ["gin", "soda"],
     show: true,
     shots: 1,
+    alchol: 10,
   },
   {
     nameEng: "King's Valley",
@@ -50,6 +52,7 @@ export const reciepe = [
     ingredients: ["Whiskey", "cointreau", "Lemon", "blue curacao"],
     show: true,
     shots: 1.5,
+    alchol: 25,
   },
   {
     nameEng: "Whiskey Sour",
@@ -66,6 +69,7 @@ export const reciepe = [
     ingredients: ["Whiskey", "Lemon", "Sugar", "Egg White"],
     show: true,
     shots: 1.5,
+    alchol: 20,
   },
   {
     nameEng: "Gold Rush",
@@ -80,7 +84,8 @@ export const reciepe = [
     nameCht: "淘金熱",
     ingredients: ["Whiskey", "Lemon", "Honey"],
     show: true,
-    shots: 1.5,
+    shots: 1,
+    alchol: 20,
   },
   {
     nameEng: "Silent Third",
@@ -306,7 +311,7 @@ export const reciepe = [
     reciepe: {
       Gin: "45ml",
       Lemon: "20ml",
-      Sugar: "10ml",
+      Sugar: "15ml",
       "Soda Water": "90ml",
     },
     glass: "Highball",
@@ -322,7 +327,7 @@ export const reciepe = [
     reciepe: {
       Gin: "60ml",
       Lemon: "20ml",
-      "Ginger Syrup": "10ml",
+      "Ginger Syrup": "20ml",
       "Angostura Bitters": "2 dash",
       "Soda Water": "90ml",
       Garnish: "Lime twist",
@@ -2871,7 +2876,8 @@ export const reciepe = [
       "Rye Whiskey": "60ml",
       "Lemon Juice": "15ml",
       "Orange Juice": "15ml",
-      Grenadine: "15ml",
+      Grenadine: "10ml",
+      "Orange Bitters": "2 dash",
       Garnish: "Orange Twist",
     },
     glass: "Martini",
