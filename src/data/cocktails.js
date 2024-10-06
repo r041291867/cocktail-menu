@@ -97,7 +97,7 @@ export const cocktailMenu = [
         alcohol: "Medium",
         shots: 1.5,
         ingredients: ["Rum", "Grapefruit", "Maraschino", "Lime"],
-        hasImage: true,
+        hasImage: false,
         src: "/images/cocktails/xyz.jpg",
         imgPosition: "left",
       },
