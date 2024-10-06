@@ -1334,6 +1334,7 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Vodka",
+    nameCht: "神風特攻隊",
     ingredients: ["Vodka", "cointreau", "Lemon"],
     show: true,
     shots: 2,
