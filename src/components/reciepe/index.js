@@ -3,7 +3,7 @@ import "./styles.css";
 export default function Reciepe({ reciepe }) {
   if (!reciepe) return null;
 
-  const { name, method, reciepe: ing, glass } = reciepe;
+  const { nameEng, method, reciepe: ing, glass } = reciepe;
 
   function capitalize(str) {
     return str
@@ -20,7 +20,7 @@ export default function Reciepe({ reciepe }) {
         className="handwrite-en"
         style={{ padding: "0 20px", transform: "none" }}
       >
-        <div className="reciepe-name">{name}</div>
+        <div className="reciepe-name">{nameEng}</div>
         <div className="method-and-glass">
           <div className="reciepe-method">{method}</div>
           <div className="reciepe-glass">{glass} Glass</div>

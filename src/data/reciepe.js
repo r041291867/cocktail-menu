@@ -20,7 +20,7 @@ export const reciepe = [
     ingredients: ["whisky", "soda"],
     show: true,
     shots: 1,
-    alchol: 10,
+    alcohol: 10,
   },
   {
     nameEng: "Gin Soda",
@@ -35,7 +35,7 @@ export const reciepe = [
     ingredients: ["gin", "soda"],
     show: true,
     shots: 1,
-    alchol: 10,
+    alcohol: 10,
   },
   {
     nameEng: "King's Valley",
@@ -52,7 +52,7 @@ export const reciepe = [
     ingredients: ["Whiskey", "cointreau", "Lemon", "blue curacao"],
     show: true,
     shots: 1.5,
-    alchol: 25,
+    alcohol: 25,
   },
   {
     nameEng: "Whiskey Sour",
@@ -69,7 +69,7 @@ export const reciepe = [
     ingredients: ["Whiskey", "Lemon", "Sugar", "Egg White"],
     show: true,
     shots: 1.5,
-    alchol: 20,
+    alcohol: 20,
   },
   {
     nameEng: "Gold Rush",
@@ -85,7 +85,7 @@ export const reciepe = [
     ingredients: ["Whiskey", "Lemon", "Honey"],
     show: true,
     shots: 1,
-    alchol: 20,
+    alcohol: 20,
   },
   {
     nameEng: "Silent Third",
@@ -261,7 +261,7 @@ export const reciepe = [
     nameEng: "Old Pal",
     method: "Stir",
     reciepe: {
-      Whiskey: "50ml",
+      "Rye Whiskey": "50ml",
       Campari: "20ml",
       "Dry Vermouth": "20ml",
     },
@@ -271,6 +271,7 @@ export const reciepe = [
     ingredients: ["Whiskey", "Campari", "Dry Vermouth"],
     show: true,
     shots: 3,
+    alcohol: 27
   },
   {
     nameEng: "Tipperary",
@@ -520,11 +521,11 @@ export const reciepe = [
     nameEng: "Singapore Sling",
     method: "Shake",
     reciepe: {
-      Gin: "30ml",
+      Gin: "50ml",
       Cointreau: "7.5ml",
       Bénédictine: "7.5ml",
       "Heering Cherry Liqueur": "15ml",
-      "Pineapple Juice": "120ml",
+      "Pineapple Juice": "60ml",
       Lime: "15ml",
       Grenadine: "10ml",
       "Angostura Bitters": "1 dash",
@@ -544,6 +545,7 @@ export const reciepe = [
     ],
     show: false,
     shots: 1.5,
+    alcohol: 15,
   },
   {
     nameEng: "Yokohama",
@@ -1136,6 +1138,7 @@ export const reciepe = [
     ingredients: ["Vodka", "Ginger", "Soda", "Lime"],
     show: true,
     shots: 1.5,
+    alcohol: 15,
   },
   {
     nameEng: "Chi Chi",
@@ -1184,6 +1187,7 @@ export const reciepe = [
     ingredients: ["Vodka", "espresso"],
     show: true,
     shots: 1.5,
+    alcohol: 18,
   },
   {
     nameEng: "Cosmopolitan",
@@ -1221,10 +1225,11 @@ export const reciepe = [
     nameEng: "Lemon Drop Martini",
     method: "Shake",
     reciepe: {
-      Vodka: "45ml",
+      "Vodka or Limoncello": "45ml",
       cointreau: "15ml",
-      Lemon: "30ml",
-      Limoncello: "30ml",
+      Lemon: "20ml",
+      Sugar: "5ml",
+      Garnish: "Sugar Rim & Lemon Peel"
     },
     glass: "Coupe",
     category: "Vodka",
@@ -2415,11 +2420,11 @@ export const reciepe = [
   },
   {
     nameEng: "Gin Rickey",
-    method: "Shake",
+    method: "Build",
     reciepe: {
       Gin: "60ml",
       "Lime Juice": "20ml",
-      Sugar: "15ml",
+      // Sugar: "15ml",
       Soda: "To top",
       Garnish: "Lime Wedge",
     },
@@ -2887,6 +2892,7 @@ export const reciepe = [
     ingredients: ["Whiskey", "Lemon", "Orange", "Grenadine"],
     show: true,
     shots: 1.5,
+    alcohol: 20,
   },
   {
     nameEng: "Whiskey Smash",
@@ -2952,5 +2958,23 @@ export const reciepe = [
     ],
     show: false,
     shots: 2.5,
+  },
+  {
+    nameEng: "Holland House",
+    method: "Stir",
+    reciepe: {
+      "Gin or Genever": "45ml",
+      "Dry Vermouth": "20ml",
+      "Lemon Juice": "10ml",
+      Maraschino: "5ml",
+      Garnish: "Lemon Twist",
+    },
+    glass: "Martini",
+    category: "Gin",
+    nameCht: "荷蘭之家",
+    ingredients: ["Gin", "Dry Vermouth", "Lemon", "Maraschino"],
+    show: true,
+    shots: 2,
+    alcohol: 21
   },
 ];
