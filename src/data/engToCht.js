@@ -4,6 +4,8 @@ const dictionary = {
   whisky: "威士忌",
   whiskey: "威士忌",
   brandy: "白蘭地",
+  else: "其他",
+  signature: "特調",
   calvados: "蘋果白蘭地",
   applejack: "蘋果白蘭地",
   "apple brandy": "蘋果白蘭地",
@@ -97,7 +99,7 @@ const dictionary = {
   "pimm’s no. 1": "皮姆一號",
   pisco: "皮斯可",
   cachaça: "卡夏莎",
-  sherry: "雪莉酒"
+  sherry: "雪莉酒",
 };
 
 export function toChinese(englishText) {

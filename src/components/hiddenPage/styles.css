@@ -12,3 +12,46 @@
   transform-origin: center;
   cursor: pointer;
 }
+
+.floatBtn {
+  position: relative;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: url('/images/ic-search.png') center/40% no-repeat,#555;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+  z-index: 11;
+}
+
+.floatBtn .tag-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 16px;
+  width: 16px;
+  font-size: 14px;
+  background: red;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.tags {
+  display: inline-block;
+  font-size: 16px;
+  padding: 4px 10px;
+  line-height: 20px;
+  border: 1px solid #aaa;
+  border-radius: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tags.active {
+  border-color: #e57d27;
+  color: #e57d27;
+}

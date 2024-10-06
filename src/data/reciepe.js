@@ -7,6 +7,7 @@ export function getReciepe(name) {
 export const reciepe = [
   {
     nameEng: "Highball",
+    nameCht: "嗨波魯",
     method: "Build",
     reciepe: {
       Whisky: "45ml",
@@ -16,7 +17,6 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Whiskey",
-    nameCht: "嗨波魯",
     ingredients: ["whisky", "soda"],
     show: true,
     shots: 1,
@@ -24,6 +24,7 @@ export const reciepe = [
   },
   {
     nameEng: "Gin Soda",
+    nameCht: "琴蘇打",
     method: "Build",
     reciepe: {
       gin: "45ml",
@@ -31,7 +32,6 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Gin",
-    nameCht: "琴蘇打",
     ingredients: ["gin", "soda"],
     show: true,
     shots: 1,
@@ -39,6 +39,7 @@ export const reciepe = [
   },
   {
     nameEng: "King's Valley",
+    nameCht: "國王谷",
     method: "Shake",
     reciepe: {
       Whiskey: "60ml",
@@ -48,7 +49,6 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Whiskey",
-    nameCht: "國王谷",
     ingredients: ["Whiskey", "cointreau", "Lemon", "blue curacao"],
     show: true,
     shots: 1.5,
@@ -56,6 +56,7 @@ export const reciepe = [
   },
   {
     nameEng: "Whiskey Sour",
+    nameCht: "威士忌酸酒",
     method: "Shake",
     reciepe: {
       Whiskey: "60ml",
@@ -65,7 +66,6 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Whiskey",
-    nameCht: "威士忌酸酒",
     ingredients: ["Whiskey", "Lemon", "Sugar", "Egg White"],
     show: true,
     shots: 1.5,
@@ -73,6 +73,7 @@ export const reciepe = [
   },
   {
     nameEng: "Gold Rush",
+    nameCht: "淘金熱",
     method: "Shake",
     reciepe: {
       Whiskey: "60ml",
@@ -81,14 +82,14 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Whiskey",
-    nameCht: "淘金熱",
     ingredients: ["Whiskey", "Lemon", "Honey"],
     show: true,
-    shots: 1,
+    shots: 1.5,
     alcohol: 20,
   },
   {
     nameEng: "Silent Third",
+    nameCht: "沉默第三者",
     method: "Shake",
     reciepe: {
       Whiskey: "50ml",
@@ -97,13 +98,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Whiskey",
-    nameCht: "沉默第三者",
     ingredients: ["Whiskey", "cointreau", "Lemon"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Mint Julep",
+    nameCht: "薄荷朱利普",
     method: "Build",
     reciepe: {
       Whiskey: "45ml",
@@ -113,13 +114,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Whiskey",
-    nameCht: "薄荷朱利普",
     ingredients: ["Whiskey", "Mint", "Sugar", "Water"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "New York Sour",
+    nameCht: "紐約酸酒",
     method: "Shake",
     reciepe: {
       Whiskey: "60ml",
@@ -130,13 +131,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Whiskey",
-    nameCht: "紐約酸酒",
     ingredients: ["Whiskey", "Sugar", "Lemon", "Egg White", "Red wine"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Penicillin",
+    nameCht: "盤尼西林",
     method: "Shake",
     reciepe: {
       "Peat Whisky": "60ml",
@@ -146,13 +147,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Whiskey",
-    nameCht: "盤尼西林",
     ingredients: ["Whisky", "Lemon", "Honey", "Ginger"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Paper Plane",
+    nameCht: "紙飛機",
     method: "Shake",
     reciepe: {
       "Bourbon Whiskey": "20ml",
@@ -162,13 +163,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Whiskey",
-    nameCht: "紙飛機",
     ingredients: ["Whiskey", "Amaro", "Aperol", "Lemon"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Blood and Sand",
+    nameCht: "血與沙",
     method: "Shake",
     reciepe: {
       "Scotch Whiskey": "20ml",
@@ -178,13 +179,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Whiskey",
-    nameCht: "血與沙",
     ingredients: ["Whiskey", "cherry", "rosso vermouth", "orange"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "God Father",
+    nameCht: "教父",
     method: "Stir",
     reciepe: {
       Whiskey: "50ml",
@@ -192,13 +193,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Whiskey",
-    nameCht: "教父",
     ingredients: ["Whiskey", "amaretto"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Old Fashioned",
+    nameCht: "往日情懷",
     method: "Stir",
     reciepe: {
       Whiskey: "60ml",
@@ -208,13 +209,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Whiskey",
-    nameCht: "往日情懷",
     ingredients: ["Whiskey", "Sugar", "Bitters"],
     show: true,
     shots: 3,
   },
   {
     nameEng: "Rusty Nail",
+    nameCht: "鏽釘子",
     method: "Stir",
     reciepe: {
       "Scotch Whisky": "60ml",
@@ -222,13 +223,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Whiskey",
-    nameCht: "鏽釘子",
     ingredients: ["Whisky", "Drambuie"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Manhattan",
+    nameCht: "曼哈頓",
     method: "Stir",
     reciepe: {
       Whiskey: "50ml",
@@ -237,13 +238,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Whiskey",
-    nameCht: "曼哈頓",
     ingredients: ["Whiskey", "Rosso Vermouth", "Bitters"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Boulevardier",
+    nameCht: "花花公子",
     method: "Stir",
     reciepe: {
       "Boubon or Rye Whiskey": "40ml",
@@ -252,13 +253,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Whiskey",
-    nameCht: "花花公子",
     ingredients: ["Whiskey", "Campari", "Rosso Vermouth"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Old Pal",
+    nameCht: "老朋友",
     method: "Stir",
     reciepe: {
       "Rye Whiskey": "50ml",
@@ -267,7 +268,6 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Whiskey",
-    nameCht: "老朋友",
     ingredients: ["Whiskey", "Campari", "Dry Vermouth"],
     show: true,
     shots: 3,
@@ -275,6 +275,7 @@ export const reciepe = [
   },
   {
     nameEng: "Tipperary",
+    nameCht: "蒂珀雷里",
     method: "Stir",
     reciepe: {
       "Irish Whiskey": "50ml",
@@ -285,13 +286,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Whiskey",
-    nameCht: "蒂珀雷里",
     ingredients: ["Whiskey", "Rosso Vermouth", "Chartreuse", "Bitters"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "French 75",
+    nameCht: "法式75",
     method: "Shake",
     reciepe: {
       Gin: "30ml",
@@ -301,13 +302,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Gin",
-    nameCht: "法式75",
     ingredients: ["Gin", "Lemon", "Sugar", "Champagne"],
     show: false,
     shots: 1,
   },
   {
     nameEng: "Gin Fizz",
+    nameCht: "琴費士",
     method: "Shake",
     reciepe: {
       Gin: "45ml",
@@ -317,13 +318,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Gin",
-    nameCht: "琴費士",
     ingredients: ["Gin", "Lemon", "Sugar", "Soda"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Gin Buck",
+    nameCht: "琴霸克",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -335,13 +336,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Gin",
-    nameCht: "琴霸克",
     ingredients: ["Gin", "Ginger", "Lemon", "Sugar", "Soda"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Gin & Tonic",
+    nameCht: "琴通寧",
     method: "Build",
     reciepe: {
       Gin: "45ml",
@@ -350,13 +351,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Gin",
-    nameCht: "琴通寧",
     ingredients: ["gin", "tonic water"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Ramos Gin Fizz",
+    nameCht: "拉莫斯琴費士",
     method: "Shake",
     reciepe: {
       Gin: "45ml",
@@ -370,7 +371,6 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Gin",
-    nameCht: "拉莫斯琴費士",
     ingredients: [
       "Gin",
       "Lemon",
@@ -385,6 +385,7 @@ export const reciepe = [
   },
   {
     nameEng: "20th Century",
+    nameCht: "二十世紀",
     method: "Shake",
     reciepe: {
       Gin: "45ml",
@@ -394,13 +395,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "二十世紀",
     ingredients: ["Gin", "lillet", "white cacao", "lemon"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Army & Navy",
+    nameCht: "海陸之間",
     method: "Shake",
     reciepe: {
       "Gin ": "60ml",
@@ -410,13 +411,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Gin",
-    nameCht: "海陸之間",
     ingredients: ["Gin", "Lemon", "Orgeat", "Bitters"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Hotel Georgia",
+    nameCht: "喬治亞旅店",
     method: "Shake",
     reciepe: {
       "Dry Gin ": "50ml",
@@ -427,13 +428,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Gin",
-    nameCht: "喬治亞旅店",
     ingredients: ["Gin", "Lemon", "Orgeat", "Egg White"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Gimlet",
+    nameCht: "琴蕾",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -442,13 +443,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "琴蕾",
     ingredients: ["Gin", "Lemon", "Sugar"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Bee's Knees",
+    nameCht: "蜜蜂之膝",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -457,13 +458,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "蜜蜂之膝",
     ingredients: ["Gin", "Honey", "Lemon"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Clover Club",
+    nameCht: "三葉草俱樂部",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -473,13 +474,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Gin",
-    nameCht: "三葉草俱樂部",
     ingredients: ["Gin", "Grenadine", "Lemon", "Egg White"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Million Dollar",
+    nameCht: "百萬美元",
     method: "Shake",
     reciepe: {
       Gin: "50ml",
@@ -490,7 +491,6 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "百萬美元",
     ingredients: [
       "Gin",
       "Rosso Vermouth",
@@ -503,6 +503,7 @@ export const reciepe = [
   },
   {
     nameEng: "Monkey Gland",
+    nameCht: "猴子腺體",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -512,13 +513,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "猴子腺體",
     ingredients: ["Gin", "Orange", "Absinthe", "Grenadine"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Singapore Sling",
+    nameCht: "新加坡司令",
     method: "Shake",
     reciepe: {
       Gin: "50ml",
@@ -532,7 +533,6 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Gin",
-    nameCht: "新加坡司令",
     ingredients: [
       "Gin",
       "Cointreau",
@@ -549,6 +549,7 @@ export const reciepe = [
   },
   {
     nameEng: "Yokohama",
+    nameCht: "橫濱",
     method: "Shake",
     reciepe: {
       Gin: "45ml",
@@ -559,13 +560,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "橫濱",
     ingredients: ["Gin", "Vodka", "Orange", "Grenadine", "Absinthe"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Aviation",
+    nameCht: "飛行",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -575,13 +576,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "飛行",
     ingredients: ["Gin", "Maraschino", "Lemon", "Violet"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Bramble",
+    nameCht: "荊棘",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -592,13 +593,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Gin",
-    nameCht: "荊棘",
     ingredients: ["Gin", "Lemon", "Sugar", "berries"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Casino",
+    nameCht: "賭場",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -609,13 +610,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "賭場",
     ingredients: ["Gin", "Maraschino", "Lemon", "Bitters"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Corpse Reviver #2",
+    nameCht: "亡者復甦二號",
     method: "Shake",
     reciepe: {
       Gin: "22.5ml",
@@ -626,13 +627,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "亡者復甦二號",
     ingredients: ["Gin", "Cointreau", "Lillet", "Lemon", "Absinthe"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Paradise",
+    nameCht: "天堂",
     method: "Shake",
     reciepe: {
       Gin: "40ml",
@@ -641,13 +642,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "天堂",
     ingredients: ["Gin", "Apricot", "Orange"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Pegu Club",
+    nameCht: "勃固俱樂部",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -658,13 +659,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "勃固俱樂部",
     ingredients: ["Gin", "Curacao", "lime", "bitters"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "White Lady",
+    nameCht: "白色佳人",
     method: "Shake",
     reciepe: {
       Gin: "50ml",
@@ -673,13 +674,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "白色佳人",
     ingredients: ["Gin", "cointreau", "Lemon"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Angel Face",
+    nameCht: "天使之顏",
     method: "Stir",
     reciepe: {
       Gin: "30ml",
@@ -688,13 +689,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "天使之顏",
     ingredients: ["Gin", "Apricot", "Calvados"],
     show: false,
     shots: 2.5,
   },
   {
     nameEng: "Martinez",
+    nameCht: "馬丁尼茲",
     method: "Stir",
     reciepe: {
       Gin: "45ml",
@@ -705,13 +706,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "馬丁尼茲",
     ingredients: ["Gin", "Rosso Vermouth", "Maraschino", "Bitters"],
     show: false,
     shots: 2.5,
   },
   {
     nameEng: "Hanky Panky",
+    nameCht: "翻雲覆雨",
     method: "Stir",
     reciepe: {
       Gin: "50ml",
@@ -720,13 +721,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "翻雲覆雨",
     ingredients: ["Gin", "Rosso Vermouth", "Fernet Branca"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Last Word",
+    nameCht: "臨別一語",
     method: "Shake",
     reciepe: {
       Gin: "30ml",
@@ -736,13 +737,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "臨別一語",
     ingredients: ["Gin", "Chartreuse", "Maraschino", "Lime"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Jasmine",
+    nameCht: "茉莉",
     method: "Shake",
     reciepe: {
       Gin: "50ml",
@@ -752,13 +753,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "茉莉",
     ingredients: ["Gin", "Cointreau", "Lime", "Campari"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Old Maid",
+    nameCht: "老姑娘",
     method: "Shake",
     reciepe: {
       Gin: "60ml",
@@ -769,13 +770,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Gin",
-    nameCht: "老姑娘",
     ingredients: ["Gin", "Lime", "Sugar", "Cucumber", "Mint"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Martini",
+    nameCht: "馬丁尼",
     method: "Stir",
     reciepe: {
       Gin: "75ml",
@@ -783,13 +784,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "馬丁尼",
     ingredients: ["Gin", "Dry Vermouth"],
     show: true,
     shots: 3,
   },
   {
     nameEng: "Negroni",
+    nameCht: "內格羅尼",
     method: "Stir",
     reciepe: {
       Gin: "40ml",
@@ -798,13 +799,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Gin",
-    nameCht: "內格羅尼",
     ingredients: ["Gin", "Campari", "Rosso Vermouth"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "White Negroni",
+    nameCht: "白色內格羅尼",
     method: "Stir",
     reciepe: {
       Gin: "40ml",
@@ -813,13 +814,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Gin",
-    nameCht: "白色內格羅尼",
     ingredients: ["Gin", "Suze", "Lillet"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Tuxedo",
+    nameCht: "燕尾服",
     method: "Stir",
     reciepe: {
       Gin: "60ml",
@@ -830,13 +831,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "燕尾服",
     ingredients: ["Gin", "Dry Vermouth", "Maraschino", "Absinthe", "Bitters"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Vesper",
+    nameCht: "薇絲朋",
     method: "Shake",
     reciepe: {
       Gin: "45ml",
@@ -846,13 +847,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "薇絲朋",
     ingredients: ["Gin", "Vodka", "Lillet"],
     show: true,
     shots: 3,
   },
   {
     nameEng: "Dark 'N' Stormy",
+    nameCht: "月黑風高",
     method: "Shake",
     reciepe: {
       "Dark Rum": "60ml",
@@ -861,13 +862,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Rum",
-    nameCht: "月黑風高",
     ingredients: ["Rum", "Ginger", "Soda"],
     show: false,
     shots: 1,
   },
   {
     nameEng: "Mojito",
+    nameCht: "莫希托",
     method: "Shake",
     reciepe: {
       "White Rum": "40ml",
@@ -878,13 +879,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Rum",
-    nameCht: "莫希托",
     ingredients: ["Rum", "Lime", "Mint", "Sugar", "Soda"],
     show: false,
     shots: 1,
   },
   {
     nameEng: "Painkiller",
+    nameCht: "止痛藥",
     method: "Shake",
     reciepe: {
       "Dark Rum": "60ml",
@@ -895,13 +896,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Rum",
-    nameCht: "止痛藥",
     ingredients: ["Rum", "Pineapple", "Orange", "Coconut milk"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Pina Colada",
+    nameCht: "鳳梨可樂達",
     method: "Shake",
     reciepe: {
       "White Rum": "30ml",
@@ -912,13 +913,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Rum",
-    nameCht: "鳳梨可樂達",
     ingredients: ["Rum", "Coconut milk", "Pineapple"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Daiquiri",
+    nameCht: "黛綺莉",
     method: "Shake",
     reciepe: {
       "White Rum": "60ml",
@@ -927,13 +928,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Rum",
-    nameCht: "黛綺莉",
     ingredients: ["Rum", "Lime", "Sugar"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Hemingway Special",
+    nameCht: "海明威特調",
     method: "Shake",
     reciepe: {
       "White Rum": "60ml",
@@ -943,13 +944,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Rum",
-    nameCht: "海明威特調",
     ingredients: ["Rum", "Grapefruit", "Maraschino", "Lime"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "X.Y.Z.",
+    nameCht: "末調",
     method: "Shake",
     reciepe: {
       "White Rum": "50ml",
@@ -958,13 +959,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Rum",
-    nameCht: "末調",
     ingredients: ["rum", "cointreau", "lemon"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Hurricane",
+    nameCht: "颶風",
     method: "Shake",
     reciepe: {
       "White Rum": "30ml",
@@ -977,7 +978,6 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Rum",
-    nameCht: "颶風",
     ingredients: [
       "Rum",
       "Passionfruit",
@@ -991,6 +991,7 @@ export const reciepe = [
   },
   {
     nameEng: "Jungle Bird",
+    nameCht: "叢林鳥",
     method: "Shake",
     reciepe: {
       "Dark Rum": "30ml",
@@ -1001,13 +1002,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Rum",
-    nameCht: "叢林鳥",
     ingredients: ["Rum", "Pineapple", "Campari", "lime", "Sugar"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Mai-Tai",
+    nameCht: "邁泰",
     method: "Shake",
     reciepe: {
       "White Rum": "30ml",
@@ -1018,13 +1019,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Rum",
-    nameCht: "邁泰",
     ingredients: ["Rum", "Curacao", "Orgeat", "Lime", "Sugar"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Mary Pickford",
+    nameCht: "瑪麗·畢克馥",
     method: "Shake",
     reciepe: {
       "White Rum": "45ml",
@@ -1034,13 +1035,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Rum",
-    nameCht: "瑪麗·畢克馥",
     ingredients: ["Rum", "Pineapple", "Maraschino", "Grenadine"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Barracuda",
+    nameCht: "梭子魚",
     method: "Shake",
     reciepe: {
       "Gold Rum": "45ml",
@@ -1051,13 +1052,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Rum",
-    nameCht: "梭子魚",
     ingredients: ["Rum", "Galliano", "Pineapple", "Lime", "Prosecco"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Old Cuban",
+    nameCht: "老古巴人",
     method: "Shake",
     reciepe: {
       "Dark Rum": "45ml",
@@ -1069,13 +1070,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Rum",
-    nameCht: "老古巴人",
     ingredients: ["Rum", "Lime", "Mint", "Sugar", "Bitters", "Prosecco"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Yellow Bird",
+    nameCht: "黃色鳥",
     method: "Shake",
     reciepe: {
       "White Rum": "40ml",
@@ -1085,13 +1086,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Rum",
-    nameCht: "黃色鳥",
     ingredients: ["Rum", "Galliano", "cointreau", "Lime"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "El Presidente",
+    nameCht: "大總統",
     method: "Stir",
     reciepe: {
       "White Rum": "50ml",
@@ -1102,13 +1103,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Rum",
-    nameCht: "大總統",
     ingredients: ["Rum", "Dry Vermouth", "cointreau", "Grenadine", "Bitters"],
     show: true,
     shots: 3,
   },
   {
     nameEng: "Sea Breeze",
+    nameCht: "海風",
     method: "Build",
     reciepe: {
       Vodka: "45ml",
@@ -1117,13 +1118,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Vodka",
-    nameCht: "海風",
     ingredients: ["Vodka", "Cranberry", "Grapefruit"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Moscow Mule",
+    nameCht: "莫斯科驢子",
     method: "Build",
     reciepe: {
       Vodka: "40ml",
@@ -1134,7 +1135,6 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Vodka",
-    nameCht: "莫斯科驢子",
     ingredients: ["Vodka", "Ginger", "Soda", "Lime"],
     show: true,
     shots: 1.5,
@@ -1142,6 +1142,7 @@ export const reciepe = [
   },
   {
     nameEng: "Chi Chi",
+    nameCht: "奇奇",
     method: "Shake",
     reciepe: {
       Vodka: "30ml",
@@ -1152,13 +1153,13 @@ export const reciepe = [
     },
     glass: "Hurricane",
     category: "Vodka",
-    nameCht: "奇奇",
     ingredients: ["Vodka", "Lemon", "Coconut milk", "Pineapple"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Vodka Lime",
+    nameCht: "大人版冰火",
     method: "Shake",
     reciepe: {
       Vodka: "60ml",
@@ -1168,13 +1169,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Vodka",
-    nameCht: "大人版冰火",
     ingredients: ["vodka", "lemon", "sugar"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Espresso Martini",
+    nameCht: "咖啡馬丁尼",
     method: "Shake",
     reciepe: {
       Vodka: "40ml",
@@ -1183,7 +1184,6 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Vodka",
-    nameCht: "咖啡馬丁尼",
     ingredients: ["Vodka", "espresso"],
     show: true,
     shots: 1.5,
@@ -1191,6 +1191,7 @@ export const reciepe = [
   },
   {
     nameEng: "Cosmopolitan",
+    nameCht: "柯夢波丹",
     method: "Shake",
     reciepe: {
       Vodka: "40ml",
@@ -1201,13 +1202,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Vodka",
-    nameCht: "柯夢波丹",
     ingredients: ["Vodka", "Cointreau", "Lime", "Cranberry"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "French Martini",
+    nameCht: "法式馬丁尼",
     method: "Shake",
     reciepe: {
       Vodka: "50ml",
@@ -1216,13 +1217,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Vodka",
-    nameCht: "法式馬丁尼",
     ingredients: ["Vodka", "Raspberry", "Pineapple"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Lemon Drop Martini",
+    nameCht: "檸檬糖馬丁尼",
     method: "Shake",
     reciepe: {
       "Vodka or Limoncello": "45ml",
@@ -1233,13 +1234,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Vodka",
-    nameCht: "檸檬糖馬丁尼",
     ingredients: ["Vodka", "cointreau", "Lemon", "sugar"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Russian Spring Punch",
+    nameCht: "俄羅斯之春潘趣",
     method: "Shake",
     reciepe: {
       Vodka: "25ml",
@@ -1250,13 +1251,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Vodka",
-    nameCht: "俄羅斯之春潘趣",
     ingredients: ["Vodka", "Lemon", "Cassis", "Sugar", "Sparkling wine"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Black Russian",
+    nameCht: "黑色俄羅斯",
     method: "Build",
     reciepe: {
       Vodka: "50ml",
@@ -1264,13 +1265,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Vodka",
-    nameCht: "黑色俄羅斯",
     ingredients: ["Vodka", "coffee"],
     show: true,
     shots: 2.5,
   },
   {
     nameEng: "White Russian",
+    nameCht: "白色俄羅斯",
     method: "Build",
     reciepe: {
       Vodka: "50ml",
@@ -1279,13 +1280,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Vodka",
-    nameCht: "白色俄羅斯",
     ingredients: ["Vodka", "coffee", "Cream"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Colorado Bulldog",
+    nameCht: "克羅拉多鬥牛犬",
     method: "Shake",
     reciepe: {
       Vodka: "40ml",
@@ -1295,13 +1296,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Vodka",
-    nameCht: "克羅拉多鬥牛犬",
     ingredients: ["Vodka", "Coffee", "Cream", "Cola"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "God Mother",
+    nameCht: "教母",
     method: "Stir",
     reciepe: {
       Vodka: "50ml",
@@ -1309,13 +1310,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Vodka",
-    nameCht: "教母",
     ingredients: ["Vodka", "amaretto"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Silver Wing",
+    nameCht: "銀色羽翼",
     method: "Stir",
     reciepe: {
       Vodka: "50ml",
@@ -1324,13 +1325,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Vodka",
-    nameCht: "銀色羽翼",
     ingredients: ["Vodka", "cointreau", "dry vermouth"],
     show: true,
     shots: 3,
   },
   {
     nameEng: "Kamikaze",
+    nameCht: "神風特攻隊",
     method: "Shake",
     reciepe: {
       Vodka: "40ml",
@@ -1339,13 +1340,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Vodka",
-    nameCht: "神風特攻隊",
     ingredients: ["Vodka", "cointreau", "Lemon"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "High Life",
+    nameCht: "上流社會",
     method: "Shake",
     reciepe: {
       Vodka: "45ml",
@@ -1355,13 +1356,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Vodka",
-    nameCht: "上流社會",
     ingredients: ["Vodka", "Cointreau", "Pineapple", "Egg White"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Blue Monday",
+    nameCht: "藍色星期一",
     method: "Shake",
     reciepe: {
       Vodka: "60ml",
@@ -1371,13 +1372,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Vodka",
-    nameCht: "藍色星期一",
     ingredients: ["Vodka", "Cointreau", "Blue Curacao", "Bitters"],
     show: true,
     shots: 1.5,
   },
   {
     nameEng: "Pornstar Martini",
+    nameCht: "豔星馬丁尼",
     method: "Shake",
     reciepe: {
       Vodka: "45ml",
@@ -1390,13 +1391,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Vodka",
-    nameCht: "豔星馬丁尼",
     ingredients: ["Vodka", "passionfruit", "Lime", "Vanilla", "Prosecco"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "After Midnight",
+    nameCht: "午夜夢回",
     method: "Shake",
     reciepe: {
       Vodka: "60ml",
@@ -1405,13 +1406,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Vodka",
-    nameCht: "午夜酒",
     ingredients: ["Vodka", "White Cacao", "Green Crème De Menthe"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Horse's Neck",
+    nameCht: "馬頸",
     method: "Build",
     reciepe: {
       Brandy: "60ml",
@@ -1422,13 +1423,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Brandy",
-    nameCht: "馬頸",
     ingredients: ["Brandy", "Ginger", "Soda", "Bitters"],
     show: false,
     shots: 1,
   },
   {
     nameEng: "Alexander",
+    nameCht: "亞歷山大",
     method: "Shake",
     reciepe: {
       Brandy: "45ml",
@@ -1438,13 +1439,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Brandy",
-    nameCht: "亞歷山大",
     ingredients: ["Brandy", "Cacao", "Cream"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Between the Sheets",
+    nameCht: "床笫之間",
     method: "Shake",
     reciepe: {
       Brandy: "30ml",
@@ -1454,13 +1455,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Brandy",
-    nameCht: "床笫之間",
     ingredients: ["Brandy", "Rum", "cointreau", "Lemon"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Brandy Crusta",
+    nameCht: "白蘭地庫斯塔",
     method: "Shake",
     reciepe: {
       Brandy: "60ml",
@@ -1472,7 +1473,6 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Brandy",
-    nameCht: "白蘭地庫斯塔",
     ingredients: [
       "Brandy",
       "Maraschino",
@@ -1486,6 +1486,7 @@ export const reciepe = [
   },
   {
     nameEng: "Porto Flip",
+    nameCht: "波特菲麗普",
     method: "Shake",
     reciepe: {
       "Red Tawny Port Wine": "45ml",
@@ -1495,13 +1496,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Else",
-    nameCht: "波特菲麗普",
     ingredients: ["Port Wine", "Brandy", "Egg Yolk"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Sidecar",
+    nameCht: "側車",
     method: "Shake",
     reciepe: {
       Brandy: "50ml",
@@ -1510,13 +1511,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Brandy",
-    nameCht: "側車",
     ingredients: ["Brandy", "cointreau", "Lemon"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Stinger",
+    nameCht: "毒刺",
     method: "Stir",
     reciepe: {
       Brandy: "50ml",
@@ -1524,13 +1525,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Brandy",
-    nameCht: "毒刺",
     ingredients: ["Brandy", "white crème de menthe"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "B and B",
+    nameCht: "B&B",
     method: "Stir",
     reciepe: {
       Brandy: "50ml",
@@ -1538,13 +1539,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Brandy",
-    nameCht: "B&B",
     ingredients: ["Brandy", "bénédictine"],
     show: true,
     shots: 3,
   },
   {
     nameEng: "French Connection",
+    nameCht: "霹靂神探",
     method: "Stir",
     reciepe: {
       Brandy: "50ml",
@@ -1552,13 +1553,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Brandy",
-    nameCht: "霹靂神探",
     ingredients: ["Brandy", "Amaretto"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Sazerac",
+    nameCht: "賽澤瑞克",
     method: "Stir",
     reciepe: {
       Brandy: "60ml",
@@ -1568,13 +1569,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Brandy",
-    nameCht: "賽澤瑞克",
     ingredients: ["Brandy", "Absinthe", "Sugar", "Bitters"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Vieux Carrè",
+    nameCht: "老廣場",
     method: "Stir",
     reciepe: {
       Brandy: "30ml",
@@ -1586,7 +1587,6 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Brandy",
-    nameCht: "老廣場",
     ingredients: [
       "Brandy",
       "Whiskey",
@@ -1599,6 +1599,7 @@ export const reciepe = [
   },
   {
     nameEng: "Tequila Sunrise",
+    nameCht: "龍舌蘭日出",
     method: "Build",
     reciepe: {
       Tequila: "40ml",
@@ -1607,13 +1608,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Tequila",
-    nameCht: "龍舌蘭日出",
     ingredients: ["Tequila", "Orange", "Grenadine"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Paloma",
+    nameCht: "帕洛瑪",
     method: "Shake",
     reciepe: {
       Tequila: "60ml",
@@ -1624,13 +1625,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Tequila",
-    nameCht: "帕洛瑪",
     ingredients: ["Tequila", "Grapefruit", "lime", "Soda"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Margarita",
+    nameCht: "瑪格麗特",
     method: "Shake",
     reciepe: {
       Tequila: "50ml",
@@ -1639,13 +1640,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Tequila",
-    nameCht: "瑪格麗特",
     ingredients: ["Tequila", "cointreau", "Lime"],
     show: true,
     shots: 2,
   },
   {
     nameEng: "Mocking Bird",
+    nameCht: "仿聲鳥",
     method: "Shake",
     reciepe: {
       Tequila: "60ml",
@@ -1655,13 +1656,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Tequila",
-    nameCht: "仿聲鳥",
     ingredients: ["Tequila", "green crème de menthe", "Lime", "sugar"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Tommy's Margarita",
+    nameCht: "湯米瑪格麗特",
     method: "Shake",
     reciepe: {
       Tequila: "60ml",
@@ -1671,13 +1672,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Tequila",
-    nameCht: "湯米瑪格麗特",
     ingredients: ["Tequila", "Lime", "Agave Syrup"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Rosita",
+    nameCht: "蘿西塔",
     method: "Stir",
     reciepe: {
       Tequila: "40ml",
@@ -1687,13 +1688,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Tequila",
-    nameCht: "蘿西塔",
     ingredients: ["Tequila", "Campari", "Rosso Vermouth"],
     show: false,
     shots: 3,
   },
   {
     nameEng: "Americano",
+    nameCht: "美國佬",
     method: "Build",
     reciepe: {
       Campari: "30ml",
@@ -1702,13 +1703,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Else",
-    nameCht: "美國佬",
     ingredients: ["Campari", "Rosso Vermouth", "Soda"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Bellini",
+    nameCht: "貝里尼",
     method: "Build",
     reciepe: {
       Prosecco: "100ml",
@@ -1716,13 +1717,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Else",
-    nameCht: "貝里尼",
     ingredients: ["Prosecco", "White Peach"],
     show: false,
     shots: 1,
   },
   {
     nameEng: "KIR",
+    nameCht: "基爾",
     method: "Build",
     reciepe: {
       "Dry White Wine": "90ml",
@@ -1730,13 +1731,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Else",
-    nameCht: "基爾",
     ingredients: ["White Wine", "Cassis"],
     show: false,
     shots: 1,
   },
   {
     nameEng: "Mimosa",
+    nameCht: "含羞草",
     method: "Build",
     reciepe: {
       Prosecco: "90ml",
@@ -1744,13 +1745,13 @@ export const reciepe = [
     },
     glass: "Coupe",
     category: "Else",
-    nameCht: "含羞草",
     ingredients: ["Orange", "Prosecco"],
     show: false,
     shots: 1,
   },
   {
     nameEng: "Fernandito",
+    nameCht: "費爾南迪托",
     method: "Build",
     reciepe: {
       "Fernet Branca": "50ml",
@@ -1758,13 +1759,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Else",
-    nameCht: "費爾南迪托",
     ingredients: ["Fernet Branca", "Cola"],
     show: false,
     shots: 1,
   },
   {
     nameEng: "Aperol Spritz",
+    nameCht: "橙光",
     method: "Build",
     reciepe: {
       Prosecco: "90ml",
@@ -1772,9 +1773,14 @@ export const reciepe = [
       Soda: "30ml",
     },
     glass: "Highball",
+    category: "Else",
+    ingredients: ["Prosecco", "Aperol", "Soda"],
+    show: false,
+    shots: 1,
   },
   {
     nameEng: "Spumoni",
+    nameCht: "泡泡",
     method: "Shake",
     reciepe: {
       Campari: "20ml",
@@ -1783,13 +1789,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Else",
-    nameCht: "泡泡",
     ingredients: ["campari", "grapefruit", "tonic water"],
     show: true,
     shots: 1,
   },
   {
     nameEng: "Champagne Cocktail",
+    nameCht: "香檳雞尾酒",
     method: "Build",
     reciepe: {
       Champagne: "to top",
@@ -1798,13 +1804,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Else",
-    nameCht: "香檳雞尾酒",
     ingredients: ["Champagne", "Bitters", "Sugar"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Grasshopper",
+    nameCht: "綠色蚱蜢",
     method: "Shake",
     reciepe: {
       "White Cacao": "30ml",
@@ -1813,13 +1819,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Else",
-    nameCht: "綠色蚱蜢",
     ingredients: ["White Cacao", "green crème de menthe", "Cream"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Sex on the Beach",
+    nameCht: "性感海灘",
     method: "Shake",
     reciepe: {
       Vodka: "45ml",
@@ -1830,13 +1836,13 @@ export const reciepe = [
     },
     glass: "Highball",
     category: "Else",
-    nameCht: "性感海灘",
     ingredients: ["Vodka", "Peach Schnapps", "Orange", "Cranberry"],
     show: false,
     shots: 1.5,
   },
   {
     nameEng: "Caipirinha",
+    nameCht: "卡琵莉亞",
     method: "Build",
     reciepe: {
       Cachaça: "50ml",
@@ -1845,13 +1851,13 @@ export const reciepe = [
     },
     glass: "Lowball",
     category: "Else",
-    nameCht: "卡琵莉亞",
     ingredients: ["Cachaça", "Lime", "Sugar"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Golden Dream",
+    nameCht: "金色夢想",
     method: "Shake",
     reciepe: {
       Galliano: "45ml",
@@ -1861,13 +1867,13 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Else",
-    nameCht: "金色夢想",
     ingredients: ["Galliano", "cointreau", "Orange", "Cream"],
     show: false,
     shots: 2,
   },
   {
     nameEng: "Illegal",
+    nameCht: "非法",
     method: "Shake",
     reciepe: {
       Mezcal: "30ml",
@@ -1880,7 +1886,6 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Else",
-    nameCht: "非法",
     ingredients: [
       "Mezcal",
       "Rum",
@@ -2562,6 +2567,17 @@ export const reciepe = [
       Garnish: "Cherry",
     },
     glass: "Martini",
+    category: "Whiskey",
+    nameCht: "路易斯安那",
+    ingredients: [
+      "Whiskey",
+      "Rosso Vermouth",
+      "Bénédictine",
+      "Absinthe",
+      "Bitters",
+    ],
+    show: false,
+    shots: 2,
   },
   {
     nameEng: "Little Italy",
