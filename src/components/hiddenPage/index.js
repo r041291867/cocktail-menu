@@ -17,7 +17,7 @@ const categories = [
   "Signature",
 ];
 
-const tags = ["Campari"];
+const tags = [...categories, "Campari"];
 
 export default function HiddenPage({
   onCocktailClick = () => {},
@@ -26,6 +26,8 @@ export default function HiddenPage({
   const [showAll, setShowAll] = useState(false);
   const [keywd, setKeywd] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  const [tagList, setTagList] = useState([...tags]);
+  const [inputText, setInputText] = useState("");
 
   function getCategoryCocktails(category) {
     return filterByKeyword(reciepe, keywd)
@@ -48,7 +50,7 @@ export default function HiddenPage({
           cocktail.nameEng.toLowerCase().includes(lowerCaseKeyword) ||
           cocktail.nameCht.includes(keyword) ||
           cocktail.ingredients.filter(
-            (ingredient) => ingredient.toLowerCase() === lowerCaseKeyword
+            (ingredient) => ingredient.toLowerCase().includes(lowerCaseKeyword)
           ).length
           // Object.keys(cocktail.reciepe).filter(
           //   (key) => key.toLowerCase().includes(lowerCaseKeyword).length
@@ -79,10 +81,7 @@ export default function HiddenPage({
             {showAll && <span>.</span>}
           </div>
           <div style={{ flex: 1 }}></div>
-          <div
-            className="close-btn"
-            onClick={onCloseClick}
-          >
+          <div className="close-btn" onClick={onCloseClick}>
             +
           </div>
         </div>
@@ -97,16 +96,10 @@ export default function HiddenPage({
           }))
           .map(({ category, categoryCh, cocktails }) =>
             cocktails.filter((c) => c.show).length || showAll ? (
-              <div
-                key={category}
-                className="menu__section"
-              >
+              <div key={category} className="menu__section">
                 <div className="menu__title handwrite-border sticky">
                   <span className="handwrite-ch">{categoryCh}</span>
-                  <span
-                    className="handwrite-en"
-                    style={{ marginLeft: 6 }}
-                  >
+                  <span className="handwrite-en" style={{ marginLeft: 6 }}>
                     {category}
                   </span>
                 </div>
@@ -136,14 +129,31 @@ export default function HiddenPage({
 
       {showPopup && (
         <Popup onCloseClick={() => setShowPopup(false)}>
-          <h3
-            className="handwrite-ch"
-            style={{ marginTop: 8 }}
-          >
+          <h3 className="handwrite-ch" style={{ marginTop: 8 }}>
             Filter
           </h3>
+
+          <div className="filter-input-frame">
+            <input
+              className="filter-input"
+              type="text"
+              value={inputText}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  // setKeywd([...keywd, inputText]);
+                  setTagList([...tagList, inputText]);
+                  setInputText("");
+                }
+              }}
+              onChange={(e) => {
+                setInputText(e.target.value);
+              }}
+            />
+            <img src="/images/ic-search.png" alt="" />
+          </div>
+
           <div className="tags-list handwrite-ch">
-            {tags.map((tag) => (
+            {tagList.map((tag) => (
               <div
                 key={tag}
                 className={`tags${keywd.includes(tag) ? " active" : ""}`}
@@ -152,8 +162,8 @@ export default function HiddenPage({
                     setKeywd([...keywd.filter((key) => key !== tag)]);
                   } else {
                     setKeywd([...keywd, tag]);
+                    setShowPopup(false);
                   }
-                  setShowPopup(false);
                 }}
               >
                 {tag}
