@@ -135,7 +135,7 @@ export default function HiddenPage({
 
           <div className="filter-input-frame">
             <input
-              className="filter-input"
+              className="filter-input handwrite-ch"
               type="text"
               value={inputText}
               onKeyDown={(e) => {
