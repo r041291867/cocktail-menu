@@ -137,10 +137,21 @@ export default function HiddenPage({
       {showPopup && (
         <Popup onCloseClick={() => setShowPopup(false)}>
           <h3
-            className="handwrite-ch"
+            className="popup-h3 handwrite-ch"
             style={{ marginTop: 8 }}
           >
             Filter
+            {keywd.length ? (
+              <div
+                className="popup-h3-clear"
+                onClick={() => {
+                  setKeywd([]);
+                  setShowPopup(false);
+                }}
+              >
+                clear
+              </div>
+            ) : null}
           </h3>
           <div className="tags-list handwrite-ch">
             {tags.map((tag) => (
