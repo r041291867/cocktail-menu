@@ -33,7 +33,9 @@
   right: 0;
   height: 16px;
   width: 16px;
-  font-size: 14px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 16px;
   background: red;
   color: #fff;
   text-align: center;

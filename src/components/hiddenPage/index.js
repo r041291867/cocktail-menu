@@ -79,7 +79,10 @@ export default function HiddenPage({
             {showAll && <span>.</span>}
           </div>
           <div style={{ flex: 1 }}></div>
-          <div className="close-btn" onClick={onCloseClick}>
+          <div
+            className="close-btn"
+            onClick={onCloseClick}
+          >
             +
           </div>
         </div>
@@ -94,10 +97,16 @@ export default function HiddenPage({
           }))
           .map(({ category, categoryCh, cocktails }) =>
             cocktails.filter((c) => c.show).length || showAll ? (
-              <div key={category} className="menu__section">
+              <div
+                key={category}
+                className="menu__section"
+              >
                 <div className="menu__title handwrite-border sticky">
                   <span className="handwrite-ch">{categoryCh}</span>
-                  <span className="handwrite-en" style={{ marginLeft: 6 }}>
+                  <span
+                    className="handwrite-en"
+                    style={{ marginLeft: 6 }}
+                  >
                     {category}
                   </span>
                 </div>
@@ -122,12 +131,15 @@ export default function HiddenPage({
         }}
         // onDoubleClick={() => setKeywd([])}
       >
-        {keywd.length && <div className="tag-count">{keywd.length}</div>}
+        {keywd.length ? <div className="tag-count">{keywd.length}</div> : null}
       </div>
 
       {showPopup && (
         <Popup onCloseClick={() => setShowPopup(false)}>
-          <h3 className="handwrite-ch" style={{ marginTop: 8 }}>
+          <h3
+            className="handwrite-ch"
+            style={{ marginTop: 8 }}
+          >
             Filter
           </h3>
           <div className="tags-list handwrite-ch">
