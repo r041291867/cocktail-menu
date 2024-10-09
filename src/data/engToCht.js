@@ -100,6 +100,8 @@ const dictionary = {
   pisco: "皮斯可",
   cachaça: "卡夏莎",
   sherry: "雪莉酒",
+  "red wine": "紅酒",
+  fruits: "水果"
 };
 
 export function toChinese(englishText) {

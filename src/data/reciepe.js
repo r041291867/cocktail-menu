@@ -2669,7 +2669,7 @@ export const reciepe = [
       "Sugar",
       "Cucumber",
       "Mint",
-      "Fruit",
+      "Fruits",
       "Ginger",
       "Soda",
     ],
