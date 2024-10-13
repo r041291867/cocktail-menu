@@ -173,7 +173,7 @@ export const reciepe = [
     method: "Shake",
     reciepe: {
       "Scotch Whiskey": "20ml",
-      "Heering Liquor": "20ml",
+      "Heering Liqueur": "20ml",
       "Rosso Vermouth": "20ml",
       "Orange Juice": "20ml",
     },
@@ -1261,7 +1261,7 @@ export const reciepe = [
     method: "Build",
     reciepe: {
       Vodka: "50ml",
-      "Coffee Liquor": "20ml",
+      "Coffee Liqueur": "20ml",
     },
     glass: "Lowball",
     category: "Vodka",
@@ -1275,7 +1275,7 @@ export const reciepe = [
     method: "Build",
     reciepe: {
       Vodka: "50ml",
-      "Coffee Liquor": "20ml",
+      "Coffee Liqueur": "20ml",
       Cream: "20ml",
     },
     glass: "Lowball",
@@ -1290,7 +1290,7 @@ export const reciepe = [
     method: "Shake",
     reciepe: {
       Vodka: "40ml",
-      "Coffee Liquor": "20ml",
+      "Coffee Liqueur": "20ml",
       Cream: "20ml",
       Cola: "to top",
     },
@@ -1382,7 +1382,7 @@ export const reciepe = [
     method: "Shake",
     reciepe: {
       Vodka: "45ml",
-      "Passion Fruit Liquor": "15ml",
+      "Passion Fruit Liqueur": "15ml",
       "Passion Fruit Juice": "30ml",
       "Lime Juice": "15ml",
       "Vanilla Syrup": "15ml",
@@ -2002,7 +2002,7 @@ export const reciepe = [
       Vodka: "30ml",
       Mango: "30ml",
       "Coconut Milk": "30ml",
-      "Grapefruit Liquor": "10ml",
+      "Grapefruit Liqueur": "10ml",
       Sugar: "5ml",
       Garnish: "Grapefruit pulp",
     },
@@ -2977,6 +2977,7 @@ export const reciepe = [
   },
   {
     nameEng: "Holland House",
+    nameCht: "荷蘭之家",
     method: "Stir",
     reciepe: {
       "Gin or Genever": "45ml",
@@ -2987,10 +2988,100 @@ export const reciepe = [
     },
     glass: "Martini",
     category: "Gin",
-    nameCht: "荷蘭之家",
     ingredients: ["Gin", "Dry Vermouth", "Lemon", "Maraschino"],
     show: true,
     shots: 2,
     alcohol: 21
+  },
+  {
+    category: "Gin",
+    nameEng: "Earl Grey Martini",
+    nameCht: "英倫風情",
+    method: "Shake",
+    reciepe: {
+      "Earl Grey infused Gin": "50ml",
+      "Elderflower Liqueur": "20ml",
+      "Grapefuilt Juice/Syrup": "20ml",
+      "Lemon Juice": "10ml",
+      Garnish: "Orange Twist",
+    },
+    glass: "Martini",
+    ingredients: ["Gin", "Earl Grey", "Elderflower", "Grapefuilt", "Lemon"],
+    show: false,
+    shots: 2,
+    alcohol: 18
+  },
+  {
+    category: "Rum",
+    nameEng: "Twelve Mile Limit",
+    nameCht: "十二海哩限制",
+    method: "Shake",
+    reciepe: {
+      "White Rum": "30ml",
+      "Rye Whiskey": "15ml",
+      "Cognac": "15ml",
+      "Lemon Juice": "15ml",
+      "Grenadine": "10ml",
+      Garnish: "Lemon Twist",
+    },
+    glass: "Martini",
+    ingredients: ["Rum", "Whiskey", "Brandy", "Grenadine", "Lemon"],
+    show: true,
+    shots: 2,
+    alcohol: 22
+  },
+  {
+    category: "Brandy",
+    nameEng: "Three Mile Limit",
+    nameCht: "三海哩限制",
+    method: "Shake",
+    reciepe: {
+      "Cognac": "40ml",
+      "White Rum": "20ml",
+      "Lemon Juice": "15ml",
+      "Grenadine": "10ml",
+      Garnish: "Lemon Twist",
+    },
+    glass: "Martini",
+    ingredients: ["Rum", "Brandy", "Grenadine", "Lemon"],
+    show: true,
+    shots: 2,
+    alcohol: 22
+  },
+  {
+    category: "Rum",
+    nameEng: "100-Year-Old Cigar",
+    nameCht: "百年雪茄",
+    method: "Stir",
+    reciepe: {
+      "Aged Rum": "50ml",
+      "Bénédictine": "15ml",
+      "Cynar": "15ml",
+      "Peated Scotch Whisky": "5ml",
+      "absinthe": "2.5ml (Rinse)",
+      "Angostura Bitters": "1 dash",
+      Garnish: "Lemon Twist",
+    },
+    glass: "Martini",
+    ingredients: ["Rum", "Bénédictine", "Cynar", "Whisky", "absinthe", "Bitters"],
+    show: false,
+    shots: 3,
+    alcohol: 28
+  },
+  {
+    category: "Gin",
+    nameEng: "Berlin Station Chief",
+    nameCht: "柏林站長",
+    method: "Stir",
+    reciepe: {
+      "Gin": "60ml",
+      "Peaty Whisky": "15ml",
+      Garnish: "Lemon Twist",
+    },
+    glass: "Martini",
+    ingredients: ["Gin", "Whisky"],
+    show: true,
+    shots: 3,
+    alcohol: 31
   },
 ];
