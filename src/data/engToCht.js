@@ -90,7 +90,7 @@ const dictionary = {
   suze: "龍膽草",
   falernum: "法勒南",
   drambuie: "蜂蜜酒",
-  cynar: "開胃酒",
+  cynar: "朝鮮薊",
   "amer picon": "開胃酒",
   basil: "羅勒",
   grapes: "葡萄",
