@@ -47,10 +47,11 @@ export default function HiddenPage({
       const lowerCaseKeyword = keyword.toLowerCase();
       result = result.filter((cocktail) => {
         return (
+          cocktail.category.toLowerCase().includes(lowerCaseKeyword) ||
           cocktail.nameEng.toLowerCase().includes(lowerCaseKeyword) ||
           cocktail.nameCht.includes(keyword) ||
-          cocktail.ingredients.filter(
-            (ingredient) => ingredient.toLowerCase().includes(lowerCaseKeyword)
+          cocktail.ingredients.filter((ingredient) =>
+            ingredient.toLowerCase().includes(lowerCaseKeyword)
           ).length
           // Object.keys(cocktail.reciepe).filter(
           //   (key) => key.toLowerCase().includes(lowerCaseKeyword).length
@@ -81,7 +82,10 @@ export default function HiddenPage({
             {showAll && <span>.</span>}
           </div>
           <div style={{ flex: 1 }}></div>
-          <div className="close-btn" onClick={onCloseClick}>
+          <div
+            className="close-btn"
+            onClick={onCloseClick}
+          >
             +
           </div>
         </div>
@@ -96,10 +100,16 @@ export default function HiddenPage({
           }))
           .map(({ category, categoryCh, cocktails }) =>
             cocktails.filter((c) => c.show).length || showAll ? (
-              <div key={category} className="menu__section">
+              <div
+                key={category}
+                className="menu__section"
+              >
                 <div className="menu__title handwrite-border sticky">
                   <span className="handwrite-ch">{categoryCh}</span>
-                  <span className="handwrite-en" style={{ marginLeft: 6 }}>
+                  <span
+                    className="handwrite-en"
+                    style={{ marginLeft: 6 }}
+                  >
                     {category}
                   </span>
                 </div>
@@ -129,19 +139,36 @@ export default function HiddenPage({
 
       {showPopup && (
         <Popup onCloseClick={() => setShowPopup(false)}>
-          <h3 className="handwrite-ch" style={{ marginTop: 8 }}>
+          <h3
+            className="popup-h3 handwrite-ch"
+            style={{ marginTop: 8 }}
+          >
             Filter
+            {keywd.length ? (
+              <div
+                className="popup-h3-clear"
+                onClick={() => {
+                  setKeywd([]);
+                  setShowPopup(false);
+                }}
+              >
+                clear
+              </div>
+            ) : null}
           </h3>
 
           <div className="filter-input-frame">
+            <div className="handwrite-ch">Add Tags:</div>
+
             <input
               className="filter-input handwrite-ch"
               type="text"
               value={inputText}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
+                  if (!inputText) return;
                   // setKeywd([...keywd, inputText]);
-                  setTagList([...tagList, inputText]);
+                  setTagList([...tagList, inputText.trim()]);
                   setInputText("");
                 }
               }}
@@ -149,7 +176,17 @@ export default function HiddenPage({
                 setInputText(e.target.value);
               }}
             />
-            <img src="/images/ic-search.png" alt="" />
+            <div
+              style={{ fontWeight: "bold", userSelect: "none" }}
+              onClick={() => {
+                if (!inputText) return;
+                setTagList([...tagList, inputText.trim()]);
+                setInputText("");
+              }}
+            >
+              +
+            </div>
+            {/* <img src="/images/ic-search.png" alt="" / */}
           </div>
 
           <div className="tags-list handwrite-ch">
