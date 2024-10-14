@@ -786,6 +786,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
+    alcohol: 28,
     show: true,
   },
   {
@@ -929,7 +930,8 @@ export const reciepe = [
       Sugar: "15ml",
     },
     glass: "Martini",
-    shots: 1.5,
+    shots: 2,
+    alcohol: 18,
     show: true,
   },
   {
@@ -946,6 +948,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 1.5,
+    alcohol: 20,
     show: true,
   },
   {
@@ -1975,7 +1978,8 @@ export const reciepe = [
       Soda: "to top",
     },
     glass: "Highball",
-    shots: 1.5,
+    shots: 1,
+    alcohol: 7,
     show: true,
   },
   {
@@ -1993,6 +1997,7 @@ export const reciepe = [
     },
     glass: "Coupe",
     shots: 1,
+    alcohol: 5,
     show: true,
   },
   {
@@ -2011,6 +2016,7 @@ export const reciepe = [
     },
     glass: "Coupe",
     shots: 1,
+    alcohol: 8,
     show: true,
   },
   {
@@ -2039,7 +2045,8 @@ export const reciepe = [
       Umeshu: "30ml",
     },
     glass: "Highball",
-    shots: 1.5,
+    shots: 2,
+    alcohol: 20,
     show: true,
   },
   {
@@ -2055,7 +2062,8 @@ export const reciepe = [
       Sugar: "10ml",
     },
     glass: "Nick & Nora",
-    shots: 2,
+    shots: 1.5,
+    alcohol: 15,
     show: true,
   },
   {
@@ -2073,6 +2081,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 8,
     show: true,
   },
   {
@@ -2125,6 +2134,7 @@ export const reciepe = [
     },
     glass: "Hurricane",
     shots: 1,
+    alcohol: 8,
     show: true,
   },
   {
