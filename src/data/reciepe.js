@@ -3058,7 +3058,7 @@ export const reciepe = [
     nameCht: "三海哩限制",
     nameEng: "Three Mile Limit",
     method: "Shake",
-    ingredients: ["Rum", "Brandy", "Grenadine", "Lemon"],
+    ingredients: ["Brandy", "Rum", "Grenadine", "Lemon"],
     reciepe: {
       Cognac: "40ml",
       "White Rum": "20ml",
