@@ -101,7 +101,9 @@ const dictionary = {
   cachaça: "卡夏莎",
   sherry: "雪莉酒",
   "red wine": "紅酒",
-  fruits: "水果"
+  fruits: "水果",
+  "earl grey": "伯爵茶",
+  elderflower: "接骨木"
 };
 
 export function toChinese(englishText) {
