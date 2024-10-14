@@ -6,6 +6,7 @@ const dictionary = {
   brandy: "白蘭地",
   else: "其他",
   signature: "特調",
+  mocktail: "無酒精",
   calvados: "蘋果白蘭地",
   applejack: "蘋果白蘭地",
   "apple brandy": "蘋果白蘭地",

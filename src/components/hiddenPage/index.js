@@ -15,6 +15,7 @@ const categories = [
   "Tequila",
   "Else",
   "Signature",
+  "Mocktail",
 ];
 
 const tags = [...categories, "Campari"];

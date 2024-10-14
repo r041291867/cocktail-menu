@@ -3114,4 +3114,22 @@ export const reciepe = [
     alcohol: 31,
     show: true,
   },
+  {
+    category: "Mocktail",
+    nameCht: "百香鳳梨",
+    nameEng: "Passion Pineapple",
+    method: "Build",
+    ingredients: ["Passionfruit", "pineapple", "tonic water", "lemon"],
+    reciepe: {
+      "Pineapple Juice": "60ml",
+      "Passionfruit Syrup": "15ml",
+      "Lemon Juice": "5-10ml",
+      "Tonic Water": "to top",
+      Garnish: "Pineapple Slice",
+    },
+    glass: "Highball",
+    shots: 0,
+    alcohol: 0,
+    show: true,
+  },
 ];
