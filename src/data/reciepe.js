@@ -67,8 +67,8 @@ export const reciepe = [
       "Egg White": "",
     },
     glass: "Lowball",
-    shots: 1.5,
-    alcohol: 20,
+    shots: 2,
+    alcohol: 18,
     show: true,
   },
   {
@@ -83,8 +83,8 @@ export const reciepe = [
       Lemon: "20ml",
     },
     glass: "Martini",
-    shots: 1.5,
-    alcohol: 20,
+    shots: 2,
+    alcohol: 18,
     show: true,
   },
   {
@@ -132,7 +132,8 @@ export const reciepe = [
       "Red wine": "float",
     },
     glass: "Lowball",
-    shots: 1.5,
+    shots: 2,
+    alcohol: 18,
     show: false,
   },
   {
@@ -148,7 +149,8 @@ export const reciepe = [
       Ginger: "10ml",
     },
     glass: "Lowball",
-    shots: 1.5,
+    shots: 2,
+    alcohol: 18,
     show: true,
   },
   {
@@ -413,7 +415,7 @@ export const reciepe = [
     },
     glass: "Coupe",
     shots: 1.5,
-    show: false,
+    show: true,
   },
   {
     category: "Gin",
@@ -430,7 +432,7 @@ export const reciepe = [
     },
     glass: "Coupe",
     shots: 1.5,
-    show: false,
+    show: true,
   },
   {
     category: "Gin",
@@ -445,6 +447,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 1.5,
+    alcohol: 18,
     show: true,
   },
   {
@@ -460,6 +463,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 1.5,
+    alcohol: 18,
     show: true,
   },
   {
@@ -476,6 +480,7 @@ export const reciepe = [
     },
     glass: "Coupe",
     shots: 1.5,
+    alcohol: 15,
     show: true,
   },
   {
@@ -676,6 +681,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 22,
     show: true,
   },
   {
@@ -1014,7 +1020,7 @@ export const reciepe = [
     nameCht: "邁泰",
     nameEng: "Mai-Tai",
     method: "Shake",
-    ingredients: ["Rum", "Curacao", "Orgeat", "Lime", "Sugar"],
+    ingredients: ["Rum", "Curacao", "Orgeat", "Lime"],
     reciepe: {
       "White Rum": "30ml",
       "Dark Rum": "30ml",
@@ -1024,7 +1030,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 1.5,
-    show: false,
+    show: true,
   },
   {
     category: "Rum",
@@ -1645,6 +1651,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 22,
     show: true,
   },
   {
@@ -2556,7 +2563,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
-    show: false,
+    show: true,
   },
   {
     category: "Rum",
@@ -2650,17 +2657,18 @@ export const reciepe = [
     nameCht: "墨西哥突擊隊",
     nameEng: "Mexican Firing Squad",
     method: "Shake",
-    ingredients: ["Tequila", "Lime", "Sugar", "Grenadine", "Bitters"],
+    ingredients: ["Tequila", "Lime", "Grenadine", "Bitters"],
     reciepe: {
       "Blanco Tequila": "60ml",
       "Lime Juice": "20ml",
-      Sugar: "15ml",
-      Grenadine: "5ml",
-      "Angostura Bitters": "4 dash",
+      // Sugar: "15ml",
+      Grenadine: "15ml",
+      "Angostura Bitters": "2-4dash",
       Garnish: "Lime Wheel, Cherry",
     },
     glass: "Lowball",
-    shots: 1.5,
+    shots: 2,
+    alcohol: 18,
     show: true,
   },
   {
@@ -2786,6 +2794,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
+    alcohol: 25,
     show: true,
   },
   {
