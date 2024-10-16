@@ -6,14 +6,12 @@ export const cocktailMenu = [
       {
         nameCht: "檸檬塔",
         nameEng: "Lemon Tart",
-        alcohol: "Light",
         shots: 1,
         ingredients: ["lemon", "cointreau", "cream"],
       },
       {
         nameCht: "牛奶糖",
         nameEng: "Fudge",
-        alcohol: "Light",
         shots: 1,
         ingredients: ["amarula", "milk", "honey"],
         hasImage: true,
@@ -23,7 +21,6 @@ export const cocktailMenu = [
       {
         nameCht: "楊枝甘露",
         nameEng: "Mango Pomelo",
-        alcohol: "Light",
         shots: 1,
         ingredients: ["vodka", "mango", "coconut milk", "grapefruit"],
         hasImage: true,
@@ -33,14 +30,12 @@ export const cocktailMenu = [
       {
         nameCht: "茶香椪柑",
         nameEng: "Tea & Ponkan",
-        alcohol: "Medium",
         shots: 1.5,
         ingredients: ["vodka", "tea", "lillet", "ponkan", "passionfruit", "egg white"],
         },
         {
           nameCht: "梅子樹下",
           nameEng: "Beneath Plum Tree",
-          alcohol: "Medium",
           shots: 1.5,
           ingredients: ["souler gin", "umeshu", "green tea"],
           hasImage: false,
@@ -50,7 +45,6 @@ export const cocktailMenu = [
         {
           nameCht: "梅子冰茶",
           nameEng: "Plum Iced Tea",
-          alcohol: "Medium",
           shots: 2,
           ingredients: ["gin", "vodka", "tequila", "rum", "cointreau", "umeshu", "honey", "green tea"],
         },
@@ -63,21 +57,18 @@ export const cocktailMenu = [
       {
         nameCht: "琴蕾",
         nameEng: "Gimlet",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["gin", "lemon", "sugar"],
       },
       {
         nameCht: "黛綺莉",
         nameEng: "Daiquiri",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["rum", "lemon", "sugar"],
       },
       {
         nameCht: "淘金熱",
         nameEng: "Gold Rush",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["whisky", "honey", "lemon"],
         hasImage: true,
@@ -87,7 +78,6 @@ export const cocktailMenu = [
       {
         nameCht: "蜜蜂之膝",
         nameEng: "Bee's Knees",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["gin", "honey", "lemon"],
         hasImage: true,
@@ -97,7 +87,6 @@ export const cocktailMenu = [
       {
         nameCht: "海明威特調",
         nameEng: "Hemingway Special",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["Rum", "Grapefruit", "Maraschino", "Lime"],
         hasImage: false,
@@ -107,11 +96,58 @@ export const cocktailMenu = [
       {
         nameCht: "瑪格麗特",
         nameEng: "Margarita",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["cointreau", "cointreau", "Lime"],
       },
     ],
+  },
+  {
+    category: "Fruity",
+    categoryCh: "香甜水果",
+    cocktails: [
+      {
+        nameCht: "鳳梨可樂達",
+        nameEng: "Pina Colada",
+        shots: 1,
+        ingredients: ["Rum", "Coconut milk", "Pineapple"],
+      },
+      {
+        nameCht: "三葉草俱樂部",
+        nameEng: "Clover Club",
+        shots: 1.5,
+        ingredients: ["Gin", "Grenadine", "Lemon", "Egg White"],
+      },
+      {
+        nameCht: "伊恩佐尼",
+        nameEng: "Enzoni",
+        shots: 1.5,
+        ingredients: ["Gin", "Campari", "Lemon", "Sugar", "Grapes"],
+      },
+      {
+        nameCht: "第八區",
+        nameEng: "Ward 8",
+        shots: 2,
+        ingredients: ["Whiskey", "Lemon", "Orange", "Grenadine"],
+      },
+      {
+        nameCht: "颶風",
+        nameEng: "Hurricane",
+        shots: 2,
+        ingredients: [
+          "Rum",
+          "Passionfruit",
+          "Orange",
+          "Lime",
+          "Grenadine",
+        ]
+      },
+      {
+        nameCht: "墨西哥突擊隊",
+        nameEng: "Mexican Firing Squad",
+        shots: 2,
+        ingredients: ["Tequila", "Lime", "Grenadine", "Bitters"],
+      },
+    ]
   },
   {
     category: "Classics",
@@ -120,42 +156,36 @@ export const cocktailMenu = [
       {
         nameCht: "咖啡馬丁尼",
         nameEng: "Espresso Martini",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["Vodka", "espresso"],
       },
       {
         nameCht: "白色佳人",
         nameEng: "White Lady",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["gin", "cointreau", "lemon"],
       },
       {
         nameCht: "側車",
         nameEng: "Sidecar",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["brandy", "grand marnier", "lemon"],
       },
       {
+        nameCht: "邁泰",
+        nameEng: "Mai-Tai",
+        shots: 2,
+        ingredients: ["Rum", "Curacao", "Orgeat", "Lime"],
+      },
+      {
         nameCht: "往日情懷",
         nameEng: "Old Fashioned",
-        alcohol: "Strong",
         shots: 3,
         ingredients: ["whisky", "bitters", "sugar"],
       },
       {
-        nameCht: "老朋友",
-        nameEng: "Old Pal",
-        alcohol: "Strong",
-        shots: 3,
-        ingredients: ["Whiskey", "Campari", "Dry Vermouth"],
-      },
-      {
         nameCht: "馬丁尼",
         nameEng: "Martini",
-        alcohol: "Strong",
         shots: 3,
         ingredients: ["gin", "dry vermouth"],
       },
@@ -168,35 +198,30 @@ export const cocktailMenu = [
       {
         nameCht: "嗨波魯",
         nameEng: "Highball",
-        alcohol: "light",
         shots: 1,
         ingredients: ["whisky", "soda"],
       },
       {
         nameCht: "琴費士",
         nameEng: "Gin Fizz",
-        alcohol: "light",
         shots: 1,
         ingredients: ["gin", "soda", "lemon"],
       },
       {
         nameCht: "琴通寧",
         nameEng: "Gin & Tonic",
-        alcohol: "light",
         shots: 1,
         ingredients: ["gin", "tonic water"],
       },
       {
         nameCht: "帕洛瑪",
         nameEng: "Paloma",
-        alcohol: "light",
         shots: 1,
         ingredients: ["Tequila", "Grapefruit", "lime", "Soda"],
       },
       {
         nameCht: "泡泡",
         nameEng: "Spumoni",
-        alcohol: "light",
         shots: 1,
         ingredients: ["campari", "grapefruit","tonic water"],
         hasImage: true,
@@ -206,7 +231,6 @@ export const cocktailMenu = [
       {
         nameCht: "莫斯科驢子",
         nameEng: "Moscow Mule",
-        alcohol: "light",
         shots: 1.5,
         ingredients: ["vodka", "lemon", "ginger", "soda"],
         hasImage: true,
@@ -216,7 +240,6 @@ export const cocktailMenu = [
       // {
       //   nameCht: "美國佬",
       //   nameEng: "Americano",
-      //   alcohol: "light",
       //   shots: 1,
       //   ingredients: ["campari", "rosso vermouth", "soda"],
       //   hasImage: true,
@@ -232,35 +255,30 @@ export const cocktailMenu = [
       {
         nameCht: "新加坡司令",
         nameEng: "Singapore Sling",
-        alcohol: "Medium",
         shots: 1.5,
         ingredients: ["Gin", "Cointreau", "Lime", "bénédictine", "Cherry", "Pineapple", "Grenadine", "Bitters"],
       },
       {
         nameCht: "第八區",
         nameEng: "Ward 8",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["Whiskey", "Lemon", "Orange", "Grenadine"],
       },
       {
         nameCht: "檸檬糖馬丁尼",
         nameEng: "Lemon Drop Martini",
-        alcohol: "light",
         shots: 2,
         ingredients: ["Vodka", "cointreau", "Lemon", "sugar"],
       },
       {
         nameCht: "紙飛機",
         nameEng: "Paper Plane",
-        alcohol: "Medium",
         shots: 2,
         ingredients: ["Whiskey", "Amaro", "Aperol", "Lemon"],
       },
       {
         nameCht: "曼哈頓",
         nameEng: "Manhattan",
-        alcohol: "Strong",
         shots: 3,
         ingredients: ["whisky", "rosso vermouth", "bitters"],
       },
