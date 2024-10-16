@@ -50,8 +50,8 @@ export const reciepe = [
       "blue curacao": "1tsp",
     },
     glass: "Martini",
-    shots: 1.5,
-    alcohol: 25,
+    shots: 2,
+    alcohol: 22,
     show: true,
   },
   {
@@ -99,7 +99,8 @@ export const reciepe = [
       Lemon: "20ml",
     },
     glass: "Martini",
-    shots: 1.5,
+    shots: 2,
+    alcohol: 22,
     show: true,
   },
   {
@@ -115,7 +116,8 @@ export const reciepe = [
       "Crushed Ice": "",
     },
     glass: "Highball",
-    shots: 1.5,
+    shots: 2,
+    alcohol: 25,
     show: false,
   },
   {
@@ -167,6 +169,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 17,
     show: true,
   },
   {
@@ -183,6 +186,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 17,
     show: false,
   },
   {
