@@ -20,7 +20,12 @@ export default function Reciepe({ reciepe }) {
         className="handwrite-en"
         style={{ padding: "0 20px", transform: "none" }}
       >
-        <div className="reciepe-name">{nameEng}</div>
+        <div className="reciepe-name">
+          {nameEng}
+          {/* <div className="reciepe-alcohol lowMedium">12</div> */}
+
+          {/* <div className="reciepe-alcohol">12 %</div> */}
+          </div>
         <div className="method-and-glass">
           <div className="reciepe-method">{method}</div>
           <div className="reciepe-glass">{glass} Glass</div>

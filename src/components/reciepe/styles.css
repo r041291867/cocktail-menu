@@ -1,6 +1,46 @@
 .reciepe-name {
-  font-size: 22px;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  font-size: 24px;
   text-align: center;
+}
+
+.reciepe-alcohol {
+  height: 24px;
+  /* width: 24px; */
+  font-size: 20px;
+  /* font-weight: 500; */
+  color: #aaa;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 50%;
+  /* background: #000; */
+}
+
+.reciepe-alcohol.low {
+  background: rgb(66, 167, 1);
+  color: #eee;
+}
+
+.reciepe-alcohol.lowMedium {
+  /* background: hsl(75, 100%, 43%); */
+  background: hsl(67, 99%, 45%);
+  color: #333;
+}
+
+.reciepe-alcohol.medium {
+  background: rgb(255, 192, 0);
+  color: #333;
+}
+
+.reciepe-alcohol.mediumHigh {
+  background: hsl(27, 79%, 48%);
+  color: #eee;
+}
+
+.reciepe-alcohol.high {
+  background: hsl(11, 99%, 40%);
 }
 
 .method-and-glass {
@@ -13,10 +53,12 @@
 .reciepe-glass {
   font-size: 18px;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .reciepe-ing {
   font-size: 18px;
+  font-weight: 500;
   margin: 20px auto 10px;
   text-align: center;
 }

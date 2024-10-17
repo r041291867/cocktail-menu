@@ -2429,10 +2429,11 @@ export const reciepe = [
       "Lemon Juice": "20ml",
       Sugar: "15ml",
       "Green Grapes": "5",
-      Garnish: "Grape",
+      Garnish: "Grapes",
     },
-    glass: "Martini",
+    glass: "Lowball",
     shots: 1.5,
+    alcohol: 14,
     show: false,
   },
   {
