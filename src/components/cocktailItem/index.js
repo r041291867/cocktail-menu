@@ -1,6 +1,7 @@
 import "./styles.scss";
 import ShotIcon from "../shotIcon";
 import { toChinese } from "../../data/engToCht";
+import { getReciepe } from '@/data/reciepe.js'
 
 export default function CocktailItem({ cocktail, onCocktailClick = () => {} }) {
   const { hasImage = false, src = "", imgPosition = "left" } = cocktail;
@@ -31,6 +32,8 @@ export default function CocktailItem({ cocktail, onCocktailClick = () => {} }) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  const reciepe = getReciepe(cocktail.nameEng);
+
   return (
     <div className={`cocktail__outer`} onDoubleClick={onCocktailClick}>
       {hasImage && imgPosition === "left" && (
@@ -49,14 +52,14 @@ export default function CocktailItem({ cocktail, onCocktailClick = () => {} }) {
             <div className="cocktail__eng handwrite-en">{cocktail.nameEng}</div>
           </div>
 
-          <div className="cocktail__stars">{numToRate(cocktail.shots)}</div>
+          <div className="cocktail__stars">{numToRate(reciepe.shots)}</div>
         </div>
 
         <div className="cocktail__ingredients--ch handwrite-ch">
-          {cocktail.ingredients.map((str) => toChinese(str)).join(" / ")}
+          {reciepe.ingredients.map((str) => toChinese(str)).join(" / ")}
         </div>
         <div className="cocktail__ingredients handwrite-en">
-          {cocktail.ingredients.map((str) => capitalize(str)).join(" / ")}
+          {reciepe.ingredients.map((str) => capitalize(str)).join(" / ")}
         </div>
       </div>
 
