@@ -1,46 +1,59 @@
 .reciepe-name {
-  /* display: flex;
+  position: relative;
+  display: flex;
   justify-content: space-between;
-  align-items: center; */
+  align-items: center;
   font-size: 24px;
   text-align: center;
 }
 
 .reciepe-alcohol {
+  /* position: absolute;
+  right: 0; */
   height: 24px;
   /* width: 24px; */
-  font-size: 20px;
-  /* font-weight: 500; */
+  font-size: 16px;
+  padding: 0 4px;
   color: #aaa;
   text-align: center;
-  line-height: 24px;
-  border-radius: 50%;
+  line-height: 20px;
+  /* border-radius: 4px; */
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border-width: 2px;
+  border-style: solid;
   /* background: #000; */
 }
 
 .reciepe-alcohol.low {
-  background: rgb(66, 167, 1);
+  border-color: rgb(66, 167, 1);
   color: #eee;
 }
 
 .reciepe-alcohol.lowMedium {
+  border-color: hsl(67, 99%, 45%);
   /* background: hsl(75, 100%, 43%); */
-  background: hsl(67, 99%, 45%);
-  color: #333;
+  /* border: 1px solid hsl(67, 99%, 45%); */
+  /* background: hsl(67, 99%, 45%); */
 }
 
 .reciepe-alcohol.medium {
-  background: rgb(255, 192, 0);
-  color: #333;
+  /* background: rgb(255, 192, 0); */
+  border-color: rgb(255, 192, 0);
+  /* border: 1px solid rgb(255, 192, 0); */
+  /* color: #333; */
 }
 
 .reciepe-alcohol.mediumHigh {
-  background: hsl(27, 79%, 48%);
-  color: #eee;
+  /* background: hsl(27, 79%, 48%); */
+  border-color: hsl(27, 79%, 48%);
+  /* border: 1px solid hsl(27, 79%, 48%); */
+  /* color: #eee; */
 }
 
 .reciepe-alcohol.high {
-  background: hsl(11, 99%, 40%);
+  /* background: hsl(11, 99%, 40%); */
+  border-color: hsl(11, 99%, 40%);
+  /* border: 1px solid hsl(11, 99%, 40%); */
 }
 
 .method-and-glass {

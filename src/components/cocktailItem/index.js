@@ -1,7 +1,7 @@
 import "./styles.scss";
 import ShotIcon from "../shotIcon";
 import { toChinese } from "../../data/engToCht";
-import { getReciepe } from '@/data/reciepe.js'
+import { getReciepe } from "@/data/reciepe.js";
 
 export default function CocktailItem({ cocktail, onCocktailClick = () => {} }) {
   const { hasImage = false, src = "", imgPosition = "left" } = cocktail;
@@ -32,6 +32,20 @@ export default function CocktailItem({ cocktail, onCocktailClick = () => {} }) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  function getAlcoholShots(alcohol) {
+    if (alcohol <= 10) {
+      return 1;
+    } else if (alcohol <= 16) {
+      return 1.5;
+    } else if (alcohol <= 22) {
+      return 2;
+    } else if (alcohol <= 25) {
+      return 2.5;
+    } else {
+      return 3;
+    }
+  }
+
   const reciepe = getReciepe(cocktail.nameEng);
 
   return (
@@ -52,7 +66,11 @@ export default function CocktailItem({ cocktail, onCocktailClick = () => {} }) {
             <div className="cocktail__eng handwrite-en">{cocktail.nameEng}</div>
           </div>
 
-          <div className="cocktail__stars">{numToRate(reciepe.shots)}</div>
+          <div className="cocktail__stars">
+            {numToRate(
+              reciepe.alcohol ? getAlcoholShots(reciepe.alcohol) : reciepe.shots
+            )}
+          </div>
         </div>
 
         <div className="cocktail__ingredients--ch handwrite-ch">
