@@ -18,7 +18,17 @@ const categories = [
   "Mocktail",
 ];
 
-const tags = [...categories, "Campari", "Grapefruit", "Grenadine", "Orgeat", "Prosecco", "Champagne"];
+const tags = [
+  ...categories,
+  "Campari",
+  "Grapefruit",
+  "Grenadine",
+  "Orgeat",
+  "Prosecco",
+  "Champagne",
+  "Absinthe",
+  "Bénédictine"
+];
 
 export default function HiddenPage({
   onCocktailClick = () => {},

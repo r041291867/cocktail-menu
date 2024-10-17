@@ -571,7 +571,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 1.5,
-    show: true,
+    show: false,
   },
   {
     category: "Gin",
