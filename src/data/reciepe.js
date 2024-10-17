@@ -1217,6 +1217,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 16,
     show: false,
   },
   {

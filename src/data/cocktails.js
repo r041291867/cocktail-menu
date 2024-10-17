@@ -106,6 +106,12 @@ export const cocktailMenu = [
     categoryCh: "香甜水果",
     cocktails: [
       {
+        nameCht: "加里波第",
+        nameEng: "Garibaldi",
+        shots: 1,
+        ingredients: ["Campari", "Orange", "Sugar"],
+      },
+      {
         nameCht: "鳳梨可樂達",
         nameEng: "Pina Colada",
         shots: 1,
@@ -141,12 +147,12 @@ export const cocktailMenu = [
           "Grenadine",
         ]
       },
-      {
-        nameCht: "墨西哥突擊隊",
-        nameEng: "Mexican Firing Squad",
-        shots: 2,
-        ingredients: ["Tequila", "Lime", "Grenadine", "Bitters"],
-      },
+      // {
+      //   nameCht: "墨西哥突擊隊",
+      //   nameEng: "Mexican Firing Squad",
+      //   shots: 2,
+      //   ingredients: ["Tequila", "Lime", "Grenadine", "Bitters"],
+      // },
     ]
   },
   {
@@ -259,10 +265,10 @@ export const cocktailMenu = [
         ingredients: ["Gin", "Cointreau", "Lime", "bénédictine", "Cherry", "Pineapple", "Grenadine", "Bitters"],
       },
       {
-        nameCht: "第八區",
-        nameEng: "Ward 8",
+        nameCht: "柯夢波丹",
+        nameEng: "Cosmopolitan",
         shots: 2,
-        ingredients: ["Whiskey", "Lemon", "Orange", "Grenadine"],
+        ingredients: ["Vodka", "Cointreau", "Lime", "Cranberry"],
       },
       {
         nameCht: "檸檬糖馬丁尼",
