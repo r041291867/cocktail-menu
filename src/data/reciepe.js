@@ -3157,4 +3157,22 @@ export const reciepe = [
     alcohol: 0,
     show: true,
   },
+  {
+    category: "Mocktail",
+    nameCht: "秘密會議",
+    nameEng: "Conclave",
+    method: "Shake",
+    ingredients: ["Orange", "Milk", "Raspberry"],
+    reciepe: {
+      "Orange Juice": "90ml",
+      "Milk": "90ml",
+      "Raspberry Syrup": "30ml",
+      "Sugar": "1tsp",
+      Garnish: "Orange Slice",
+    },
+    glass: "Lowball",
+    shots: 0,
+    alcohol: 0,
+    show: true,
+  },
 ];
