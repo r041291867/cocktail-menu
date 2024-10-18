@@ -51,7 +51,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
-    alcohol: 22,
+    alcohol: 25,
     show: true,
   },
   {
@@ -201,6 +201,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 3,
+    alcohol: 28,
     show: false,
   },
   {
@@ -217,6 +218,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 3,
+    alcohol: 27,
     show: true,
   },
   {
@@ -231,6 +233,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 3,
+    alcohol: 31,
     show: false,
   },
   {
@@ -246,6 +249,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
+    alcohol: 26,
     show: false,
   },
   {
@@ -261,6 +265,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 3,
+    alcohol: 24,
     show: false,
   },
   {
@@ -276,7 +281,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
-    alcohol: 27,
+    alcohol: 25,
     show: true,
   },
   {
@@ -294,6 +299,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
+    alcohol: 29,
     show: false,
   },
   {
@@ -303,13 +309,14 @@ export const reciepe = [
     method: "Shake",
     ingredients: ["Gin", "Lemon", "Sugar", "Champagne"],
     reciepe: {
-      Gin: "30ml",
+      Gin: "45ml",
       Lemon: "15ml",
       Sugar: "15ml",
       Champagne: "90ml",
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 10,
     show: false,
   },
   {
@@ -326,6 +333,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 10,
     show: true,
   },
   {
@@ -344,6 +352,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 10,
     show: true,
   },
   {
@@ -359,6 +368,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 10,
     show: true,
   },
   {
@@ -387,6 +397,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 10,
     show: true,
   },
   {
@@ -402,7 +413,8 @@ export const reciepe = [
       lemon: "15ml",
     },
     glass: "Martini",
-    shots: 1.5,
+    shots: 2,
+    alcohol: 20,
     show: false,
   },
   {
@@ -412,13 +424,14 @@ export const reciepe = [
     method: "Shake",
     ingredients: ["Gin", "Lemon", "Orgeat", "Bitters"],
     reciepe: {
-      "Gin ": "60ml",
+      Gin: "60ml",
       Lemon: "20ml",
       Orgeat: "15ml",
       "Angostura bitters": "1 dash",
     },
     glass: "Coupe",
     shots: 1.5,
+    alcohol: 18,
     show: true,
   },
   {
@@ -436,6 +449,7 @@ export const reciepe = [
     },
     glass: "Coupe",
     shots: 1.5,
+    alcohol: 16,
     show: true,
   },
   {
@@ -508,6 +522,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 1.5,
+    alcohol: 14,
     show: false,
   },
   {
@@ -524,6 +539,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 1.5,
+    alcohol: 22,
     show: false,
   },
   {
@@ -571,6 +587,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 1.5,
+    alcohol: 22,
     show: false,
   },
   {
@@ -587,6 +604,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 22,
     show: false,
   },
   {
@@ -604,6 +622,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 2,
+    alcohol: 23,
     show: false,
   },
   {
@@ -621,6 +640,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 23,
     show: true,
   },
   {
@@ -638,6 +658,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 18,
     show: false,
   },
   {
@@ -653,6 +674,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 18,
     show: false,
   },
   {
@@ -670,6 +692,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 23,
     show: true,
   },
   {
@@ -701,6 +724,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2.5,
+    alcohol: 26,
     show: false,
   },
   {
@@ -718,6 +742,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2.5,
+    alcohol: 24,
     show: false,
   },
   {
@@ -733,6 +758,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
+    alcohol: 26,
     show: false,
   },
   {
@@ -749,6 +775,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
+    alcohol: 26,
     show: false,
   },
   {
@@ -765,6 +792,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 22,
     show: true,
   },
   {
@@ -782,6 +810,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 1.5,
+    alcohol: 16,
     show: false,
   },
   {
@@ -812,6 +841,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 3,
+    alcohol: 24,
     show: false,
   },
   {
@@ -827,6 +857,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 3,
+    alcohol: 22,
     show: false,
   },
   {
@@ -844,6 +875,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
+    alcohol: 28,
     show: false,
   },
   {
@@ -860,6 +892,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
+    alcohol: 27,
     show: true,
   },
   {
@@ -875,6 +908,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 10,
     show: false,
   },
   {
@@ -892,6 +926,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 10,
     show: false,
   },
   {
@@ -905,10 +940,11 @@ export const reciepe = [
       "Pineapple Juice": "120ml",
       "Orange Juice": "30ml",
       "Coconut Milk": "30ml",
-      Garnish: "orange slice & cherry & 肉荳蔻粉",
+      Garnish: "orange slice & cherry & Grated nutmeg",
     },
-    glass: "Highball",
+    glass: "Hurricane",
     shots: 1,
+    alcohol: 10,
     show: true,
   },
   {
@@ -918,14 +954,15 @@ export const reciepe = [
     method: "Shake",
     ingredients: ["Rum", "Coconut milk", "Pineapple"],
     reciepe: {
-      "White Rum": "30ml",
-      "Pineapple Juice": "90ml",
+      "White Rum": "40ml",
+      "Pineapple Juice": "80ml",
       "Coconut Milk": "30ml",
       "Lemon Juice": "15ml",
       Sugar: "20ml",
     },
-    glass: "Highball",
+    glass: "Hurricane",
     shots: 1,
+    alcohol: 8,
     show: true,
   },
   {
@@ -974,6 +1011,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
+    alcohol: 22,
     show: true,
   },
   {
@@ -994,12 +1032,13 @@ export const reciepe = [
       "Dark Rum": "60ml",
       "Lime Juice": "30ml",
       "Orange Juice": "30ml",
-      "Passionfruit Syrup": "30ml",
+      "Passionfruit Syrup": "20ml",
       Grenadine: "1 tsp",
       Garnish: "cherry",
     },
-    glass: "Highball",
-    shots: 2,
+    glass: "Hurricane",
+    shots: 1.5,
+    alcohol: 15,
     show: true,
   },
   {
@@ -1009,14 +1048,15 @@ export const reciepe = [
     method: "Shake",
     ingredients: ["Rum", "Pineapple", "Campari", "lime", "Sugar"],
     reciepe: {
-      "Dark Rum": "30ml",
-      Campari: "30ml",
-      "Pineapple Juice": "90ml",
+      "Dark Rum": "45ml",
+      Campari: "15ml",
+      "Pineapple Juice": "45ml",
       "Lime Juice": "15ml",
       Sugar: "15ml",
     },
     glass: "Lowball",
     shots: 1.5,
+    alcohol: 12,
     show: true,
   },
   {
@@ -1034,6 +1074,7 @@ export const reciepe = [
     },
     glass: "Lowball",
     shots: 2,
+    alcohol: 22,
     show: true,
   },
   {
@@ -1050,6 +1091,7 @@ export const reciepe = [
     },
     glass: "Coupe",
     shots: 1.5,
+    alcohol: 15,
     show: true,
   },
   {
@@ -1066,7 +1108,8 @@ export const reciepe = [
       Prosecco: "to top",
     },
     glass: "Highball",
-    shots: 2,
+    shots: 1,
+    alcohol: 10,
     show: false,
   },
   {
@@ -1084,7 +1127,8 @@ export const reciepe = [
       Prosecco: "15ml",
     },
     glass: "Coupe",
-    shots: 2,
+    shots: 1.5,
+    alcohol: 12,
     show: false,
   },
   {
@@ -1100,7 +1144,8 @@ export const reciepe = [
       "Lime Juice": "20ml",
     },
     glass: "Martini",
-    shots: 2,
+    shots: 2.5,
+    alcohol: 24,
     show: false,
   },
   {
@@ -1117,7 +1162,8 @@ export const reciepe = [
       Bitters: "3 drop",
     },
     glass: "Martini",
-    shots: 3,
+    shots: 2.5,
+    alcohol: 25,
     show: true,
   },
   {
@@ -2921,6 +2967,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 3,
+    alcohol: 27,
     show: true,
   },
   {
@@ -3166,9 +3213,9 @@ export const reciepe = [
     ingredients: ["Orange", "Milk", "Raspberry"],
     reciepe: {
       "Orange Juice": "90ml",
-      "Milk": "90ml",
+      Milk: "90ml",
       "Raspberry Syrup": "30ml",
-      "Sugar": "1tsp",
+      Sugar: "1tsp",
       Garnish: "Orange Slice",
     },
     glass: "Lowball",

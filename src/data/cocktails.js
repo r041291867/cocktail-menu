@@ -4,14 +4,17 @@ export const cocktailMenu = [
     categoryCh: "特調",
     cocktails: [
       {
-        nameCht: "檸檬塔",
-        nameEng: "Lemon Tart",
-      },
-      {
         nameCht: "牛奶糖",
         nameEng: "Fudge",
         hasImage: true,
         src: "/images/cocktails/alexandar.jpg",
+        imgPosition: "left",
+      },
+      {
+        nameCht: "檸檬塔",
+        nameEng: "Lemon Tart",
+        hasImage: true,
+        src: "/images/cocktails/ramosGinFizz.jpg",
         imgPosition: "left",
       },
       {
@@ -90,20 +93,20 @@ export const cocktailMenu = [
         nameEng: "Pina Colada",
       },
       {
-        nameCht: "三葉草俱樂部",
-        nameEng: "Clover Club",
-      },
-      {
         nameCht: "伊恩佐尼",
         nameEng: "Enzoni",
       },
       {
-        nameCht: "第八區",
-        nameEng: "Ward 8",
+        nameCht: "三葉草俱樂部",
+        nameEng: "Clover Club",
       },
       {
         nameCht: "颶風",
         nameEng: "Hurricane",
+      },
+      {
+        nameCht: "第八區",
+        nameEng: "Ward 8",
       },
       // {
       //   nameCht: "墨西哥突擊隊",
