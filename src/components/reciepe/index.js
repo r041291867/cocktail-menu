@@ -36,7 +36,7 @@ export default function Reciepe({ reciepe }) {
           {nameEng}
           {alcohol ? (
             <div className={`reciepe-alcohol ${getAlcoholColor(alcohol)}`}>
-              abv {alcohol} %
+              abv {alcohol}%
             </div>
           ) : null}
         </div>

@@ -2461,13 +2461,14 @@ export const reciepe = [
     method: "Build",
     ingredients: ["Campari", "Orange", "Sugar"],
     reciepe: {
-      Campari: "45ml",
+      Campari: "40ml",
       "Orange Juice": "120ml",
       Sugar: "1 tsp",
       Garnish: "Orange Slice",
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 6,
     show: true,
   },
   {
