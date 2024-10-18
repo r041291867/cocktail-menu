@@ -1667,9 +1667,11 @@ export const reciepe = [
       Tequila: "40ml",
       "Orange Juice": "120ml",
       Grenadine: "1 tsp",
+      Garnish: "Orage Slice & Cherry"
     },
     glass: "Highball",
     shots: 1,
+    alcohol: 10,
     show: true,
   },
   {
