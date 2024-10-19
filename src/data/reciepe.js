@@ -381,7 +381,6 @@ export const reciepe = [
       "Lemon",
       "Cream",
       "Egg white",
-      "Sugar",
       "Orange Flower Water",
       "Soda",
     ],
@@ -1025,7 +1024,6 @@ export const reciepe = [
       "Orange",
       "Lime",
       "Grenadine",
-      "Sugar",
     ],
     reciepe: {
       "White Rum": "30ml",
@@ -1046,7 +1044,7 @@ export const reciepe = [
     nameCht: "叢林鳥",
     nameEng: "Jungle Bird",
     method: "Shake",
-    ingredients: ["Rum", "Pineapple", "Campari", "lime", "Sugar"],
+    ingredients: ["Rum", "Pineapple", "Campari", "lime"],
     reciepe: {
       "Dark Rum": "45ml",
       Campari: "15ml",
@@ -1117,7 +1115,7 @@ export const reciepe = [
     nameCht: "老古巴人",
     nameEng: "Old Cuban",
     method: "Shake",
-    ingredients: ["Rum", "Lime", "Mint", "Sugar", "Bitters", "Prosecco"],
+    ingredients: ["Rum", "Lime", "Mint", "Bitters", "Prosecco"],
     reciepe: {
       "Dark Rum": "45ml",
       "Lime Juice": "25ml",
@@ -1303,7 +1301,7 @@ export const reciepe = [
     nameCht: "俄羅斯之春潘趣",
     nameEng: "Russian Spring Punch",
     method: "Shake",
-    ingredients: ["Vodka", "Lemon", "Cassis", "Sugar", "Sparkling wine"],
+    ingredients: ["Vodka", "Lemon", "Cassis", "Sparkling wine"],
     reciepe: {
       Vodka: "25ml",
       "Lemon Juice": "25ml",
@@ -1945,7 +1943,6 @@ export const reciepe = [
       "Falernum",
       "Maraschino",
       "Lime",
-      "Sugar",
       "Egg White",
     ],
     reciepe: {
@@ -1973,7 +1970,6 @@ export const reciepe = [
       "Gin",
       "Cointreau",
       "Lemon",
-      "Sugar",
       "Cola",
     ],
     reciepe: {
@@ -2179,7 +2175,6 @@ export const reciepe = [
       "Pineapple",
       "Lemon",
       "Cointreau",
-      "Sugar",
       "Blue curacao",
       "coconut water",
     ],
@@ -2249,7 +2244,7 @@ export const reciepe = [
     nameCht: "竹子",
     nameEng: "Bamboo",
     method: "Stir",
-    ingredients: ["Sherry", "Dry Vermouth", "Sugar", "Bitters"],
+    ingredients: ["Sherry", "Dry Vermouth", "Bitters"],
     reciepe: {
       "Dry Sherry": "45ml",
       "Dry Vermouth": "45ml",
@@ -2470,7 +2465,7 @@ export const reciepe = [
     nameCht: "伊恩佐尼",
     nameEng: "Enzoni",
     method: "Shake",
-    ingredients: ["Gin", "Campari", "Lemon", "Sugar", "Grapes"],
+    ingredients: ["Gin", "Campari", "Lemon", "Grapes"],
     reciepe: {
       Gin: "30ml",
       Campari: "30ml",
@@ -2507,7 +2502,7 @@ export const reciepe = [
     nameCht: "加里波第",
     nameEng: "Garibaldi",
     method: "Build",
-    ingredients: ["Campari", "Orange", "Sugar"],
+    ingredients: ["Campari", "Orange"],
     reciepe: {
       Campari: "40ml",
       "Orange Juice": "120ml",
@@ -2524,7 +2519,7 @@ export const reciepe = [
     nameCht: "琴瑞奇",
     nameEng: "Gin Rickey",
     method: "Build",
-    ingredients: ["Gin", "Lemon", "Sugar", "Soda"],
+    ingredients: ["Gin", "Lemon", "Soda"],
     reciepe: {
       Gin: "60ml",
       "Lime Juice": "20ml",
@@ -2752,7 +2747,6 @@ export const reciepe = [
     ingredients: [
       "Pimm’s No. 1",
       "Lime",
-      "Sugar",
       "Cucumber",
       "Mint",
       "Fruits",
@@ -2959,7 +2953,7 @@ export const reciepe = [
     nameCht: "多倫多",
     nameEng: "Toronto",
     method: "Stir",
-    ingredients: ["Whiskey", "Fernet Branca", "Sugar", "Bitters"],
+    ingredients: ["Whiskey", "Fernet Branca", "Bitters"],
     reciepe: {
       "Rye Whiskey": "60ml",
       "Fernet Branca": "7.5ml",

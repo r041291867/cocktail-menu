@@ -3,7 +3,11 @@ import ShotIcon from "../shotIcon";
 import { toChinese } from "../../data/engToCht";
 import { getReciepe } from "@/data/reciepe.js";
 
-export default function CocktailItem({ cocktail, onCocktailClick = () => {} }) {
+export default function CocktailItem({
+  showAll,
+  cocktail,
+  onCocktailClick = () => {},
+}) {
   const { hasImage = false, src = "", imgPosition = "left" } = cocktail;
 
   const numToRate = (num) => {
@@ -63,7 +67,10 @@ export default function CocktailItem({ cocktail, onCocktailClick = () => {} }) {
         <div className="cocktail__main">
           <div className="cocktail__name">
             <div className="cocktail__cht handwrite-ch">{cocktail.nameCht}</div>
-            <div className="cocktail__eng handwrite-en">{cocktail.nameEng}</div>
+            <div className="cocktail__eng handwrite-en">
+              {cocktail.nameEng}
+              {showAll && cocktail.show ? <sup> *</sup> : null}
+            </div>
           </div>
 
           <div className="cocktail__stars">

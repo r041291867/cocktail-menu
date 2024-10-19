@@ -128,6 +128,7 @@ export default function HiddenPage({
                   cocktail.show || showAll ? (
                     <CocktailItem
                       key={index + cocktail.nameEng}
+                      showAll={showAll}
                       cocktail={cocktail}
                       onCocktailClick={() => onCocktailClick(cocktail)}
                     />
