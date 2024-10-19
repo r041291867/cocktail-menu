@@ -2154,15 +2154,15 @@ export const reciepe = [
       "egg white",
     ],
     reciepe: {
-      "Tea infused Vodka": "30ml",
-      Lillet: "10ml",
+      "Tea infused Vodka": "45ml",
+      Lillet: "15ml",
       "Ponkan Juice": "30ml",
       "Passionfruit Syrup": "10ml",
       "Egg White": "20ml",
     },
     glass: "Coupe",
     shots: 1.5,
-    alcohol: 10,
+    alcohol: 12,
     show: true,
   },
   {
