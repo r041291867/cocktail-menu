@@ -3191,10 +3191,10 @@ export const reciepe = [
   },
   {
     category: "Mocktail",
-    nameCht: "百香鳳梨",
-    nameEng: "Passion Pineapple",
+    nameCht: "百鳳寧",
+    nameEng: "PPT",
     method: "Build",
-    ingredients: ["Passionfruit", "pineapple", "tonic water", "lemon"],
+    ingredients: ["Passionfruit", "pineapple", "tonic water"],
     reciepe: {
       "Pineapple Juice": "60ml",
       "Passionfruit Syrup": "15ml",
