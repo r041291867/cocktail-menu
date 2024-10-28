@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import CocktailItem from "@/components/cocktailItem";
 import Loading from "@/components/loading";
 import HiddenPage from "@/components/hiddenPage";
-import { cocktailMenu } from "@/data/cocktails";
+import { cocktailMenu } from "@/data/cocktailsHalloween";
 import Popup from "@/components/popup";
 import Reciepe from "@/components/reciepe";
 import { getReciepe } from '@/data/reciepe.js'
