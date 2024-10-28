@@ -1018,13 +1018,7 @@ export const reciepe = [
     nameCht: "颶風",
     nameEng: "Hurricane",
     method: "Shake",
-    ingredients: [
-      "Rum",
-      "Passionfruit",
-      "Orange",
-      "Lime",
-      "Grenadine",
-    ],
+    ingredients: ["Rum", "Passionfruit", "Orange", "Lime", "Grenadine"],
     reciepe: {
       "White Rum": "30ml",
       "Dark Rum": "60ml",
@@ -1665,7 +1659,7 @@ export const reciepe = [
       Tequila: "40ml",
       "Orange Juice": "120ml",
       Grenadine: "1 tsp",
-      Garnish: "Orage Slice & Cherry"
+      Garnish: "Orage Slice & Cherry",
     },
     glass: "Highball",
     shots: 1,
@@ -2745,7 +2739,7 @@ export const reciepe = [
     nameEng: "Pimm's Cup",
     method: "Shake",
     ingredients: [
-      "Pimm’s No. 1",
+      "Pimm's No. 1",
       "Lime",
       "Cucumber",
       "Mint",
@@ -3217,6 +3211,24 @@ export const reciepe = [
     glass: "Lowball",
     shots: 0,
     alcohol: 0,
+    show: true,
+  },
+  {
+    category: "Gin",
+    nameCht: "會館費士",
+    nameEng: "Kaikan Fizz",
+    method: "Shake",
+    ingredients: ["Gin", "Milk", "Lemon", "Soda"],
+    reciepe: {
+      Gin: "45ml",
+      Milk: "30ml",
+      "Lemon Juice": "10ml",
+      Sugar: "1 tsp",
+      "Soda Water": "to top"
+    },
+    glass: "Highball",
+    shots: 1,
+    alcohol: 8,
     show: true,
   },
 ];
