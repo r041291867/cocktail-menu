@@ -2162,18 +2162,14 @@ export const reciepe = [
   {
     category: "Signature",
     nameCht: "百香伯爵",
-    nameEng: "Earl Grey & Passionfruit",
+    nameEng: "Passion Earl",
     method: "Shake",
-    ingredients: [
-      "vodka",
-      "Earl Grey",
-      "passionfruit",
-      "Lemon"
-    ],
+    ingredients: ["vodka", "Earl Grey", "passionfruit", "Lemon", "Honey"],
     reciepe: {
-      "Tea infused Vodka": "60ml",
-      "Passionfruit Syrup": "20ml",
+      "Tea infused Vodka": "50ml",
       "Lemon Juice": "20ml",
+      "Passionfruit Syrup": "15ml",
+      "Honey": "5ml",
     },
     glass: "Coupe",
     shots: 1.5,
@@ -3249,7 +3245,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
-    alcohol: 8,
+    alcohol: 10,
     show: true,
   },
 ];
