@@ -2127,7 +2127,7 @@ export const reciepe = [
     nameCht: "檸檬塔",
     nameEng: "Lemon Tart",
     method: "Shake",
-    ingredients: ["lemon", "cointreau", "cream"],
+    ingredients: ["Vodka", "lemon", "cointreau", "cream"],
     reciepe: {
       Limoncello: "30ml",
       Cointreau: "30ml",
@@ -2163,6 +2163,27 @@ export const reciepe = [
     glass: "Coupe",
     shots: 1.5,
     alcohol: 12,
+    show: true,
+  },
+  {
+    category: "Signature",
+    nameCht: "百香伯爵",
+    nameEng: "Earl Grey & Passionfruit",
+    method: "Shake",
+    ingredients: [
+      "vodka",
+      "Earl Grey",
+      "passionfruit",
+      "Lemon"
+    ],
+    reciepe: {
+      "Tea infused Vodka": "60ml",
+      "Passionfruit Syrup": "20ml",
+      "Lemon Juice": "20ml",
+    },
+    glass: "Coupe",
+    shots: 1.5,
+    alcohol: 18,
     show: true,
   },
   {
