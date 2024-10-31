@@ -18,7 +18,7 @@ export const cocktailMenu = [
         imgPosition: "left",
       },
       {
-        nameCht: "百香伯爵",
+        nameCht: "熱情伯爵",
         nameEng: "Passion Earl",
       },
     ],
@@ -40,13 +40,6 @@ export const cocktailMenu = [
         nameEng: "Daiquiri",
       },
       {
-        nameCht: "淘金熱",
-        nameEng: "Gold Rush",
-        hasImage: true,
-        src: "/images/cocktails/goldRush.jpg",
-        imgPosition: "right",
-      },
-      {
         nameCht: "蜜蜂之膝",
         nameEng: "Bee's Knees",
         hasImage: true,
@@ -57,8 +50,12 @@ export const cocktailMenu = [
   },
   {
     category: "Classics",
-    categoryCh: "懷舊經典",
+    categoryCh: "經典調酒",
     cocktails: [
+      {
+        nameCht: "盤尼西林",
+        nameEng: "Penicillin",
+      },
       {
         nameCht: "白色佳人",
         nameEng: "White Lady",
@@ -84,10 +81,6 @@ export const cocktailMenu = [
       {
         nameCht: "琴費士",
         nameEng: "Gin Fizz",
-      },
-      {
-        nameCht: "琴通寧",
-        nameEng: "Gin & Tonic",
       },
       {
         nameCht: "會館費士",
