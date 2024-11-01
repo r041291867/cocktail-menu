@@ -3231,4 +3231,21 @@ export const reciepe = [
     alcohol: 8,
     show: true,
   },
+  {
+    category: "Vodka",
+    nameCht: "藍色潟湖",
+    nameEng: "Blue Lagoon",
+    method: "Shake",
+    ingredients: ["Vodka", "Blue curacao", "Lemon", "Soda"],
+    reciepe: {
+      "Vodka": "45ml",
+      "Blue curacao": "30ml",
+      "Lemon Juice": "20ml",
+      "Soda Water": "to top",
+    },
+    glass: "Highball",
+    shots: 1,
+    alcohol: 10,
+    show: true,
+  },
 ];
