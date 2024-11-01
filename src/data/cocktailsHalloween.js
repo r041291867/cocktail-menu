@@ -83,6 +83,10 @@ export const cocktailMenu = [
         nameEng: "Gin Fizz",
       },
       {
+        nameCht: "藍色潟湖",
+        nameEng: "Blue Lagoon",
+      },
+      {
         nameCht: "會館費士",
         nameEng: "Kaikan Fizz",
       },

@@ -3265,4 +3265,23 @@ export const reciepe = [
     alcohol: 10,
     show: true,
   },
+  {
+    category: "Rum",
+    nameCht: "藍色夏威夷",
+    nameEng: "Blue Hawaii",
+    method: "Shake",
+    ingredients: ["Rum", "Vodka", "Blue curacao", "curacao", "Pineapple", "Lemon"],
+    reciepe: {
+      "Rum": "20ml",
+      "Vodka": "20ml",
+      "Blue curacao": "15ml",
+      "Pineapple Juice": "90ml",
+      "Lemon Juice": "30ml",
+      "Sugar": "20ml",
+    },
+    glass: "Highball",
+    shots: 1,
+    alcohol: 8,
+    show: true,
+  },
 ];
