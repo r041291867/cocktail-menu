@@ -61,6 +61,7 @@ const dictionary = {
   "lemon": "檸檬",
   "lillet": "麗葉酒",
   "lime": "萊姆",
+  "limoncello": "檸檬酒",
   "mango": "芒果",
   "maraschino": "黑櫻桃",
   "mezcal": "梅茲卡爾",

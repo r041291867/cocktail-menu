@@ -52,6 +52,7 @@ export default function CocktailItem({
 
   const reciepe = getReciepe(cocktail.nameEng);
 
+  if (!reciepe) return null;
   return (
     <div className={`cocktail__outer`} onDoubleClick={onCocktailClick}>
       {hasImage && imgPosition === "left" && (
