@@ -21,6 +21,10 @@ export const cocktailMenu = [
         nameCht: "熱情伯爵",
         nameEng: "Passion Earl",
       },
+      {
+        nameCht: "國王谷",
+        nameEng: "King's Valley",
+      },
     ],
   },
   {
