@@ -45,6 +45,7 @@ const dictionary = {
   "espresso": "濃縮咖啡",
   "falernum": "法勒南",
   "fernet branca": "芙內布蘭卡",
+  "floral": "花香",
   "fruits": "水果",
   "galliano": "茴香",
   "gin": "琴酒",

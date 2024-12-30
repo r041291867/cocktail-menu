@@ -22,10 +22,6 @@ export const cocktailMenu = [
         imgPosition: "left",
       },
       {
-        nameCht: "熱情伯爵",
-        nameEng: "Passion Earl",
-      },
-      {
         nameCht: "梅子樹下",
         nameEng: "Beneath Plum Tree",
       },
@@ -36,6 +32,32 @@ export const cocktailMenu = [
       {
         nameCht: "上海",
         nameEng: "Shanghai",
+      },
+    ],
+  },
+  {
+    category: "Tea",
+    categoryCh: "茶系",
+    cocktails: [
+      {
+        nameCht: "煎茶",
+        nameEng: "Gin & Tonic",
+      },
+      {
+        nameCht: "熱情伯爵",
+        nameEng: "Passion Earl",
+      },
+      {
+        nameCht: "烏龍茶",
+        nameEng: "Honeysuckle",
+      },
+      {
+        nameCht: "茉莉花茶",
+        nameEng: "Bee's Knees",
+      },
+      {
+        nameCht: "焙茶",
+        nameEng: "Martini",
       },
     ],
   },
@@ -55,10 +77,10 @@ export const cocktailMenu = [
         nameCht: "白色佳人",
         nameEng: "White Lady",
       },
-      {
-        nameCht: "賭場",
-        nameEng: "Casino",
-      },
+      // {
+      //   nameCht: "賭場",
+      //   nameEng: "Casino",
+      // },
       {
         nameCht: "側車",
         nameEng: "Sidecar",
@@ -80,10 +102,6 @@ export const cocktailMenu = [
       {
         nameCht: "咖啡馬丁尼",
         nameEng: "Espresso Martini",
-      },
-      {
-        nameCht: "蜜蜂之膝",
-        nameEng: "Bee's Knees",
       },
       {
         nameCht: "盤尼西林",
@@ -127,6 +145,10 @@ export const cocktailMenu = [
         nameCht: "泡泡",
         nameEng: "Spumoni",
       },
+      {
+        nameCht: "會館費士",
+        nameEng: "Kaikan Fizz",
+      },
     ],
   },
   {
@@ -134,12 +156,12 @@ export const cocktailMenu = [
     categoryCh: "特別的",
     cocktails: [
       {
-        nameCht: "會館費士",
-        nameEng: "Kaikan Fizz",
-      },
-      {
         nameCht: "喬治亞旅店",
         nameEng: "Hotel Georgia",
+      },
+      {
+        nameCht: "法外狂徒",
+        nameEng: "Scofflaw",
       },
       {
         nameCht: "墨西哥突擊隊",
@@ -152,10 +174,6 @@ export const cocktailMenu = [
       {
         nameCht: "左輪手槍",
         nameEng: "Revolver",
-      },
-      {
-        nameCht: "法外狂徒",
-        nameEng: "Scofflaw",
       },
       {
         nameCht: "柏林站長",
