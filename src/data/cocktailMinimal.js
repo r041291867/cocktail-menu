@@ -99,10 +99,10 @@ export const cocktailMenu = [
     category: "New Era",
     categoryCh: "新經典",
     cocktails: [
-      {
-        nameCht: "咖啡馬丁尼",
-        nameEng: "Espresso Martini",
-      },
+      // {
+      //   nameCht: "咖啡馬丁尼",
+      //   nameEng: "Espresso Martini",
+      // },
       {
         nameCht: "盤尼西林",
         nameEng: "Penicillin",
@@ -144,6 +144,10 @@ export const cocktailMenu = [
       {
         nameCht: "泡泡",
         nameEng: "Spumoni",
+      },
+      {
+        nameCht: "帕洛瑪",
+        nameEng: "Paloma",
       },
       {
         nameCht: "會館費士",
