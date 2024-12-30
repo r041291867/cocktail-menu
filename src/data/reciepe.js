@@ -1673,9 +1673,11 @@ export const reciepe = [
     method: "Shake",
     ingredients: ["Tequila", "Grapefruit", "lime", "Soda"],
     reciepe: {
-      "Tequila": "60ml",
-      "Grapefruit": "20ml",
+      "Tequila": "50ml",
+      "Grapefruit Juice": "30ml",
+      "Grapefruit Liqueur": "20ml",
       "Lime Juice": "15ml",
+      "Sugar": "10ml",
       "Soda": "Top",
       "Salt": "1 pinch",
     },
