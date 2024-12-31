@@ -156,8 +156,8 @@ export const cocktailMenu = [
     ],
   },
   {
-    category: "Something Special",
-    categoryCh: "特別的",
+    category: "Niche",
+    categoryCh: "小眾調酒",
     cocktails: [
       {
         nameCht: "喬治亞旅店",

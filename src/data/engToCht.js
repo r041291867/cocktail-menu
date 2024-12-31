@@ -74,6 +74,7 @@ const dictionary = {
   "orgeat": "杏仁",
   "passionfruit": "百香果",
   "peach schnapps": "蜜桃白蘭地",
+  "peaty": "泥煤",
   "pimm's no. 1": "皮姆一號",
   "pineapple": "鳳梨",
   "pisco": "皮斯可",
