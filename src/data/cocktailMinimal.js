@@ -48,10 +48,6 @@ export const cocktailMenu = [
         nameEng: "Passion Earl",
       },
       {
-        nameCht: "烏龍茶",
-        nameEng: "Honeysuckle",
-      },
-      {
         nameCht: "茉莉花茶",
         nameEng: "Bee's Knees",
       },
