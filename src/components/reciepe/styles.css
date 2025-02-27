@@ -67,6 +67,7 @@
 .reciepe-ing > div {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 /* .reciepe-ing > div:first-child {
@@ -77,6 +78,10 @@
   width: 40%;
 } */
 
-/* .reciepe-glass {
-
-} */
+.reciepe-ing .ing-name {
+  white-space: nowrap;
+}
+.reciepe-ing .ing-content {
+  text-align: left;
+  line-height: 1.2;
+}
