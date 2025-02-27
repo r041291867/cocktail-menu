@@ -995,7 +995,7 @@ export const reciepe = [
     glass: "Martini",
     shots: 2,
     alcohol: 20,
-    show: true,
+    show: false,
   },
   {
     category: "Rum",
@@ -1171,7 +1171,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
-    show: true,
+    show: false,
   },
   {
     category: "Vodka",
@@ -1683,7 +1683,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
-    show: true,
+    show: false,
   },
   {
     category: "Tequila",
@@ -1848,7 +1848,7 @@ export const reciepe = [
     },
     glass: "Highball",
     shots: 1,
-    show: true,
+    show: false,
   },
   {
     category: "Else",
@@ -2069,7 +2069,7 @@ export const reciepe = [
     glass: "Coupe",
     shots: 1,
     alcohol: 8,
-    show: true,
+    show: false,
   },
   {
     category: "Signature",
@@ -2370,7 +2370,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 1.5,
-    show: true,
+    show: false,
   },
   {
     category: "Rum",
