@@ -125,9 +125,13 @@ export const cocktailMenu = [
         nameCht: "琴通寧",
         nameEng: "Gin & Tonic",
       },
+      // {
+      //   nameCht: "會館費士",
+      //   nameEng: "Kaikan Fizz",
+      // },
       {
-        nameCht: "會館費士",
-        nameEng: "Kaikan Fizz",
+        nameCht: "莫希托",
+        nameEng: "Mojito",
       },
     ],
   },
@@ -135,10 +139,10 @@ export const cocktailMenu = [
     category: "Niche",
     categoryCh: "小眾調酒",
     cocktails: [
-      {
-        nameCht: "喬治亞旅店",
-        nameEng: "Hotel Georgia",
-      },
+      // {
+      //   nameCht: "喬治亞旅店",
+      //   nameEng: "Hotel Georgia",
+      // },
       {
         nameCht: "法外狂徒",
         nameEng: "Scofflaw",
