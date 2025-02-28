@@ -15,6 +15,7 @@ const dictionary = {
   "bitters": "苦精",
   "blue curacao": "藍柑橘",
   "brandy": "白蘭地",
+  "buckwheat": "蕎麥",
   "bénédictine": "班尼迪克汀",
   "cacao": "可可",
   "cachaça": "卡夏莎",
@@ -73,6 +74,7 @@ const dictionary = {
   "orange flower water": "橙花水",
   "orgeat": "杏仁",
   "passionfruit": "百香果",
+  "peach": "蜜桃",
   "peach schnapps": "蜜桃白蘭地",
   "peaty": "泥煤",
   "pimm's no. 1": "皮姆一號",
@@ -109,6 +111,7 @@ const dictionary = {
   "white peach": "白桃",
   "white wine": "白葡萄酒",
   "yellow chartreuse": "黃夏翠斯",
+  "yuzu": "柚子",
 };
 
 export function toChinese(englishText) {
