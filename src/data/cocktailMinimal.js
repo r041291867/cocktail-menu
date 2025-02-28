@@ -58,10 +58,6 @@ export const cocktailMenu = [
     categoryCh: "懷舊經典",
     cocktails: [
       {
-        nameCht: "琴費士",
-        nameEng: "Gin Fizz",
-      },
-      {
         nameCht: "黛綺麗",
         nameEng: "Daiquiri",
       },
@@ -76,6 +72,10 @@ export const cocktailMenu = [
       {
         nameCht: "往日情懷",
         nameEng: "Old Fashioned",
+      },
+      {
+        nameCht: "曼哈頓",
+        nameEng: "Manhattan",
       },
       {
         nameCht: "馬丁尼",
@@ -103,10 +103,10 @@ export const cocktailMenu = [
         nameCht: "勃固俱樂部",
         nameEng: "Pegu Club",
       },
-      {
-        nameCht: "邁泰",
-        nameEng: "Mai-Tai",
-      },
+      // {
+      //   nameCht: "邁泰",
+      //   nameEng: "Mai-Tai",
+      // },
       {
         nameCht: "薇絲朋",
         nameEng: "Vesper",
@@ -122,6 +122,10 @@ export const cocktailMenu = [
         nameEng: "Highball",
       },
       {
+        nameCht: "琴費士",
+        nameEng: "Gin Fizz",
+      },
+      {
         nameCht: "琴通寧",
         nameEng: "Gin & Tonic",
       },
@@ -132,6 +136,10 @@ export const cocktailMenu = [
       {
         nameCht: "莫希托",
         nameEng: "Mojito",
+      },
+      {
+        nameCht: "美國佬",
+        nameEng: "Americano",
       },
     ],
   },
