@@ -3,17 +3,14 @@ export const cocktailMenu = [
     category: "Signature",
     categoryCh: "特調",
     cocktails: [
-      // {
-      //   nameCht: "牛奶糖",
-      //   nameEng: "Fudge",
-      //   hasImage: false,
-      //   src: "/images/cocktails/alexandar.jpg",
-      //   imgPosition: "left",
-      // },
-      // {
-      //   nameCht: "香草布丁",
-      //   nameEng: "Vanilla Pudding",
-      // },
+      {
+        nameCht: "牛奶糖",
+        nameEng: "Fudge",
+      },
+      {
+        nameCht: "香草布丁",
+        nameEng: "Vanilla Pudding",
+      },
       {
         nameCht: "蜜桃黛綺麗",
         nameEng: "Peach Daiquiri",
@@ -21,9 +18,6 @@ export const cocktailMenu = [
       {
         nameCht: "檸檬塔",
         nameEng: "Lemon Tart",
-        hasImage: false,
-        src: "/images/cocktails/ramosGinFizz.jpg",
-        imgPosition: "left",
       },
       {
         nameCht: "梅子冰茶",
@@ -31,28 +25,28 @@ export const cocktailMenu = [
       },
     ],
   },
-  {
-    category: "Tea",
-    categoryCh: "茶系",
-    cocktails: [
-      {
-        nameCht: "蕎麥割り",
-        nameEng: "Sobawari",
-      },
-      {
-        nameCht: "蜜柚綠茶",
-        nameEng: "Yuzu Green Tea",
-      },
-      {
-        nameCht: "熱情伯爵",
-        nameEng: "Passion Earl",
-      },
-      {
-        nameCht: "焙茶",
-        nameEng: "Martini",
-      },
-    ],
-  },
+  // {
+  //   category: "Tea",
+  //   categoryCh: "茶系",
+  //   cocktails: [
+  //     {
+  //       nameCht: "蕎麥割り",
+  //       nameEng: "Sobawari",
+  //     },
+  //     {
+  //       nameCht: "蜜柚綠茶",
+  //       nameEng: "Yuzu Green Tea",
+  //     },
+  //     {
+  //       nameCht: "熱情伯爵",
+  //       nameEng: "Passion Earl",
+  //     },
+  //     {
+  //       nameCht: "焙茶",
+  //       nameEng: "Martini",
+  //     },
+  //   ],
+  // },
   {
     category: "Classics",
     categoryCh: "懷舊經典",
