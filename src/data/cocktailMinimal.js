@@ -7,46 +7,80 @@ export const cocktailMenu = [
         nameCht: "牛奶糖",
         nameEng: "Fudge",
       },
+      // {
+      //   nameCht: "香草布丁",
+      //   nameEng: "Vanilla Pudding",
+      // },
       {
-        nameCht: "香草布丁",
-        nameEng: "Vanilla Pudding",
+        nameCht: "檸檬糖馬丁尼",
+        nameEng: "Lemon Drop Martini",
       },
       {
         nameCht: "蜜桃黛綺麗",
         nameEng: "Peach Daiquiri",
       },
       {
-        nameCht: "檸檬塔",
-        nameEng: "Lemon Tart",
+        nameCht: "Ｊ博士",
+        nameEng: "Dr. J",
       },
       {
         nameCht: "梅子冰茶",
         nameEng: "Plum Iced Tea",
       },
+      {
+        nameCht: "草莓羅尼",
+        nameEng: "Kingston Strawberry Negroni",
+      },
     ],
   },
-  // {
-  //   category: "Tea",
-  //   categoryCh: "茶系",
-  //   cocktails: [
-  //     {
-  //       nameCht: "蕎麥割り",
-  //       nameEng: "Sobawari",
-  //     },
-  //     {
-  //       nameCht: "蜜柚綠茶",
-  //       nameEng: "Yuzu Green Tea",
-  //     },
-  //     {
-  //       nameCht: "熱情伯爵",
-  //       nameEng: "Passion Earl",
-  //     },
-  //     {
-  //       nameCht: "焙茶",
-  //       nameEng: "Martini",
-  //     },
-  //   ],
-  // },
+  {
+    category: "Tea",
+    categoryCh: "茶",
+    cocktails: [
+      // {
+      //   nameCht: "蕎麥割り",
+      //   nameEng: "Sobawari",
+      // },
+      {
+        nameCht: "蜜柚綠茶",
+        nameEng: "Yuzu Green Tea",
+      },
+      // {
+      //   nameCht: "熱情伯爵",
+      //   nameEng: "Passion Earl",
+      // },
+      {
+        nameCht: "蜜蘋法式伯爵",
+        nameEng: "Apple French Earl",
+      },
+      {
+        nameCht: "伯爵茶",
+        nameEng: "Kamikaze",
+      },
+      {
+        nameCht: "焙茶",
+        nameEng: "Martini",
+      },
+    ],
+  },
+  {
+    category: "Coffee",
+    categoryCh: "咖啡調酒",
+    cocktails: [
+      {
+        nameCht: "咖啡馬丁尼",
+        nameEng: "Espresso Martini",
+      },
+      {
+        nameCht: "極品冷萃馬丁尼",
+        nameEng: "Damn Fine Coffee Martini",
+      },
+      {
+        nameCht: "夢遊者",
+        nameEng: "Sleepwalker",
+      },
+    ],
+  },
   {
     category: "Classics",
     categoryCh: "懷舊經典",
@@ -81,14 +115,14 @@ export const cocktailMenu = [
     category: "New Era",
     categoryCh: "新經典",
     cocktails: [
-      {
-        nameCht: "盤尼西林",
-        nameEng: "Penicillin",
-      },
-      {
-        nameCht: "海明威特調",
-        nameEng: "Hemingway Special",
-      },
+      // {
+      //   nameCht: "盤尼西林",
+      //   nameEng: "Penicillin",
+      // },
+      // {
+      //   nameCht: "海明威特調",
+      //   nameEng: "Hemingway Special",
+      // },
       {
         nameCht: "瑪格麗特",
         nameEng: "Margarita",
@@ -97,10 +131,10 @@ export const cocktailMenu = [
         nameCht: "勃固俱樂部",
         nameEng: "Pegu Club",
       },
-      // {
-      //   nameCht: "邁泰",
-      //   nameEng: "Mai-Tai",
-      // },
+      {
+        nameCht: "邁泰",
+        nameEng: "Mai-Tai",
+      },
       {
         nameCht: "薇絲朋",
         nameEng: "Vesper",
@@ -141,25 +175,29 @@ export const cocktailMenu = [
     category: "Niche",
     categoryCh: "小眾調酒",
     cocktails: [
+      {
+        nameCht: "喬治亞旅店",
+        nameEng: "Hotel Georgia",
+      },
       // {
-      //   nameCht: "喬治亞旅店",
-      //   nameEng: "Hotel Georgia",
+      //   nameCht: "法外狂徒",
+      //   nameEng: "Scofflaw",
+      // },
+      // {
+      //   nameCht: "墨西哥突擊隊",
+      //   nameEng: "Mexican Firing Squad",
       // },
       {
-        nameCht: "法外狂徒",
-        nameEng: "Scofflaw",
+        nameCht: "亡者復甦二號",
+        nameEng: "Corpse Reviver #2",
       },
       {
-        nameCht: "墨西哥突擊隊",
-        nameEng: "Mexican Firing Squad",
+        nameCht: "多倫多",
+        nameEng: "Toronto",
       },
       {
-        nameCht: "荷蘭之家",
-        nameEng: "Holland House",
-      },
-      {
-        nameCht: "柏林站長",
-        nameEng: "Berlin Station Chief",
+        nameCht: "翻雲覆雨",
+        nameEng: "Hanky Panky",
       },
     ],
   },

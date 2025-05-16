@@ -46,6 +46,10 @@
   display: flex;
   align-items: flex-end;
   gap: 5px;
+  width: calc(100% - 70px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   & > .cocktail__cht {
     font-size: 18px;
@@ -56,6 +60,8 @@
   & > .cocktail__eng {
     font-size: 18px;
     color: #aaa;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   sup {
