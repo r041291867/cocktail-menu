@@ -3684,8 +3684,8 @@ export const reciepe = [
   },
   {
     category: "Signature",
-    nameCht: "Kingston Strawberry Negroni",
-    nameEng: "草莓羅尼",
+    nameEng: "Kingston Strawberry Negroni",
+    nameCht: "草莓羅尼",
     method: "Stir",
     ingredients: ["Rum", "Strawberry", "Vermouth", "Campari"],
     reciepe: {
