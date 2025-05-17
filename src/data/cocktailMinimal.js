@@ -41,10 +41,10 @@ export const cocktailMenu = [
       //   nameCht: "蕎麥割り",
       //   nameEng: "Sobawari",
       // },
-      {
-        nameCht: "蜜柚綠茶",
-        nameEng: "Yuzu Green Tea",
-      },
+      // {
+      //   nameCht: "蜜柚綠茶",
+      //   nameEng: "Yuzu Green Tea",
+      // },
       // {
       //   nameCht: "熱情伯爵",
       //   nameEng: "Passion Earl",
