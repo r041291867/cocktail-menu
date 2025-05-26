@@ -1540,6 +1540,23 @@ export const reciepe = [
     show: true,
   },
   {
+    category: "Brandy",
+    nameCht: "菲麗普",
+    nameEng: "Brandy Flip",
+    method: "Shake",
+    ingredients: ["Brandy", "Cream","Egg Yolk"],
+    reciepe: {
+      "Brandy": "60ml",
+      "Cream": "20ml",
+      "Syrup": "15ml",
+      "Egg Yolk": "10ml",
+      "Garnish": "ground nutmeg",
+    },
+    glass: "Coupe",
+    shots: 1.5,
+    show: false,
+  },
+  {
     category: "Else",
     nameCht: "波特菲麗普",
     nameEng: "Porto Flip",
@@ -3587,7 +3604,7 @@ export const reciepe = [
     method: "Stir",
     ingredients: ["Gin", "Del Santo", "Maraschino", "Lemon"],
     reciepe: {
-      "Gin": "45ml",
+      "Gin": "50ml",
       "Del Santo": "15ml",
       "Maraschino": "15ml",
       "Lemon": "20ml",
@@ -3623,7 +3640,7 @@ export const reciepe = [
     reciepe: {
       "Tequila": "45ml",
       "cold-brew": "40ml",
-      "Demerara Syrup": "22.5ml",
+      "Demerara Syrup": "15ml",
       "Fernet Branca": "7.5ml",
       "Chocolate Bitters": "1 dash",
       "Garnish": "Orange Peel"
@@ -3697,6 +3714,42 @@ export const reciepe = [
     },
     glass: "Lowball",
     alcohol: 24,
+    show: true,
+  },
+  {
+    category: "Else",
+    nameEng: "Harry's Midnight Snack",
+    nameCht: "哈利的午夜小食",
+    method: "Shake",
+    ingredients: ["Fernet Branca", "Cream", "white cacao", "Orange"],
+    reciepe: {
+      "Fernet-Branca": "45ml",
+      "Heavy Cream": "30ml",
+      "White Creme de Cacao": "30ml",
+      "Orange Wheel": "1/2 wheel",
+      "Garnish": "Freeze Dried Orange Wheel"
+    },
+    glass: "Coupe",
+    alcohol: 18,
+    show: true,
+  },
+  {
+    category: "Signature",
+    nameEng: "Mandarin Time Fizz",
+    nameCht: "橘時費斯",
+    method: "Shake",
+    ingredients: ["Gin", "Orange", "Green Tea", "Soda"],
+    reciepe: {
+      "Green Tee infused Gin": "30ml",
+      "Gin": "20ml",
+      "Orange Juice": "30ml",
+      "Syrup": "15ml",
+      "Soda Water": "45ml",
+      "Egg White or Alternative": "Alternative foamer 3 drop",
+      "Garnish": "Mint, Green Tea Powder"
+    },
+    glass: "Highball",
+    alcohol: 13,
     show: true,
   },
 ];

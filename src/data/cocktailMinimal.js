@@ -3,10 +3,10 @@ export const cocktailMenu = [
     category: "Signature",
     categoryCh: "特調",
     cocktails: [
-      {
-        nameCht: "牛奶糖",
-        nameEng: "Fudge",
-      },
+      // {
+      //   nameCht: "牛奶糖",
+      //   nameEng: "Fudge",
+      // },
       // {
       //   nameCht: "香草布丁",
       //   nameEng: "Vanilla Pudding",
@@ -37,18 +37,18 @@ export const cocktailMenu = [
     category: "Tea",
     categoryCh: "茶",
     cocktails: [
-      // {
-      //   nameCht: "蕎麥割り",
-      //   nameEng: "Sobawari",
-      // },
+      {
+        nameCht: "蜜香紅茶",
+        nameEng: "Gin & Tonic",
+      },
       // {
       //   nameCht: "蜜柚綠茶",
       //   nameEng: "Yuzu Green Tea",
       // },
-      // {
-      //   nameCht: "熱情伯爵",
-      //   nameEng: "Passion Earl",
-      // },
+      {
+        nameEng: "Mandarin Time Fizz",
+        nameCht: "橘時費斯",
+      },
       {
         nameCht: "蜜蘋法式伯爵",
         nameEng: "Apple French Earl",
@@ -56,10 +56,6 @@ export const cocktailMenu = [
       {
         nameCht: "伯爵茶",
         nameEng: "Kamikaze",
-      },
-      {
-        nameCht: "焙茶",
-        nameEng: "Martini",
       },
     ],
   },
@@ -124,12 +120,20 @@ export const cocktailMenu = [
       //   nameEng: "Hemingway Special",
       // },
       {
+        nameCht: "亡者復甦二號",
+        nameEng: "Corpse Reviver #2",
+      },
+      {
         nameCht: "瑪格麗特",
         nameEng: "Margarita",
       },
       {
         nameCht: "勃固俱樂部",
         nameEng: "Pegu Club",
+      },
+      {
+        nameCht: "茉莉",
+        nameEng: "Jasmine",
       },
       {
         nameCht: "邁泰",
@@ -179,17 +183,9 @@ export const cocktailMenu = [
         nameCht: "喬治亞旅店",
         nameEng: "Hotel Georgia",
       },
-      // {
-      //   nameCht: "法外狂徒",
-      //   nameEng: "Scofflaw",
-      // },
-      // {
-      //   nameCht: "墨西哥突擊隊",
-      //   nameEng: "Mexican Firing Squad",
-      // },
       {
-        nameCht: "亡者復甦二號",
-        nameEng: "Corpse Reviver #2",
+        nameCht: "菊花",
+        nameEng: "Chrysanthemum",
       },
       {
         nameCht: "多倫多",
@@ -198,6 +194,10 @@ export const cocktailMenu = [
       {
         nameCht: "翻雲覆雨",
         nameEng: "Hanky Panky",
+      },
+      {
+        nameCht: "法蘭克·辛納屈",
+        nameEng: "Francis Albert",
       },
     ],
   },
