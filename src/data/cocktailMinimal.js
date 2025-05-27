@@ -196,6 +196,10 @@ export const cocktailMenu = [
         nameEng: "Hanky Panky",
       },
       {
+        nameCht: "老廣場",
+        nameEng: "Vieux Carrè",
+      },
+      {
         nameCht: "法蘭克·辛納屈",
         nameEng: "Francis Albert",
       },
