@@ -39,7 +39,13 @@ body {
 .handwrite-border {
   border-width: 2px;
   border-image-slice: 1;
-  border-image-source: linear-gradient(90deg, transparent, #aaa 10%, #aaa 90%, #ffffff00);
+  border-image-source: linear-gradient(
+    90deg,
+    transparent,
+    #aaa 10%,
+    #aaa 90%,
+    #ffffff00
+  );
 }
 
 .menu__header {
@@ -97,6 +103,12 @@ body {
   top: calc(var(--header-height) - 5px);
 }
 
+@media (max-width: 374px) {
+  body {
+    padding: 5px 10px 30px;
+  }
+}
+
 @media (min-width: 768px) {
   :root {
     --header-height: 50px;
@@ -111,8 +123,28 @@ body {
   }
 }
 
-@media (max-width: 374px) {
-  body {
-    padding: 5px 10px 30px;
+@media (min-width: 1125px) {
+  .menu__header--inner {
+    max-width: 1085px;
+  }
+
+  .menu__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1085px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1500px) {
+  .menu__header--inner {
+    max-width: 1500px;
+  }
+
+  .menu__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 1500px;
+    margin: auto;
   }
 }
