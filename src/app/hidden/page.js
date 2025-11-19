@@ -1,23 +1,25 @@
 "use client";
 
 import "../styles.css";
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import HiddenPage from "@/components/hiddenPage";
 import Popup from "@/components/popup";
 import Reciepe from "@/components/reciepe";
 import { getReciepe } from "@/data/reciepe.js";
 import Loading from "@/components/loading";
+import { useFontReady } from "@/store";
 
 export default function Hidden() {
-  const [fontReady, setFontReady] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [resiepeItem, setResiepeItem] = useState(null);
   const router = useRouter();
+  const fontReady = useFontReady((state) => state.fontReady);
+  const setFontReady = useFontReady((state) => state.setFontReady);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     document.fonts.ready.then(() => {
-      setFontReady(true);
+      setFontReady();
     });
   }, []);
 

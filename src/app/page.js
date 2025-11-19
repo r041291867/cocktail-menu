@@ -3,25 +3,27 @@
 import "./styles.css";
 // import Head from "next/head";
 import { useRouter } from "next/navigation";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CocktailItem from "@/components/cocktailItem";
 import Loading from "@/components/loading";
 import { cocktailMenu } from "@/data/cocktailMinimal";
 import Popup from "@/components/popup";
 import Reciepe from "@/components/reciepe";
 import { getReciepe } from "@/data/reciepe.js";
+import { useFontReady } from "@/store";
 
 export default function Home() {
-  const [fontReady, setFontReady] = useState(false)
   const [showPopup, setShowPopup] = useState(false);
   const [resiepeItem, setResiepeItem] = useState(null);
   const router = useRouter();
+  const fontReady = useFontReady((state) => state.fontReady);
+  const setFontReady = useFontReady((state) => state.setFontReady);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     document.fonts.ready.then(() => {
-      setFontReady(true)
-    })
-  }, [])
+      setFontReady();
+    });
+  }, []);
 
   return (
     <>
