@@ -1,65 +1,39 @@
 "use client";
 
 import "./styles.css";
-import Head from "next/head";
-import { useEffect, useState } from "react";
+// import Head from "next/head";
+import { useRouter } from "next/navigation";
+import { useLayoutEffect, useState } from "react";
 import CocktailItem from "@/components/cocktailItem";
 import Loading from "@/components/loading";
-import HiddenPage from "@/components/hiddenPage";
 import { cocktailMenu } from "@/data/cocktailMinimal";
 import Popup from "@/components/popup";
 import Reciepe from "@/components/reciepe";
-import { getReciepe } from '@/data/reciepe.js'
-// import { toChinese } from "@/data/engToCht";
+import { getReciepe } from "@/data/reciepe.js";
 
-const randomNum = Math.round(Math.random() * 1000);
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  const [fontReady, setFontReady] = useState(false)
   const [showPopup, setShowPopup] = useState(false);
   const [resiepeItem, setResiepeItem] = useState(null);
-  const [showHiddenPage, setShowHiddenPage] = useState(false);
+  const router = useRouter();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-      window.scrollTo(0, 0);
-    }, 1500 + randomNum);
-  }, []);
-
-  useEffect(() => {
-    if (showHiddenPage) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [showHiddenPage]);
-
-  const item = {
-    name: "Highball",
-    method: "Build",
-    reciepe: {
-      whisky: "45ml",
-      soda: "to top",
-    },
-    glass: "Lowball",
-  };
+  useLayoutEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontReady(true)
+    })
+  }, [])
 
   return (
     <>
-      <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </Head>
-
       <div className="menu__header ">
         <div className="menu__header--inner handwrite-border">
           <img src={"./favicon.ico"} alt="" />
-          <div className="handwrite-en" onDoubleClick={() => setShowHiddenPage(true)}>The Mixology Menu</div>
-          <div style={{ flex: 1 }}></div>
-          {/* <div onClick={() => setShowHiddenPage(true)}>+</div> */}
+          <div
+            className="handwrite-en"
+            onDoubleClick={() => router.push("/hidden")}
+          >
+            The Mixology Menu
+          </div>
         </div>
       </div>
 
@@ -79,7 +53,7 @@ export default function Home() {
                 cocktail={cocktail}
                 onCocktailClick={() => {
                   setShowPopup(true);
-                  setResiepeItem(getReciepe(cocktail.nameEng))
+                  setResiepeItem(getReciepe(cocktail.nameEng));
                 }}
               />
             ))}
@@ -87,17 +61,7 @@ export default function Home() {
         ))}
       </div>
 
-      {loading && <Loading />}
-
-      {showHiddenPage && (
-        <HiddenPage
-          onCocktailClick={(cocktail) => {
-            setShowPopup(true);
-            setResiepeItem(getReciepe(cocktail.nameEng))
-          }}
-          onCloseClick={() => setShowHiddenPage(false)}
-        />
-      )}
+      {!fontReady && <Loading />}
 
       {showPopup && (
         <Popup onCloseClick={() => setShowPopup(false)}>

@@ -90,7 +90,7 @@ export default function HiddenPage({
               setShowAll(!showAll);
             }}
           >
-            The Hidden Menu
+            The Mixology Menu
             {showAll && <span>.</span>}
           </div>
           <div style={{ flex: 1 }}></div>
