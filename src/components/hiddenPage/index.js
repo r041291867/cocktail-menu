@@ -35,7 +35,7 @@ export default function HiddenPage({
   onCocktailClick = () => {},
   onCloseClick = () => {},
 }) {
-  const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(true);
   const [keywd, setKeywd] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [tagList, setTagList] = useState([...tags]);
