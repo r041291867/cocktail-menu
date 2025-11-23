@@ -3711,7 +3711,7 @@ export const reciepe = [
     },
     glass: "Martini",
     shots: 2,
-    alcohol: 24,
+    alcohol: 18,
     show: true,
   },
   {
@@ -4094,8 +4094,8 @@ export const reciepe = [
       "Blue curacao": "1 barspoon",
     },
     glass: "Martini",
-    shots: 1,
-    alcohol: 10,
+    shots: 1.5,
+    alcohol: 15,
     show: true,
   },
   {
@@ -4147,8 +4147,8 @@ export const reciepe = [
       "Ginger Ale": "To Top",
     },
     glass: "Martini",
-    shots: 1.5,
-    alcohol: 18,
+    shots: 1,
+    alcohol: 10,
     show: true,
   },
   {
@@ -4182,7 +4182,7 @@ export const reciepe = [
     glass: "Coupe",
     shots: 1.5,
     alcohol: 15,
-    show: true,
+    show: false,
   },
   {
     category: "Rum",
@@ -4233,7 +4233,7 @@ export const reciepe = [
     glass: "Coupe",
     shots: 3,
     alcohol: 26,
-    show: false,
+    show: true,
   },
   {
     category: "Whiskey",
