@@ -4252,4 +4252,20 @@ export const reciepe = [
     alcohol: 26,
     show: false,
   },
+  {
+    category: "Tequila",
+    nameCht: "格林霍恩",
+    nameEng: "Greenhorn",
+    method: "Stir",
+    ingredients: ["Tequila", "Melon", "Suze"],
+    reciepe: {
+      "Tequila Blanco": "30ml",
+      "Midori": "20ml",
+      "Suze": "15ml",
+    },
+    glass: "Martini",
+    shots: 2,
+    alcohol: 20,
+    show: false,
+  },
 ];
