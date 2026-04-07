@@ -1,0 +1,63 @@
+---
+import "../cocktailItem/styles.scss";
+import "../shotIcon/styles.css";
+import { toChinese } from "@/data/engToCht";
+import { getReciepe } from "@/data/reciepe";
+
+const { cocktail } = Astro.props;
+const reciepe = getReciepe(cocktail.nameEng);
+
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function getAlcoholShots(alcohol) {
+  if (alcohol <= 10) return 1;
+  if (alcohol <= 16) return 1.5;
+  if (alcohol <= 22) return 2;
+  if (alcohol <= 25) return 2.5;
+  return 3;
+}
+
+function getShotStatusList(shots) {
+  const list = [];
+  const full = Math.floor(shots);
+  for (let i = 0; i < full; i++) list.push("filled");
+  if (shots % 1 === 0.5) list.push("half");
+  while (list.length < 3) list.push("empty");
+  return list;
+}
+---
+
+{
+  reciepe && (
+    <div class="cocktail__outer" data-recipe-name={cocktail.nameEng}>
+      <div class="cocktail__frame">
+        <div class="cocktail__main">
+          <div class="cocktail__name">
+            <div class="cocktail__cht handwrite-ch">{cocktail.nameCht}</div>
+            <div class="cocktail__eng handwrite-en">{cocktail.nameEng}</div>
+          </div>
+
+          <div class="cocktail__stars">
+            {getShotStatusList(
+              reciepe.alcohol ? getAlcoholShots(reciepe.alcohol) : reciepe.shots
+            ).map((status, index) => (
+              <div class="shot-icon__frame" style="width:16px;height:16px;" data-shot={index}>
+                <div class={`shot-icon status-${status}`}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="cocktail__ingredients--ch handwrite-ch">
+          {reciepe.ingredients.map((str) => toChinese(str)).join(" / ")}
+        </div>
+        <div class="cocktail__ingredients handwrite-en">
+          {reciepe.ingredients.map((str) => capitalize(str)).join(" / ")}
+        </div>
+      </div>
+    </div>
+  )
+}
+

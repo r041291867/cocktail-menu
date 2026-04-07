@@ -1,9 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap");
+
+@import "./fonts.css";
+
 :root {
-  --header-height: 40px;
+  --handwrite-en: "Annie Use Your Telescope";
+  --handwrite-ch: "HandwriteCh";
 }
 
-#root ~ iframe {
-  display: none !important;
+/* Copied from Next's src/app/styles.css so the UI stays identical */
+:root {
+  --header-height: 40px;
 }
 
 div {
@@ -17,7 +23,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ccc;
-  /* background: url("https://i.imgur.com/2ovH9wo.jpg"), #2e2e2e; */
   background: #2e2e2e;
 }
 
@@ -89,7 +94,6 @@ body {
 
 .menu__title {
   top: var(--header-height);
-  /* padding: 10px 0px 10px; */
   line-height: 40px;
   font-size: 18px;
   font-weight: bold;
@@ -117,7 +121,6 @@ body {
   .menu__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* gap: 40px 80px; */
     max-width: 830px;
     margin: auto;
   }
@@ -148,3 +151,4 @@ body {
     margin: auto;
   }
 }
+

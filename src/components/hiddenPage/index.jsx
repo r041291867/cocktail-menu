@@ -80,7 +80,7 @@ export default function HiddenPage({
       <div className="menu__header ">
         <div className="menu__header--inner handwrite-border">
           <img
-            src={"./favicon.ico"}
+            src={"/images/favicon.ico"}
             style={{ filter: "grayscale(1)" }}
             alt=""
           />

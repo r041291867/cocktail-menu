@@ -1,27 +1,22 @@
 "use client";
 
-import "../styles.css";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import HiddenPage from "@/components/hiddenPage";
 import Popup from "@/components/popup";
 import Reciepe from "@/components/reciepe";
 import { getReciepe } from "@/data/reciepe.js";
 import Loading from "@/components/loading";
-import { useFontReady } from "@/store";
 
-export default function Hidden() {
+export default function HiddenApp() {
   const [showPopup, setShowPopup] = useState(false);
   const [resiepeItem, setResiepeItem] = useState(null);
-  const router = useRouter();
-  const fontReady = useFontReady((state) => state.fontReady);
-  const setFontReady = useFontReady((state) => state.setFontReady);
+  const [fontReady, setFontReady] = useState(false);
 
   useEffect(() => {
     document.fonts.ready.then(() => {
-      setFontReady();
+      setFontReady(true);
     });
-  }, []);
+  }, [setFontReady]);
 
   return (
     <div>
@@ -30,7 +25,7 @@ export default function Hidden() {
           setShowPopup(true);
           setResiepeItem(getReciepe(cocktail.nameEng));
         }}
-        onCloseClick={() => router.push("/")}
+        onCloseClick={() => window.location.assign("/")}
       />
 
       {!fontReady && <Loading />}
@@ -43,3 +38,4 @@ export default function Hidden() {
     </div>
   );
 }
+

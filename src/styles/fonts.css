@@ -1,0 +1,7 @@
+/* Local fonts (replacing next/font/local) */
+@font-face {
+  font-family: "HandwriteCh";
+  src: url("/fonts/851tegaki_zatsu_normal_0883.ttf") format("truetype");
+  font-display: swap;
+}
+

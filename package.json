@@ -3,21 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4000",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "astro dev --port 4000",
+    "build": "astro build",
+    "preview": "astro preview --port 4000",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "lowdb": "^7.0.1",
-    "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18",
-    "zustand": "^5.0.8"
+    "react-dom": "^18"
   },
   "devDependencies": {
+    "@astrojs/react": "^4.3.0",
+    "astro": "^5.7.0",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3",
-    "sass": "^1.77.4"
+    "eslint-plugin-react": "^7.37.5",
+    "sass": "^1.77.4",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
