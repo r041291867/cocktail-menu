@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CocktailItemStatic from "../components/astro/CocktailItemStatic.astro";
+import HomeInteractions from "../components/islands/HomeInteractions.jsx";
+import { cocktailMenu } from "@/data/cocktailMinimal";
+---
+
+<BaseLayout>
+  <div class="menu__header ">
+    <div class="menu__header--inner handwrite-border">
+      <img src="/images/favicon.ico" alt="" />
+      <div class="handwrite-en" data-home-title>The Mixology Menu</div>
+    </div>
+  </div>
+
+  <div class="menu__grid">
+    {
+      cocktailMenu.map(({ category, categoryCh, cocktails }) => (
+        <div class="menu__section">
+          <div class="menu__title handwrite-border">
+            <span class="handwrite-ch">{categoryCh}</span>
+            <span class="handwrite-en" style="margin-left: 6px;">
+              {category}
+            </span>
+          </div>
+
+          {cocktails.map((cocktail) => <CocktailItemStatic cocktail={cocktail} />)}
+        </div>
+      ))
+    }
+  </div>
+
+  <HomeInteractions client:idle />
+</BaseLayout>
+

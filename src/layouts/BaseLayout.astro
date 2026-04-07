@@ -1,0 +1,29 @@
+---
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+import "../styles/global.css";
+
+const {
+  title = "The Mixology Nook",
+  description = "Welcome to The Mixology Nook, your destination for all things home bar! Cheers to creating unforgettable moments, one drink at a time!",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
