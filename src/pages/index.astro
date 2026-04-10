@@ -3,6 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CocktailItemStatic from "../components/astro/CocktailItemStatic.astro";
 import HomeInteractions from "../components/islands/HomeInteractions.jsx";
 import { cocktailMenu } from "@/data/cocktailMinimal";
+import { fetchCocktailsFromSanity } from "@/data/fetchCocktailsFromSanity";
+import { getReciepe } from "@/data/reciepeUtils";
+
+const recipes = await fetchCocktailsFromSanity();
 ---
 
 <BaseLayout>
@@ -24,12 +28,17 @@ import { cocktailMenu } from "@/data/cocktailMinimal";
             </span>
           </div>
 
-          {cocktails.map((cocktail) => <CocktailItemStatic cocktail={cocktail} />)}
+          {cocktails.map((cocktail) => (
+            <CocktailItemStatic
+              cocktail={cocktail}
+              reciepe={getReciepe(recipes, cocktail.nameEng)}
+            />
+          ))}
         </div>
       ))
     }
   </div>
 
-  <HomeInteractions client:idle />
+  <HomeInteractions client:idle recipes={recipes} />
 </BaseLayout>
 

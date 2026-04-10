@@ -2,10 +2,8 @@
 import "../cocktailItem/styles.scss";
 import "../shotIcon/styles.css";
 import { toChinese } from "@/data/engToCht";
-import { getReciepe } from "@/data/reciepe";
 
-const { cocktail } = Astro.props;
-const reciepe = getReciepe(cocktail.nameEng);
+const { cocktail, reciepe } = Astro.props;
 
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);

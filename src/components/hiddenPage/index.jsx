@@ -2,7 +2,6 @@ import "./styles.css";
 import { useState } from "react";
 import CocktailItem from "@/components/cocktailItem";
 // import { cocktailMenu } from "@/data/hidden";
-import { reciepe } from "@/data/reciepe";
 import { toChinese } from "@/data/engToCht";
 import Popup from "../popup";
 
@@ -32,6 +31,7 @@ const tags = [
 ];
 
 export default function HiddenPage({
+  recipes = [],
   onCocktailClick = () => {},
   onCloseClick = () => {},
 }) {
@@ -42,7 +42,7 @@ export default function HiddenPage({
   const [inputText, setInputText] = useState("");
 
   function getCategoryCocktails(category) {
-    return filterByKeyword(reciepe, keywd)
+    return filterByKeyword(recipes, keywd)
       .filter((item) => item.category === category)
       .sort((a, b) => {
         if (a.shots === b.shots) return a.nameEng > b.nameEng ? 1 : -1;
@@ -131,6 +131,7 @@ export default function HiddenPage({
                       key={index + cocktail.nameEng}
                       showAll={showAll}
                       cocktail={cocktail}
+                      recipes={recipes}
                       onCocktailClick={() => onCocktailClick(cocktail)}
                     />
                   ) : null
