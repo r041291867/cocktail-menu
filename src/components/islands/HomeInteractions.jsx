@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import Loading from "@/components/loading";
 import Popup from "@/components/popup";
 import Reciepe from "@/components/reciepe";
-import { getReciepe } from "@/data/reciepe";
+import { getReciepe } from "@/data/reciepeUtils";
 
-export default function HomeInteractions() {
+export default function HomeInteractions({ recipes = [] }) {
   const [fontReady, setFontReady] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [reciepeItem, setReciepeItem] = useState(null);
@@ -23,7 +23,7 @@ export default function HomeInteractions() {
     const items = document.querySelectorAll("[data-recipe-name]");
     const onItemDoubleClick = (event) => {
       const { recipeName } = event.currentTarget.dataset;
-      setReciepeItem(getReciepe(recipeName));
+      setReciepeItem(getReciepe(recipes, recipeName));
       setShowPopup(true);
     };
     items.forEach((item) => item.addEventListener("dblclick", onItemDoubleClick));
@@ -34,7 +34,7 @@ export default function HomeInteractions() {
         item.removeEventListener("dblclick", onItemDoubleClick)
       );
     };
-  }, []);
+  }, [recipes]);
 
   return (
     <>

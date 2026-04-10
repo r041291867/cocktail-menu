@@ -1,11 +1,12 @@
 import "./styles.scss";
 import ShotIcon from "../shotIcon";
 import { toChinese } from "../../data/engToCht";
-import { getReciepe } from "@/data/reciepe.js";
+import { getReciepe } from "@/data/reciepeUtils";
 
 export default function CocktailItem({
   showAll,
   cocktail,
+  recipes = [],
   onCocktailClick = () => {},
 }) {
   const { hasImage = false, src = "", imgPosition = "left" } = cocktail;
@@ -50,7 +51,9 @@ export default function CocktailItem({
     }
   }
 
-  const reciepe = getReciepe(cocktail.nameEng);
+  const reciepe = cocktail.ingredients?.length
+    ? cocktail
+    : getReciepe(recipes, cocktail.nameEng);
 
   if (!reciepe) return null;
   return (

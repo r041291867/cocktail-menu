@@ -6,9 +6,9 @@ import Loading from "@/components/loading";
 import { cocktailMenu } from "@/data/cocktailMinimal";
 import Popup from "@/components/popup";
 import Reciepe from "@/components/reciepe";
-import { getReciepe } from "@/data/reciepe.js";
+import { getReciepe } from "@/data/reciepeUtils";
 
-export default function HomeApp() {
+export default function HomeApp({ recipes = [] }) {
   const [showPopup, setShowPopup] = useState(false);
   const [resiepeItem, setResiepeItem] = useState(null);
   const [fontReady, setFontReady] = useState(false);
@@ -47,9 +47,10 @@ export default function HomeApp() {
               <CocktailItem
                 key={index + cocktail.nameEng}
                 cocktail={cocktail}
+                recipes={recipes}
                 onCocktailClick={() => {
                   setShowPopup(true);
-                  setResiepeItem(getReciepe(cocktail.nameEng));
+                  setResiepeItem(getReciepe(recipes, cocktail.nameEng));
                 }}
               />
             ))}
