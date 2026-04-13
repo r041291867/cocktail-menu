@@ -13,7 +13,8 @@
 .popup-main {
   position: absolute;
   inset: 50% 0 auto 0;
-  width: 320px;
+  width: calc(100vw - 40px);
+  max-width: 500px;
   /* height: 500px; */
   padding: 15px;
   margin: auto;
