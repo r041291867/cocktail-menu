@@ -59,15 +59,12 @@ export default function HiddenPage({
       const lowerCaseKeyword = keyword.toLowerCase();
       result = result.filter((cocktail) => {
         return (
-          cocktail.category.toLowerCase().includes(lowerCaseKeyword) ||
-          cocktail.nameEng.toLowerCase().includes(lowerCaseKeyword) ||
-          cocktail.nameCht.includes(keyword) ||
-          cocktail.ingredients.filter((ingredient) =>
+          cocktail.category?.toLowerCase().includes(lowerCaseKeyword) ||
+          cocktail.nameEng?.toLowerCase().includes(lowerCaseKeyword) ||
+          cocktail.nameCht?.includes(keyword) ||
+          cocktail.ingredients?.some((ingredient) =>
             ingredient.toLowerCase().includes(lowerCaseKeyword)
-          ).length
-          // Object.keys(cocktail.reciepe).filter(
-          //   (key) => key.toLowerCase().includes(lowerCaseKeyword).length
-          // )
+          )
         );
       });
     });
@@ -172,17 +169,23 @@ export default function HiddenPage({
           </h3>
 
           <div className="filter-input-frame">
-            <div className="handwrite-ch">Add Tags:</div>
+            <div className="handwrite-ch">Search / Add:</div>
 
             <input
               className="filter-input handwrite-ch"
               type="text"
               value={inputText}
+              placeholder="Type to filter..."
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  if (!inputText) return;
-                  // setKeywd([...keywd, inputText]);
-                  setTagList([...tagList, inputText.trim()]);
+                  if (!inputText.trim()) return;
+                  const newTag = inputText.trim();
+                  if (!tagList.includes(newTag)) {
+                    setTagList([...tagList, newTag]);
+                  }
+                  if (!keywd.includes(newTag)) {
+                    setKeywd([...keywd, newTag]);
+                  }
                   setInputText("");
                 }
               }}
@@ -191,10 +194,16 @@ export default function HiddenPage({
               }}
             />
             <div
-              style={{ fontWeight: "bold", userSelect: "none" }}
+              style={{ fontWeight: "bold", userSelect: "none", cursor: "pointer" }}
               onClick={() => {
-                if (!inputText) return;
-                setTagList([...tagList, inputText.trim()]);
+                if (!inputText.trim()) return;
+                const newTag = inputText.trim();
+                if (!tagList.includes(newTag)) {
+                  setTagList([...tagList, newTag]);
+                }
+                if (!keywd.includes(newTag)) {
+                  setKeywd([...keywd, newTag]);
+                }
                 setInputText("");
               }}
             >
@@ -213,7 +222,6 @@ export default function HiddenPage({
                     setKeywd([...keywd.filter((key) => key !== tag)]);
                   } else {
                     setKeywd([...keywd, tag]);
-                    setShowPopup(false);
                   }
                 }}
               >
