@@ -4,6 +4,7 @@ import CocktailItem from "@/components/cocktailItem";
 // import { cocktailMenu } from "@/data/hidden";
 import { toChinese } from "@/data/engToCht";
 import Popup from "@/components/popup";
+import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
 
 const categories = [
   "Whiskey",
@@ -37,11 +38,24 @@ export default function HiddenPage({
 }) {
   const [showAll, setShowAll] = useState(true);
   const [keywd, setKeywd] = useState([]);
-  const [showPopup, setShowPopup] = useState(false);
+  const [showFilterPopup, setShowFilterPopup] = useState(false);
+  const [showBarPopup, setShowBarPopup] = useState(false);
   const [tagList, setTagList] = useState([...tags]);
   const [inputText, setInputText] = useState("");
   const [activeSection, setActiveSection] = useState(null);
   const navRef = useRef(null);
+
+  // My Bar state
+  const [myBar, setMyBar] = useState(() => {
+    try {
+      const saved = localStorage.getItem("myBar");
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+  const [showOnlyMakeable, setShowOnlyMakeable] = useState(false);
+  const [barInputText, setBarInputText] = useState("");
 
   const visibleCategories = categories
     .map((category) => ({
@@ -50,6 +64,10 @@ export default function HiddenPage({
       cocktails: getCategoryCocktails(category),
     }))
     .filter(({ cocktails }) => cocktails.filter((c) => c.show).length || showAll);
+
+  useEffect(() => {
+    localStorage.setItem("myBar", JSON.stringify(myBar));
+  }, [myBar]);
 
   useEffect(() => {
     const sections = document.querySelectorAll(".menu__section[id]");
@@ -73,13 +91,35 @@ export default function HiddenPage({
     activeEl?.scrollIntoView({ block: "nearest", inline: "nearest" });
   }, [activeSection]);
 
-  function getCategoryCocktails(category) {
-    return filterByKeyword(recipes, keywd)
-      .filter((item) => item.category === category)
-      .sort((a, b) => {
-        if (a.shots === b.shots) return a.nameEng > b.nameEng ? 1 : -1;
-        else return a.shots - b.shots;
+  function getMatchInfo(cocktail) {
+    if (!myBar.length) return null;
+    const ingredients = cocktail.ingredients || [];
+    if (!ingredients.length) return null;
+
+    const missingCount = ingredients.filter((ing) => {
+      const a = ing.toLowerCase();
+      return !myBar.some((barIng) => {
+        const b = barIng.toLowerCase();
+        return a.includes(b) || b.includes(a);
       });
+    }).length;
+
+    return { missing: missingCount, total: ingredients.length };
+  }
+
+  function getCategoryCocktails(category) {
+    let result = filterByKeyword(recipes, keywd).filter(
+      (item) => item.category === category
+    );
+
+    if (showOnlyMakeable && myBar.length) {
+      result = result.filter((cocktail) => getMatchInfo(cocktail)?.missing === 0);
+    }
+
+    return result.sort((a, b) => {
+      if (a.shots === b.shots) return a.nameEng > b.nameEng ? 1 : -1;
+      return a.shots - b.shots;
+    });
   }
 
   function filterByKeyword(cocktails, keywords = []) {
@@ -102,6 +142,15 @@ export default function HiddenPage({
     });
 
     return result;
+  }
+
+  function addToBar() {
+    if (!barInputText.trim()) return;
+    const newIng = barInputText.trim().toLowerCase();
+    if (!myBar.includes(newIng)) {
+      setMyBar([...myBar, newIng]);
+    }
+    setBarInputText("");
   }
 
   return (
@@ -167,6 +216,7 @@ export default function HiddenPage({
                   showAll={showAll}
                   cocktail={cocktail}
                   recipes={recipes}
+                  matchInfo={getMatchInfo(cocktail)}
                   onCocktailClick={() => onCocktailClick(cocktail)}
                 />
               ) : null
@@ -175,29 +225,35 @@ export default function HiddenPage({
         ))}
       </div>
 
-      <div
-        className="floatBtn"
-        onClick={() => {
-          setShowPopup(true);
-        }}
-        // onDoubleClick={() => setKeywd([])}
-      >
-        {keywd.length ? <div className="tag-count">{keywd.length}</div> : null}
+      {/* Filter button */}
+      <div className="floatBtn" onClick={() => setShowFilterPopup(true)}>
+        {keywd.length > 0 && (
+          <div className="tag-count">{keywd.length}</div>
+        )}
       </div>
 
-      {showPopup && (
-        <Popup onCloseClick={() => setShowPopup(false)}>
-          <h3
-            className="popup-h3 handwrite-ch"
-            style={{ marginTop: 8 }}
-          >
-            Filter
+      {/* My Bar button */}
+      <div
+        className={`floatBtn floatBtn--bar${showOnlyMakeable ? " active" : ""}`}
+        onClick={() => setShowBarPopup(true)}
+      >
+        <LiquorOutlinedIcon style={{ fontSize: 28 }} />
+        {myBar.length > 0 && showOnlyMakeable && (
+          <div className="tag-count">{myBar.length}</div>
+        )}
+      </div>
+
+      {/* Filter popup */}
+      {showFilterPopup && (
+        <Popup onCloseClick={() => setShowFilterPopup(false)}>
+          <h3 className="popup-h3 handwrite-ch" style={{ marginTop: 8 }}>
+            篩選
             {keywd.length ? (
               <div
                 className="popup-h3-clear"
                 onClick={() => {
                   setKeywd([]);
-                  setShowPopup(false);
+                  setShowFilterPopup(false);
                 }}
               >
                 clear
@@ -207,7 +263,6 @@ export default function HiddenPage({
 
           <div className="filter-input-frame">
             <div className="handwrite-ch">Search / Add:</div>
-
             <input
               className="filter-input handwrite-ch"
               type="text"
@@ -217,36 +272,25 @@ export default function HiddenPage({
                 if (e.key === "Enter") {
                   if (!inputText.trim()) return;
                   const newTag = inputText.trim();
-                  if (!tagList.includes(newTag)) {
-                    setTagList([...tagList, newTag]);
-                  }
-                  if (!keywd.includes(newTag)) {
-                    setKeywd([...keywd, newTag]);
-                  }
+                  if (!tagList.includes(newTag)) setTagList([...tagList, newTag]);
+                  if (!keywd.includes(newTag)) setKeywd([...keywd, newTag]);
                   setInputText("");
                 }
               }}
-              onChange={(e) => {
-                setInputText(e.target.value);
-              }}
+              onChange={(e) => setInputText(e.target.value)}
             />
             <div
               style={{ fontWeight: "bold", userSelect: "none", cursor: "pointer" }}
               onClick={() => {
                 if (!inputText.trim()) return;
                 const newTag = inputText.trim();
-                if (!tagList.includes(newTag)) {
-                  setTagList([...tagList, newTag]);
-                }
-                if (!keywd.includes(newTag)) {
-                  setKeywd([...keywd, newTag]);
-                }
+                if (!tagList.includes(newTag)) setTagList([...tagList, newTag]);
+                if (!keywd.includes(newTag)) setKeywd([...keywd, newTag]);
                 setInputText("");
               }}
             >
               +
             </div>
-            {/* <img src="/images/ic-search.png" alt="" / */}
           </div>
 
           <div className="tags-list handwrite-ch">
@@ -256,7 +300,7 @@ export default function HiddenPage({
                 className={`tags${keywd.includes(tag) ? " active" : ""}`}
                 onClick={() => {
                   if (keywd.includes(tag)) {
-                    setKeywd([...keywd.filter((key) => key !== tag)]);
+                    setKeywd(keywd.filter((k) => k !== tag));
                   } else {
                     setKeywd([...keywd, tag]);
                   }
@@ -265,6 +309,56 @@ export default function HiddenPage({
                 {tag}
               </div>
             ))}
+          </div>
+        </Popup>
+      )}
+
+      {/* My Bar popup */}
+      {showBarPopup && (
+        <Popup onCloseClick={() => setShowBarPopup(false)}>
+          <h3 className="popup-h3 handwrite-ch" style={{ marginTop: 8 }}>
+            我的吧台
+            <div
+              className={`popup-h3-toggle handwrite-ch${showOnlyMakeable ? " active" : ""}`}
+              onClick={() => setShowOnlyMakeable(!showOnlyMakeable)}
+            >
+              只顯示可做的
+            </div>
+          </h3>
+
+          <div className="filter-input-frame">
+            <div className="handwrite-ch">新增材料:</div>
+            <input
+              className="filter-input handwrite-ch"
+              type="text"
+              value={barInputText}
+              placeholder="輸入材料..."
+              onKeyDown={(e) => {
+                if (e.key === "Enter") addToBar();
+              }}
+              onChange={(e) => setBarInputText(e.target.value)}
+            />
+            <div
+              style={{ fontWeight: "bold", userSelect: "none", cursor: "pointer" }}
+              onClick={addToBar}
+            >
+              +
+            </div>
+          </div>
+
+          <div className="tags-list handwrite-ch">
+            {myBar.map((ing) => (
+              <div
+                key={ing}
+                className="tags active"
+                onClick={() => setMyBar(myBar.filter((i) => i !== ing))}
+              >
+                {ing} ×
+              </div>
+            ))}
+            {!myBar.length && (
+              <div className="bar-empty">尚未新增任何材料</div>
+            )}
           </div>
         </Popup>
       )}

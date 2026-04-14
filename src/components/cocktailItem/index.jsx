@@ -7,6 +7,7 @@ export default function CocktailItem({
   showAll,
   cocktail,
   recipes = [],
+  matchInfo = null,
   onCocktailClick = () => {},
 }) {
   const { hasImage = false, src = "", imgPosition = "left" } = cocktail;
@@ -80,6 +81,14 @@ export default function CocktailItem({
           <div className="cocktail__stars">
             {numToRate(
               recipe.alcohol ? getAlcoholShots(recipe.alcohol) : recipe.shots
+            )}
+            {matchInfo !== null && (
+              <div className={`cocktail__match ${
+                matchInfo.missing === 0 ? "match-full" :
+                matchInfo.missing === 1 ? "match-near" : "match-miss"
+              }`}>
+                {matchInfo.missing === 0 ? "✓" : `缺${matchInfo.missing}`}
+              </div>
             )}
           </div>
         </div>

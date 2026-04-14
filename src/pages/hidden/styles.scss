@@ -29,6 +29,20 @@
   z-index: 11;
 }
 
+.floatBtn--bar {
+  bottom: 90px;
+  background: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ddd;
+
+  &.active {
+    color: #e57d27;
+    outline: 2px solid #e57d27;
+  }
+}
+
 .floatBtn .tag-count {
   position: absolute;
   top: 0;
@@ -101,4 +115,30 @@
 .tags.active {
   border-color: #e57d27;
   color: #e57d27;
+}
+
+.popup-divider {
+  height: 1px;
+  background: #444;
+  margin: 16px 0;
+}
+
+.popup-h3-toggle {
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  border: 1px solid #555;
+  padding: 2px 8px;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  user-select: none;
+
+  &.active {
+    color: #e57d27;
+    border-color: #e57d27;
+  }
+}
+
+.bar-empty {
+  font-size: 13px;
+  color: #555;
 }
