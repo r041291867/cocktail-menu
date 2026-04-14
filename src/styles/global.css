@@ -142,6 +142,7 @@ body {
   display: grid;
   gap: 40px;
   padding-top: var(--header-total);
+  overflow-x: hidden;
 }
 
 .menu__section {
