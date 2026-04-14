@@ -1,7 +1,6 @@
 import "./styles.scss";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import CocktailItem from "@/components/cocktailItem";
-// import { cocktailMenu } from "@/data/hidden";
 import { toChinese } from "@/data/engToCht";
 import Popup from "@/components/popup";
 import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
@@ -16,71 +15,54 @@ interface Props {
   onCloseClick?: () => void;
 }
 
-const categories = [
-  "Whiskey",
-  "Gin",
-  "Rum",
-  "Vodka",
-  "Brandy",
-  "Tequila",
-  "Else",
-  "Signature",
-  "Imbibe",
-  "Mocktail",
-];
-
-const tags = [
-  ...categories,
-  "Campari",
-  "Grapefruit",
-  "Grenadine",
-  "Orgeat",
-  "Prosecco",
-  "Champagne",
-  "Absinthe",
-  "Bénédictine",
-];
-
-const excludedKeywords = ["optional", "garnish", "ratio"];
+// ─── Component ───────────────────────────────────────────────────────────────
 
 export default function HiddenPage({
   recipes = [],
   onCocktailClick = () => {},
   onCloseClick = () => {},
 }: Props) {
+  // ── State ──────────────────────────────────────────────────────────────────
   const [showAll, setShowAll] = useState(true);
   const [keywd, setKeywd] = useState<string[]>([]);
-  const [showFilterPopup, setShowFilterPopup] = useState(false);
-  const [showBarPopup, setShowBarPopup] = useState(false);
-  const [tagList, setTagList] = useState<string[]>([...tags]);
+  const [tagList, setTagList] = useState<string[]>([...TAGS]);
   const [inputText, setInputText] = useState("");
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-  const navRef = useRef<HTMLDivElement>(null);
+  const [showFilterPopup, setShowFilterPopup] = useState(false);
 
-  // My Bar state
   const [myBar, setMyBar] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem("myBar");
-      return saved ? JSON.parse(saved) : [];
+      return JSON.parse(localStorage.getItem("myBar") ?? "[]");
     } catch {
       return [];
     }
   });
-  const [showOnlyMakeable, setShowOnlyMakeable] = useState(false);
   const [barInputText, setBarInputText] = useState("");
-  const [showQrPopup, setShowQrPopup] = useState(false);
+  const [showOnlyMakeable, setShowOnlyMakeable] = useState(false);
+  const [showBarPopup, setShowBarPopup] = useState(false);
+
   const [currentUrl, setCurrentUrl] = useState("");
+  const [showQrPopup, setShowQrPopup] = useState(false);
 
-  const visibleCategories = categories
-    .map((category) => ({
-      category,
-      categoryCh: toChinese(category),
-      cocktails: getCategoryCocktails(category),
-    }))
-    .filter(
-      ({ cocktails }) => cocktails.filter((c) => c.show).length || showAll
-    );
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
+  // ── Derived ────────────────────────────────────────────────────────────────
+  const getMatchInfo = useCallback(
+    (cocktail: Cocktail) => computeMatchInfo(myBar)(cocktail),
+    [myBar]
+  );
+
+  const filteredRecipes = useMemo(
+    () => filterByKeywords(keywd)(recipes),
+    [recipes, keywd]
+  );
+
+  const visibleCategories = useMemo(
+    () => buildVisibleCategories({ filteredRecipes, showAll, showOnlyMakeable, myBar, getMatchInfo }),
+    [filteredRecipes, showAll, showOnlyMakeable, myBar, getMatchInfo]
+  );
+
+  // ── Effects ────────────────────────────────────────────────────────────────
   useEffect(() => {
     localStorage.setItem("myBar", JSON.stringify(myBar));
   }, [myBar]);
@@ -103,110 +85,60 @@ export default function HiddenPage({
 
   useEffect(() => {
     if (!activeSection || !navRef.current) return;
-    const activeEl = navRef.current.querySelector(
-      `[data-nav-id="${activeSection}"]`
-    );
-    activeEl?.scrollIntoView({ block: "nearest", inline: "nearest" });
+    navRef.current
+      .querySelector(`[data-nav-id="${activeSection}"]`)
+      ?.scrollIntoView({ block: "nearest", inline: "nearest" });
   }, [activeSection]);
 
-  function getMatchInfo(cocktail: Cocktail): MatchInfo | null {
-    if (!myBar.length) return null;
-    const recipe = cocktail.recipe || {};
-    const ingredients = (cocktail.ingredients || []).filter((ing) => {
-      const ingLower = ing.toLowerCase();
-      // 排除帶有 excludedKeywords 的材料或份量
-      if (excludedKeywords.some((kw) => ingLower.includes(kw))) return false;
-      const amountLower = (recipe[ing] ?? "").toLowerCase();
-      return !excludedKeywords.some((kw) => amountLower.includes(kw));
-    });
-    if (!ingredients.length) return null;
+  // ── Handlers ───────────────────────────────────────────────────────────────
+  const addTag = useCallback(() => {
+    const tag = inputText.trim();
+    if (!tag) return;
+    setTagList((prev) => (prev.includes(tag) ? prev : [...prev, tag]));
+    setKeywd((prev) => (prev.includes(tag) ? prev : [...prev, tag]));
+    setInputText("");
+  }, [inputText]);
 
-    const missingCount = ingredients.filter((ing) => {
-      const a = ing.toLowerCase();
-      return !myBar.some((barIng: string) => {
-        const b = barIng.toLowerCase();
-        return a.includes(b) || b.includes(a);
-      });
-    }).length;
-
-    return { missing: missingCount, total: ingredients.length };
-  }
-
-  function getCategoryCocktails(category: string): Cocktail[] {
-    let result = filterByKeyword(recipes, keywd).filter(
-      (item) => item.category === category
+  const toggleTag = useCallback((tag: string) => {
+    setKeywd((prev) =>
+      prev.includes(tag) ? prev.filter((k) => k !== tag) : [...prev, tag]
     );
+  }, []);
 
-    if (showOnlyMakeable && myBar.length) {
-      result = result.filter(
-        (cocktail) => getMatchInfo(cocktail)?.missing === 0
-      );
-    }
+  const clearFilter = useCallback(() => {
+    setKeywd([]);
+    setShowFilterPopup(false);
+  }, []);
 
-    return result.sort((a, b) => {
-      const aShots = a.shots ?? 0;
-      const bShots = b.shots ?? 0;
-      if (aShots === bShots) return a.nameEng > b.nameEng ? 1 : -1;
-      return aShots - bShots;
-    });
-  }
-
-  function filterByKeyword(
-    cocktails: Cocktail[],
-    keywords: string[] = []
-  ): Cocktail[] {
-    if (!keywords.length) return cocktails;
-
-    let result = cocktails;
-
-    keywords.forEach((keyword) => {
-      const lowerCaseKeyword = keyword.toLowerCase();
-      result = result.filter((cocktail) => {
-        return (
-          cocktail.category?.toLowerCase().includes(lowerCaseKeyword) ||
-          cocktail.nameEng?.toLowerCase().includes(lowerCaseKeyword) ||
-          cocktail.nameCht?.includes(keyword) ||
-          cocktail.ingredients?.some((ingredient) =>
-            ingredient.toLowerCase().includes(lowerCaseKeyword)
-          )
-        );
-      });
-    });
-
-    return result;
-  }
-
-  function addToBar() {
-    if (!barInputText.trim()) return;
-    const newIng = barInputText.trim().toLowerCase();
-    if (!myBar.includes(newIng)) {
-      setMyBar([...myBar, newIng]);
-    }
+  const addToBar = useCallback(() => {
+    const ing = barInputText.trim().toLowerCase();
+    if (!ing) return;
+    setMyBar((prev) => (prev.includes(ing) ? prev : [...prev, ing]));
     setBarInputText("");
-  }
+  }, [barInputText]);
 
+  const removeFromBar = useCallback(
+    (ing: string) => setMyBar((prev) => prev.filter((i) => i !== ing)),
+    []
+  );
+
+  const openQr = useCallback(() => {
+    setCurrentUrl(window.location.href);
+    setShowQrPopup(true);
+  }, []);
+
+  // ── Render ─────────────────────────────────────────────────────────────────
   return (
     <div className="hidden-page__frame">
-      <div className="menu__header ">
+      <div className="menu__header">
         <div className="menu__header--inner handwrite-border">
-          <img
-            src={"/images/favicon.ico"}
-            style={{ filter: "grayscale(1)" }}
-            alt=""
-          />
-          <div
-            className="handwrite-en"
-            onDoubleClick={() => {
-              setShowAll(!showAll);
-            }}
-          >
+          <img src="/images/favicon.ico" style={{ filter: "grayscale(1)" }} alt="" />
+          <div className="handwrite-en" onDoubleClick={() => setShowAll((v) => !v)}>
             The Mixology Menu
             {showAll && <span>.</span>}
           </div>
-          <div style={{ flex: 1 }}></div>
-          <div className="close-btn" onClick={onCloseClick}>
-            +
-          </div>
+          <div style={{ flex: 1 }} />
+          <div className="close-btn" onClick={onCloseClick}>+</div>
         </div>
       </div>
 
@@ -227,16 +159,10 @@ export default function HiddenPage({
 
       <div className="menu__grid">
         {visibleCategories.map(({ category, categoryCh, cocktails }) => (
-          <div
-            key={category}
-            id={category.toLowerCase()}
-            className="menu__section"
-          >
+          <div key={category} id={category.toLowerCase()} className="menu__section">
             <div className="menu__title handwrite-border sticky">
               <span className="handwrite-ch">{categoryCh}</span>
-              <span className="handwrite-en" style={{ marginLeft: 6 }}>
-                {category}
-              </span>
+              <span className="handwrite-en" style={{ marginLeft: 6 }}>{category}</span>
             </div>
             {cocktails.map((cocktail, index) =>
               cocktail.show || showAll ? (
@@ -254,13 +180,12 @@ export default function HiddenPage({
         ))}
       </div>
 
-      {/* Filter button */}
+      {/* Float buttons */}
       <div className="floatBtn" onClick={() => setShowFilterPopup(true)}>
         <SearchOutlinedIcon style={{ fontSize: 28 }} />
         {keywd.length > 0 && <div className="tag-count">{keywd.length}</div>}
       </div>
 
-      {/* My Bar button */}
       <div
         className={`floatBtn floatBtn--bar${showOnlyMakeable ? " active" : ""}`}
         onClick={() => setShowBarPopup(true)}
@@ -271,14 +196,7 @@ export default function HiddenPage({
         )}
       </div>
 
-      {/* QR code button */}
-      <div
-        className="floatBtn floatBtn--qr"
-        onClick={() => {
-          setCurrentUrl(window.location.href);
-          setShowQrPopup(true);
-        }}
-      >
+      <div className="floatBtn floatBtn--qr" onClick={openQr}>
         <QrCode2OutlinedIcon style={{ fontSize: 28 }} />
       </div>
 
@@ -287,17 +205,9 @@ export default function HiddenPage({
         <Popup onCloseClick={() => setShowFilterPopup(false)}>
           <h3 className="popup-h3 handwrite-ch" style={{ marginTop: 8 }}>
             篩選
-            {keywd.length ? (
-              <div
-                className="popup-h3-clear"
-                onClick={() => {
-                  setKeywd([]);
-                  setShowFilterPopup(false);
-                }}
-              >
-                clear
-              </div>
-            ) : null}
+            {keywd.length > 0 && (
+              <div className="popup-h3-clear" onClick={clearFilter}>clear</div>
+            )}
           </h3>
 
           <div className="filter-input-frame">
@@ -307,31 +217,12 @@ export default function HiddenPage({
               type="text"
               value={inputText}
               placeholder="Type to filter..."
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  if (!inputText.trim()) return;
-                  const newTag = inputText.trim();
-                  if (!tagList.includes(newTag))
-                    setTagList([...tagList, newTag]);
-                  if (!keywd.includes(newTag)) setKeywd([...keywd, newTag]);
-                  setInputText("");
-                }
-              }}
               onChange={(e) => setInputText(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && addTag()}
             />
             <div
-              style={{
-                fontWeight: "bold",
-                userSelect: "none",
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                if (!inputText.trim()) return;
-                const newTag = inputText.trim();
-                if (!tagList.includes(newTag)) setTagList([...tagList, newTag]);
-                if (!keywd.includes(newTag)) setKeywd([...keywd, newTag]);
-                setInputText("");
-              }}
+              style={{ fontWeight: "bold", userSelect: "none", cursor: "pointer" }}
+              onClick={addTag}
             >
               +
             </div>
@@ -342,13 +233,7 @@ export default function HiddenPage({
               <div
                 key={tag}
                 className={`tags${keywd.includes(tag) ? " active" : ""}`}
-                onClick={() => {
-                  if (keywd.includes(tag)) {
-                    setKeywd(keywd.filter((k) => k !== tag));
-                  } else {
-                    setKeywd([...keywd, tag]);
-                  }
-                }}
+                onClick={() => toggleTag(tag)}
               >
                 {tag}
               </div>
@@ -364,7 +249,7 @@ export default function HiddenPage({
             我的吧台
             <div
               className={`popup-h3-toggle handwrite-ch${showOnlyMakeable ? " active" : ""}`}
-              onClick={() => setShowOnlyMakeable(!showOnlyMakeable)}
+              onClick={() => setShowOnlyMakeable((v) => !v)}
             >
               只顯示可做的
             </div>
@@ -377,17 +262,11 @@ export default function HiddenPage({
               type="text"
               value={barInputText}
               placeholder="輸入材料..."
-              onKeyDown={(e) => {
-                if (e.key === "Enter") addToBar();
-              }}
               onChange={(e) => setBarInputText(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && addToBar()}
             />
             <div
-              style={{
-                fontWeight: "bold",
-                userSelect: "none",
-                cursor: "pointer",
-              }}
+              style={{ fontWeight: "bold", userSelect: "none", cursor: "pointer" }}
               onClick={addToBar}
             >
               +
@@ -396,11 +275,7 @@ export default function HiddenPage({
 
           <div className="tags-list handwrite-ch">
             {myBar.map((ing) => (
-              <div
-                key={ing}
-                className="tags active"
-                onClick={() => setMyBar(myBar.filter((i) => i !== ing))}
-              >
+              <div key={ing} className="tags active" onClick={() => removeFromBar(ing)}>
                 {ing} ×
               </div>
             ))}
@@ -409,7 +284,7 @@ export default function HiddenPage({
         </Popup>
       )}
 
-      {/* QR code popup */}
+      {/* QR popup */}
       {showQrPopup && (
         <Popup onCloseClick={() => setShowQrPopup(false)}>
           <QrCode currentUrl={currentUrl} />
@@ -417,4 +292,87 @@ export default function HiddenPage({
       )}
     </div>
   );
+}
+
+// ─── Constants ───────────────────────────────────────────────────────────────
+
+const CATEGORIES = [
+  "Whiskey", "Gin", "Rum", "Vodka", "Brandy",
+  "Tequila", "Else", "Signature", "Imbibe", "Mocktail",
+];
+
+const TAGS = [
+  ...CATEGORIES,
+  "Campari", "Grapefruit", "Grenadine", "Orgeat",
+  "Prosecco", "Champagne", "Absinthe", "Bénédictine",
+];
+
+const EXCLUDED = ["optional", "garnish", "ratio"];
+
+// ─── Pure Functions ───────────────────────────────────────────────────────────
+
+function isExcluded(text: string): boolean {
+  const lower = text.toLowerCase();
+  return EXCLUDED.some((kw) => lower.includes(kw));
+}
+
+function getRequiredIngredients(cocktail: Cocktail): string[] {
+  return (cocktail.ingredients ?? []).filter(
+    (ing) => !isExcluded(ing) && !isExcluded(cocktail.recipe?.[ing] ?? "")
+  );
+}
+
+function computeMatchInfo(myBar: string[]) {
+  return (cocktail: Cocktail): MatchInfo | null => {
+    if (!myBar.length) return null;
+    const ingredients = getRequiredIngredients(cocktail);
+    if (!ingredients.length) return null;
+    const missing = ingredients.filter((ing) => {
+      const a = ing.toLowerCase();
+      return !myBar.some((b) => a.includes(b.toLowerCase()) || b.toLowerCase().includes(a));
+    }).length;
+    return { missing, total: ingredients.length };
+  };
+}
+
+function filterByKeywords(keywords: string[]) {
+  return (cocktails: Cocktail[]): Cocktail[] =>
+    keywords.reduce((result, keyword) => {
+      const lc = keyword.toLowerCase();
+      return result.filter(
+        (c) =>
+          c.category?.toLowerCase().includes(lc) ||
+          c.nameEng?.toLowerCase().includes(lc) ||
+          c.nameCht?.includes(keyword) ||
+          c.ingredients?.some((ing) => ing.toLowerCase().includes(lc))
+      );
+    }, cocktails);
+}
+
+function sortCocktails(cocktails: Cocktail[]): Cocktail[] {
+  return [...cocktails].sort((a, b) => {
+    const diff = (a.shots ?? 0) - (b.shots ?? 0);
+    return diff !== 0 ? diff : a.nameEng > b.nameEng ? 1 : -1;
+  });
+}
+
+interface BuildArgs {
+  filteredRecipes: Cocktail[];
+  showAll: boolean;
+  showOnlyMakeable: boolean;
+  myBar: string[];
+  getMatchInfo: (c: Cocktail) => MatchInfo | null;
+}
+
+function buildVisibleCategories({ filteredRecipes, showAll, showOnlyMakeable, myBar, getMatchInfo }: BuildArgs) {
+  return CATEGORIES
+    .map((category) => {
+      const cocktails = sortCocktails(
+        filteredRecipes
+          .filter((c) => c.category === category)
+          .filter((c) => !showOnlyMakeable || !myBar.length || getMatchInfo(c)?.missing === 0)
+      );
+      return { category, categoryCh: toChinese(category), cocktails };
+    })
+    .filter(({ cocktails }) => showAll || cocktails.some((c) => c.show));
 }
