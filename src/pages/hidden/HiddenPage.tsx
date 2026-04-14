@@ -58,7 +58,14 @@ export default function HiddenPage({
   );
 
   const visibleCategories = useMemo(
-    () => buildVisibleCategories({ filteredRecipes, showAll, showOnlyMakeable, myBar, getMatchInfo }),
+    () =>
+      buildVisibleCategories({
+        filteredRecipes,
+        showAll,
+        showOnlyMakeable,
+        myBar,
+        getMatchInfo,
+      }),
     [filteredRecipes, showAll, showOnlyMakeable, myBar, getMatchInfo]
   );
 
@@ -132,13 +139,22 @@ export default function HiddenPage({
     <div className="hidden-page__frame">
       <div className="menu__header">
         <div className="menu__header--inner handwrite-border">
-          <img src="/images/favicon.ico" style={{ filter: "grayscale(1)" }} alt="" />
-          <div className="handwrite-en" onDoubleClick={() => setShowAll((v) => !v)}>
+          <img
+            src="/images/favicon.ico"
+            style={{ filter: "grayscale(1)" }}
+            alt=""
+          />
+          <div
+            className="handwrite-en"
+            onDoubleClick={() => setShowAll((v) => !v)}
+          >
             The Mixology Menu
             {showAll && <span>.</span>}
           </div>
           <div style={{ flex: 1 }} />
-          <div className="close-btn" onClick={onCloseClick}>+</div>
+          <div className="close-btn" onClick={onCloseClick}>
+            +
+          </div>
         </div>
       </div>
 
@@ -159,10 +175,16 @@ export default function HiddenPage({
 
       <div className="menu__grid">
         {visibleCategories.map(({ category, categoryCh, cocktails }) => (
-          <div key={category} id={category.toLowerCase()} className="menu__section">
-            <div className="menu__title handwrite-border sticky">
+          <div
+            key={category}
+            id={category.toLowerCase()}
+            className="menu__section"
+          >
+            <div className="menu__title handwrite-border">
               <span className="handwrite-ch">{categoryCh}</span>
-              <span className="handwrite-en" style={{ marginLeft: 6 }}>{category}</span>
+              <span className="handwrite-en" style={{ marginLeft: 6 }}>
+                {category}
+              </span>
             </div>
             {cocktails.map((cocktail, index) =>
               cocktail.show || showAll ? (
@@ -206,7 +228,9 @@ export default function HiddenPage({
           <h3 className="popup-h3 handwrite-ch" style={{ marginTop: 8 }}>
             篩選
             {keywd.length > 0 && (
-              <div className="popup-h3-clear" onClick={clearFilter}>clear</div>
+              <div className="popup-h3-clear" onClick={clearFilter}>
+                clear
+              </div>
             )}
           </h3>
 
@@ -221,7 +245,11 @@ export default function HiddenPage({
               onKeyDown={(e) => e.key === "Enter" && addTag()}
             />
             <div
-              style={{ fontWeight: "bold", userSelect: "none", cursor: "pointer" }}
+              style={{
+                fontWeight: "bold",
+                userSelect: "none",
+                cursor: "pointer",
+              }}
               onClick={addTag}
             >
               +
@@ -266,7 +294,11 @@ export default function HiddenPage({
               onKeyDown={(e) => e.key === "Enter" && addToBar()}
             />
             <div
-              style={{ fontWeight: "bold", userSelect: "none", cursor: "pointer" }}
+              style={{
+                fontWeight: "bold",
+                userSelect: "none",
+                cursor: "pointer",
+              }}
               onClick={addToBar}
             >
               +
@@ -275,7 +307,11 @@ export default function HiddenPage({
 
           <div className="tags-list handwrite-ch">
             {myBar.map((ing) => (
-              <div key={ing} className="tags active" onClick={() => removeFromBar(ing)}>
+              <div
+                key={ing}
+                className="tags active"
+                onClick={() => removeFromBar(ing)}
+              >
                 {ing} ×
               </div>
             ))}
@@ -297,14 +333,28 @@ export default function HiddenPage({
 // ─── Constants ───────────────────────────────────────────────────────────────
 
 const CATEGORIES = [
-  "Whiskey", "Gin", "Rum", "Vodka", "Brandy",
-  "Tequila", "Else", "Signature", "Imbibe", "Mocktail",
+  "Whiskey",
+  "Gin",
+  "Rum",
+  "Vodka",
+  "Brandy",
+  "Tequila",
+  "Else",
+  "Signature",
+  "Imbibe",
+  "Mocktail",
 ];
 
 const TAGS = [
   ...CATEGORIES,
-  "Campari", "Grapefruit", "Grenadine", "Orgeat",
-  "Prosecco", "Champagne", "Absinthe", "Bénédictine",
+  "Campari",
+  "Grapefruit",
+  "Grenadine",
+  "Orgeat",
+  "Prosecco",
+  "Champagne",
+  "Absinthe",
+  "Bénédictine",
 ];
 
 const EXCLUDED = ["optional", "garnish", "ratio"];
@@ -329,7 +379,9 @@ function computeMatchInfo(myBar: string[]) {
     if (!ingredients.length) return null;
     const missing = ingredients.filter((ing) => {
       const a = ing.toLowerCase();
-      return !myBar.some((b) => a.includes(b.toLowerCase()) || b.toLowerCase().includes(a));
+      return !myBar.some(
+        (b) => a.includes(b.toLowerCase()) || b.toLowerCase().includes(a)
+      );
     }).length;
     return { missing, total: ingredients.length };
   };
@@ -364,15 +416,22 @@ interface BuildArgs {
   getMatchInfo: (c: Cocktail) => MatchInfo | null;
 }
 
-function buildVisibleCategories({ filteredRecipes, showAll, showOnlyMakeable, myBar, getMatchInfo }: BuildArgs) {
-  return CATEGORIES
-    .map((category) => {
-      const cocktails = sortCocktails(
-        filteredRecipes
-          .filter((c) => c.category === category)
-          .filter((c) => !showOnlyMakeable || !myBar.length || getMatchInfo(c)?.missing === 0)
-      );
-      return { category, categoryCh: toChinese(category), cocktails };
-    })
-    .filter(({ cocktails }) => showAll || cocktails.some((c) => c.show));
+function buildVisibleCategories({
+  filteredRecipes,
+  showAll,
+  showOnlyMakeable,
+  myBar,
+  getMatchInfo,
+}: BuildArgs) {
+  return CATEGORIES.map((category) => {
+    const cocktails = sortCocktails(
+      filteredRecipes
+        .filter((c) => c.category === category)
+        .filter(
+          (c) =>
+            !showOnlyMakeable || !myBar.length || getMatchInfo(c)?.missing === 0
+        )
+    );
+    return { category, categoryCh: toChinese(category), cocktails };
+  }).filter(({ cocktails }) => showAll || cocktails.some((c) => c.show));
 }
