@@ -30,7 +30,7 @@ const tags = [
   "Absinthe",
   "Bénédictine"
 ];
-
+  const excludedKeywords = ["optional", "garnish", "ratio"];
 export default function HiddenPage({
   recipes = [],
   onCocktailClick = () => {},
@@ -91,9 +91,18 @@ export default function HiddenPage({
     activeEl?.scrollIntoView({ block: "nearest", inline: "nearest" });
   }, [activeSection]);
 
+
+
   function getMatchInfo(cocktail) {
     if (!myBar.length) return null;
-    const ingredients = cocktail.ingredients || [];
+    const recipe = cocktail.recipe || {};
+    const ingredients = (cocktail.ingredients || []).filter((ing) => {
+      const ingLower = ing.toLowerCase();
+      // 排除帶有 excludedKeywords 的材料或份量
+      if (excludedKeywords.some((kw) => ingLower.includes(kw))) return false;
+      const amountLower = (recipe[ing] ?? "").toLowerCase();
+      return !excludedKeywords.some((kw) => amountLower.includes(kw));
+    });
     if (!ingredients.length) return null;
 
     const missingCount = ingredients.filter((ing) => {
