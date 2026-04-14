@@ -1,0 +1,17 @@
+{
+  "name": "The Mixology Nook",
+  "short_name": "Mixology",
+  "description": "Your destination for all things home bar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2e2e2e",
+  "theme_color": "#2e2e2e",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
