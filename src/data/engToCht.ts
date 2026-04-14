@@ -99,6 +99,7 @@ const dictionary: Record<string, string> = {
   "souler gin": "琴酒",
   "sparkling wine": "氣泡酒",
   "sugar": "糖",
+  "syrup": "糖",
   "sugar cane": "甘蔗",
   "suze": "龍膽草",
   "tea": "茶",
