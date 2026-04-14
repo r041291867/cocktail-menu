@@ -5,6 +5,7 @@ import CocktailItem from "@/components/cocktailItem";
 import { toChinese } from "@/data/engToCht";
 import Popup from "@/components/popup";
 import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import QrCode2OutlinedIcon from "@mui/icons-material/QrCode2Outlined";
 import QrCode from "@/components/qrcode";
 import type { Cocktail, MatchInfo } from "@/types";
@@ -255,6 +256,7 @@ export default function HiddenPage({
 
       {/* Filter button */}
       <div className="floatBtn" onClick={() => setShowFilterPopup(true)}>
+        <SearchOutlinedIcon style={{ fontSize: 28 }} />
         {keywd.length > 0 && <div className="tag-count">{keywd.length}</div>}
       </div>
 
