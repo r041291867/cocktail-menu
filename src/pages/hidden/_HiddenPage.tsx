@@ -23,7 +23,6 @@ export default function HiddenPage({
   onCloseClick = () => {},
 }: Props) {
   // ── State ──────────────────────────────────────────────────────────────────
-  const [showAll, setShowAll] = useState(true);
   const [keywd, setKeywd] = useState<string[]>([]);
   const [tagList, setTagList] = useState<string[]>([...TAGS]);
   const [inputText, setInputText] = useState("");
@@ -39,6 +38,8 @@ export default function HiddenPage({
   const [barInputText, setBarInputText] = useState("");
   const [showOnlyMakeable, setShowOnlyMakeable] = useState(false);
   const [showBarPopup, setShowBarPopup] = useState(false);
+
+  const [confirmRemove, setConfirmRemove] = useState<string | null>(null);
 
   const [currentUrl, setCurrentUrl] = useState("");
   const [showQrPopup, setShowQrPopup] = useState(false);
@@ -61,12 +62,11 @@ export default function HiddenPage({
     () =>
       buildVisibleCategories({
         filteredRecipes,
-        showAll,
         showOnlyMakeable,
         myBar,
         getMatchInfo,
       }),
-    [filteredRecipes, showAll, showOnlyMakeable, myBar, getMatchInfo]
+    [filteredRecipes, showOnlyMakeable, myBar, getMatchInfo]
   );
 
   // ── Effects ────────────────────────────────────────────────────────────────
@@ -88,7 +88,7 @@ export default function HiddenPage({
     sections.forEach((s) => observer.observe(s));
     if (sections.length > 0) setActiveSection(sections[0].id);
     return () => observer.disconnect();
-  }, [keywd, showAll]);
+  }, [keywd]);
 
   useEffect(() => {
     if (!activeSection || !navRef.current) return;
@@ -144,13 +144,7 @@ export default function HiddenPage({
             style={{ filter: "grayscale(1)" }}
             alt=""
           />
-          <div
-            className="handwrite-en"
-            onDoubleClick={() => setShowAll((v) => !v)}
-          >
-            The Mixology Menu
-            {showAll && <span>.</span>}
-          </div>
+          <div className="handwrite-en">The Mixology Menu</div>
           <div style={{ flex: 1 }} />
           <div className="close-btn" onClick={onCloseClick}>
             +
@@ -186,24 +180,21 @@ export default function HiddenPage({
                 {category}
               </span>
             </div>
-            {cocktails.map((cocktail, index) =>
-              cocktail.show || showAll ? (
-                <CocktailItem
-                  key={index + cocktail.nameEng}
-                  showAll={showAll}
-                  cocktail={cocktail}
-                  recipes={recipes}
-                  matchInfo={getMatchInfo(cocktail)}
-                  onCocktailClick={() => onCocktailClick(cocktail)}
-                />
-              ) : null
-            )}
+            {cocktails.map((cocktail, index) => (
+              <CocktailItem
+                key={index + cocktail.nameEng}
+                cocktail={cocktail}
+                recipes={recipes}
+                matchInfo={getMatchInfo(cocktail)}
+                onCocktailClick={() => onCocktailClick(cocktail)}
+              />
+            ))}
           </div>
         ))}
       </div>
 
       {/* Float buttons */}
-      <div className="floatBtn" onClick={() => setShowFilterPopup(true)}>
+      <div className="floatBtn floatBtn--filter" onClick={() => setShowFilterPopup(true)}>
         <SearchOutlinedIcon style={{ fontSize: 28 }} />
         {keywd.length > 0 && <div className="tag-count">{keywd.length}</div>}
       </div>
@@ -305,17 +296,47 @@ export default function HiddenPage({
             </div>
           </div>
 
-          <div className="tags-list handwrite-ch">
-            {myBar.map((ing) => (
-              <div
-                key={ing}
-                className="tags active"
-                onClick={() => removeFromBar(ing)}
-              >
-                {ing} ×
-              </div>
-            ))}
+          <div className="bar-list handwrite-ch">
+            {[...myBar]
+              .sort((a, b) => a.localeCompare(b))
+              .map((ing) => (
+                <div key={ing} className="bar-item">
+                  {ing}
+                  <div
+                    className="bar-item-remove close-btn"
+                    onClick={() => setConfirmRemove(ing)}
+                  >
+                    +
+                  </div>
+                </div>
+              ))}
             {!myBar.length && <div className="bar-empty">尚未新增任何材料</div>}
+          </div>
+        </Popup>
+      )}
+
+      {/* Confirm remove popup */}
+      {confirmRemove !== null && (
+        <Popup width={200} onCloseClick={() => setConfirmRemove(null)}>
+          <p className="handwrite-ch" style={{ margin: "8px 0 20px" }}>
+            確定移除「{confirmRemove}」？
+          </p>
+          <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
+            <div
+              className="tags handwrite-ch"
+              onClick={() => setConfirmRemove(null)}
+            >
+              取消
+            </div>
+            <div
+              className="tags active handwrite-ch"
+              onClick={() => {
+                removeFromBar(confirmRemove);
+                setConfirmRemove(null);
+              }}
+            >
+              確定
+            </div>
           </div>
         </Popup>
       )}
@@ -421,7 +442,6 @@ function sortCocktails(cocktails: Cocktail[]): Cocktail[] {
 
 interface BuildArgs {
   filteredRecipes: Cocktail[];
-  showAll: boolean;
   showOnlyMakeable: boolean;
   myBar: string[];
   getMatchInfo: (c: Cocktail) => MatchInfo | null;
@@ -429,7 +449,6 @@ interface BuildArgs {
 
 function buildVisibleCategories({
   filteredRecipes,
-  showAll,
   showOnlyMakeable,
   myBar,
   getMatchInfo,
@@ -444,5 +463,5 @@ function buildVisibleCategories({
         )
     );
     return { category, categoryCh: toChinese(category), cocktails };
-  }).filter(({ cocktails }) => showAll || cocktails.some((c) => c.show));
+  }).filter(({ cocktails }) => cocktails.length > 0);
 }

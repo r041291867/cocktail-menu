@@ -1,3 +1,10 @@
+.qr-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
 .qr-popup-inner {
   display: flex;
   flex-direction: column;

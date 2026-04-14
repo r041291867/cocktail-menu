@@ -5,9 +5,11 @@ import type { ReactNode } from "react";
 interface Props {
   children: ReactNode;
   onCloseClick?: () => void;
+  width?: string | number;
+  height?: string | number;
 }
 
-export default function Popup({ children, onCloseClick = () => {} }: Props) {
+export default function Popup({ children, onCloseClick = () => {}, width, height }: Props) {
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -19,7 +21,7 @@ export default function Popup({ children, onCloseClick = () => {} }: Props) {
   return (
     <div className="popup-frame">
       <div className="popup-mask" onClick={onCloseClick}></div>
-      <div className="popup-main">{children}</div>
+      <div className="popup-main" style={{ width, height }}>{children}</div>
     </div>
   );
 }

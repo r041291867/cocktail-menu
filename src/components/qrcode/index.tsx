@@ -4,6 +4,20 @@ import "./styles.scss";
 export default function QrCode({ currentUrl }: QrcodeProps) {
   return (
     <div className="qr-popup-inner">
+      <div className="qr-popup-header ">
+        <img
+          src="/images/favicon.ico"
+          width={30}
+          alt="QR Code"
+          className="qr-popup-image"
+        />
+        <span className="handwrite-en">
+          Welcome to <strong>Mixology Nook</strong>!
+        </span>
+      </div>
+      <div className="qr-popop-header handwrite-en">
+        Scan the QR code to view the cocktail menu on your device!
+      </div>
       <div className="qr-popup-border">
         <QRCodeSVG
           level="H"
@@ -14,7 +28,7 @@ export default function QrCode({ currentUrl }: QrcodeProps) {
           marginSize={1}
         />
       </div>
-      <div className="qr-popup-url">{currentUrl}</div>
+      <div className="qr-popup-url handwrite-en">{currentUrl}</div>
     </div>
   );
 }

@@ -8,7 +8,6 @@ interface Props {
   cocktail: Cocktail | CocktailSummary;
   recipes?: Cocktail[];
   matchInfo?: MatchInfo | null;
-  showAll?: boolean;
   onCocktailClick?: () => void;
 }
 
@@ -28,7 +27,6 @@ export default function CocktailItem({
   cocktail,
   recipes = [],
   matchInfo = null,
-  showAll,
   onCocktailClick = () => {},
 }: Props) {
   const { hasImage = false, src = "", imgPosition = "left" } = cocktail as CocktailSummary;
@@ -76,7 +74,6 @@ export default function CocktailItem({
             <div className="cocktail__cht handwrite-ch">{cocktail.nameCht}</div>
             <div className="cocktail__eng handwrite-en">
               {cocktail.nameEng}
-              {showAll && (recipe as Cocktail).show ? <sup> *</sup> : null}
             </div>
           </div>
 
