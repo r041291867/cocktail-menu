@@ -43,6 +43,15 @@
   }
 }
 
+.floatBtn--qr {
+  bottom: 160px;
+  background: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ddd;
+}
+
 .floatBtn .tag-count {
   position: absolute;
   top: 0;

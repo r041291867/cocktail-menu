@@ -123,7 +123,9 @@ body {
   white-space: nowrap;
   font-size: 14px;
   border-bottom: 2px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
   margin-bottom: -1px;
 }
 
@@ -160,6 +162,23 @@ body {
 .menu__title.sticky {
   position: sticky;
   top: calc(var(--header-total) - 5px);
+}
+
+.float-qr-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #555;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ddd;
 }
 
 @media (max-width: 374px) {
@@ -215,4 +234,3 @@ body {
     margin: auto;
   }
 }
-

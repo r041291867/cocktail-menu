@@ -6,6 +6,8 @@ import Popup from "@/components/popup";
 import Recipe from "@/components/recipe";
 import { getRecipe } from "@/data/recipeUtils";
 import type { Cocktail } from "@/types";
+import QrCode from "@/components/qrcode";
+import QrCode2OutlinedIcon from "@mui/icons-material/QrCode2Outlined";
 
 interface Props {
   recipes?: Cocktail[];
@@ -15,6 +17,8 @@ export default function HomeInteractions({ recipes = [] }: Props) {
   const [fontReady, setFontReady] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [recipeItem, setRecipeItem] = useState<Cocktail | null>(null);
+  const [showQrPopup, setShowQrPopup] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState("");
 
   useEffect(() => {
     document.fonts.ready.then(() => {
@@ -32,7 +36,9 @@ export default function HomeInteractions({ recipes = [] }: Props) {
       setRecipeItem(getRecipe(recipes, recipeName));
       setShowPopup(true);
     };
-    items.forEach((item) => item.addEventListener("dblclick", onItemDoubleClick));
+    items.forEach((item) =>
+      item.addEventListener("dblclick", onItemDoubleClick)
+    );
 
     // Intersection Observer for active nav item
     const navItems = document.querySelectorAll<HTMLElement>("[data-nav-id]");
@@ -83,7 +89,22 @@ export default function HomeInteractions({ recipes = [] }: Props) {
           <Recipe recipe={recipeItem} />
         </Popup>
       )}
+
+      <div
+        className="float-qr-btn"
+        onClick={() => {
+          setCurrentUrl(window.location.href);
+          setShowQrPopup(true);
+        }}
+      >
+        <QrCode2OutlinedIcon style={{ fontSize: 28 }} />
+      </div>
+
+      {showQrPopup && (
+        <Popup onCloseClick={() => setShowQrPopup(false)}>
+          <QrCode currentUrl={currentUrl} />
+        </Popup>
+      )}
     </>
   );
 }
-

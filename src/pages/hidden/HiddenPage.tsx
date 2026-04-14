@@ -5,6 +5,8 @@ import CocktailItem from "@/components/cocktailItem";
 import { toChinese } from "@/data/engToCht";
 import Popup from "@/components/popup";
 import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
+import QrCode2OutlinedIcon from "@mui/icons-material/QrCode2Outlined";
+import QrCode from "@/components/qrcode";
 import type { Cocktail, MatchInfo } from "@/types";
 
 interface Props {
@@ -35,7 +37,7 @@ const tags = [
   "Prosecco",
   "Champagne",
   "Absinthe",
-  "Bénédictine"
+  "Bénédictine",
 ];
 
 const excludedKeywords = ["optional", "garnish", "ratio"];
@@ -65,6 +67,8 @@ export default function HiddenPage({
   });
   const [showOnlyMakeable, setShowOnlyMakeable] = useState(false);
   const [barInputText, setBarInputText] = useState("");
+  const [showQrPopup, setShowQrPopup] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState("");
 
   const visibleCategories = categories
     .map((category) => ({
@@ -72,7 +76,9 @@ export default function HiddenPage({
       categoryCh: toChinese(category),
       cocktails: getCategoryCocktails(category),
     }))
-    .filter(({ cocktails }) => cocktails.filter((c) => c.show).length || showAll);
+    .filter(
+      ({ cocktails }) => cocktails.filter((c) => c.show).length || showAll
+    );
 
   useEffect(() => {
     localStorage.setItem("myBar", JSON.stringify(myBar));
@@ -96,11 +102,11 @@ export default function HiddenPage({
 
   useEffect(() => {
     if (!activeSection || !navRef.current) return;
-    const activeEl = navRef.current.querySelector(`[data-nav-id="${activeSection}"]`);
+    const activeEl = navRef.current.querySelector(
+      `[data-nav-id="${activeSection}"]`
+    );
     activeEl?.scrollIntoView({ block: "nearest", inline: "nearest" });
   }, [activeSection]);
-
-
 
   function getMatchInfo(cocktail: Cocktail): MatchInfo | null {
     if (!myBar.length) return null;
@@ -131,7 +137,9 @@ export default function HiddenPage({
     );
 
     if (showOnlyMakeable && myBar.length) {
-      result = result.filter((cocktail) => getMatchInfo(cocktail)?.missing === 0);
+      result = result.filter(
+        (cocktail) => getMatchInfo(cocktail)?.missing === 0
+      );
     }
 
     return result.sort((a, b) => {
@@ -142,7 +150,10 @@ export default function HiddenPage({
     });
   }
 
-  function filterByKeyword(cocktails: Cocktail[], keywords: string[] = []): Cocktail[] {
+  function filterByKeyword(
+    cocktails: Cocktail[],
+    keywords: string[] = []
+  ): Cocktail[] {
     if (!keywords.length) return cocktails;
 
     let result = cocktails;
@@ -192,10 +203,7 @@ export default function HiddenPage({
             {showAll && <span>.</span>}
           </div>
           <div style={{ flex: 1 }}></div>
-          <div
-            className="close-btn"
-            onClick={onCloseClick}
-          >
+          <div className="close-btn" onClick={onCloseClick}>
             +
           </div>
         </div>
@@ -247,9 +255,7 @@ export default function HiddenPage({
 
       {/* Filter button */}
       <div className="floatBtn" onClick={() => setShowFilterPopup(true)}>
-        {keywd.length > 0 && (
-          <div className="tag-count">{keywd.length}</div>
-        )}
+        {keywd.length > 0 && <div className="tag-count">{keywd.length}</div>}
       </div>
 
       {/* My Bar button */}
@@ -261,6 +267,17 @@ export default function HiddenPage({
         {myBar.length > 0 && showOnlyMakeable && (
           <div className="tag-count">{myBar.length}</div>
         )}
+      </div>
+
+      {/* QR code button */}
+      <div
+        className="floatBtn floatBtn--qr"
+        onClick={() => {
+          setCurrentUrl(window.location.href);
+          setShowQrPopup(true);
+        }}
+      >
+        <QrCode2OutlinedIcon style={{ fontSize: 28 }} />
       </div>
 
       {/* Filter popup */}
@@ -292,7 +309,8 @@ export default function HiddenPage({
                 if (e.key === "Enter") {
                   if (!inputText.trim()) return;
                   const newTag = inputText.trim();
-                  if (!tagList.includes(newTag)) setTagList([...tagList, newTag]);
+                  if (!tagList.includes(newTag))
+                    setTagList([...tagList, newTag]);
                   if (!keywd.includes(newTag)) setKeywd([...keywd, newTag]);
                   setInputText("");
                 }
@@ -300,7 +318,11 @@ export default function HiddenPage({
               onChange={(e) => setInputText(e.target.value)}
             />
             <div
-              style={{ fontWeight: "bold", userSelect: "none", cursor: "pointer" }}
+              style={{
+                fontWeight: "bold",
+                userSelect: "none",
+                cursor: "pointer",
+              }}
               onClick={() => {
                 if (!inputText.trim()) return;
                 const newTag = inputText.trim();
@@ -359,7 +381,11 @@ export default function HiddenPage({
               onChange={(e) => setBarInputText(e.target.value)}
             />
             <div
-              style={{ fontWeight: "bold", userSelect: "none", cursor: "pointer" }}
+              style={{
+                fontWeight: "bold",
+                userSelect: "none",
+                cursor: "pointer",
+              }}
               onClick={addToBar}
             >
               +
@@ -376,10 +402,15 @@ export default function HiddenPage({
                 {ing} ×
               </div>
             ))}
-            {!myBar.length && (
-              <div className="bar-empty">尚未新增任何材料</div>
-            )}
+            {!myBar.length && <div className="bar-empty">尚未新增任何材料</div>}
           </div>
+        </Popup>
+      )}
+
+      {/* QR code popup */}
+      {showQrPopup && (
+        <Popup onCloseClick={() => setShowQrPopup(false)}>
+          <QrCode currentUrl={currentUrl} />
         </Popup>
       )}
     </div>
