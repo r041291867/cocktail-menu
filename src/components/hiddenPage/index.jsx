@@ -1,5 +1,5 @@
 import "./styles.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import CocktailItem from "@/components/cocktailItem";
 // import { cocktailMenu } from "@/data/hidden";
 import { toChinese } from "@/data/engToCht";
@@ -40,6 +40,38 @@ export default function HiddenPage({
   const [showPopup, setShowPopup] = useState(false);
   const [tagList, setTagList] = useState([...tags]);
   const [inputText, setInputText] = useState("");
+  const [activeSection, setActiveSection] = useState(null);
+  const navRef = useRef(null);
+
+  const visibleCategories = categories
+    .map((category) => ({
+      category,
+      categoryCh: toChinese(category),
+      cocktails: getCategoryCocktails(category),
+    }))
+    .filter(({ cocktails }) => cocktails.filter((c) => c.show).length || showAll);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll(".menu__section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: "-10% 0px -60% 0px", threshold: 0 }
+    );
+    sections.forEach((s) => observer.observe(s));
+    if (sections.length > 0) setActiveSection(sections[0].id);
+    return () => observer.disconnect();
+  }, [keywd, showAll]);
+
+  useEffect(() => {
+    if (!activeSection || !navRef.current) return;
+    const activeEl = navRef.current.querySelector(`[data-nav-id="${activeSection}"]`);
+    activeEl?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [activeSection]);
 
   function getCategoryCocktails(category) {
     return filterByKeyword(recipes, keywd)
@@ -100,42 +132,47 @@ export default function HiddenPage({
         </div>
       </div>
 
+      <nav className="category-nav">
+        <div className="category-nav__inner" ref={navRef}>
+          {visibleCategories.map(({ category, categoryCh }) => (
+            <a
+              key={category}
+              href={`#${category.toLowerCase()}`}
+              className={`category-nav__item handwrite-ch${activeSection === category.toLowerCase() ? " active" : ""}`}
+              data-nav-id={category.toLowerCase()}
+            >
+              {categoryCh}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <div className="menu__grid">
-        {categories
-          .map((category) => ({
-            category: category,
-            categoryCh: toChinese(category),
-            cocktails: getCategoryCocktails(category),
-          }))
-          .map(({ category, categoryCh, cocktails }) =>
-            cocktails.filter((c) => c.show).length || showAll ? (
-              <div
-                key={category}
-                className="menu__section"
-              >
-                <div className="menu__title handwrite-border sticky">
-                  <span className="handwrite-ch">{categoryCh}</span>
-                  <span
-                    className="handwrite-en"
-                    style={{ marginLeft: 6 }}
-                  >
-                    {category}
-                  </span>
-                </div>
-                {cocktails.map((cocktail, index) =>
-                  cocktail.show || showAll ? (
-                    <CocktailItem
-                      key={index + cocktail.nameEng}
-                      showAll={showAll}
-                      cocktail={cocktail}
-                      recipes={recipes}
-                      onCocktailClick={() => onCocktailClick(cocktail)}
-                    />
-                  ) : null
-                )}
-              </div>
-            ) : null
-          )}
+        {visibleCategories.map(({ category, categoryCh, cocktails }) => (
+          <div
+            key={category}
+            id={category.toLowerCase()}
+            className="menu__section"
+          >
+            <div className="menu__title handwrite-border sticky">
+              <span className="handwrite-ch">{categoryCh}</span>
+              <span className="handwrite-en" style={{ marginLeft: 6 }}>
+                {category}
+              </span>
+            </div>
+            {cocktails.map((cocktail, index) =>
+              cocktail.show || showAll ? (
+                <CocktailItem
+                  key={index + cocktail.nameEng}
+                  showAll={showAll}
+                  cocktail={cocktail}
+                  recipes={recipes}
+                  onCocktailClick={() => onCocktailClick(cocktail)}
+                />
+              ) : null
+            )}
+          </div>
+        ))}
       </div>
 
       <div

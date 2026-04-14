@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 @import "./fonts.css";
 
 :root {
@@ -10,6 +14,8 @@
 /* Copied from Next's src/app/styles.css so the UI stays identical */
 :root {
   --header-height: 40px;
+  --nav-height: 36px;
+  --header-total: calc(var(--header-height) + var(--nav-height));
 }
 
 div {
@@ -82,14 +88,64 @@ body {
   height: 25px;
 }
 
+.category-nav {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: #2e2e2e;
+  z-index: 10;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.category-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.category-nav__inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: 830px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+.category-nav__item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  text-decoration: none;
+  color: #888;
+  white-space: nowrap;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+
+.category-nav__item:hover {
+  color: #ccc;
+}
+
+.category-nav__item.active {
+  color: #e57d27;
+  border-bottom-color: #e57d27;
+}
+
 .menu__grid {
   display: grid;
   gap: 40px;
-  padding-top: var(--header-height);
+  padding-top: var(--header-total);
 }
 
 .menu__section {
   min-width: 335px;
+  scroll-margin-top: calc(var(--header-total) + 8px);
 }
 
 .menu__title {
@@ -104,7 +160,7 @@ body {
 
 .menu__title.sticky {
   position: sticky;
-  top: calc(var(--header-height) - 5px);
+  top: calc(var(--header-total) - 5px);
 }
 
 @media (max-width: 374px) {
@@ -116,6 +172,7 @@ body {
 @media (min-width: 768px) {
   :root {
     --header-height: 50px;
+    --header-total: calc(50px + var(--nav-height));
   }
 
   .menu__grid {
@@ -131,6 +188,10 @@ body {
     max-width: 1085px;
   }
 
+  .category-nav__inner {
+    max-width: 1085px;
+  }
+
   .menu__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -141,6 +202,10 @@ body {
 
 @media (min-width: 1500px) {
   .menu__header--inner {
+    max-width: 1500px;
+  }
+
+  .category-nav__inner {
     max-width: 1500px;
   }
 

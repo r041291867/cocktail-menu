@@ -17,10 +17,27 @@ const recipes = await fetchCocktailsFromSanity();
     </div>
   </div>
 
+  <nav class="category-nav">
+    <div class="category-nav__inner">
+      {cocktailMenu.map(({ category, categoryCh }) => (
+        <a
+          href={`#${category.toLowerCase().replace(/\s+/g, "-")}`}
+          class="category-nav__item handwrite-ch"
+          data-nav-id={category.toLowerCase().replace(/\s+/g, "-")}
+        >
+          {categoryCh}
+        </a>
+      ))}
+    </div>
+  </nav>
+
   <div class="menu__grid">
     {
       cocktailMenu.map(({ category, categoryCh, cocktails }) => (
-        <div class="menu__section">
+        <div
+          class="menu__section"
+          id={category.toLowerCase().replace(/\s+/g, "-")}
+        >
           <div class="menu__title handwrite-border">
             <span class="handwrite-ch">{categoryCh}</span>
             <span class="handwrite-en" style="margin-left: 6px;">
