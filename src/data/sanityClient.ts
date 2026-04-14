@@ -1,6 +1,6 @@
-import { createClient } from "@sanity/client";
+import { createClient, type SanityClient } from "@sanity/client";
 
-export function createSanityReadClient() {
+export function createSanityReadClient(): SanityClient {
   const projectId = import.meta.env.PUBLIC_SANITY_PROJECT_ID;
   const dataset = import.meta.env.PUBLIC_SANITY_DATASET;
   const apiVersion =

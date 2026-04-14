@@ -6,7 +6,14 @@
       "Bash(mv components/islands/HiddenApp.jsx pages/hidden/HiddenApp.jsx)",
       "Bash(mv components/hiddenPage/index.jsx pages/hidden/HiddenPage.jsx)",
       "Bash(mv components/hiddenPage/styles.css pages/hidden/styles.scss)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "Bash(mv data/sanityClient.js data/sanityClient.ts)",
+      "Bash(mv data/fetchCocktailsFromSanity.js data/fetchCocktailsFromSanity.ts)",
+      "Bash(mv data/engToCht.js data/engToCht.ts)",
+      "Bash(mv data/recipeUtils.js data/recipeUtils.ts)",
+      "Bash(mv data/cocktailMinimal.js data/cocktailMinimal.ts)",
+      "Bash(mv pages/hidden/HiddenApp.jsx pages/hidden/HiddenApp.tsx)",
+      "Bash(mv pages/hidden/HiddenPage.jsx pages/hidden/HiddenPage.tsx)"
     ]
   }
 }

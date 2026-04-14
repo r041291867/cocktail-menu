@@ -1,4 +1,5 @@
 import { createSanityReadClient } from "@/data/sanityClient";
+import type { Cocktail } from "@/types";
 
 const COCKTAILS_QUERY = `*[_type == "cocktail" && defined(nameEng)] | order(nameEng asc) {
   category,
@@ -13,16 +14,36 @@ const COCKTAILS_QUERY = `*[_type == "cocktail" && defined(nameEng)] | order(name
   recipe
 }`;
 
-function recipeArrayToObject(recipe) {
+interface SanityRecipeRow {
+  ingredient?: string;
+  amount?: string;
+}
+
+interface SanityDoc {
+  category: string;
+  nameCht: string;
+  nameEng: string;
+  method?: string;
+  ingredients?: string[];
+  glass?: string;
+  shots?: number;
+  alcohol?: number;
+  show?: boolean;
+  recipe?: SanityRecipeRow[];
+}
+
+function recipeArrayToObject(
+  recipe: SanityRecipeRow[] | undefined
+): Record<string, string> {
   if (!recipe || !Array.isArray(recipe)) return {};
-  return recipe.reduce((acc, row) => {
+  return recipe.reduce<Record<string, string>>((acc, row) => {
     if (!row?.ingredient) return acc;
     acc[row.ingredient] = row.amount ?? "";
     return acc;
   }, {});
 }
 
-function mapDoc(doc) {
+function mapDoc(doc: SanityDoc): Cocktail {
   return {
     category: doc.category,
     nameCht: doc.nameCht,
@@ -37,8 +58,8 @@ function mapDoc(doc) {
   };
 }
 
-export async function fetchCocktailsFromSanity() {
+export async function fetchCocktailsFromSanity(): Promise<Cocktail[]> {
   const client = createSanityReadClient();
-  const rows = await client.fetch(COCKTAILS_QUERY);
+  const rows = await client.fetch<SanityDoc[]>(COCKTAILS_QUERY);
   return rows.map(mapDoc);
 }

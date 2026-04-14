@@ -5,6 +5,13 @@ import CocktailItem from "@/components/cocktailItem";
 import { toChinese } from "@/data/engToCht";
 import Popup from "@/components/popup";
 import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
+import type { Cocktail, MatchInfo } from "@/types";
+
+interface Props {
+  recipes?: Cocktail[];
+  onCocktailClick?: (cocktail: Cocktail) => void;
+  onCloseClick?: () => void;
+}
 
 const categories = [
   "Whiskey",
@@ -30,23 +37,25 @@ const tags = [
   "Absinthe",
   "Bénédictine"
 ];
-  const excludedKeywords = ["optional", "garnish", "ratio"];
+
+const excludedKeywords = ["optional", "garnish", "ratio"];
+
 export default function HiddenPage({
   recipes = [],
   onCocktailClick = () => {},
   onCloseClick = () => {},
-}) {
+}: Props) {
   const [showAll, setShowAll] = useState(true);
-  const [keywd, setKeywd] = useState([]);
+  const [keywd, setKeywd] = useState<string[]>([]);
   const [showFilterPopup, setShowFilterPopup] = useState(false);
   const [showBarPopup, setShowBarPopup] = useState(false);
-  const [tagList, setTagList] = useState([...tags]);
+  const [tagList, setTagList] = useState<string[]>([...tags]);
   const [inputText, setInputText] = useState("");
-  const [activeSection, setActiveSection] = useState(null);
-  const navRef = useRef(null);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
   // My Bar state
-  const [myBar, setMyBar] = useState(() => {
+  const [myBar, setMyBar] = useState<string[]>(() => {
     try {
       const saved = localStorage.getItem("myBar");
       return saved ? JSON.parse(saved) : [];
@@ -93,7 +102,7 @@ export default function HiddenPage({
 
 
 
-  function getMatchInfo(cocktail) {
+  function getMatchInfo(cocktail: Cocktail): MatchInfo | null {
     if (!myBar.length) return null;
     const recipe = cocktail.recipe || {};
     const ingredients = (cocktail.ingredients || []).filter((ing) => {
@@ -107,7 +116,7 @@ export default function HiddenPage({
 
     const missingCount = ingredients.filter((ing) => {
       const a = ing.toLowerCase();
-      return !myBar.some((barIng) => {
+      return !myBar.some((barIng: string) => {
         const b = barIng.toLowerCase();
         return a.includes(b) || b.includes(a);
       });
@@ -116,7 +125,7 @@ export default function HiddenPage({
     return { missing: missingCount, total: ingredients.length };
   }
 
-  function getCategoryCocktails(category) {
+  function getCategoryCocktails(category: string): Cocktail[] {
     let result = filterByKeyword(recipes, keywd).filter(
       (item) => item.category === category
     );
@@ -126,12 +135,14 @@ export default function HiddenPage({
     }
 
     return result.sort((a, b) => {
-      if (a.shots === b.shots) return a.nameEng > b.nameEng ? 1 : -1;
-      return a.shots - b.shots;
+      const aShots = a.shots ?? 0;
+      const bShots = b.shots ?? 0;
+      if (aShots === bShots) return a.nameEng > b.nameEng ? 1 : -1;
+      return aShots - bShots;
     });
   }
 
-  function filterByKeyword(cocktails, keywords = []) {
+  function filterByKeyword(cocktails: Cocktail[], keywords: string[] = []): Cocktail[] {
     if (!keywords.length) return cocktails;
 
     let result = cocktails;

@@ -1,4 +1,6 @@
-export const cocktailMenu = [
+import type { MenuCategory } from "@/types";
+
+export const cocktailMenu: MenuCategory[] = [
   // {
   //   category: "Signature",
   //   categoryCh: "特調",

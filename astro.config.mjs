@@ -7,13 +7,5 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     plugins: [tsconfigPaths()],
-    esbuild: {
-      // This project stores JSX in .js files (from Next.js),
-      // so ensure Vite parses them as JSX without renaming everything.
-      include: ["src/**/*.js", "src/**/*.jsx"],
-      loader: "jsx",
-      jsx: "automatic",
-    },
   },
 });
-

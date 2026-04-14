@@ -1,4 +1,4 @@
-const dictionary = {
+const dictionary: Record<string, string> = {
   "absinthe": "艾碧斯",
   "agave syrup": "龍舌蘭糖漿",
   "amaretto": "杏仁酒",
@@ -120,8 +120,7 @@ const dictionary = {
   "yuzu": "柚子",
 };
 
-export function toChinese(englishText) {
+export function toChinese(englishText: string): string {
   const lowerCase = englishText.toLowerCase();
-  if (!dictionary[lowerCase]) return englishText;
-  return dictionary[lowerCase];
+  return dictionary[lowerCase] ?? englishText;
 }

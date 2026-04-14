@@ -6,10 +6,15 @@ import Popup from "@/components/popup";
 import Recipe from "@/components/recipe";
 import { getRecipe } from "@/data/recipeUtils";
 import Loading from "@/components/loading";
+import type { Cocktail } from "@/types";
 
-export default function HiddenApp({ recipes = [] }) {
+interface Props {
+  recipes?: Cocktail[];
+}
+
+export default function HiddenApp({ recipes = [] }: Props) {
   const [showPopup, setShowPopup] = useState(false);
-  const [recipeItem, setRecipeItem] = useState(null);
+  const [recipeItem, setRecipeItem] = useState<Cocktail | null>(null);
   const [fontReady, setFontReady] = useState(false);
 
   useEffect(() => {

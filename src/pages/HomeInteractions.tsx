@@ -5,11 +5,16 @@ import Loading from "@/components/loading";
 import Popup from "@/components/popup";
 import Recipe from "@/components/recipe";
 import { getRecipe } from "@/data/recipeUtils";
+import type { Cocktail } from "@/types";
 
-export default function HomeInteractions({ recipes = [] }) {
+interface Props {
+  recipes?: Cocktail[];
+}
+
+export default function HomeInteractions({ recipes = [] }: Props) {
   const [fontReady, setFontReady] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [recipeItem, setRecipeItem] = useState(null);
+  const [recipeItem, setRecipeItem] = useState<Cocktail | null>(null);
 
   useEffect(() => {
     document.fonts.ready.then(() => {
@@ -20,19 +25,20 @@ export default function HomeInteractions({ recipes = [] }) {
     const onHeaderDoubleClick = () => window.location.assign("/hidden");
     header?.addEventListener("dblclick", onHeaderDoubleClick);
 
-    const items = document.querySelectorAll("[data-recipe-name]");
-    const onItemDoubleClick = (event) => {
-      const { recipeName } = event.currentTarget.dataset;
+    const items = document.querySelectorAll<HTMLElement>("[data-recipe-name]");
+    const onItemDoubleClick = (event: Event) => {
+      const el = event.currentTarget as HTMLElement;
+      const recipeName = el.dataset.recipeName ?? "";
       setRecipeItem(getRecipe(recipes, recipeName));
       setShowPopup(true);
     };
     items.forEach((item) => item.addEventListener("dblclick", onItemDoubleClick));
 
     // Intersection Observer for active nav item
-    const navItems = document.querySelectorAll("[data-nav-id]");
+    const navItems = document.querySelectorAll<HTMLElement>("[data-nav-id]");
     const sections = document.querySelectorAll(".menu__section[id]");
 
-    const setActiveNav = (id) => {
+    const setActiveNav = (id: string) => {
       navItems.forEach((el) => {
         el.classList.toggle("active", el.dataset.navId === id);
       });
