@@ -1,7 +1,7 @@
 import "./styles.scss";
 import ShotIcon from "../shotIcon";
 import { toChinese } from "../../data/engToCht";
-import { getReciepe } from "@/data/reciepeUtils";
+import { getRecipe } from "@/data/recipeUtils";
 
 export default function CocktailItem({
   showAll,
@@ -51,11 +51,11 @@ export default function CocktailItem({
     }
   }
 
-  const reciepe = cocktail.ingredients?.length
+  const recipe = cocktail.ingredients?.length
     ? cocktail
-    : getReciepe(recipes, cocktail.nameEng);
+    : getRecipe(recipes, cocktail.nameEng);
 
-  if (!reciepe) return null;
+  if (!recipe) return null;
   return (
     <div className={`cocktail__outer`} onDoubleClick={onCocktailClick}>
       {hasImage && imgPosition === "left" && (
@@ -79,16 +79,16 @@ export default function CocktailItem({
 
           <div className="cocktail__stars">
             {numToRate(
-              reciepe.alcohol ? getAlcoholShots(reciepe.alcohol) : reciepe.shots
+              recipe.alcohol ? getAlcoholShots(recipe.alcohol) : recipe.shots
             )}
           </div>
         </div>
 
         <div className="cocktail__ingredients--ch handwrite-ch">
-          {reciepe.ingredients.map((str) => toChinese(str)).join(" / ")}
+          {recipe.ingredients.map((str) => toChinese(str)).join(" / ")}
         </div>
         <div className="cocktail__ingredients handwrite-en">
-          {reciepe.ingredients.map((str) => capitalize(str)).join(" / ")}
+          {recipe.ingredients.map((str) => capitalize(str)).join(" / ")}
         </div>
       </div>
 

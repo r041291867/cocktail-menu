@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import HiddenPage from "@/components/hiddenPage";
 import Popup from "@/components/popup";
-import Reciepe from "@/components/reciepe";
-import { getReciepe } from "@/data/reciepeUtils";
+import Recipe from "@/components/recipe";
+import { getRecipe } from "@/data/recipeUtils";
 import Loading from "@/components/loading";
 
 export default function HiddenApp({ recipes = [] }) {
   const [showPopup, setShowPopup] = useState(false);
-  const [resiepeItem, setResiepeItem] = useState(null);
+  const [recipeItem, setRecipeItem] = useState(null);
   const [fontReady, setFontReady] = useState(false);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function HiddenApp({ recipes = [] }) {
         recipes={recipes}
         onCocktailClick={(cocktail) => {
           setShowPopup(true);
-          setResiepeItem(getReciepe(recipes, cocktail.nameEng));
+          setRecipeItem(getRecipe(recipes, cocktail.nameEng));
         }}
         onCloseClick={() => window.location.assign("/")}
       />
@@ -33,7 +33,7 @@ export default function HiddenApp({ recipes = [] }) {
 
       {showPopup && (
         <Popup onCloseClick={() => setShowPopup(false)}>
-          <Reciepe reciepe={resiepeItem} />
+          <Recipe recipe={recipeItem} />
         </Popup>
       )}
     </div>

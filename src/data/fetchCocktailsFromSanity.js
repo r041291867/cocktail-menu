@@ -29,7 +29,7 @@ function mapDoc(doc) {
     nameEng: doc.nameEng,
     method: doc.method,
     ingredients: Array.isArray(doc.ingredients) ? doc.ingredients : [],
-    reciepe: recipeArrayToObject(doc.recipe),
+    recipe: recipeArrayToObject(doc.recipe),
     glass: doc.glass,
     shots: typeof doc.shots === "number" ? doc.shots : undefined,
     alcohol: typeof doc.alcohol === "number" ? doc.alcohol : undefined,

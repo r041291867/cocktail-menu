@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import Loading from "@/components/loading";
 import Popup from "@/components/popup";
-import Reciepe from "@/components/reciepe";
-import { getReciepe } from "@/data/reciepeUtils";
+import Recipe from "@/components/recipe";
+import { getRecipe } from "@/data/recipeUtils";
 
 export default function HomeInteractions({ recipes = [] }) {
   const [fontReady, setFontReady] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [reciepeItem, setReciepeItem] = useState(null);
+  const [recipeItem, setRecipeItem] = useState(null);
 
   useEffect(() => {
     document.fonts.ready.then(() => {
@@ -23,7 +23,7 @@ export default function HomeInteractions({ recipes = [] }) {
     const items = document.querySelectorAll("[data-recipe-name]");
     const onItemDoubleClick = (event) => {
       const { recipeName } = event.currentTarget.dataset;
-      setReciepeItem(getReciepe(recipes, recipeName));
+      setRecipeItem(getRecipe(recipes, recipeName));
       setShowPopup(true);
     };
     items.forEach((item) => item.addEventListener("dblclick", onItemDoubleClick));
@@ -74,7 +74,7 @@ export default function HomeInteractions({ recipes = [] }) {
       {!fontReady && <Loading />}
       {showPopup && (
         <Popup onCloseClick={() => setShowPopup(false)}>
-          <Reciepe reciepe={reciepeItem} />
+          <Recipe recipe={recipeItem} />
         </Popup>
       )}
     </>

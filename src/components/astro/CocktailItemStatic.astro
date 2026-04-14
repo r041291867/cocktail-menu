@@ -3,7 +3,7 @@ import "../cocktailItem/styles.scss";
 import "../shotIcon/styles.css";
 import { toChinese } from "@/data/engToCht";
 
-const { cocktail, reciepe } = Astro.props;
+const { cocktail, recipe } = Astro.props;
 
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -28,7 +28,7 @@ function getShotStatusList(shots) {
 ---
 
 {
-  reciepe && (
+  recipe && (
     <div class="cocktail__outer" data-recipe-name={cocktail.nameEng}>
       <div class="cocktail__frame">
         <div class="cocktail__main">
@@ -39,7 +39,7 @@ function getShotStatusList(shots) {
 
           <div class="cocktail__stars">
             {getShotStatusList(
-              reciepe.alcohol ? getAlcoholShots(reciepe.alcohol) : reciepe.shots
+              recipe.alcohol ? getAlcoholShots(recipe.alcohol) : recipe.shots
             ).map((status, index) => (
               <div class="shot-icon__frame" style="width:16px;height:16px;" data-shot={index}>
                 <div class={`shot-icon status-${status}`}></div>
@@ -49,10 +49,10 @@ function getShotStatusList(shots) {
         </div>
 
         <div class="cocktail__ingredients--ch handwrite-ch">
-          {reciepe.ingredients.map((str) => toChinese(str)).join(" / ")}
+          {recipe.ingredients.map((str) => toChinese(str)).join(" / ")}
         </div>
         <div class="cocktail__ingredients handwrite-en">
-          {reciepe.ingredients.map((str) => capitalize(str)).join(" / ")}
+          {recipe.ingredients.map((str) => capitalize(str)).join(" / ")}
         </div>
       </div>
     </div>

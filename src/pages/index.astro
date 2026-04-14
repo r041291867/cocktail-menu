@@ -4,7 +4,7 @@ import CocktailItemStatic from "../components/astro/CocktailItemStatic.astro";
 import HomeInteractions from "../components/islands/HomeInteractions.jsx";
 import { cocktailMenu } from "@/data/cocktailMinimal";
 import { fetchCocktailsFromSanity } from "@/data/fetchCocktailsFromSanity";
-import { getReciepe } from "@/data/reciepeUtils";
+import { getRecipe } from "@/data/recipeUtils";
 
 const recipes = await fetchCocktailsFromSanity();
 ---
@@ -48,7 +48,7 @@ const recipes = await fetchCocktailsFromSanity();
           {cocktails.map((cocktail) => (
             <CocktailItemStatic
               cocktail={cocktail}
-              reciepe={getReciepe(recipes, cocktail.nameEng)}
+              recipe={getRecipe(recipes, cocktail.nameEng)}
             />
           ))}
         </div>
