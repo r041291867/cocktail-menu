@@ -1,15 +1,15 @@
 ---
-import "../cocktailItem/styles.scss";
-import "../shotIcon/styles.css";
+import "./cocktailItem/styles.scss";
+import "./shotIcon/styles.scss";
 import { toChinese } from "@/data/engToCht";
 
 const { cocktail, recipe } = Astro.props;
 
-function capitalize(string) {
+function capitalize(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function getAlcoholShots(alcohol) {
+function getAlcoholShots(alcohol: number) {
   if (alcohol <= 10) return 1;
   if (alcohol <= 16) return 1.5;
   if (alcohol <= 22) return 2;
@@ -17,7 +17,7 @@ function getAlcoholShots(alcohol) {
   return 3;
 }
 
-function getShotStatusList(shots) {
+function getShotStatusList(shots: number) {
   const list = [];
   const full = Math.floor(shots);
   for (let i = 0; i < full; i++) list.push("filled");
@@ -38,24 +38,21 @@ function getShotStatusList(shots) {
           </div>
 
           <div class="cocktail__stars">
-            {getShotStatusList(
-              recipe.alcohol ? getAlcoholShots(recipe.alcohol) : recipe.shots
-            ).map((status, index) => (
+            {getShotStatusList(recipe.alcohol ? getAlcoholShots(recipe.alcohol) : recipe.shots).map((status, index) => (
               <div class="shot-icon__frame" style="width:16px;height:16px;" data-shot={index}>
-                <div class={`shot-icon status-${status}`}></div>
+                <div class={`shot-icon status-${status}`} />
               </div>
             ))}
           </div>
         </div>
 
         <div class="cocktail__ingredients--ch handwrite-ch">
-          {recipe.ingredients.map((str) => toChinese(str)).join(" / ")}
+          {recipe.ingredients.map((str: string) => toChinese(str)).join(" / ")}
         </div>
         <div class="cocktail__ingredients handwrite-en">
-          {recipe.ingredients.map((str) => capitalize(str)).join(" / ")}
+          {recipe.ingredients.map((str: string) => capitalize(str)).join(" / ")}
         </div>
       </div>
     </div>
   )
 }
-

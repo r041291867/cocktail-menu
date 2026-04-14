@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap");
+@import "./fonts.css";
 
 html {
   scroll-behavior: smooth;
 }
-
-@import "./fonts.css";
 
 :root {
   --handwrite-en: "Annie Use Your Telescope";

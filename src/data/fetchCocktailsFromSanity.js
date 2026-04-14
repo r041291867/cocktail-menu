@@ -1,4 +1,4 @@
-import { createSanityReadClient } from "@/lib/sanityClient";
+import { createSanityReadClient } from "@/data/sanityClient";
 
 const COCKTAILS_QUERY = `*[_type == "cocktail" && defined(nameEng)] | order(nameEng asc) {
   category,

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv lib/sanityClient.js data/sanityClient.js)",
+      "Bash(mv components/astro/CocktailItemStatic.astro components/CocktailItemStatic.astro)",
+      "Bash(mv components/islands/HiddenApp.jsx pages/hidden/HiddenApp.jsx)",
+      "Bash(mv components/hiddenPage/index.jsx pages/hidden/HiddenPage.jsx)",
+      "Bash(mv components/hiddenPage/styles.css pages/hidden/styles.scss)",
+      "Bash(pnpm build:*)"
+    ]
+  }
+}

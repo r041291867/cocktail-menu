@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HiddenApp from "../../components/islands/HiddenApp.jsx";
+import HiddenApp from "./HiddenApp.jsx";
 import { fetchCocktailsFromSanity } from "@/data/fetchCocktailsFromSanity";
 
 const recipes = await fetchCocktailsFromSanity();

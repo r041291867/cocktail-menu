@@ -1,9 +1,9 @@
-import "./styles.css";
+import "./styles.scss";
 import { useState, useEffect, useRef } from "react";
 import CocktailItem from "@/components/cocktailItem";
 // import { cocktailMenu } from "@/data/hidden";
 import { toChinese } from "@/data/engToCht";
-import Popup from "../popup";
+import Popup from "@/components/popup";
 
 const categories = [
   "Whiskey",

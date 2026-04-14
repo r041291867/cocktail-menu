@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HiddenPage from "@/components/hiddenPage";
+import HiddenPage from "./HiddenPage";
 import Popup from "@/components/popup";
 import Recipe from "@/components/recipe";
 import { getRecipe } from "@/data/recipeUtils";

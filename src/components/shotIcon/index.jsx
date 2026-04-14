@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles.scss";
 
 export default function ShotIcon({ width = 16, status = 1 }) {
   return (
