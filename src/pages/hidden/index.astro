@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HiddenApp from "./HiddenApp.tsx";
+import HiddenApp from "./_HiddenApp.tsx";
 import { fetchCocktailsFromSanity } from "@/data/fetchCocktailsFromSanity";
 
 const recipes = await fetchCocktailsFromSanity();
@@ -9,4 +9,3 @@ const recipes = await fetchCocktailsFromSanity();
 <BaseLayout>
   <HiddenApp client:idle recipes={recipes} />
 </BaseLayout>
-

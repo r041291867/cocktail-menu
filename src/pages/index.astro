@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CocktailItemStatic from "../components/CocktailItemStatic.astro";
-import HomeInteractions from "./HomeInteractions.tsx";
+import HomeInteractions from "./_HomeInteractions.tsx";
 import { cocktailMenu } from "@/data/cocktailMinimal";
 import { fetchCocktailsFromSanity } from "@/data/fetchCocktailsFromSanity";
 import { getRecipe } from "@/data/recipeUtils";
@@ -10,7 +10,7 @@ const recipes = await fetchCocktailsFromSanity();
 ---
 
 <BaseLayout>
-  <div class="menu__header ">
+  <div class="menu__header">
     <div class="menu__header--inner handwrite-border">
       <img src="/images/favicon.ico" alt="" />
       <div class="handwrite-en" data-home-title>The Mixology Menu</div>
@@ -19,25 +19,24 @@ const recipes = await fetchCocktailsFromSanity();
 
   <nav class="category-nav">
     <div class="category-nav__inner">
-      {cocktailMenu.map(({ category, categoryCh }) => (
-        <a
-          href={`#${category.toLowerCase().replace(/\s+/g, "-")}`}
-          class="category-nav__item handwrite-ch"
-          data-nav-id={category.toLowerCase().replace(/\s+/g, "-")}
-        >
-          {categoryCh}
-        </a>
-      ))}
+      {
+        cocktailMenu.map(({ category, categoryCh }) => (
+          <a
+            href={`#${category.toLowerCase().replace(/\s+/g, "-")}`}
+            class="category-nav__item handwrite-ch"
+            data-nav-id={category.toLowerCase().replace(/\s+/g, "-")}
+          >
+            {categoryCh}
+          </a>
+        ))
+      }
     </div>
   </nav>
 
   <div class="menu__grid">
     {
       cocktailMenu.map(({ category, categoryCh, cocktails }) => (
-        <div
-          class="menu__section"
-          id={category.toLowerCase().replace(/\s+/g, "-")}
-        >
+        <div class="menu__section" id={category.toLowerCase().replace(/\s+/g, "-")}>
           <div class="menu__title handwrite-border">
             <span class="handwrite-ch">{categoryCh}</span>
             <span class="handwrite-en" style="margin-left: 6px;">
@@ -46,10 +45,7 @@ const recipes = await fetchCocktailsFromSanity();
           </div>
 
           {cocktails.map((cocktail) => (
-            <CocktailItemStatic
-              cocktail={cocktail}
-              recipe={getRecipe(recipes, cocktail.nameEng)}
-            />
+            <CocktailItemStatic cocktail={cocktail} recipe={getRecipe(recipes, cocktail.nameEng)} />
           ))}
         </div>
       ))
@@ -58,4 +54,3 @@ const recipes = await fetchCocktailsFromSanity();
 
   <HomeInteractions client:idle recipes={recipes} />
 </BaseLayout>
-

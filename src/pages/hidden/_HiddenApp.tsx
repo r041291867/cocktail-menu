@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HiddenPage from "./HiddenPage";
+import HiddenPage from "./_HiddenPage";
 import Popup from "@/components/popup";
 import Recipe from "@/components/recipe";
 import { getRecipe } from "@/data/recipeUtils";
@@ -44,4 +44,3 @@ export default function HiddenApp({ recipes = [] }: Props) {
     </div>
   );
 }
-

@@ -372,17 +372,28 @@ function getRequiredIngredients(cocktail: Cocktail): string[] {
   );
 }
 
+function normalizeSpelling(s: string): string {
+  return s.toLowerCase().replace(/whiskey/g, "whisky");
+}
+
+function matchIngredient(ingredient: string, barItem: string): boolean {
+  const a = normalizeSpelling(ingredient);
+  const b = normalizeSpelling(barItem);
+  const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return (
+    new RegExp(`\\b${escape(b)}\\b`).test(a) ||
+    new RegExp(`\\b${escape(a)}\\b`).test(b)
+  );
+}
+
 function computeMatchInfo(myBar: string[]) {
   return (cocktail: Cocktail): MatchInfo | null => {
     if (!myBar.length) return null;
     const ingredients = getRequiredIngredients(cocktail);
     if (!ingredients.length) return null;
-    const missing = ingredients.filter((ing) => {
-      const a = ing.toLowerCase();
-      return !myBar.some(
-        (b) => a.includes(b.toLowerCase()) || b.toLowerCase().includes(a)
-      );
-    }).length;
+    const missing = ingredients.filter(
+      (ing) => !myBar.some((barItem) => matchIngredient(ing, barItem))
+    ).length;
     return { missing, total: ingredients.length };
   };
 }
