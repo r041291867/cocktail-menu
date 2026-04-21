@@ -8,6 +8,7 @@ export const INGREDIENT_ABV: Record<string, number> = {
   "aged rum": 40,
   "plantation rum": 40,
   "plantation rum barbado 5y": 40,
+  "plantation pineapple rum": 40,
   "tequila": 40,
   "mezcal": 40,
   "whisky": 43,
@@ -139,6 +140,7 @@ export const INGREDIENT_ABV: Record<string, number> = {
   "cinnamon syrup": 0,
   "vanilla syrup": 0,
   "jam": 0,
+  "donn’s mix": 0,
 
   // ── Dairy & Eggs (0%) ────────────────────────────────────────────────────────
   "egg white": 0,
