@@ -9,7 +9,7 @@ export interface Cocktail {
   glass?: string;
   shots?: number;
   alcohol?: number;
-  show: boolean;
+  note?: string;
 }
 
 /** Minimal cocktail entry used in the static main-menu data */

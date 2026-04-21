@@ -11,7 +11,8 @@ const COCKTAILS_QUERY = `*[_type == "cocktail" && defined(nameEng)] | order(name
   shots,
   alcohol,
   show,
-  recipe
+  recipe,
+  note
 }`;
 
 interface SanityRecipeRow {
@@ -30,6 +31,7 @@ interface SanityDoc {
   alcohol?: number;
   show?: boolean;
   recipe?: SanityRecipeRow[];
+  note?: string;
 }
 
 function recipeArrayToObject(
@@ -55,6 +57,7 @@ function mapDoc(doc: SanityDoc): Cocktail {
     shots: typeof doc.shots === "number" ? doc.shots : undefined,
     alcohol: typeof doc.alcohol === "number" ? doc.alcohol : undefined,
     show: doc.show !== false,
+    note: doc.note,
   };
 }
 

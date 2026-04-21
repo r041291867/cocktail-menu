@@ -12,7 +12,7 @@ type AlcoholLevel = "low" | "medium" | "mediumHigh" | "high";
 export default function Recipe({ recipe, myBar = [] }: Props) {
   if (!recipe) return null;
 
-  const { nameEng, method, recipe: ing, glass, alcohol } = recipe;
+  const { nameEng, method, recipe: ing, glass, alcohol, note } = recipe;
 
   function capitalize(str: string): string {
     return str
@@ -66,6 +66,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
           );
         })}
       </div>
+      {note && <div className="recipe-note handwrite-ch">{note}</div>}
     </div>
   );
 }
