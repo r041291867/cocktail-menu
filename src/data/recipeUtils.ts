@@ -1,11 +1,24 @@
 import type { Cocktail } from "@/types";
 
-export function getRecipe(recipes: Cocktail[], nameEng: string): Cocktail | null {
+export function getRecipe(
+  recipes: Cocktail[],
+  nameEng: string
+): Cocktail | null {
   if (!nameEng || !recipes?.length) return null;
   return recipes.find((cocktail) => cocktail.nameEng === nameEng) ?? null;
 }
 
-const EXCLUDED = ["optional", "garnish", "ratio"];
+const EXCLUDED = [
+  "optional",
+  "garnish",
+  "ratio",
+  "float",
+  "egg white",
+  "mint",
+  "crushed ice",
+  "rinse",
+  "salt",
+];
 
 export function isExcluded(text: string): boolean {
   const lower = text.toLowerCase();

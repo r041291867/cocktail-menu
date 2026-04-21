@@ -1,4 +1,5 @@
 import { createSanityReadClient } from "@/data/sanityClient";
+import { calculateAbv } from "@/data/calculateAbv";
 import type { Cocktail } from "@/types";
 
 const COCKTAILS_QUERY = `*[_type == "cocktail" && defined(nameEng)] | order(nameEng asc) {
@@ -9,8 +10,6 @@ const COCKTAILS_QUERY = `*[_type == "cocktail" && defined(nameEng)] | order(name
   ingredients,
   glass,
   shots,
-  alcohol,
-  show,
   recipe,
   note
 }`;
@@ -28,8 +27,6 @@ interface SanityDoc {
   ingredients?: string[];
   glass?: string;
   shots?: number;
-  alcohol?: number;
-  show?: boolean;
   recipe?: SanityRecipeRow[];
   note?: string;
 }
@@ -46,17 +43,20 @@ function recipeArrayToObject(
 }
 
 function mapDoc(doc: SanityDoc): Cocktail {
+  const recipe = recipeArrayToObject(doc.recipe);
+  const { abv, unknown } = calculateAbv(recipe, doc.method);
+  if (unknown)
+    console.log(`[ABV] ${doc.nameEng}: 無法計算，未知食材 → "${unknown}"`);
   return {
     category: doc.category,
     nameCht: doc.nameCht,
     nameEng: doc.nameEng,
     method: doc.method,
     ingredients: Array.isArray(doc.ingredients) ? doc.ingredients : [],
-    recipe: recipeArrayToObject(doc.recipe),
+    recipe,
     glass: doc.glass,
     shots: typeof doc.shots === "number" ? doc.shots : undefined,
-    alcohol: typeof doc.alcohol === "number" ? doc.alcohol : undefined,
-    show: doc.show !== false,
+    alcohol: abv ?? undefined,
     note: doc.note,
   };
 }

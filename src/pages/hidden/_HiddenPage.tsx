@@ -431,7 +431,9 @@ function filterByKeywords(keywords: string[]) {
 
 function sortCocktails(cocktails: Cocktail[]): Cocktail[] {
   return [...cocktails].sort((a, b) => {
-    const diff = (a.shots ?? 0) - (b.shots ?? 0);
+    const aAbv = a.alcohol ?? Infinity;
+    const bAbv = b.alcohol ?? Infinity;
+    const diff = aAbv - bAbv;
     return diff !== 0 ? diff : a.nameEng > b.nameEng ? 1 : -1;
   });
 }
