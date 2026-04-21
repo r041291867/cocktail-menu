@@ -5,6 +5,13 @@ export function getRecipe(recipes: Cocktail[], nameEng: string): Cocktail | null
   return recipes.find((cocktail) => cocktail.nameEng === nameEng) ?? null;
 }
 
+const EXCLUDED = ["optional", "garnish", "ratio"];
+
+export function isExcluded(text: string): boolean {
+  const lower = text.toLowerCase();
+  return EXCLUDED.some((kw) => lower.includes(kw));
+}
+
 function normalizeSpelling(s: string): string {
   return s.toLowerCase().replace(/whiskey/g, "whisky");
 }

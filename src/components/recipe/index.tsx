@@ -1,5 +1,5 @@
 import "./styles.scss";
-import { matchIngredient } from "@/data/recipeUtils";
+import { isExcluded, matchIngredient } from "@/data/recipeUtils";
 import type { Cocktail } from "@/types";
 
 interface Props {
@@ -49,12 +49,13 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
       </div>
       <div className="recipe-ing">
         {Object.keys(ing).map((item) => {
-          const inBar = myBar.length > 0 && myBar.some((b) => matchIngredient(item, b));
-          const missing = myBar.length > 0 && !inBar;
+          const excluded = isExcluded(item) || isExcluded(ing[item]);
+          const inBar = !excluded && myBar.length > 0 && myBar.some((b) => matchIngredient(item, b));
+          const missing = !excluded && myBar.length > 0 && !inBar;
           return (
             <div key={item}>
               <div className="ing-name">
-                {myBar.length > 0 && (
+                {myBar.length > 0 && !excluded && (
                   <span className={`ing-check ${inBar ? "ing-check--have" : "ing-check--miss"}`}>
                     {inBar ? "✓" : "✗"}
                   </span>

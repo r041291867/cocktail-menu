@@ -7,6 +7,7 @@ import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import QrCode2OutlinedIcon from "@mui/icons-material/QrCode2Outlined";
 import QrCode from "@/components/qrcode";
+import { isExcluded } from "@/data/recipeUtils";
 import type { Cocktail, MatchInfo } from "@/types";
 
 interface Props {
@@ -380,14 +381,7 @@ const TAGS = [
   "Bénédictine",
 ];
 
-const EXCLUDED = ["optional", "garnish", "ratio"];
-
 // ─── Pure Functions ───────────────────────────────────────────────────────────
-
-function isExcluded(text: string): boolean {
-  const lower = text.toLowerCase();
-  return EXCLUDED.some((kw) => lower.includes(kw));
-}
 
 function getRequiredIngredients(cocktail: Cocktail): string[] {
   return (cocktail.ingredients ?? []).filter(
