@@ -15,6 +15,7 @@ interface Props {
 export default function HiddenApp({ recipes = [] }: Props) {
   const [showPopup, setShowPopup] = useState(false);
   const [recipeItem, setRecipeItem] = useState<Cocktail | null>(null);
+  const [recipeMyBar, setRecipeMyBar] = useState<string[]>([]);
   const [fontReady, setFontReady] = useState(false);
 
   useEffect(() => {
@@ -27,9 +28,10 @@ export default function HiddenApp({ recipes = [] }: Props) {
     <div>
       <HiddenPage
         recipes={recipes}
-        onCocktailClick={(cocktail) => {
+        onCocktailClick={(cocktail, myBar) => {
           setShowPopup(true);
           setRecipeItem(getRecipe(recipes, cocktail.nameEng));
+          setRecipeMyBar(myBar);
         }}
         onCloseClick={() => window.location.assign("/")}
       />
@@ -38,7 +40,7 @@ export default function HiddenApp({ recipes = [] }: Props) {
 
       {showPopup && (
         <Popup onCloseClick={() => setShowPopup(false)}>
-          <Recipe recipe={recipeItem} />
+          <Recipe recipe={recipeItem} myBar={recipeMyBar} />
         </Popup>
       )}
     </div>

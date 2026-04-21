@@ -81,8 +81,25 @@
 
 .recipe-ing .ing-name {
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .recipe-ing .ing-content {
   text-align: left;
   line-height: 1.2;
+}
+.recipe-ing .ing-content--miss {
+  opacity: 0.4;
+}
+
+.ing-check {
+  font-size: 14px;
+  font-style: normal;
+}
+.ing-check--have {
+  color: #42a701;
+}
+.ing-check--miss {
+  color: #cb2601;
 }

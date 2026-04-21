@@ -1,13 +1,15 @@
 import "./styles.scss";
+import { matchIngredient } from "@/data/recipeUtils";
 import type { Cocktail } from "@/types";
 
 interface Props {
   recipe: Cocktail | null;
+  myBar?: string[];
 }
 
 type AlcoholLevel = "low" | "medium" | "mediumHigh" | "high";
 
-export default function Recipe({ recipe }: Props) {
+export default function Recipe({ recipe, myBar = [] }: Props) {
   if (!recipe) return null;
 
   const { nameEng, method, recipe: ing, glass, alcohol } = recipe;
@@ -46,12 +48,23 @@ export default function Recipe({ recipe }: Props) {
         <div className="recipe-glass">{glass} Glass</div>
       </div>
       <div className="recipe-ing">
-        {Object.keys(ing).map((item) => (
-          <div key={item}>
-            <div className="ing-name">{capitalize(item)}</div>
-            <div className="ing-content">{ing[item]}</div>
-          </div>
-        ))}
+        {Object.keys(ing).map((item) => {
+          const inBar = myBar.length > 0 && myBar.some((b) => matchIngredient(item, b));
+          const missing = myBar.length > 0 && !inBar;
+          return (
+            <div key={item}>
+              <div className="ing-name">
+                {myBar.length > 0 && (
+                  <span className={`ing-check ${inBar ? "ing-check--have" : "ing-check--miss"}`}>
+                    {inBar ? "✓" : "✗"}
+                  </span>
+                )}
+                {capitalize(item)}
+              </div>
+              <div className={`ing-content${missing ? " ing-content--miss" : ""}`}>{ing[item]}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

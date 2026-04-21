@@ -11,7 +11,7 @@ import type { Cocktail, MatchInfo } from "@/types";
 
 interface Props {
   recipes?: Cocktail[];
-  onCocktailClick?: (cocktail: Cocktail) => void;
+  onCocktailClick?: (cocktail: Cocktail, myBar: string[]) => void;
   onCloseClick?: () => void;
 }
 
@@ -144,7 +144,7 @@ export default function HiddenPage({
             style={{ filter: "grayscale(1)" }}
             alt=""
           />
-          <div className="handwrite-en">The Mixology Menu</div>
+          <div className="handwrite-en">The Mixology Recipe Book</div>
           <div style={{ flex: 1 }} />
           <div className="close-btn" onClick={onCloseClick}>
             +
@@ -185,8 +185,7 @@ export default function HiddenPage({
                 key={index + cocktail.nameEng}
                 cocktail={cocktail}
                 recipes={recipes}
-                matchInfo={getMatchInfo(cocktail)}
-                onCocktailClick={() => onCocktailClick(cocktail)}
+                onCocktailClick={() => onCocktailClick(cocktail, myBar)}
               />
             ))}
           </div>
@@ -194,7 +193,10 @@ export default function HiddenPage({
       </div>
 
       {/* Float buttons */}
-      <div className="floatBtn floatBtn--filter" onClick={() => setShowFilterPopup(true)}>
+      <div
+        className="floatBtn floatBtn--filter"
+        onClick={() => setShowFilterPopup(true)}
+      >
         <SearchOutlinedIcon style={{ fontSize: 28 }} />
         {keywd.length > 0 && <div className="tag-count">{keywd.length}</div>}
       </div>
