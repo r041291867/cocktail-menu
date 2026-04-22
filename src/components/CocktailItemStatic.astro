@@ -36,7 +36,7 @@ function getGlassIcon(glass: string | undefined): string | null {
     nick_nora: "/images/glass/ic-glass-nick-nora.svg",
     hurricane: "/images/glass/ic-glass-hurricane.svg",
   };
-  console.log(glass);
+
   return glass ? (map[glass.toLowerCase()] ?? null) : null;
 }
 ---
