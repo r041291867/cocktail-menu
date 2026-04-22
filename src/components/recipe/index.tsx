@@ -7,7 +7,7 @@ import {
   getAlcoholShots,
   getShotList,
 } from "@/data/recipeUtils";
-import { toChinese } from "@/data/engToCht";
+import { toChinese, toChineseFull } from "@/data/engToCht";
 import type { Cocktail } from "@/types";
 
 const GLASS_ICON: Record<string, string> = {
@@ -127,7 +127,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
                   </span>
                 )}
                 <span className="recipe__ing-ch handwrite-ch">
-                  {toChinese(item)}
+                  {toChineseFull(item)}
                 </span>
                 <span className="recipe__ing-en handwrite-en">
                   {capitalize(item)}

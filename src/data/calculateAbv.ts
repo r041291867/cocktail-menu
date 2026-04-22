@@ -79,7 +79,7 @@ export function calculateAbv(
       topAbvs.push(abv);
     } else {
       const volume = parseAmountMl(amount);
-      if (volume === null) return { abv: null, unknown: ingredient }; // 無法解析用量
+      if (volume === null) continue; // 無法解析用量時略過（如：適量、少許）
       baseItems.push({ volume, abv });
     }
   }

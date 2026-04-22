@@ -38,7 +38,6 @@ const EXCLUDED = [
   "ratio",
   "float",
   "egg white",
-  "mint",
   "crushed ice",
   "rinse",
   "salt",
