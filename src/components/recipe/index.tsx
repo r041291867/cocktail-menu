@@ -1,13 +1,14 @@
 import "./styles.scss";
 import ShotIcon from "@/components/shotIcon";
-import { isExcluded, matchIngredient } from "@/data/recipeUtils";
+import {
+  isExcluded,
+  matchIngredient,
+  capitalize,
+  getAlcoholShots,
+  getShotList,
+} from "@/data/recipeUtils";
 import { toChinese } from "@/data/engToCht";
 import type { Cocktail } from "@/types";
-
-interface Props {
-  recipe: Cocktail | null;
-  myBar?: string[];
-}
 
 const GLASS_ICON: Record<string, string> = {
   coupe: "/images/glass/ic-glass-coupe.svg",
@@ -18,41 +19,6 @@ const GLASS_ICON: Record<string, string> = {
   nick_nora: "/images/glass/ic-glass-nick-nora.svg",
   hurricane: "/images/glass/ic-glass-hurricane.svg",
 };
-
-function capitalize(str: string) {
-  return str
-    .split(" ")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
-
-function getAlcoholShots(abv: number) {
-  if (abv <= 10) return 1;
-  if (abv <= 16) return 1.5;
-  if (abv <= 22) return 2;
-  if (abv <= 25) return 2.5;
-  return 3;
-}
-
-function getShotList(shots: number) {
-  const list: string[] = [];
-  const full = Math.floor(shots);
-  for (let i = 0; i < full; i++) list.push("filled");
-  if (shots % 1 === 0.5) list.push("half");
-  while (list.length < 3) list.push("empty");
-  return list;
-}
-
-function isGarnishRow(key: string, val: string) {
-  return (
-    key.toLowerCase().includes("garnish") ||
-    val.toLowerCase().includes("garnish")
-  );
-}
-
-function getGarnishName(key: string, val: string) {
-  return val.toLowerCase().includes("garnish") ? key : val;
-}
 
 export default function Recipe({ recipe, myBar = [] }: Props) {
   if (!recipe) return null;
@@ -100,35 +66,21 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
         )}
         <div className="recipe__info-panel">
           {glassLabel && (
-            <div className="recipe__info-block">
-              <div className="recipe__info-label handwrite-en">
-                GLASS / <span className="handwrite-ch">杯型</span>
-              </div>
-              <div className="recipe__info-value handwrite-en">
-                {glassLabel}
-              </div>
-            </div>
+            <InfoBlock en="GLASS" ch="杯型">
+              <div className="recipe__info-value handwrite-en">{glassLabel}</div>
+            </InfoBlock>
           )}
           {shotList && (
-            <div className="recipe__info-block">
-              <div className="recipe__info-label handwrite-en">
-                STRENGTH / <span className="handwrite-ch">烈度</span>
-              </div>
+            <InfoBlock en="STRENGTH" ch="烈度">
               <div className="recipe__shots">
                 {shotList.map((status, i) => (
-                  <ShotIcon
-                    key={i}
-                    status={status as "filled" | "half" | "empty"}
-                    width={18}
-                    color="#aaa"
-                  />
+                  <ShotIcon key={i} status={status} width={18} color="#aaa" />
                 ))}
               </div>
-            </div>
+            </InfoBlock>
           )}
           {abvPercent !== null && (
-            <div className="recipe__info-block">
-              <div className="recipe__info-label handwrite-en">ABV</div>
+            <InfoBlock en="ABV">
               <div className="recipe__abv-row">
                 <div className="recipe__abv-bar">
                   <div
@@ -140,7 +92,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
                   {alcohol}% ABV
                 </div>
               </div>
-            </div>
+            </InfoBlock>
           )}
         </div>
       </div>
@@ -149,7 +101,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
 
       {/* Ingredients */}
       <div className="recipe__section-label handwrite-en">
-        RECIPE / <span className="handwrite-ch">酒譜</span>
+        <InfoLabel en="RECIPE" ch="酒譜" />
       </div>
       <div className="recipe__ingredients">
         {mainIngredients.map(([item, amount]) => {
@@ -189,32 +141,84 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
       {method && (
         <div className="recipe__bottom-block">
           <div className="flex-1">
-            <div className="recipe__info-label handwrite-en">
-              METHOD / <span className="handwrite-ch">作法</span>
-            </div>
+            <InfoLabel en="METHOD" ch="作法" />
             <div className="recipe__bottom-value handwrite-ch">{method}</div>
           </div>
-          <div className="flex-1">
-            <div className="recipe__info-label handwrite-en">
-              GARNISH / <span className="handwrite-ch">裝飾</span>
+
+          {garnishItems.length > 0 && (
+            <div className="flex-1">
+              <InfoLabel en="GARNISH" ch="裝飾" />
+              {garnishItems.map((g) => (
+                <div key={g} className="recipe__bottom-value handwrite-ch">
+                  {toChinese(g)}
+                </div>
+              ))}
             </div>
-            {garnishItems.map((g) => (
-              <div key={g} className="recipe__bottom-value handwrite-ch">
-                {toChinese(g)}
-              </div>
-            ))}
-          </div>
+          )}
         </div>
       )}
 
       {note && (
         <div className="recipe__bottom-block">
-          <div className="recipe__info-label handwrite-en">
-            NOTE / <span className="handwrite-ch">備註</span>
+          <div>
+            <InfoLabel en="NOTE" ch="備註" />
+            <div className="recipe__note handwrite-ch">{note}</div>
           </div>
-          <div className="recipe__note handwrite-ch">{note}</div>
         </div>
       )}
     </div>
   );
+}
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+interface Props {
+  recipe: Cocktail | null;
+  myBar?: string[];
+}
+
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
+function InfoLabel({ en, ch }: { en: string; ch?: string }) {
+  return (
+    <div className="recipe__info-label handwrite-en">
+      {ch ? (
+        <>
+          {en} / <span className="handwrite-ch">{ch}</span>
+        </>
+      ) : (
+        en
+      )}
+    </div>
+  );
+}
+
+function InfoBlock({
+  en,
+  ch,
+  children,
+}: {
+  en: string;
+  ch?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="recipe__info-block">
+      <InfoLabel en={en} ch={ch} />
+      {children}
+    </div>
+  );
+}
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+function isGarnishRow(key: string, val: string) {
+  return (
+    key.toLowerCase().includes("garnish") ||
+    val.toLowerCase().includes("garnish")
+  );
+}
+
+function getGarnishName(key: string, val: string) {
+  return val.toLowerCase().includes("garnish") ? key : val;
 }

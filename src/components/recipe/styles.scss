@@ -62,6 +62,7 @@
   font-size: 14px;
   letter-spacing: 0.08em;
   color: #aaa;
+  margin-bottom: 8px;
   text-transform: uppercase;
 }
 
@@ -176,8 +177,8 @@
 .recipe__bottom-block {
   flex: 1;
   display: flex;
-    gap: 4px;
-  margin-top: 16px;
+  gap: 4px;
+  margin-top: 20px;
 }
 
 .recipe__bottom-block .flex-1 {
