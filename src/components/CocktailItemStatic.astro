@@ -25,11 +25,32 @@ function getShotStatusList(shots: number) {
   while (list.length < 3) list.push("empty");
   return list;
 }
+
+function getGlassIcon(glass: string | undefined): string | null {
+  const map: Record<string, string> = {
+    coupe: "/images/glass/ic-glass-coupe.svg",
+    lowball: "/images/glass/ic-glass-rocks.svg",
+    highball: "/images/glass/ic-glass-highball.svg",
+    collins: "/images/glass/ic-glass-collins.svg",
+    martini: "/images/glass/ic-glass-martini.svg",
+    nick_nora: "/images/glass/ic-glass-nick-nora.svg",
+    hurricane: "/images/glass/ic-glass-hurricane.svg",
+  };
+  console.log(glass);
+  return glass ? (map[glass.toLowerCase()] ?? null) : null;
+}
 ---
 
 {
   recipe && (
     <div class="cocktail__outer" data-recipe-name={cocktail.nameEng}>
+      {getGlassIcon(recipe.glass) && (
+        <img
+          src={getGlassIcon(recipe.glass)!}
+          alt={recipe.glass}
+          style="width:60px;height:55px;object-fit:contain;margin-right:2px;"
+        />
+      )}
       <div class="cocktail__frame">
         <div class="cocktail__main">
           <div class="cocktail__name">
