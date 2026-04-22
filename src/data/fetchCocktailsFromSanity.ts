@@ -1,5 +1,6 @@
 import { createSanityReadClient } from "@/data/sanityClient";
 import { calculateAbv } from "@/data/calculateAbv";
+import { deriveTags } from "@/data/deriveTags";
 import type { Cocktail } from "@/types";
 
 const COCKTAILS_QUERY = `*[_type == "cocktail" && defined(nameEng)] | order(nameEng asc) {
@@ -58,6 +59,7 @@ function mapDoc(doc: SanityDoc): Cocktail {
     shots: typeof doc.shots === "number" ? doc.shots : undefined,
     alcohol: abv ?? undefined,
     note: doc.note,
+    tags: deriveTags(doc.nameEng, Array.isArray(doc.ingredients) ? doc.ingredients : [], recipe),
   };
 }
 

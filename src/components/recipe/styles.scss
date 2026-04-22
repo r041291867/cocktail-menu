@@ -1,3 +1,5 @@
+@use "@/styles/tags.scss";
+
 .recipe {
   padding: 8px 4px 16px;
   color: #ccc;
@@ -108,7 +110,7 @@
 .recipe__divider {
   height: 1px;
   background: #444;
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
 
 // ── Ingredients ────────────────────────────────────────────────────────────────

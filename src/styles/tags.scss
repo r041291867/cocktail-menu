@@ -1,0 +1,21 @@
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags {
+  display: inline-block;
+  font-size: 14px;
+  padding: 2px 8px;
+  line-height: 20px;
+  border: 1px solid #aaa;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tags.active {
+  border-color: #e57d27;
+  color: #e57d27;
+}

@@ -1,3 +1,5 @@
+import type { CocktailTag } from "@/data/deriveTags";
+
 /** Full cocktail data fetched from Sanity CMS */
 export interface Cocktail {
   category: string;
@@ -10,6 +12,7 @@ export interface Cocktail {
   shots?: number;
   alcohol?: number;
   note?: string;
+  tags: CocktailTag[];
 }
 
 /** Minimal cocktail entry used in the static main-menu data */

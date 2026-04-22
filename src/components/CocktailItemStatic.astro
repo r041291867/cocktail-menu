@@ -1,6 +1,7 @@
 ---
 import "./cocktailItem/styles.scss";
 import "./shotIcon/styles.scss";
+import "@/styles/tags.scss";
 import { toChinese } from "@/data/engToCht";
 
 const { cocktail, recipe } = Astro.props;
@@ -73,6 +74,14 @@ function getGlassIcon(glass: string | undefined): string | null {
         <div class="cocktail__ingredients handwrite-en">
           {recipe.ingredients.map((str: string) => capitalize(str)).join(" / ")}
         </div>
+
+        {recipe.tags?.length > 0 && (
+          <div class="tags-list">
+            {recipe.tags.map((tag: string) => (
+              <span class="tags">{tag}</span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

@@ -32,6 +32,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
     alcohol,
     shots,
     note,
+    tags,
   } = recipe;
 
   if (!ing || !Object.keys(ing).length) return null;
@@ -98,6 +99,16 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
           )}
         </div>
       </div>
+
+      {tags.length > 0 && (
+        <div className="tags-list">
+          {tags.map((tag) => (
+            <span key={tag} className="tags handwrite-ch">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className="recipe__divider" />
 
