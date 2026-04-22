@@ -67,7 +67,9 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
         <div className="recipe__info-panel">
           {glassLabel && (
             <InfoBlock en="GLASS" ch="杯型">
-              <div className="recipe__info-value handwrite-en">{glassLabel}</div>
+              <div className="recipe__info-value handwrite-en">
+                {glassLabel}
+              </div>
             </InfoBlock>
           )}
           {shotList && (
@@ -80,7 +82,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
             </InfoBlock>
           )}
           {abvPercent !== null && (
-            <InfoBlock en="ABV">
+            <InfoBlock en="ABV" ch="度數">
               <div className="recipe__abv-row">
                 <div className="recipe__abv-bar">
                   <div
@@ -181,13 +183,14 @@ interface Props {
 
 function InfoLabel({ en, ch }: { en: string; ch?: string }) {
   return (
-    <div className="recipe__info-label handwrite-en">
+    <div className="recipe__info-label">
       {ch ? (
         <>
-          {en} / <span className="handwrite-ch">{ch}</span>
+          <span className="handwrite-ch">{ch}</span> /{" "}
+          <span className="handwrite-en">{en}</span>
         </>
       ) : (
-        en
+        <span className="handwrite-en">{en}</span>
       )}
     </div>
   );
