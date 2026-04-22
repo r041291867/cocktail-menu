@@ -8,10 +8,10 @@ export function capitalize(str: string): string {
 }
 
 export function getAlcoholShots(abv: number): number {
-  if (abv <= 10) return 1;
-  if (abv <= 16) return 1.5;
-  if (abv <= 22) return 2;
-  if (abv <= 25) return 2.5;
+  if (abv <= 12) return 1;
+  if (abv <= 20) return 1.5;
+  if (abv <= 27) return 2;
+  if (abv <= 33) return 2.5;
   return 3;
 }
 
