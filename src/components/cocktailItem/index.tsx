@@ -29,7 +29,11 @@ export default function CocktailItem({
   matchInfo = null,
   onCocktailClick = () => {},
 }: Props) {
-  const { hasImage = false, src = "", imgPosition = "left" } = cocktail as CocktailSummary;
+  const {
+    hasImage = false,
+    src = "",
+    imgPosition = "left",
+  } = cocktail as CocktailSummary;
 
   function capitalize(string: string): string {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -49,9 +53,10 @@ export default function CocktailItem({
     return result;
   }
 
-  const recipe: Cocktail | null = isFull(cocktail) && cocktail.ingredients.length > 0
-    ? cocktail
-    : getRecipe(recipes, cocktail.nameEng);
+  const recipe: Cocktail | null =
+    isFull(cocktail) && cocktail.ingredients.length > 0
+      ? cocktail
+      : getRecipe(recipes, cocktail.nameEng);
 
   if (!recipe) return null;
 
@@ -64,7 +69,11 @@ export default function CocktailItem({
       {hasImage && imgPosition === "left" && (
         <div
           className="cocktail__image cocktail__image--left"
-          style={src ? { background: `url(${src}) center/cover no-repeat` } : undefined}
+          style={
+            src
+              ? { background: `url(${src}) center/cover no-repeat` }
+              : undefined
+          }
         />
       )}
 
@@ -72,9 +81,7 @@ export default function CocktailItem({
         <div className="cocktail__main">
           <div className="cocktail__name">
             <div className="cocktail__cht handwrite-ch">{cocktail.nameCht}</div>
-            <div className="cocktail__eng handwrite-en">
-              {cocktail.nameEng}
-            </div>
+            <div className="cocktail__eng handwrite-en">{cocktail.nameEng}</div>
           </div>
 
           <div className="cocktail__stars">
@@ -85,8 +92,8 @@ export default function CocktailItem({
                   matchInfo!.missing === 0
                     ? "match-full"
                     : matchInfo!.missing === 1
-                    ? "match-near"
-                    : "match-miss"
+                      ? "match-near"
+                      : "match-miss"
                 }`}
               >
                 {matchInfo!.missing === 0 ? "✓" : `缺${matchInfo!.missing}`}
@@ -106,7 +113,11 @@ export default function CocktailItem({
       {hasImage && imgPosition === "right" && (
         <div
           className="cocktail__image cocktail__image--right"
-          style={src ? { background: `url(${src}) center/cover no-repeat` } : undefined}
+          style={
+            src
+              ? { background: `url(${src}) center/cover no-repeat` }
+              : undefined
+          }
         />
       )}
     </div>

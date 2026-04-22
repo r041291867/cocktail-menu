@@ -1,14 +1,34 @@
-import "./styles.scss";
-
 interface Props {
   width?: number;
   status?: "filled" | "half" | "empty";
+  color?: string;
 }
 
-export default function ShotIcon({ width = 16, status = "filled" }: Props) {
+const SHELL_EMPTY =
+  "M50,55.8c-6.6,0-12,1.3-12,2.9l3.4,23.3c0,1.6,3.8,2.9,8.6,2.9s8.6-1.3,8.6-2.9L62,58.6C62,57,56.6,55.8,50,55.8z M50,57.3c5,0,8.4,0.7,9.9,1.3c-1.4,0.6-4.9,1.3-9.9,1.3s-8.4-0.7-9.9-1.3C41.6,58,45,57.3,50,57.3z M57.1,79.7c-0.4,0.5-2.9,1.5-7.1,1.5s-6.6-1-7.1-1.5l-3.2-19.6c3.5,1.1,8.9,1.4,10.3,1.4s6.5-0.2,10-1.3L57.1,79.7z";
+const SHELL_FILLED =
+  "M50,55.1c-6.6,0-12,1.3-12,2.9l3.4,23.3c0,1.6,3.8,2.9,8.6,2.9s8.6-1.3,8.6-2.9L62,57.9C62,56.4,56.6,55.1,50,55.1z M50,56.6c5,0,8.4,0.7,9.9,1.3c-1.4,0.6-4.9,1.3-9.9,1.3s-8.4-0.7-9.9-1.3C41.6,57.3,45,56.6,50,56.6z M57.1,79.1c-0.4,0.5-2.9,1.5-7.1,1.5s-6.6-1-7.1-1.5l-3.2-19.6c3.5,1.1,8.9,1.4,10.3,1.4s6.5-0.2,10-1.3L57.1,79.1z";
+const FILL_FULL =
+  "M50.1,78.7c-2.7,0-4.4-0.5-5.2-0.8l-2.6-15.7c3.2,0.6,6.6,0.7,7.8,0.7c0.2,0,3.9,0,7.6-0.7L55.4,78C54.5,78.3,52.8,78.7,50.1,78.7z";
+const FILL_HALF =
+  "M50.1,78.7c-2.7,0-4.4-0.5-5.2-0.8l-2.6-10.7c3.2,0.6,6.6,0.7,7.8,0.7c0.2,0,3.9,0,7.6-0.7L55.4,78C54.5,78.3,52.8,78.7,50.1,78.7z";
+
+export default function ShotIcon({
+  width = 12.8,
+  status = "filled",
+  color = "#333",
+}: Props) {
   return (
-    <div className="shot-icon__frame" style={{ width, height: width }}>
-      <div className={`shot-icon status-${status}`}></div>
-    </div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="38 55 24 30"
+      width={width}
+      height={width * (30 / 24)}
+      style={{ display: "block", flexShrink: 0 }}
+    >
+      <path d={status === "empty" ? SHELL_EMPTY : SHELL_FILLED} fill={color} />
+      {status === "filled" && <path d={FILL_FULL} fill="#e57d27" />}
+      {status === "half" && <path d={FILL_HALF} fill="#e57d27" />}
+    </svg>
   );
 }

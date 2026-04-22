@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import HiddenPage from "./_HiddenPage";
-import Popup from "@/components/popup";
+import Drawer from "@/components/drawer";
 import Recipe from "@/components/recipe";
 import { getRecipe } from "@/data/recipeUtils";
 import Loading from "@/components/loading";
@@ -39,9 +39,9 @@ export default function HiddenApp({ recipes = [] }: Props) {
       {!fontReady && <Loading />}
 
       {showPopup && (
-        <Popup onCloseClick={() => setShowPopup(false)}>
+        <Drawer onClose={() => setShowPopup(false)}>
           <Recipe recipe={recipeItem} myBar={recipeMyBar} />
-        </Popup>
+        </Drawer>
       )}
     </div>
   );
