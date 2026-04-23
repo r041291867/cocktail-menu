@@ -2,7 +2,8 @@ import "./styles.scss";
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 
-const MIN_MOVEMENT = 60;
+const MIN_MOVEMENT = 80;
+
 interface Props {
   children: ReactNode;
   onClose?: () => void;
@@ -16,6 +17,7 @@ export default function Drawer({
 }: Props) {
   const [closing, setClosing] = useState(false);
   const touchStartY = useRef<number | null>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -35,12 +37,25 @@ export default function Drawer({
 
   function handleTouchStart(e: React.TouchEvent) {
     touchStartY.current = e.touches[0].clientY;
+    if (drawerRef.current) {
+      drawerRef.current.style.transition = "none";
+    }
+  }
+
+  function handleTouchMove(e: React.TouchEvent) {
+    if (touchStartY.current === null || !drawerRef.current) return;
+    const delta = Math.max(0, e.touches[0].clientY - touchStartY.current);
+    drawerRef.current.style.transform = `translateY(${delta}px)`;
   }
 
   function handleTouchEnd(e: React.TouchEvent) {
-    if (touchStartY.current === null) return;
+    if (touchStartY.current === null || !drawerRef.current) return;
     const delta = e.changedTouches[0].clientY - touchStartY.current;
-    if (delta > MIN_MOVEMENT) handleClose();
+    drawerRef.current.style.transition = "";
+    drawerRef.current.style.transform = "";
+    if (delta > MIN_MOVEMENT) {
+      handleClose();
+    }
     touchStartY.current = null;
   }
 
@@ -51,13 +66,16 @@ export default function Drawer({
         onClick={handleClose}
       />
       <div
+        ref={drawerRef}
         className={`drawer-main${closing ? " drawer-main--closing" : ""}`}
         style={height !== undefined ? { height, maxHeight: height } : undefined}
         onAnimationEnd={handleAnimationEnd}
       >
         <div
           className="drawer-handle"
+          onClick={handleClose}
           onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         />
         {children}
