@@ -275,24 +275,24 @@ export default function GlassWithLiquid({
   }
 
   if (glassType === "martini") {
-    // 三角形 y: 28(寬口)→84(尖底)，八分滿 y≈39
+    // 三角形 y: 28(寬口)→78(尖底)，八分滿 y≈38
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 10 120 160"
+        viewBox="0 10 120 144"
         fill="none"
         className={className}
         style={style}
       >
         <defs>
           <clipPath id={clip}>
-            <path d="M30 28 L60 84 L90 28 Z" />
+            <path d="M30 28 L60 78 L90 28 Z" />
           </clipPath>
         </defs>
-        <Liquid yStart={39} />
-        <path d="M30 28 L60 84 L90 28 Z" fill="rgba(170,170,170,0.08)" />
+        <Liquid yStart={38} />
+        <path d="M30 28 L60 78 L90 28 Z" fill="rgba(170,170,170,0.08)" />
         <path
-          d="M30 28 L60 84 L90 28 Z"
+          d="M30 28 L60 78 L90 28 Z"
           stroke={S}
           strokeWidth={SW}
           strokeLinecap="round"
@@ -301,16 +301,16 @@ export default function GlassWithLiquid({
         />
         <line
           x1="60"
-          y1="84"
+          y1="78"
           x2="60"
-          y2="148"
+          y2="136"
           stroke={S}
           strokeWidth={SW}
           strokeLinecap="round"
         />
         <ellipse
           cx="60"
-          cy="152"
+          cy="140"
           rx="22"
           ry="4"
           stroke={S}
