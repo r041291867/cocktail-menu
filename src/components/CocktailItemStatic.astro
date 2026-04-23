@@ -78,7 +78,9 @@ function getGlassIcon(glass: string | undefined): string | null {
         {recipe.tags?.length > 0 && (
           <div class="tags-list">
             {recipe.tags.map((tag: string) => (
-              <span class="tags">{tag}</span>
+              <span class="tags handwrite-ch" style="font-size: 12px">
+                {tag}
+              </span>
             ))}
           </div>
         )}
