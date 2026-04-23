@@ -1,4 +1,5 @@
 import type { CocktailTag } from "@/data/deriveTags";
+import type { CSSProperties } from "react";
 
 /** Full cocktail data fetched from Sanity CMS */
 export interface Cocktail {
@@ -22,6 +23,8 @@ export interface CocktailSummary {
   hasImage?: boolean;
   src?: string;
   imgPosition?: "left" | "right";
+  color?: string;
+  opacity?: number;
 }
 
 /** One section in the main menu */
@@ -29,6 +32,10 @@ export interface MenuCategory {
   category: string;
   categoryCh: string;
   cocktails: CocktailSummary[];
+  color?: string;
+  opacity?: number;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /** Result of matching a cocktail against the user's bar inventory */

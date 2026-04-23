@@ -68,26 +68,33 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "黛綺麗",
         nameEng: "Daiquiri",
+        color: "crystal",
       },
       {
         nameCht: "白色佳人",
         nameEng: "White Lady",
+        color: "crystal",
       },
       {
         nameCht: "側車",
         nameEng: "Sidecar",
+        color: "amber",
       },
       {
         nameCht: "往日情懷",
         nameEng: "Old Fashioned",
+        color: "amber",
       },
       {
         nameCht: "曼哈頓",
         nameEng: "Manhattan",
+        color: "ruby",
       },
       {
         nameCht: "馬丁尼",
         nameEng: "Martini",
+        color: "pale",
+        opacity: 0.5,
       },
     ],
   },
@@ -98,26 +105,32 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "帕洛瑪",
         nameEng: "Paloma",
+        color: "coral",
       },
       {
         nameCht: "盤尼西林",
         nameEng: "Penicillin",
+        color: "golden",
       },
       {
         nameCht: "海明威特調",
         nameEng: "Hemingway Special",
+        color: "coral",
       },
       {
         nameCht: "亡者復甦二號",
         nameEng: "Corpse Reviver #2",
+        color: "crystal",
       },
       {
         nameCht: "瑪格麗特",
         nameEng: "Margarita",
+        color: "crystal",
       },
       {
         nameCht: "茉莉",
         nameEng: "Jasmine",
+        color: "coral",
       },
       // {
       //   nameCht: "邁泰",
@@ -126,6 +139,7 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "薇絲朋",
         nameEng: "Vesper",
+        color: "pale",
       },
     ],
   },
@@ -136,22 +150,28 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "克朗代克高球",
         nameEng: "Klondike Highball",
+        color: "tawny",
       },
       {
         nameCht: "M30-雨",
         nameEng: "M30 - Rain",
+        color: "cobalt",
       },
       {
         nameCht: "伊麗莎白皇后",
         nameEng: "Queen Elizabeth",
+        color: "golden",
+        opacity: 0.5,
       },
       {
         nameCht: "吻別男孩",
         nameEng: "Kiss the Boys Goodbye",
+        color: "tawny",
       },
       {
         nameCht: "翻雲覆雨",
         nameEng: "Hanky Panky",
+        color: "ruby",
       },
     ],
   },
@@ -162,14 +182,17 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "嗨波魯",
         nameEng: "Highball",
+        color: "amber",
       },
       {
         nameCht: "琴費士",
         nameEng: "Gin Fizz",
+        color: "crystal",
       },
       {
         nameCht: "琴通寧",
         nameEng: "Gin & Tonic",
+        color: "pale",
       },
       // {
       //   nameCht: "會館費士",
@@ -178,14 +201,17 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "莫希托",
         nameEng: "Mojito",
+        color: "crystal",
       },
       {
         nameCht: "泡泡",
         nameEng: "Spumoni",
+        color: "coral",
       },
       {
         nameCht: "美國佬",
         nameEng: "Americano",
+        color: "crimson",
       },
     ],
   },
@@ -196,18 +222,22 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "曼哈頓先生",
         nameEng: "Mr Manhattan",
+        color: "orange",
       },
       {
         nameCht: "菊花",
         nameEng: "Chrysanthemum",
+        color: "golden",
       },
       {
         nameCht: "老廣場",
         nameEng: "Vieux Carrè",
+        color: "amber",
       },
       {
         nameCht: "法蘭克·辛納屈",
         nameEng: "Francis Albert",
+        color: "amber",
       },
     ],
   },

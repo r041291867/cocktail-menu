@@ -3,6 +3,7 @@ import "./cocktailItem/styles.scss";
 import "./shotIcon/styles.scss";
 import "@/styles/tags.scss";
 import { toChinese } from "@/data/engToCht";
+import GlassWithLiquid from "@/components/GlassWithLiquid";
 
 const { cocktail, recipe } = Astro.props;
 
@@ -45,13 +46,13 @@ function getGlassIcon(glass: string | undefined): string | null {
 {
   recipe && (
     <div class="cocktail__outer" data-recipe-name={cocktail.nameEng}>
-      {getGlassIcon(recipe.glass) && (
-        <img
-          src={getGlassIcon(recipe.glass)!}
-          alt={recipe.glass}
-          style="width:60px;height:55px;object-fit:contain;margin-right:2px;"
-        />
-      )}
+      <GlassWithLiquid
+        glass={recipe.glass}
+        liquidColor={cocktail.color}
+        liquidOpacity={cocktail.opacity}
+        style={{ width: 80 }}
+      />
+
       <div class="cocktail__frame">
         <div class="cocktail__main">
           <div class="cocktail__name">
