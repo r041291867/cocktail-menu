@@ -48,7 +48,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
 
   const shotCount = alcohol ? getAlcoholShots(alcohol) : (shots ?? null);
   const shotList = shotCount ? getShotList(shotCount) : null;
-  const abvPercent = alcohol ? Math.min((alcohol / 50) * 100, 100) : null;
+  const abvPercent = alcohol ? Math.min((alcohol / 40) * 100, 100) : null;
 
   return (
     <div className="recipe">
