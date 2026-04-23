@@ -205,6 +205,7 @@ export const ALCOHOL_DATA: Record<string, AlcoholEntry> = {
   "apple juice": { fullName: "蘋果汁", shortName: "蘋果", abv: 0 },
   "apple": { fullName: "蘋果", shortName: "蘋果", abv: 0 },
   "passionfruit juice": { fullName: "百香果汁", shortName: "百香果", abv: 0 },
+  "passion fruit juice": { fullName: "百香果汁", shortName: "百香果", abv: 0 },
   "passionfruit": { fullName: "百香果", shortName: "百香果", abv: 0 },
   "mango juice": { fullName: "芒果汁", shortName: "芒果", abv: 0 },
   "mango": { fullName: "芒果", shortName: "芒果", abv: 0 },
