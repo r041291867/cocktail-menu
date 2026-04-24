@@ -63,7 +63,8 @@ export default function HiddenPage({
   );
 
   const visibleCategories = useMemo(
-    () => buildVisibleCategories(filteredRecipes, showOnlyMakeable, getMatchInfo),
+    () =>
+      buildVisibleCategories(filteredRecipes, showOnlyMakeable, getMatchInfo),
     [filteredRecipes, showOnlyMakeable, getMatchInfo]
   );
 
@@ -89,7 +90,7 @@ export default function HiddenPage({
 
   const clearFilter = useCallback(() => {
     setKeywd([]);
-    setShowFilterPopup(false);
+    // setShowFilterPopup(false);
   }, []);
 
   const addToBar = useCallback(() => {
@@ -203,7 +204,7 @@ export default function HiddenPage({
           </h3>
 
           <InputWithButton
-            label="Search / Add:"
+            label="新增材料:"
             value={inputText}
             placeholder="Type to filter..."
             onChange={setInputText}
@@ -247,16 +248,16 @@ export default function HiddenPage({
 
           <div className="bar-list handwrite-ch">
             {sortedBar.map((ing) => (
-                <div key={ing} className="bar-item">
-                  {ing}
-                  <div
-                    className="bar-item-remove close-btn"
-                    onClick={() => setConfirmRemove(ing)}
-                  >
-                    +
-                  </div>
+              <div key={ing} className="bar-item">
+                {ing}
+                <div
+                  className="bar-item-remove close-btn"
+                  onClick={() => setConfirmRemove(ing)}
+                >
+                  +
                 </div>
-              ))}
+              </div>
+            ))}
             {!myBar.length && <div className="bar-empty">尚未新增任何材料</div>}
           </div>
         </Popup>
