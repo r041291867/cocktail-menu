@@ -5,6 +5,9 @@ export type CocktailTag =
   | "苦甜"
   | "草本"
   | "果香"
+  | "熱帶"
+  | "奶香"
+  | "重酒感"
   | "煙燻"
   | "泥煤";
 
@@ -48,10 +51,7 @@ const TAG_RULES: { tag: CocktailTag; keywords: string[] }[] = [
       "cynar",
       "suze",
       "bénédictine",
-      "falernum",
       "basil",
-      "elderflower",
-      "st-germain",
       "mint",
     ],
   },
@@ -74,7 +74,6 @@ const TAG_RULES: { tag: CocktailTag; keywords: string[] }[] = [
       "peach schnapps",
       "cranberry",
       "cranberry juice",
-      "grape",
       "grape juice",
       "melon",
       "midori",
@@ -86,7 +85,6 @@ const TAG_RULES: { tag: CocktailTag; keywords: string[] }[] = [
       "maraschino",
       "limoncello",
       "aperol",
-      "amaretto",
       "crème de mûre",
     ],
   },
@@ -101,9 +99,24 @@ const TAG_RULES: { tag: CocktailTag; keywords: string[] }[] = [
       "fernet branca",
       "suze",
       "amer picon",
-      "angostura bitters",
-      "angostura bitter",
-      "bitters",
+    ],
+  },
+  {
+    tag: "熱帶",
+    keywords: [
+      "pineapple", "pineapple juice",
+      "passionfruit", "passionfruit juice",
+      "mango", "mango juice",
+      "coconut milk", "coconut cream", "coconut water",
+      "falernum", "orgeat",
+    ],
+  },
+  {
+    tag: "奶香",
+    keywords: [
+      "cream", "heavy cream",
+      "milk", "coconut milk", "coconut cream",
+      "amarula",
     ],
   },
   {
@@ -119,7 +132,7 @@ const TAG_RULES: { tag: CocktailTag; keywords: string[] }[] = [
   },
   {
     tag: "煙燻",
-    keywords: ["mezcal", "scotch", "scotch whisky", "scotch whiskey"],
+    keywords: ["mezcal"],
   },
   {
     tag: "泥煤",
@@ -130,10 +143,13 @@ const TAG_RULES: { tag: CocktailTag; keywords: string[] }[] = [
 // 手動覆蓋：nameEng → 強制加入的 tag（用於無法從食材推導的情況）
 const TAG_OVERRIDES: Record<string, CocktailTag[]> = {};
 
+const CITRUS = ["lemon", "lime", "grapefruit", "orange juice", "yuzu"];
+
 export function deriveTags(
   nameEng: string,
   ingredients: string[],
-  recipe: Record<string, string>
+  recipe: Record<string, string>,
+  method?: string,
 ): CocktailTag[] {
   const allIngredients = [...ingredients, ...Object.keys(recipe)].map((s) =>
     s.toLowerCase()
@@ -146,6 +162,11 @@ export function deriveTags(
 
   for (const { tag, keywords } of TAG_RULES) {
     if (keywords.some(hasKeyword)) tags.add(tag);
+  }
+
+  // 重酒感：stir 手法且無柑橘類果汁
+  if (/stir/i.test(method ?? "") && !CITRUS.some(hasKeyword)) {
+    tags.add("重酒感");
   }
 
   // 酸甜 需要有甜味才成立，避免純酸味的攢紋式調酒被誤標
