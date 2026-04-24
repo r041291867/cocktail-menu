@@ -1,8 +1,6 @@
 import "./styles.scss";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
-
-const MIN_MOVEMENT = 80;
 
 interface Props {
   children: ReactNode;
@@ -10,11 +8,27 @@ interface Props {
   height?: string | number;
 }
 
-export default function Drawer({
-  children,
-  onClose = () => {},
-  height,
-}: Props) {
+const MIN_MOVEMENT = 80;
+
+const lockDrag = (el: HTMLDivElement) => {
+  el.style.transition = "none";
+  el.style.animation = "none";
+};
+
+const applyDrag = (el: HTMLDivElement, startY: number, currentY: number) => {
+  el.style.transform = `translateY(${Math.max(0, currentY - startY)}px)`;
+};
+
+const clearDrag = (el: HTMLDivElement) => {
+  el.style.transition = "";
+  el.style.transform = "";
+  el.style.animation = "";
+};
+
+const toClassName = (...parts: (string | false)[]) =>
+  parts.filter(Boolean).join(" ");
+
+export default function Drawer({ children, onClose, height }: Props) {
   const [closing, setClosing] = useState(false);
   const touchStartY = useRef<number | null>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
@@ -27,47 +41,42 @@ export default function Drawer({
     };
   }, []);
 
-  function handleClose() {
-    setClosing(true);
-  }
+  const handleClose = useCallback(() => setClosing(true), []);
 
-  function handleAnimationEnd() {
-    if (closing) onClose();
-  }
+  const handleAnimationEnd = useCallback(() => {
+    if (closing) onClose?.();
+  }, [closing, onClose]);
 
-  function handleTouchStart(e: React.TouchEvent) {
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
     touchStartY.current = e.touches[0].clientY;
-    if (drawerRef.current) {
-      drawerRef.current.style.transition = "none";
-    }
-  }
+    if (drawerRef.current) lockDrag(drawerRef.current);
+  }, []);
 
-  function handleTouchMove(e: React.TouchEvent) {
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (touchStartY.current === null || !drawerRef.current) return;
-    const delta = Math.max(0, e.touches[0].clientY - touchStartY.current);
-    drawerRef.current.style.transform = `translateY(${delta}px)`;
-  }
+    applyDrag(drawerRef.current, touchStartY.current, e.touches[0].clientY);
+  }, []);
 
-  function handleTouchEnd(e: React.TouchEvent) {
-    if (touchStartY.current === null || !drawerRef.current) return;
-    const delta = e.changedTouches[0].clientY - touchStartY.current;
-    drawerRef.current.style.transition = "";
-    drawerRef.current.style.transform = "";
-    if (delta > MIN_MOVEMENT) {
-      handleClose();
-    }
-    touchStartY.current = null;
-  }
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (touchStartY.current === null || !drawerRef.current) return;
+      const delta = e.changedTouches[0].clientY - touchStartY.current;
+      clearDrag(drawerRef.current);
+      if (delta > MIN_MOVEMENT) handleClose();
+      touchStartY.current = null;
+    },
+    [handleClose]
+  );
 
   return (
     <div className="drawer-frame">
       <div
-        className={`drawer-mask${closing ? " drawer-mask--closing" : ""}`}
+        className={toClassName("drawer-mask", closing && "drawer-mask--closing")}
         onClick={handleClose}
       />
       <div
         ref={drawerRef}
-        className={`drawer-main${closing ? " drawer-main--closing" : ""}`}
+        className={toClassName("drawer-main", closing && "drawer-main--closing")}
         style={height !== undefined ? { height, maxHeight: height } : undefined}
         onAnimationEnd={handleAnimationEnd}
       >

@@ -41,6 +41,7 @@
   justify-content: center;
   margin-bottom: 8px;
   cursor: grab;
+  touch-action: none;
 
   /* 手機：顯示拖動條 */
   &::after {
