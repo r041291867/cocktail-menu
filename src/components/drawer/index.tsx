@@ -1,5 +1,5 @@
 import "./styles.scss";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useBodyOverflowLock } from "@/hooks/useBodyOverflowLock";
 import type { ReactNode } from "react";
 
@@ -33,6 +33,7 @@ export default function Drawer({ children, onClose, height }: Props) {
   const [closing, setClosing] = useState(false);
   const touchStartY = useRef<number | null>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
+  const handleRef = useRef<HTMLDivElement>(null);
 
   useBodyOverflowLock();
 
@@ -47,11 +48,6 @@ export default function Drawer({ children, onClose, height }: Props) {
     if (drawerRef.current) lockDrag(drawerRef.current);
   }, []);
 
-  const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    if (touchStartY.current === null || !drawerRef.current) return;
-    applyDrag(drawerRef.current, touchStartY.current, e.touches[0].clientY);
-  }, []);
-
   const handleTouchEnd = useCallback(
     (e: React.TouchEvent) => {
       if (touchStartY.current === null || !drawerRef.current) return;
@@ -62,6 +58,19 @@ export default function Drawer({ children, onClose, height }: Props) {
     },
     [handleClose]
   );
+
+  // 用 native listener + passive:false 讓 iOS 不攔截 touchmove
+  useEffect(() => {
+    const el = handleRef.current;
+    if (!el) return;
+    const onMove = (e: TouchEvent) => {
+      if (touchStartY.current === null || !drawerRef.current) return;
+      e.preventDefault();
+      applyDrag(drawerRef.current, touchStartY.current, e.touches[0].clientY);
+    };
+    el.addEventListener("touchmove", onMove, { passive: false });
+    return () => el.removeEventListener("touchmove", onMove);
+  }, []);
 
   return (
     <div className="drawer-frame">
@@ -76,10 +85,10 @@ export default function Drawer({ children, onClose, height }: Props) {
         onAnimationEnd={handleAnimationEnd}
       >
         <div
+          ref={handleRef}
           className="drawer-handle"
           onClick={handleClose}
           onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         />
         {children}
