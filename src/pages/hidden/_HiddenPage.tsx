@@ -27,7 +27,7 @@ export default function HiddenPage({
 }: Props) {
   // ── State ──────────────────────────────────────────────────────────────────
   const [keywd, setKeywd] = useState<string[]>([]);
-  const [tagList, setTagList] = useState<string[]>([...TAGS]);
+  const [tagList, setTagList] = useState<string[]>([]);
   const [inputText, setInputText] = useState("");
   const [showFilterPopup, setShowFilterPopup] = useState(false);
 
@@ -211,17 +211,39 @@ export default function HiddenPage({
             onSubmit={addTag}
           />
 
-          <div className="tags-list handwrite-ch">
-            {tagList.map((tag) => (
-              <div
-                key={tag}
-                className={`tags${keywd.includes(tag) ? " active" : ""}`}
-                onClick={() => toggleTag(tag)}
-              >
-                {tag}
+          {TAG_GROUPS.map(({ label, tags }) => (
+            <div key={label} className="tags-group">
+              <div className="tags-group__label handwrite-ch">{label}</div>
+              <div className="tags-list handwrite-ch">
+                {tags.map((tag) => (
+                  <div
+                    key={tag}
+                    className={`tags${keywd.includes(tag) ? " active" : ""}`}
+                    onClick={() => toggleTag(tag)}
+                  >
+                    {tag}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+
+          {tagList.length > 0 && (
+            <div className="tags-group">
+              <div className="tags-group__label handwrite-ch">自訂</div>
+              <div className="tags-list handwrite-ch">
+                {tagList.map((tag) => (
+                  <div
+                    key={tag}
+                    className={`tags${keywd.includes(tag) ? " active" : ""}`}
+                    onClick={() => toggleTag(tag)}
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </Popup>
       )}
 
@@ -314,30 +336,30 @@ const CATEGORIES = [
   "Mocktail",
 ];
 
-const TAGS = [
-  ...CATEGORIES,
-  "Campari",
-  "Grapefruit",
-  "Grenadine",
-  "Orgeat",
-  "Prosecco",
-  "Champagne",
-  "Absinthe",
-  "Bénédictine",
+const TAG_GROUPS: { label: string; tags: string[] }[] = [
+  { label: "烈酒類", tags: ["Whiskey", "Gin", "Rum", "Vodka", "Brandy", "Tequila"] },
+  { label: "其他分類", tags: ["Signature", "Else", "Imbibe", "Mocktail"] },
+  { label: "利口酒", tags: ["Campari", "Absinthe", "Bénédictine"] },
+  { label: "其他材料", tags: ["Grapefruit", "Grenadine", "Orgeat", "Prosecco", "Champagne"] },
 ];
 
 // ─── Pure Functions ───────────────────────────────────────────────────────────
+
+function escapeRegex(s: string) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
 
 function filterByKeywords(keywords: string[]) {
   return (cocktails: Cocktail[]): Cocktail[] =>
     keywords.reduce((result, keyword) => {
       const lc = keyword.toLowerCase();
+      const re = new RegExp(`\\b${escapeRegex(lc)}\\b`, "i");
       return result.filter(
         (c) =>
           c.category?.toLowerCase().includes(lc) ||
           c.nameEng?.toLowerCase().includes(lc) ||
           c.nameCht?.includes(keyword) ||
-          c.ingredients?.some((ing) => ing.toLowerCase().includes(lc))
+          c.ingredients?.some((ing) => re.test(ing))
       );
     }, cocktails);
 }
