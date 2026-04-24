@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HiddenPage from "./_HiddenPage";
+import RecipePage from "./_RecipePage";
 import Drawer from "@/components/drawer";
 import Recipe from "@/components/recipe";
 import { getRecipe } from "@/data/recipeUtils";
@@ -12,7 +12,7 @@ interface Props {
   recipes?: Cocktail[];
 }
 
-export default function HiddenApp({ recipes = [] }: Props) {
+export default function RecipeApp({ recipes = [] }: Props) {
   const [showPopup, setShowPopup] = useState(false);
   const [recipeItem, setRecipeItem] = useState<Cocktail | null>(null);
   const [recipeMyBar, setRecipeMyBar] = useState<string[]>([]);
@@ -26,7 +26,7 @@ export default function HiddenApp({ recipes = [] }: Props) {
 
   return (
     <div>
-      <HiddenPage
+      <RecipePage
         recipes={recipes}
         onCocktailClick={(cocktail, myBar) => {
           setShowPopup(true);

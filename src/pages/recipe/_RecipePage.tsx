@@ -20,7 +20,7 @@ interface Props {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
-export default function HiddenPage({
+export default function RecipePage({
   recipes = [],
   onCocktailClick = () => {},
   onCloseClick = () => {},
@@ -112,7 +112,7 @@ export default function HiddenPage({
 
   // ── Render ─────────────────────────────────────────────────────────────────
   return (
-    <div className="hidden-page__frame">
+    <div className="recipe-page__frame">
       <div className="menu__header">
         <div className="menu__header--inner handwrite-border">
           <img

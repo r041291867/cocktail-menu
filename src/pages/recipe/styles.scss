@@ -1,6 +1,6 @@
 @use "@/styles/tags.scss";
 
-.hidden-page__frame {
+.recipe-page__frame {
   position: relative;
   inset: 0;
   padding: 5px 0px 30px 0px;
@@ -9,7 +9,7 @@
   z-index: 22;
 }
 
-.hidden-page__frame .close-btn {
+.recipe-page__frame .close-btn {
   transform: rotate(45deg);
   transform-origin: center;
   cursor: pointer;

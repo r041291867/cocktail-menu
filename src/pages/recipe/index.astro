@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HiddenApp from "./_HiddenApp.tsx";
+import RecipeApp from "./_RecipeApp.tsx";
 import { fetchCocktailsFromSanity } from "@/data/fetchCocktailsFromSanity";
 
 const recipes = await fetchCocktailsFromSanity();
 ---
 
 <BaseLayout>
-  <HiddenApp client:idle recipes={recipes} />
+  <RecipeApp client:idle recipes={recipes} />
 </BaseLayout>

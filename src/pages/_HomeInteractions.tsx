@@ -27,7 +27,7 @@ export default function HomeInteractions({ recipes = [] }: Props) {
     document.fonts.ready.then(() => setFontReady(true));
 
     const header = document.querySelector("[data-home-title]");
-    const onHeaderDoubleClick = () => window.location.assign("/hidden");
+    const onHeaderDoubleClick = () => window.location.assign("/recipe");
     header?.addEventListener("dblclick", onHeaderDoubleClick);
 
     const items = document.querySelectorAll<HTMLElement>("[data-recipe-name]");
@@ -36,14 +36,19 @@ export default function HomeInteractions({ recipes = [] }: Props) {
       const recipeName = el.dataset.recipeName ?? "";
       setRecipeItem(getRecipe(recipes, recipeName));
     };
-    items.forEach((item) => item.addEventListener("dblclick", onItemDoubleClick));
+    items.forEach((item) =>
+      item.addEventListener("dblclick", onItemDoubleClick)
+    );
 
     const navItems = document.querySelectorAll<HTMLElement>("[data-nav-id]");
     const sections = document.querySelectorAll(".menu__section[id]");
 
     const setActiveNav = (id: string) => {
-      navItems.forEach((el) => el.classList.toggle("active", el.dataset.navId === id));
-      document.querySelector(`[data-nav-id="${id}"]`)
+      navItems.forEach((el) =>
+        el.classList.toggle("active", el.dataset.navId === id)
+      );
+      document
+        .querySelector(`[data-nav-id="${id}"]`)
         ?.scrollIntoView({ block: "nearest", inline: "nearest" });
     };
 
@@ -62,7 +67,9 @@ export default function HomeInteractions({ recipes = [] }: Props) {
 
     return () => {
       header?.removeEventListener("dblclick", onHeaderDoubleClick);
-      items.forEach((item) => item.removeEventListener("dblclick", onItemDoubleClick));
+      items.forEach((item) =>
+        item.removeEventListener("dblclick", onItemDoubleClick)
+      );
       observer.disconnect();
     };
   }, [recipes]);
