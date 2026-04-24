@@ -2,12 +2,11 @@ import "./styles.scss";
 import ShotIcon from "../shotIcon";
 import { toChinese } from "../../data/engToCht";
 import { getRecipe, capitalize, getAlcoholShots, getShotList } from "@/data/recipeUtils";
-import type { Cocktail, CocktailSummary, MatchInfo } from "@/types";
+import type { Cocktail, CocktailSummary } from "@/types";
 
 interface Props {
   cocktail: Cocktail | CocktailSummary;
   recipes?: Cocktail[];
-  matchInfo?: MatchInfo | null;
   onCocktailClick?: () => void;
 }
 
@@ -18,7 +17,6 @@ function isFull(c: Cocktail | CocktailSummary): c is Cocktail {
 export default function CocktailItem({
   cocktail,
   recipes = [],
-  matchInfo = null,
   onCocktailClick = () => {},
 }: Props) {
   const {
@@ -66,19 +64,6 @@ export default function CocktailItem({
 
           <div className="cocktail__stars">
             {numToRate(shots)}
-            {matchInfo !== null && (
-              <div
-                className={`cocktail__match ${
-                  matchInfo!.missing === 0
-                    ? "match-full"
-                    : matchInfo!.missing === 1
-                      ? "match-near"
-                      : "match-miss"
-                }`}
-              >
-                {matchInfo!.missing === 0 ? "✓" : `缺${matchInfo!.missing}`}
-              </div>
-            )}
           </div>
         </div>
 
