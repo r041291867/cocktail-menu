@@ -1,4 +1,4 @@
-import type { Cocktail } from "@/types";
+import type { Cocktail, MatchInfo } from "@/types";
 
 export function capitalize(str: string): string {
   return str
@@ -48,16 +48,82 @@ export function isExcluded(text: string): boolean {
   return EXCLUDED.some((kw) => lower.includes(kw));
 }
 
+export function getRequiredIngredients(cocktail: Cocktail): string[] {
+  return (cocktail.ingredients ?? []).filter(
+    (ing) => !isExcluded(ing) && !isExcluded(cocktail.recipe?.[ing] ?? "")
+  );
+}
+
+// ─── Ingredient Matching ─────────────────────────────────────────────────────
+
 function normalizeSpelling(s: string): string {
   return s.toLowerCase().replace(/whiskey/g, "whisky");
 }
 
-export function matchIngredient(ingredient: string, barItem: string): boolean {
-  const a = normalizeSpelling(ingredient);
-  const b = normalizeSpelling(barItem);
-  const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const WHISKY_SUBTYPES = ["scotch", "irish", "bourbon", "rye", "tennessee", "canadian", "japanese"] as const;
+const GIN_SUBTYPES = ["old tom", "sloe"] as const;
+const GINGER_SUBTYPES = ["ale", "beer"] as const;
+
+type SpiritConfig = {
+  subtypes: readonly string[];
+  pattern: RegExp;
+  // true:  配方需要 generic 時，bar 有任一 subtype 也算符合（e.g. whisky）
+  // false: generic 與 subtype 完全不互通（e.g. gin、ginger）
+  genericAcceptsSubtypes: boolean;
+};
+
+const SPIRIT_CONFIGS: SpiritConfig[] = [
+  { subtypes: WHISKY_SUBTYPES,  pattern: /\bwhisky\b/,  genericAcceptsSubtypes: true  },
+  { subtypes: GIN_SUBTYPES,     pattern: /\bgin\b/,     genericAcceptsSubtypes: false },
+  { subtypes: GINGER_SUBTYPES,  pattern: /\bginger\b/,  genericAcceptsSubtypes: false },
+];
+
+function getSubtype(s: string, subtypes: readonly string[], pattern: RegExp): string | "generic" | null {
+  if (!pattern.test(s)) return null;
+  for (const sub of subtypes) {
+    if (s.includes(sub)) return sub;
+  }
+  return "generic";
+}
+
+const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+function matchNormalized(a: string, b: string): boolean {
+  for (const { subtypes, pattern, genericAcceptsSubtypes } of SPIRIT_CONFIGS) {
+    const aType = getSubtype(a, subtypes, pattern);
+    const bType = getSubtype(b, subtypes, pattern);
+    if (aType !== null && bType !== null) {
+      if (aType === "generic" && bType === "generic") return true;
+      if (aType === "generic") return genericAcceptsSubtypes;
+      if (bType === "generic") return false;
+      return aType === bType;
+    }
+  }
   return (
-    new RegExp(`\\b${escape(b)}\\b`).test(a) ||
-    new RegExp(`\\b${escape(a)}\\b`).test(b)
+    new RegExp(`\\b${escapeRegExp(b)}\\b`).test(a) ||
+    new RegExp(`\\b${escapeRegExp(a)}\\b`).test(b)
   );
+}
+
+export function matchIngredient(ingredient: string, barItem: string): boolean {
+  return matchNormalized(normalizeSpelling(ingredient), normalizeSpelling(barItem));
+}
+
+function makeBarMatcher(myBar: string[]) {
+  const normalizedBar = myBar.map(normalizeSpelling);
+  return (ingredient: string): boolean => {
+    const normIng = normalizeSpelling(ingredient);
+    return normalizedBar.some((barItem) => matchNormalized(normIng, barItem));
+  };
+}
+
+export function computeMatchInfo(myBar: string[]) {
+  const isInBar = makeBarMatcher(myBar);
+  return (cocktail: Cocktail): MatchInfo | null => {
+    if (!myBar.length) return null;
+    const ingredients = getRequiredIngredients(cocktail);
+    if (!ingredients.length) return null;
+    const missing = ingredients.filter((ing) => !isInBar(ing)).length;
+    return { missing, total: ingredients.length };
+  };
 }

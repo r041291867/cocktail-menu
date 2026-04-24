@@ -1,5 +1,6 @@
 import "./styles.scss";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
+import { useBodyOverflowLock } from "@/hooks/useBodyOverflowLock";
 import type { ReactNode } from "react";
 
 interface Props {
@@ -33,13 +34,7 @@ export default function Drawer({ children, onClose, height }: Props) {
   const touchStartY = useRef<number | null>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, []);
+  useBodyOverflowLock();
 
   const handleClose = useCallback(() => setClosing(true), []);
 

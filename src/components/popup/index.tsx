@@ -1,6 +1,6 @@
 import "./styles.scss";
-import { useEffect } from "react";
 import type { ReactNode } from "react";
+import { useBodyOverflowLock } from "@/hooks/useBodyOverflowLock";
 
 interface Props {
   children: ReactNode;
@@ -10,13 +10,7 @@ interface Props {
 }
 
 export default function Popup({ children, onCloseClick = () => {}, width, height }: Props) {
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, []);
+  useBodyOverflowLock();
 
   return (
     <div className="popup-frame">

@@ -1,5 +1,5 @@
 import "./styles.scss";
-import { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import CocktailItem from "@/components/cocktailItem";
 import { toChinese } from "@/data/engToCht";
 import Popup from "@/components/popup";
@@ -7,7 +7,9 @@ import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import QrCode2OutlinedIcon from "@mui/icons-material/QrCode2Outlined";
 import QrCode from "@/components/qrcode";
-import { isExcluded } from "@/data/recipeUtils";
+import { computeMatchInfo } from "@/data/recipeUtils";
+import InputWithButton from "@/components/inputWithButton";
+import { useActiveSection } from "@/hooks/useActiveSection";
 import type { Cocktail, MatchInfo } from "@/types";
 
 interface Props {
@@ -45,58 +47,30 @@ export default function HiddenPage({
   const [currentUrl, setCurrentUrl] = useState("");
   const [showQrPopup, setShowQrPopup] = useState(false);
 
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-  const navRef = useRef<HTMLDivElement>(null);
+  const { activeSection, navRef } = useActiveSection(".menu__section", [keywd]);
 
   // ── Derived ────────────────────────────────────────────────────────────────
-  const getMatchInfo = useCallback(
-    (cocktail: Cocktail) => computeMatchInfo(myBar)(cocktail),
-    [myBar]
-  );
+  const getMatchInfo = useMemo(() => computeMatchInfo(myBar), [myBar]);
 
   const filteredRecipes = useMemo(
     () => filterByKeywords(keywd)(recipes),
     [recipes, keywd]
   );
 
+  const sortedBar = useMemo(
+    () => [...myBar].sort((a, b) => a.localeCompare(b)),
+    [myBar]
+  );
+
   const visibleCategories = useMemo(
-    () =>
-      buildVisibleCategories({
-        filteredRecipes,
-        showOnlyMakeable,
-        myBar,
-        getMatchInfo,
-      }),
-    [filteredRecipes, showOnlyMakeable, myBar, getMatchInfo]
+    () => buildVisibleCategories(filteredRecipes, showOnlyMakeable, getMatchInfo),
+    [filteredRecipes, showOnlyMakeable, getMatchInfo]
   );
 
   // ── Effects ────────────────────────────────────────────────────────────────
   useEffect(() => {
     localStorage.setItem("myBar", JSON.stringify(myBar));
   }, [myBar]);
-
-  useEffect(() => {
-    const sections = document.querySelectorAll(".menu__section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible.length > 0) setActiveSection(visible[0].target.id);
-      },
-      { rootMargin: "-10% 0px -60% 0px", threshold: 0 }
-    );
-    sections.forEach((s) => observer.observe(s));
-    if (sections.length > 0) setActiveSection(sections[0].id);
-    return () => observer.disconnect();
-  }, [keywd]);
-
-  useEffect(() => {
-    if (!activeSection || !navRef.current) return;
-    navRef.current
-      .querySelector(`[data-nav-id="${activeSection}"]`)
-      ?.scrollIntoView({ block: "nearest", inline: "nearest" });
-  }, [activeSection]);
 
   // ── Handlers ───────────────────────────────────────────────────────────────
   const addTag = useCallback(() => {
@@ -228,27 +202,13 @@ export default function HiddenPage({
             )}
           </h3>
 
-          <div className="filter-input-frame">
-            <div className="handwrite-ch">Search / Add:</div>
-            <input
-              className="filter-input handwrite-ch"
-              type="text"
-              value={inputText}
-              placeholder="Type to filter..."
-              onChange={(e) => setInputText(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && addTag()}
-            />
-            <div
-              style={{
-                fontWeight: "bold",
-                userSelect: "none",
-                cursor: "pointer",
-              }}
-              onClick={addTag}
-            >
-              +
-            </div>
-          </div>
+          <InputWithButton
+            label="Search / Add:"
+            value={inputText}
+            placeholder="Type to filter..."
+            onChange={setInputText}
+            onSubmit={addTag}
+          />
 
           <div className="tags-list handwrite-ch">
             {tagList.map((tag) => (
@@ -277,32 +237,16 @@ export default function HiddenPage({
             </div>
           </h3>
 
-          <div className="filter-input-frame">
-            <div className="handwrite-ch">新增材料:</div>
-            <input
-              className="filter-input handwrite-ch"
-              type="text"
-              value={barInputText}
-              placeholder="輸入材料..."
-              onChange={(e) => setBarInputText(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && addToBar()}
-            />
-            <div
-              style={{
-                fontWeight: "bold",
-                userSelect: "none",
-                cursor: "pointer",
-              }}
-              onClick={addToBar}
-            >
-              +
-            </div>
-          </div>
+          <InputWithButton
+            label="新增材料:"
+            value={barInputText}
+            placeholder="輸入材料..."
+            onChange={setBarInputText}
+            onSubmit={addToBar}
+          />
 
           <div className="bar-list handwrite-ch">
-            {[...myBar]
-              .sort((a, b) => a.localeCompare(b))
-              .map((ing) => (
+            {sortedBar.map((ing) => (
                 <div key={ing} className="bar-item">
                   {ing}
                   <div
@@ -383,38 +327,6 @@ const TAGS = [
 
 // ─── Pure Functions ───────────────────────────────────────────────────────────
 
-function getRequiredIngredients(cocktail: Cocktail): string[] {
-  return (cocktail.ingredients ?? []).filter(
-    (ing) => !isExcluded(ing) && !isExcluded(cocktail.recipe?.[ing] ?? "")
-  );
-}
-
-function normalizeSpelling(s: string): string {
-  return s.toLowerCase().replace(/whiskey/g, "whisky");
-}
-
-function matchIngredient(ingredient: string, barItem: string): boolean {
-  const a = normalizeSpelling(ingredient);
-  const b = normalizeSpelling(barItem);
-  const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return (
-    new RegExp(`\\b${escape(b)}\\b`).test(a) ||
-    new RegExp(`\\b${escape(a)}\\b`).test(b)
-  );
-}
-
-function computeMatchInfo(myBar: string[]) {
-  return (cocktail: Cocktail): MatchInfo | null => {
-    if (!myBar.length) return null;
-    const ingredients = getRequiredIngredients(cocktail);
-    if (!ingredients.length) return null;
-    const missing = ingredients.filter(
-      (ing) => !myBar.some((barItem) => matchIngredient(ing, barItem))
-    ).length;
-    return { missing, total: ingredients.length };
-  };
-}
-
 function filterByKeywords(keywords: string[]) {
   return (cocktails: Cocktail[]): Cocktail[] =>
     keywords.reduce((result, keyword) => {
@@ -438,28 +350,23 @@ function sortCocktails(cocktails: Cocktail[]): Cocktail[] {
   });
 }
 
-interface BuildArgs {
-  filteredRecipes: Cocktail[];
-  showOnlyMakeable: boolean;
-  myBar: string[];
-  getMatchInfo: (c: Cocktail) => MatchInfo | null;
-}
+function buildVisibleCategories(
+  filteredRecipes: Cocktail[],
+  showOnlyMakeable: boolean,
+  getMatchInfo: (c: Cocktail) => MatchInfo | null
+) {
+  const isMakeable = (c: Cocktail): boolean => {
+    if (!showOnlyMakeable) return true;
+    const info = getMatchInfo(c);
+    return info === null || info.missing === 0;
+  };
 
-function buildVisibleCategories({
-  filteredRecipes,
-  showOnlyMakeable,
-  myBar,
-  getMatchInfo,
-}: BuildArgs) {
-  return CATEGORIES.map((category) => {
+  return CATEGORIES.flatMap((category) => {
     const cocktails = sortCocktails(
-      filteredRecipes
-        .filter((c) => c.category === category)
-        .filter(
-          (c) =>
-            !showOnlyMakeable || !myBar.length || getMatchInfo(c)?.missing === 0
-        )
+      filteredRecipes.filter((c) => c.category === category && isMakeable(c))
     );
-    return { category, categoryCh: toChinese(category), cocktails };
-  }).filter(({ cocktails }) => cocktails.length > 0);
+    return cocktails.length > 0
+      ? [{ category, categoryCh: toChinese(category), cocktails }]
+      : [];
+  });
 }
