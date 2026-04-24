@@ -1,7 +1,7 @@
 import "./styles.scss";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useBodyOverflowLock } from "@/hooks/useBodyOverflowLock";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
 interface Props {
   children: ReactNode;
@@ -11,85 +11,104 @@ interface Props {
 
 const MIN_MOVEMENT = 80;
 
-const lockDrag = (el: HTMLDivElement) => {
-  el.style.transition = "none";
-  el.style.animation = "none";
-};
+type StylePatch = { transition?: string; transform?: string; animation?: string };
 
-const applyDrag = (el: HTMLDivElement, startY: number, currentY: number) => {
-  el.style.transform = `translateY(${Math.max(0, currentY - startY)}px)`;
-};
+const DRAG_LOCK: StylePatch = { transition: "none", animation: "none" };
+const DRAG_CLEAR: StylePatch = { transition: "", transform: "", animation: "" };
 
-const clearDrag = (el: HTMLDivElement) => {
-  el.style.transition = "";
-  el.style.transform = "";
-  el.style.animation = "";
-};
+const dragOffset = (startY: number, currentY: number): StylePatch => ({
+  transform: `translateY(${Math.max(0, currentY - startY)}px)`,
+});
 
-const toClassName = (...parts: (string | false)[]) =>
+const patchStyle = (el: HTMLElement, patch: StylePatch) =>
+  Object.assign(el.style, patch);
+
+const cx = (...parts: (string | false | undefined)[]) =>
   parts.filter(Boolean).join(" ");
+
+function useDragToClose(
+  drawerRef: RefObject<HTMLDivElement | null>,
+  handleRef: RefObject<HTMLDivElement | null>,
+  onClose: () => void
+) {
+  const startY = useRef<number | null>(null);
+
+  const onTouchStart = useCallback(
+    (e: React.TouchEvent) => {
+      startY.current = e.touches[0].clientY;
+      if (drawerRef.current) patchStyle(drawerRef.current, DRAG_LOCK);
+    },
+    [drawerRef]
+  );
+
+  const onTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (startY.current === null || !drawerRef.current) return;
+      e.preventDefault();
+      const delta = e.changedTouches[0].clientY - startY.current;
+      patchStyle(drawerRef.current, DRAG_CLEAR);
+      if (delta > MIN_MOVEMENT) onClose();
+      startY.current = null;
+    },
+    [drawerRef, onClose]
+  );
+
+  // native listener + passive:false 讓 iOS 不攔截 touchmove
+  useEffect(() => {
+    const el = handleRef.current;
+    if (!el) return;
+    const onMove = (e: TouchEvent) => {
+      if (startY.current === null || !drawerRef.current) return;
+      e.preventDefault();
+      patchStyle(drawerRef.current, dragOffset(startY.current, e.touches[0].clientY));
+    };
+    el.addEventListener("touchmove", onMove, { passive: false });
+    return () => el.removeEventListener("touchmove", onMove);
+  }, [drawerRef, handleRef]);
+
+  return { onTouchStart, onTouchEnd };
+}
 
 export default function Drawer({ children, onClose, height }: Props) {
   const [closing, setClosing] = useState(false);
-  const touchStartY = useRef<number | null>(null);
+  const [opening, setOpening] = useState(true);
   const drawerRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLDivElement>(null);
 
   useBodyOverflowLock();
 
   const handleClose = useCallback(() => setClosing(true), []);
-
-  const handleAnimationEnd = useCallback(() => {
+  const handleMaskAnimationEnd = useCallback(() => setOpening(false), []);
+  const handleMainAnimationEnd = useCallback(() => {
     if (closing) onClose?.();
   }, [closing, onClose]);
 
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    touchStartY.current = e.touches[0].clientY;
-    if (drawerRef.current) lockDrag(drawerRef.current);
-  }, []);
+  const { onTouchStart, onTouchEnd } = useDragToClose(drawerRef, handleRef, handleClose);
 
-  const handleTouchEnd = useCallback(
-    (e: React.TouchEvent) => {
-      if (touchStartY.current === null || !drawerRef.current) return;
-      const delta = e.changedTouches[0].clientY - touchStartY.current;
-      clearDrag(drawerRef.current);
-      if (delta > MIN_MOVEMENT) handleClose();
-      touchStartY.current = null;
-    },
-    [handleClose]
+  const heightStyle = useMemo(
+    () => (height !== undefined ? { height, maxHeight: height } : undefined),
+    [height]
   );
-
-  // 用 native listener + passive:false 讓 iOS 不攔截 touchmove
-  useEffect(() => {
-    const el = handleRef.current;
-    if (!el) return;
-    const onMove = (e: TouchEvent) => {
-      if (touchStartY.current === null || !drawerRef.current) return;
-      e.preventDefault();
-      applyDrag(drawerRef.current, touchStartY.current, e.touches[0].clientY);
-    };
-    el.addEventListener("touchmove", onMove, { passive: false });
-    return () => el.removeEventListener("touchmove", onMove);
-  }, []);
 
   return (
     <div className="drawer-frame">
       <div
-        className={toClassName("drawer-mask", closing && "drawer-mask--closing")}
+        className={cx("drawer-mask", opening && "drawer-mask--opening", closing && "drawer-mask--closing")}
         onClick={handleClose}
+        onAnimationEnd={handleMaskAnimationEnd}
       />
       <div
         ref={drawerRef}
-        className={toClassName("drawer-main", closing && "drawer-main--closing")}
-        style={height !== undefined ? { height, maxHeight: height } : undefined}
-        onAnimationEnd={handleAnimationEnd}
+        className={cx("drawer-main", opening && "drawer-main--opening", closing && "drawer-main--closing")}
+        style={heightStyle}
+        onAnimationEnd={handleMainAnimationEnd}
       >
         <div
           ref={handleRef}
           className="drawer-handle"
           onClick={handleClose}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
         />
         {children}
       </div>

@@ -8,6 +8,9 @@
   position: absolute;
   inset: 0;
   background: #00000030;
+}
+
+.drawer-mask--opening {
   animation: drawerMaskIn 0.3s ease forwards;
 }
 
@@ -26,6 +29,10 @@
   background: #2e2e2e;
   border-radius: 16px 16px 0 0;
   z-index: 1;
+  transition: all 0.3s;
+}
+
+.drawer-main--opening {
   animation: drawerSlideIn 0.3s ease forwards;
 }
 
