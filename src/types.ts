@@ -12,6 +12,7 @@ export interface Cocktail {
   glass?: string;
   shots?: number;
   alcohol?: number;
+  story?: string;
   note?: string;
   tags: CocktailTag[];
 }

@@ -31,6 +31,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
     glass,
     alcohol,
     shots,
+    story,
     note,
     tags,
   } = recipe;
@@ -168,6 +169,15 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
               ))}
             </div>
           )}
+        </div>
+      )}
+
+      {story && (
+        <div className="recipe__bottom-block">
+          <div>
+            <InfoLabel en="STORY" ch="故事" />
+            <div className="recipe__note handwrite-ch">{story}</div>
+          </div>
         </div>
       )}
 
