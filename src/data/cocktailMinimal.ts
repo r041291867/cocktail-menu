@@ -1,40 +1,49 @@
 import type { MenuCategory } from "@/types";
 
+// 顏色對照表
+// export const COCKTAIL_COLORS = {
+//   amber:    "#c47a18", // 琥珀金　　威士忌、波本
+//   tawny:    "#a05c14", // 棕褐　　　黑蘭姆
+//   pale:     "#c8e8ef", // 淡藍清　　琴酒、通寧水
+//   crystal:  "#ddf4f8", // 近透明　　伏特加、清澈基酒
+//   ruby:     "#b8103a", // 深紅　　　尼格羅尼、金巴利
+//   coral:    "#f0a060", // 粉橙　　　葡萄柚、帕洛瑪
+//   orange:   "#f07820", // 橙紅　　　奧佩羅、Spritz
+//   crimson:  "#c40b1e", // 鮮紅　　　金巴利
+//   golden:   "#e8c84a", // 黃金　　　啤酒、香檳
+//   espresso: "#2a0e00", // 極深棕　　可樂系
+//   lime:     "#3db82a", // 草綠　　　蜜多麗、黃瓜
+//   cobalt:   "#1a6fa0", // 藍色　　　藍柑橘
+//   cream:    "#f0e0c0", // 奶白　　　貝禮詩、奶油系
+// } as const;
 export const cocktailMenu: MenuCategory[] = [
-  // {
-  //   category: "Signature",
-  //   categoryCh: "特調",
-  //   cocktails: [
-  //     // {
-  //     //   nameCht: "牛奶糖",
-  //     //   nameEng: "Fudge",
-  //     // },
-  //     // {
-  //     //   nameCht: "香草布丁",
-  //     //   nameEng: "Vanilla Pudding",
-  //     // },
-  //     {
-  //       nameCht: "檸檬糖馬丁尼",
-  //       nameEng: "Lemon Drop Martini",
-  //     },
-  //     {
-  //       nameCht: "蜜桃黛綺麗",
-  //       nameEng: "Peach Daiquiri",
-  //     },
-  //     {
-  //       nameCht: "Ｊ博士",
-  //       nameEng: "Dr. J",
-  //     },
-  //     {
-  //       nameCht: "梅子冰茶",
-  //       nameEng: "Plum Iced Tea",
-  //     },
-  //     {
-  //       nameCht: "草莓羅尼",
-  //       nameEng: "Kingston Strawberry Negroni",
-  //     },
-  //   ],
-  // },
+  {
+    category: "Signature",
+    categoryCh: "特調",
+    cocktails: [
+      {
+        nameCht: "桂花費士",
+        nameEng: "Osmanthus Fizz",
+        color: "golden",
+      },
+      {
+        nameCht: "草莓黛綺麗",
+        nameEng: "Daiquiri",
+        color: "ruby",
+      },
+      {
+        nameCht: "子夜烏龍",
+        nameEng: "Midnight Oolong",
+        color: "tawny",
+      },
+      {
+        nameCht: "抹茶古典",
+        nameEng: "Matcha Fashioned",
+        color: "lime",
+        opacity: 0.3,
+      },
+    ],
+  },
   // {
   //   category: "Tea",
   //   categoryCh: "茶",
