@@ -204,7 +204,7 @@ export default function RecipePage({
           </h3>
 
           <InputWithButton
-            label="新增材料:"
+            label="新增關鍵字:"
             value={inputText}
             placeholder="Type to filter..."
             onChange={setInputText}
@@ -337,10 +337,16 @@ const CATEGORIES = [
 ];
 
 const TAG_GROUPS: { label: string; tags: string[] }[] = [
-  { label: "烈酒類", tags: ["Whiskey", "Gin", "Rum", "Vodka", "Brandy", "Tequila"] },
-  { label: "其他分類", tags: ["Signature", "Else", "Imbibe", "Mocktail"] },
+  {
+    label: "烈酒類",
+    tags: ["Whiskey", "Gin", "Rum", "Vodka", "Brandy", "Tequila"],
+  },
+  { label: "其他分類", tags: ["Signature", "Imbibe", "Mocktail", "Else"] },
   { label: "利口酒", tags: ["Campari", "Absinthe", "Bénédictine"] },
-  { label: "其他材料", tags: ["Grapefruit", "Grenadine", "Orgeat", "Prosecco", "Champagne"] },
+  {
+    label: "其他材料",
+    tags: ["Grapefruit", "Grenadine", "Orgeat", "Prosecco", "Champagne"],
+  },
 ];
 
 // ─── Pure Functions ───────────────────────────────────────────────────────────
