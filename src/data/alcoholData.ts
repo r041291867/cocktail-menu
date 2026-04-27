@@ -284,6 +284,8 @@ export const ALCOHOL_DATA: Record<string, AlcoholEntry> = {
   "orange bitters": { fullName: "柑橘苦精", shortName: "苦精", abv: 0 },
   "peychaud's bitters": { fullName: "斐喬氏苦精", shortName: "苦精", abv: 0 },
   "aromatic bitter": { fullName: "芳香苦精", shortName: "苦精", abv: 0 },
+  "chocolate bitters": { fullName: "巧克力苦精", shortName: "苦精", abv: 0 },
+  "yuzu bitters": { fullName: "柚子苦精", shortName: "苦精", abv: 0 },
 
   // ── Others (0%) ──────────────────────────────────────────────────────────────
   "mint": { fullName: "薄荷", shortName: "薄荷", abv: 0 },
@@ -291,6 +293,7 @@ export const ALCOHOL_DATA: Record<string, AlcoholEntry> = {
   "cucumber": { fullName: "小黃瓜", shortName: "小黃瓜", abv: 0 },
   "ginger": { fullName: "薑", shortName: "薑", abv: 0 },
   "vanilla": { fullName: "香草", shortName: "香草", abv: 0 },
+  "vanilla extract": { fullName: "香草精", shortName: "香草", abv: 0 },
   "cinnamon": { fullName: "肉桂", shortName: "肉桂", abv: 0 },
   "melon": { fullName: "哈密瓜", shortName: "哈密瓜", abv: 0 },
   "floral": { fullName: "花香", shortName: "花香", abv: 0 },
@@ -298,4 +301,6 @@ export const ALCOHOL_DATA: Record<string, AlcoholEntry> = {
   "buckwheat": { fullName: "蕎麥", shortName: "蕎麥", abv: 0 },
   "orange flower water": { fullName: "橙花水", shortName: "橙花水", abv: 0 },
   "violet": { fullName: "紫羅蘭", shortName: "紫羅蘭", abv: 0 },
+  "matcha": { fullName: "抹茶", shortName: "抹茶", abv: 0 },
+  "matcha powder": { fullName: "抹茶粉", shortName: "抹茶", abv: 0 },
 };
