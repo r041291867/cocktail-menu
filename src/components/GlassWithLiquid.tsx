@@ -166,6 +166,15 @@ export default function GlassWithLiquid({
         </defs>
         <Liquid yStart={46} />
         <path d="M20 40 Q60 95 100 40 Z" fill="rgba(170,170,170,0.08)" />
+        <line
+          x1="20"
+          y1="40"
+          x2="100"
+          y2="40"
+          stroke={S}
+          strokeWidth={SW}
+          strokeLinecap="round"
+        />
         <path
           d="M20 40 Q60 95 100 40"
           stroke={S}
