@@ -1,4 +1,3 @@
-import type { CocktailTag } from "@/data/deriveTags";
 import type { CSSProperties } from "react";
 
 export interface SanityRecipeRow {
@@ -17,6 +16,7 @@ export interface SanityDoc {
   recipe?: SanityRecipeRow[];
   story?: string;
   note?: string;
+  tags?: string[];
 }
 
 /** Full cocktail data fetched from Sanity CMS */
@@ -32,7 +32,7 @@ export interface Cocktail extends Omit<SanityDoc, "recipe"> {
   alcohol?: number;
   story?: string;
   note?: string;
-  tags: CocktailTag[];
+  tags: string[];
 }
 
 /** Minimal cocktail entry used in the static main-menu data */

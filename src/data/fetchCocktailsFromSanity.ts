@@ -30,12 +30,14 @@ function mapDoc(doc: SanityDoc): Cocktail {
     recipe,
     shots: typeof doc.shots === "number" ? doc.shots : undefined,
     alcohol: abv ?? undefined,
-    tags: deriveTags(
-      doc.nameEng,
-      Array.isArray(doc.ingredients) ? doc.ingredients : [],
-      recipe,
-      doc.method
-    ),
+    tags: doc.tags?.length
+      ? doc.tags
+      : deriveTags(
+          doc.nameEng,
+          Array.isArray(doc.ingredients) ? doc.ingredients : [],
+          recipe,
+          doc.method
+        ),
   };
 }
 

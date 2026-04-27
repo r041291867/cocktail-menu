@@ -3,29 +3,13 @@ import "./cocktailItem/styles.scss";
 import "./shotIcon/styles.scss";
 import "@/styles/tags.scss";
 import { toChinese } from "@/data/engToCht";
+import { getAlcoholShots, getShotList } from "@/data/recipeUtils";
 import GlassWithLiquid from "@/components/GlassWithLiquid";
 
 const { cocktail, recipe } = Astro.props;
 
 function capitalize(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function getAlcoholShots(alcohol: number) {
-  if (alcohol <= 10) return 1;
-  if (alcohol <= 16) return 1.5;
-  if (alcohol <= 22) return 2;
-  if (alcohol <= 25) return 2.5;
-  return 3;
-}
-
-function getShotStatusList(shots: number) {
-  const list = [];
-  const full = Math.floor(shots);
-  for (let i = 0; i < full; i++) list.push("filled");
-  if (shots % 1 === 0.5) list.push("half");
-  while (list.length < 3) list.push("empty");
-  return list;
 }
 
 function getGlassIcon(glass: string | undefined): string | null {
@@ -61,7 +45,7 @@ function getGlassIcon(glass: string | undefined): string | null {
           </div>
 
           <div class="cocktail__stars">
-            {getShotStatusList(recipe.alcohol ? getAlcoholShots(recipe.alcohol) : recipe.shots).map((status, index) => (
+            {getShotList(recipe.alcohol ? getAlcoholShots(recipe.alcohol) : recipe.shots).map((status, index) => (
               <div class="shot-icon__frame" style="width:16px;height:16px;" data-shot={index}>
                 <div class={`shot-icon status-${status}`} />
               </div>

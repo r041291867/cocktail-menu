@@ -275,6 +275,7 @@ export const ALCOHOL_DATA: Record<string, AlcoholEntry> = {
   "green tea": { fullName: "綠茶", shortName: "綠茶", abv: 0 },
   "earl grey": { fullName: "伯爵茶", shortName: "伯爵茶", abv: 0 },
   "earl grey tea": { fullName: "伯爵茶", shortName: "伯爵茶", abv: 0 },
+  "oolong": { fullName: "烏龍茶", shortName: "烏龍茶", abv: 0 },
   "tea": { fullName: "茶", shortName: "茶", abv: 0 },
 
   // ── Bitters (0% – 使用量極少，酒精可忽略) ────────────────────────────────────

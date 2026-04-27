@@ -155,8 +155,10 @@ export function deriveTags(
     s.toLowerCase()
   );
 
-  const hasKeyword = (keyword: string) =>
-    allIngredients.some((ing) => ing.includes(keyword));
+  const hasKeyword = (keyword: string) => {
+    const re = new RegExp(`\\b${keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`);
+    return allIngredients.some((ing) => re.test(ing));
+  };
 
   const tags = new Set<CocktailTag>();
 

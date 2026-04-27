@@ -139,12 +139,20 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
                     {inBar ? "✓" : "✗"}
                   </span>
                 )}
-                <span className="recipe__ing-ch handwrite-ch">
-                  {toChineseFull(item)}
-                </span>
-                <span className="recipe__ing-en handwrite-en">
-                  {capitalize(item)}
-                </span>
+                {(() => {
+                  const ch = toChineseFull(item);
+                  const hasCh = ch.toLowerCase() !== item.toLowerCase();
+                  return (
+                    <>
+                      {hasCh && (
+                        <span className="recipe__ing-ch handwrite-ch">{ch}</span>
+                      )}
+                      <span className="recipe__ing-en handwrite-en">
+                        {capitalize(item)}
+                      </span>
+                    </>
+                  );
+                })()}
               </div>
               <div className="recipe__ing-amount handwrite-en">{amount}</div>
             </div>
