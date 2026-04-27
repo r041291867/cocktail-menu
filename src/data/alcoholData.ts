@@ -304,4 +304,5 @@ export const ALCOHOL_DATA: Record<string, AlcoholEntry> = {
   "violet": { fullName: "紫羅蘭", shortName: "紫羅蘭", abv: 0 },
   "matcha": { fullName: "抹茶", shortName: "抹茶", abv: 0 },
   "matcha powder": { fullName: "抹茶粉", shortName: "抹茶", abv: 0 },
+  "osmanthus": { fullName: "桂花", shortName: "桂花", abv: 0 },
 };

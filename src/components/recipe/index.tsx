@@ -11,14 +11,14 @@ import { toChinese, toChineseFull } from "@/data/engToCht";
 import type { Cocktail } from "@/types";
 
 const GLASS_ICON: Record<string, string> = {
-  coupe: "/images/glass/ic-glass-coupe.svg",
-  lowball: "/images/glass/ic-glass-rocks.svg",
-  highball: "/images/glass/ic-glass-highball.svg",
-  collins: "/images/glass/ic-glass-collins.svg",
-  martini: "/images/glass/ic-glass-martini.svg",
-  nick_nora: "/images/glass/ic-glass-nick-nora.svg",
+  "coupe": "/images/glass/ic-glass-coupe.svg",
+  "lowball": "/images/glass/ic-glass-rocks.svg",
+  "highball": "/images/glass/ic-glass-highball.svg",
+  "collins": "/images/glass/ic-glass-collins.svg",
+  "martini": "/images/glass/ic-glass-martini.svg",
+  "nick_nora": "/images/glass/ic-glass-nick-nora.svg",
   "nick & nora": "/images/glass/ic-glass-nick-nora.svg",
-  hurricane: "/images/glass/ic-glass-hurricane.svg",
+  "hurricane": "/images/glass/ic-glass-hurricane.svg",
 };
 
 export default function Recipe({ recipe, myBar = [] }: Props) {
@@ -144,12 +144,13 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
                   const hasCh = ch.toLowerCase() !== item.toLowerCase();
                   return (
                     <>
+                      <span className="recipe__ing-ch handwrite-ch">{ch}</span>
+
                       {hasCh && (
-                        <span className="recipe__ing-ch handwrite-ch">{ch}</span>
+                        <span className="recipe__ing-en handwrite-en">
+                          {capitalize(item)}
+                        </span>
                       )}
-                      <span className="recipe__ing-en handwrite-en">
-                        {capitalize(item)}
-                      </span>
                     </>
                   );
                 })()}
