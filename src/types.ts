@@ -1,15 +1,33 @@
 import type { CocktailTag } from "@/data/deriveTags";
 import type { CSSProperties } from "react";
 
-/** Full cocktail data fetched from Sanity CMS */
-export interface Cocktail {
-  category: string;
+export interface SanityRecipeRow {
+  ingredient?: string;
+  amount?: string;
+}
+
+export interface SanityDoc {
+  category: Category;
   nameCht: string;
   nameEng: string;
-  method?: string;
+  method: Method;
   ingredients: string[];
-  recipe: Record<string, string>;
-  glass?: string;
+  glass: Glass;
+  shots?: number;
+  recipe?: SanityRecipeRow[];
+  story?: string;
+  note?: string;
+}
+
+/** Full cocktail data fetched from Sanity CMS */
+export interface Cocktail extends Omit<SanityDoc, "recipe"> {
+  category: Category;
+  nameCht: string;
+  nameEng: string;
+  method: Method;
+  ingredients: string[];
+  recipe: RecipeIngredients;
+  glass: Glass;
   shots?: number;
   alcohol?: number;
   story?: string;
@@ -44,3 +62,28 @@ export interface MatchInfo {
   missing: number;
   total: number;
 }
+
+export type Category =
+  | "Whiskey"
+  | "Gin"
+  | "Rum"
+  | "Vodka"
+  | "Tequila"
+  | "Brandy"
+  | "Mocktail"
+  | "Signature"
+  | "Imbibe"
+  | "Else";
+
+export type Method = "Build" | "Shake" | "Stir" | "Rolling" | "Other";
+
+export type Glass =
+  | "Highball"
+  | "Lowball"
+  | "Martini"
+  | "Coupe"
+  | "Nick & Nora"
+  | "Hurricane"
+  | "Footed Beer";
+
+export type RecipeIngredients = Record<string, string>;
