@@ -15,6 +15,7 @@ export const COCKTAIL_COLORS = {
   lime:     "#3db82a", // 草綠　　　蜜多麗、黃瓜
   cobalt:   "#1a6fa0", // 藍色　　　藍柑橘
   cream:    "#f0e0c0", // 奶白　　　貝禮詩、奶油系
+  daiquiri: "#eeebd4", // 乳白檸檬黃　黛克瑞、瑪格麗塔
 } as const;
 
 export type CocktailColorKey = keyof typeof COCKTAIL_COLORS;

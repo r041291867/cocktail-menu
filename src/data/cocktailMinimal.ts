@@ -15,6 +15,7 @@ import type { MenuCategory } from "@/types";
 //   lime:     "#3db82a", // 草綠　　　蜜多麗、黃瓜
 //   cobalt:   "#1a6fa0", // 藍色　　　藍柑橘
 //   cream:    "#f0e0c0", // 奶白　　　貝禮詩、奶油系
+//   daiquiri: "#eeebd4", // 乳白檸檬黃　黛克瑞、瑪格麗塔
 // } as const;
 export const cocktailMenu: MenuCategory[] = [
   {
@@ -77,7 +78,7 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "黛綺麗",
         nameEng: "Daiquiri",
-        color: "crystal",
+        color: "daiquiri",
       },
       {
         nameCht: "白色佳人",
@@ -102,7 +103,7 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "馬丁尼",
         nameEng: "Martini",
-        color: "pale",
+        color: "crystal",
         opacity: 0.5,
       },
     ],
@@ -134,7 +135,7 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "瑪格麗特",
         nameEng: "Margarita",
-        color: "crystal",
+        color: "daiquiri",
       },
       {
         nameCht: "茉莉",
@@ -148,7 +149,8 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "薇絲朋",
         nameEng: "Vesper",
-        color: "pale",
+        color: "crystal",
+        opacity: 0.5,
       },
     ],
   },
@@ -196,7 +198,7 @@ export const cocktailMenu: MenuCategory[] = [
       {
         nameCht: "琴費士",
         nameEng: "Gin Fizz",
-        color: "crystal",
+        color: "daiquiri",
       },
       {
         nameCht: "琴通寧",
