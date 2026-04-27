@@ -17,6 +17,7 @@ const GLASS_ICON: Record<string, string> = {
   collins: "/images/glass/ic-glass-collins.svg",
   martini: "/images/glass/ic-glass-martini.svg",
   nick_nora: "/images/glass/ic-glass-nick-nora.svg",
+  "nick & nora": "/images/glass/ic-glass-nick-nora.svg",
   hurricane: "/images/glass/ic-glass-hurricane.svg",
 };
 

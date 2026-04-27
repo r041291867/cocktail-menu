@@ -32,6 +32,7 @@ const GLASS_ALIASES: Record<string, GlassType> = {
   "lowball": "rocks",
   "old_fashioned": "rocks",
   "old fashioned": "rocks",
+  "nick & nora": "nick_nora",
 };
 
 function normalizeGlass(glass: string): GlassType | null {
