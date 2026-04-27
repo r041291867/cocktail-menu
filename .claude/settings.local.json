@@ -13,7 +13,9 @@
       "Bash(mv data/recipeUtils.js data/recipeUtils.ts)",
       "Bash(mv data/cocktailMinimal.js data/cocktailMinimal.ts)",
       "Bash(mv pages/hidden/HiddenApp.jsx pages/hidden/HiddenApp.tsx)",
-      "Bash(mv pages/hidden/HiddenPage.jsx pages/hidden/HiddenPage.tsx)"
+      "Bash(mv pages/hidden/HiddenPage.jsx pages/hidden/HiddenPage.tsx)",
+      "Bash(cat)",
+      "Bash(bash /tmp/final_report.sh)"
     ]
   }
 }

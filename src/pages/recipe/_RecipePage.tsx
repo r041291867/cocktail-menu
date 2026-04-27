@@ -7,7 +7,7 @@ import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import QrCode2OutlinedIcon from "@mui/icons-material/QrCode2Outlined";
 import QrCode from "@/components/qrcode";
-import { computeMatchInfo } from "@/data/recipeUtils";
+import { computeMatchInfo, escapeRegExp } from "@/data/recipeUtils";
 import InputWithButton from "@/components/inputWithButton";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import type { Cocktail, MatchInfo } from "@/types";
@@ -351,15 +351,11 @@ const TAG_GROUPS: { label: string; tags: string[] }[] = [
 
 // ─── Pure Functions ───────────────────────────────────────────────────────────
 
-function escapeRegex(s: string) {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
 function filterByKeywords(keywords: string[]) {
   return (cocktails: Cocktail[]): Cocktail[] =>
     keywords.reduce((result, keyword) => {
       const lc = keyword.toLowerCase();
-      const re = new RegExp(`\\b${escapeRegex(lc)}\\b`, "i");
+      const re = new RegExp(`\\b${escapeRegExp(lc)}\\b`, "i");
       return result.filter(
         (c) =>
           c.category?.toLowerCase().includes(lc) ||

@@ -5,6 +5,7 @@ import Loading from "@/components/loading";
 import Popup from "@/components/popup";
 import Recipe from "@/components/recipe";
 import { getRecipe } from "@/data/recipeUtils";
+import { useFontReady } from "@/hooks/useFontReady";
 import type { Cocktail } from "@/types";
 import QrCode2OutlinedIcon from "@mui/icons-material/QrCode2Outlined";
 import QrCode from "@/components/qrcode";
@@ -17,15 +18,13 @@ interface Props {
 
 export default function HomeInteractions({ recipes = [] }: Props) {
   // ── State ──────────────────────────────────────────────────────────────────
-  const [fontReady, setFontReady] = useState(false);
+  const fontReady = useFontReady();
   const [recipeItem, setRecipeItem] = useState<Cocktail | null>(null);
   const [showQrPopup, setShowQrPopup] = useState(false);
   const [currentUrl, setCurrentUrl] = useState("");
 
   // ── Effects ────────────────────────────────────────────────────────────────
   useEffect(() => {
-    document.fonts.ready.then(() => setFontReady(true));
-
     const header = document.querySelector("[data-home-title]");
     const onHeaderDoubleClick = () => window.location.assign("/recipe");
     header?.addEventListener("dblclick", onHeaderDoubleClick);

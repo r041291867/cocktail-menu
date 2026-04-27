@@ -1,14 +1,23 @@
 import type { CSSProperties } from "react";
 
-export interface SanityRecipeRow {
+export interface IngredientMeta {
+  chineseName?: string;
+  chineseFullName?: string;
+  abv?: number;
+}
+
+export interface SanityRecipeRow extends IngredientMeta {
   ingredient?: string;
   amount?: string;
 }
 
-export interface SanityDoc {
-  category: Category;
+export interface CocktailName {
   nameCht: string;
   nameEng: string;
+}
+
+export interface SanityDoc extends CocktailName {
+  category: Category;
   method: Method;
   ingredients: string[];
   glass: Glass;
@@ -21,24 +30,14 @@ export interface SanityDoc {
 
 /** Full cocktail data fetched from Sanity CMS */
 export interface Cocktail extends Omit<SanityDoc, "recipe"> {
-  category: Category;
-  nameCht: string;
-  nameEng: string;
-  method: Method;
-  ingredients: string[];
   recipe: RecipeIngredients;
-  glass: Glass;
-  shots?: number;
+  ingredientMeta?: Record<string, IngredientMeta>;
   alcohol?: number;
-  story?: string;
-  note?: string;
   tags: string[];
 }
 
 /** Minimal cocktail entry used in the static main-menu data */
-export interface CocktailSummary {
-  nameCht: string;
-  nameEng: string;
+export interface CocktailSummary extends CocktailName {
   hasImage?: boolean;
   src?: string;
   imgPosition?: "left" | "right";

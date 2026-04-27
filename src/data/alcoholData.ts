@@ -165,12 +165,12 @@ export const ALCOHOL_DATA: Record<string, AlcoholEntry> = {
   // ── Fortified Wine ───────────────────────────────────────────────────────────
   "port wine": { fullName: "波特酒", shortName: "波特酒", abv: 19 },
   "sherry": { fullName: "雪莉酒", shortName: "雪莉酒", abv: 18 },
-  "dry vermouth": { fullName: "不甜香艾酒", shortName: "香艾酒", abv: 18 },
-  "rosso vermouth": { fullName: "甜香艾酒", shortName: "香艾酒", abv: 18 },
-  "sweet vermouth": { fullName: "甜香艾酒", shortName: "香艾酒", abv: 18 },
+  "dry vermouth": { fullName: "不甜香艾酒", shortName: "不甜香艾酒", abv: 18 },
+  "rosso vermouth": { fullName: "甜香艾酒", shortName: "甜香艾酒", abv: 18 },
+  "sweet vermouth": { fullName: "甜香艾酒", shortName: "甜香艾酒", abv: 18 },
   "vermouth": { fullName: "香艾酒", shortName: "香艾酒", abv: 18 },
   "lillet": { fullName: "麗葉酒", shortName: "麗葉酒", abv: 17 },
-  "lillet blanc": { fullName: "麗葉白酒", shortName: "麗葉酒", abv: 17 },
+  "lillet blanc": { fullName: "麗葉酒", shortName: "麗葉酒", abv: 17 },
   "dubonnet": { fullName: "多寶力", shortName: "多寶力", abv: 15 },
 
   // ── Wine & Sparkling ─────────────────────────────────────────────────────────
@@ -220,8 +220,8 @@ export const ALCOHOL_DATA: Record<string, AlcoholEntry> = {
   "ponkan": { fullName: "椪柑", shortName: "椪柑", abv: 0 },
 
   // ── Syrups & Sweeteners (0%) ─────────────────────────────────────────────────
-  "simple syrup": { fullName: "糖水", shortName: "糖", abv: 0 },
-  "sugar syrup": { fullName: "糖水", shortName: "糖", abv: 0 },
+  "simple syrup": { fullName: "糖漿", shortName: "糖", abv: 0 },
+  "sugar syrup": { fullName: "糖漿", shortName: "糖", abv: 0 },
   "ginger syrup": { fullName: "薑汁糖漿", shortName: "薑糖", abv: 0 },
   "syrup": { fullName: "糖漿", shortName: "糖漿", abv: 0 },
   "agave syrup": { fullName: "龍舌蘭糖漿", shortName: "糖漿", abv: 0 },

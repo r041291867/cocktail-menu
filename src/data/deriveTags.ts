@@ -1,3 +1,5 @@
+import { escapeRegExp } from "@/data/recipeUtils";
+
 export type CocktailTag =
   | "清新"
   | "氣泡"
@@ -156,7 +158,7 @@ export function deriveTags(
   );
 
   const hasKeyword = (keyword: string) => {
-    const re = new RegExp(`\\b${keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`);
+    const re = new RegExp(`\\b${escapeRegExp(keyword)}\\b`);
     return allIngredients.some((ing) => re.test(ing));
   };
 

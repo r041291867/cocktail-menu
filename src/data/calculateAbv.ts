@@ -1,5 +1,6 @@
 import { INGREDIENT_ABV } from "./alcoholAbv";
 import { isExcluded } from "./recipeUtils";
+import type { IngredientMeta } from "@/types";
 
 // ── 物理常數 ──────────────────────────────────────────────────────────────────
 const C = 4.18;  // 液體比熱容，J/(g·°C)
@@ -60,7 +61,8 @@ export type AbvResult =
 
 export function calculateAbv(
   recipe: Record<string, string>,
-  method: string | undefined
+  method: string | undefined,
+  ingredientMeta?: Record<string, IngredientMeta>
 ): AbvResult {
   const isShake = /shake/i.test(method ?? "");
   const tFinal = isShake ? -3 : 0; // shake 終溫 -3°C，其他 0°C
@@ -72,7 +74,8 @@ export function calculateAbv(
     // 跳過 garnish / optional / ratio 等標記
     if (isExcluded(ingredient) || isExcluded(amount)) continue;
 
-    const abv = lookupAbv(ingredient);
+    const metaAbv = ingredientMeta?.[ingredient]?.abv;
+    const abv = metaAbv !== undefined ? metaAbv : lookupAbv(ingredient);
     if (abv === null) return { abv: null, unknown: ingredient }; // 字典缺這個食材
 
     if (isToTop(amount)) {

@@ -86,7 +86,7 @@ function getSubtype(s: string, subtypes: readonly string[], pattern: RegExp): st
   return "generic";
 }
 
-const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+export const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 function matchNormalized(a: string, b: string): boolean {
   for (const { subtypes, pattern, genericAcceptsSubtypes } of SPIRIT_CONFIGS) {

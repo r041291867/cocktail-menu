@@ -29,6 +29,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
     nameEng,
     method,
     recipe: ing,
+    ingredientMeta,
     glass,
     alcohol,
     shots,
@@ -140,7 +141,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
                   </span>
                 )}
                 {(() => {
-                  const ch = toChineseFull(item);
+                  const ch = toChineseFull(item, ingredientMeta?.[item]);
                   const hasCh = ch.toLowerCase() !== item.toLowerCase();
                   return (
                     <>
@@ -174,7 +175,7 @@ export default function Recipe({ recipe, myBar = [] }: Props) {
               <InfoLabel en="GARNISH" ch="裝飾" />
               {garnishItems.map((g) => (
                 <div key={g} className="recipe__bottom-value handwrite-ch">
-                  {toChinese(g)}
+                  {toChinese(g, ingredientMeta?.[g])}
                 </div>
               ))}
             </div>

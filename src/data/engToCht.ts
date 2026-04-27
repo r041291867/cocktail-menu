@@ -1,4 +1,5 @@
 import { ALCOHOL_DATA } from "./alcoholData";
+import type { IngredientMeta } from "@/types";
 
 // 非食材的類別標籤翻譯
 const MISC_DICT: Record<string, string> = {
@@ -17,12 +18,15 @@ const MISC_DICT: Record<string, string> = {
   "souler gin":    "琴酒",
 };
 
-export function toChinese(englishText: string): string {
+export function toChinese(englishText: string, meta?: IngredientMeta): string {
+  if (meta?.chineseName) return meta.chineseName;
   const lower = englishText.toLowerCase();
   return ALCOHOL_DATA[lower]?.shortName ?? MISC_DICT[lower] ?? englishText;
 }
 
-export function toChineseFull(englishText: string): string {
+export function toChineseFull(englishText: string, meta?: IngredientMeta): string {
+  if (meta?.chineseFullName) return meta.chineseFullName;
+  if (meta?.chineseName) return meta.chineseName;
   const lower = englishText.toLowerCase();
   return ALCOHOL_DATA[lower]?.fullName ?? MISC_DICT[lower] ?? englishText;
 }
