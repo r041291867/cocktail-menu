@@ -43,6 +43,12 @@ export const cocktailMenu: MenuCategory[] = [
         color: "lime",
         opacity: 0.3,
       },
+      {
+        nameCht: "英吉利海峽",
+        nameEng: "English Channel",
+        color: "amber",
+        opacity: 0.5,
+      },
     ],
   },
   // {
@@ -81,11 +87,6 @@ export const cocktailMenu: MenuCategory[] = [
         color: "daiquiri",
       },
       {
-        nameCht: "白色佳人",
-        nameEng: "White Lady",
-        color: "crystal",
-      },
-      {
         nameCht: "側車",
         nameEng: "Sidecar",
         color: "amber",
@@ -113,11 +114,6 @@ export const cocktailMenu: MenuCategory[] = [
     categoryCh: "新經典",
     cocktails: [
       {
-        nameCht: "帕洛瑪",
-        nameEng: "Paloma",
-        color: "coral",
-      },
-      {
         nameCht: "盤尼西林",
         nameEng: "Penicillin",
         color: "golden",
@@ -142,16 +138,6 @@ export const cocktailMenu: MenuCategory[] = [
         nameEng: "Jasmine",
         color: "coral",
       },
-      // {
-      //   nameCht: "邁泰",
-      //   nameEng: "Mai-Tai",
-      // },
-      {
-        nameCht: "薇絲朋",
-        nameEng: "Vesper",
-        color: "crystal",
-        opacity: 0.5,
-      },
     ],
   },
   {
@@ -173,11 +159,6 @@ export const cocktailMenu: MenuCategory[] = [
         nameEng: "Queen Elizabeth",
         color: "golden",
         opacity: 0.5,
-      },
-      {
-        nameCht: "吻別男孩",
-        nameEng: "Kiss the Boys Goodbye",
-        color: "tawny",
       },
       {
         nameCht: "翻雲覆雨",
@@ -205,50 +186,10 @@ export const cocktailMenu: MenuCategory[] = [
         nameEng: "Gin & Tonic",
         color: "pale",
       },
-      // {
-      //   nameCht: "會館費士",
-      //   nameEng: "Kaikan Fizz",
-      // },
       {
-        nameCht: "莫希托",
-        nameEng: "Mojito",
-        color: "crystal",
-      },
-      {
-        nameCht: "泡泡",
-        nameEng: "Spumoni",
-        color: "coral",
-      },
-      {
-        nameCht: "美國佬",
-        nameEng: "Americano",
-        color: "crimson",
-      },
-    ],
-  },
-  {
-    category: "Niche",
-    categoryCh: "小眾調酒",
-    cocktails: [
-      {
-        nameCht: "曼哈頓先生",
-        nameEng: "Mr Manhattan",
-        color: "orange",
-      },
-      {
-        nameCht: "菊花",
-        nameEng: "Chrysanthemum",
-        color: "golden",
-      },
-      {
-        nameCht: "老廣場",
-        nameEng: "Vieux Carrè",
-        color: "amber",
-      },
-      {
-        nameCht: "法蘭克·辛納屈",
-        nameEng: "Francis Albert",
-        color: "amber",
+        nameCht: "夜黑風高",
+        nameEng: "Dark 'N' Stormy",
+        color: "tawny",
       },
     ],
   },
